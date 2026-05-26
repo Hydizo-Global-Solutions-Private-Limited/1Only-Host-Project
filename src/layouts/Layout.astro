@@ -1,0 +1,77 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+  keywords?: string;
+}
+
+const { 
+  title = "1Only Host - Reliable Web Hosting & Domain Services Provider", 
+  description = "1Only Host offers premium web hosting and domain services, providing fast, secure, and affordable solutions for businesses.", 
+  keywords = "web hosting, domain services, reliable hosting, affordable hosting, secure hosting"
+} = Astro.props;
+
+// Compute dynamic basePrefix for relative path resolution
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) : './';
+---
+
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <meta name="description" content={description}>
+    <meta name="keywords" content={keywords}>
+    <link rel="icon" type="image/png" sizes="56x56" href={`${basePrefix}images/favicon.png`}>
+    
+    <!-- Stylesheets loaded from public assets -->
+    <link rel="stylesheet" type="text/css" href={`${basePrefix}css/bootstrap.min.css`} media="all">
+    <link rel="stylesheet" type="text/css" href={`${basePrefix}css/style.min.css`} media="all">
+    <link rel="stylesheet" type="text/css" href={`${basePrefix}css/responsive.css`} media="all">
+    <link rel="stylesheet" type="text/css" href={`${basePrefix}css/ekiticons.css`} media="all">
+    <link rel="stylesheet" type="text/css" href={`${basePrefix}css/design-system.css`} media="all">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Floating Space Nebulas Background -->
+    <div class="space-nebulas">
+      <div class="nebula nebula-amber"></div>
+      <div class="nebula nebula-violet"></div>
+      <div class="nebula nebula-coral"></div>
+    </div>
+
+    <div class="main-page-wrapper">
+      <Header basePrefix={basePrefix} />
+      <slot />
+      <Footer basePrefix={basePrefix} />
+    </div>
+
+    <!-- Scripts loaded from public assets -->
+    <script is:inline src={`${basePrefix}js/jquery.min.js`}></script>
+    <script is:inline src={`${basePrefix}js/bootstrap.bundle.min.js`}></script>
+    <script is:inline src={`${basePrefix}js/slick.min.js`}></script>
+    <script is:inline src={`${basePrefix}js/jquery.waypoints.min.js`}></script>
+    <script is:inline src={`${basePrefix}js/jquery.counterup.min.js`}></script>
+    <script is:inline src={`${basePrefix}js/theme.js`}></script>
+    
+    <!-- AOS Scroll Animations -->
+    <script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script is:inline>
+      AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: true
+      });
+    </script>
+  </body>
+</html>

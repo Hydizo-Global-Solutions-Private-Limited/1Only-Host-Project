@@ -1,0 +1,7 @@
+<svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="50" rx="8" fill="#0A1128" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+  <path d="M25 15 C21 15 18 18 18 22 C15 22 13 24 13 27 C13 30 16 33 19 33 H35 C38 33 40 31 40 28 C40 25 38 23 35 23 C35 19 31 15 25 15 Z" fill="#1e3a8a" stroke="#0284c7" stroke-width="1.5" />
+  <path d="M27 28 V22 M24 25 L27 22 L30 25" fill="none" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="50" y="24" font-family="'Outfit', sans-serif" font-size="14" fill="#fff" font-weight="bold">CloudLinux</text>
+  <text x="50" y="38" font-family="'Inter', sans-serif" font-size="10" fill="#0284c7" font-weight="bold" letter-spacing="1">OS POWERED</text>
+</svg>

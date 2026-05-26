@@ -1,0 +1,286 @@
+---
+import fs from 'fs';
+import path from 'path';
+import pagesData from '../../../data/pages.json';
+
+export const prerender = false;
+
+// Check Auth Cookie
+const authCookie = Astro.cookies.get('1onlyhost_admin_session');
+if (!authCookie || authCookie.value !== 'authenticated') {
+  return Astro.redirect('/admin/login');
+}
+
+const { page } = Astro.params;
+
+// Find the target page metadata
+const pageMeta = pagesData.find((p) => p.id === page);
+if (!pageMeta) {
+  return Astro.redirect('/admin');
+}
+
+// Load the JSON data file
+const filePath = path.join(process.cwd(), pageMeta.file);
+let fileContent;
+try {
+  fileContent = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+} catch (e) {
+  return Astro.redirect('/admin');
+}
+
+let successMessage = '';
+let errorMessage = '';
+
+// Max Length Constraints for Layout Integrity
+const constraints = {
+  // SEO
+  seo_title: { max: 70, name: "SEO Meta Title" },
+  seo_description: { max: 160, name: "SEO Meta Description" },
+  seo_keywords: { max: 300, name: "SEO Meta Keywords" },
+  
+  // Content
+  hero_title: { max: 80, name: "Hero Section Title" },
+  hero_subtitle: { max: 250, name: "Hero Section Subtitle" },
+  hero_price_label: { max: 40, name: "Hero Pricing / Price Tag" },
+  card_1_title: { max: 30, name: "WordPress Card Title" },
+  card_1_price: { max: 20, name: "WordPress Card Price" },
+  card_2_title: { max: 30, name: "Web Hosting Card Title" },
+  card_2_price: { max: 20, name: "Web Hosting Card Price" },
+  card_3_title: { max: 30, name: "Domain Card Title" },
+  card_3_price: { max: 20, name: "Domain Card Price" },
+  reason_title: { max: 80, name: "Why Us Section Title" }
+};
+
+if (Astro.request.method === 'POST') {
+  try {
+    const formData = await Astro.request.formData();
+    
+    // Extract & Validate SEO
+    const updatedSeo = {
+      title: (formData.get('seo_title') || '').toString().trim(),
+      description: (formData.get('seo_description') || '').toString().trim(),
+      keywords: (formData.get('seo_keywords') || '').toString().trim()
+    };
+    
+    // Extract & Validate Content
+    const updatedContent = {};
+    for (const key of Object.keys(fileContent.content)) {
+      updatedContent[key] = (formData.get(key) || '').toString().trim();
+    }
+    
+    // Check backend length limits
+    let hasError = false;
+    
+    // Check SEO
+    if (updatedSeo.title.length > constraints.seo_title.max) {
+      errorMessage = `${constraints.seo_title.name} exceeds maximum limit of ${constraints.seo_title.max} chars.`;
+      hasError = true;
+    }
+    if (updatedSeo.description.length > constraints.seo_description.max) {
+      errorMessage = `${constraints.seo_description.name} exceeds maximum limit of ${constraints.seo_description.max} chars.`;
+      hasError = true;
+    }
+    if (updatedSeo.keywords.length > constraints.seo_keywords.max) {
+      errorMessage = `${constraints.seo_keywords.name} exceeds maximum limit of ${constraints.seo_keywords.max} chars.`;
+      hasError = true;
+    }
+    
+    // Check Content
+    for (const [key, value] of Object.entries(updatedContent)) {
+      if (constraints[key] && value.length > constraints[key].max) {
+        errorMessage = `${constraints[key].name} exceeds maximum limit of ${constraints[key].max} chars.`;
+        hasError = true;
+        break;
+      }
+    }
+    
+    if (!hasError) {
+      // Save changes back to file
+      const updatedData = {
+        seo: updatedSeo,
+        content: updatedContent
+      };
+      fs.writeFileSync(filePath, JSON.stringify(updatedData, null, 2), 'utf8');
+      
+      // Reload loaded data
+      fileContent = updatedData;
+      successMessage = 'Page content and SEO settings updated successfully!';
+    }
+  } catch (error) {
+    errorMessage = 'Failed to write updates to page file.';
+  }
+}
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit {pageMeta.name} - 1Only Host Admin</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/design-system.css">
+  </head>
+  <body class="mesh-bg-dark text-white" style="min-height: 100vh; padding: 40px 0;">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-5 pb-3 border-bottom border-secondary border-opacity-25">
+        <div>
+          <a href="/admin" class="btn btn-outline-light btn-sm rounded-pill px-4 mb-3">&larr; Back to Dashboard</a>
+          <h2 class="m-0 fw-800">Edit Page: <span class="text-primary">{pageMeta.name}</span></h2>
+        </div>
+      </div>
+
+      {successMessage && (
+        <div class="alert alert-success border-0 text-center py-3 mb-4 rounded-3" style="background: rgba(46, 213, 115, 0.1); color: #2ed573;">
+          {successMessage}
+        </div>
+      )}
+      {errorMessage && (
+        <div class="alert alert-danger border-0 text-center py-3 mb-4 rounded-3" style="background: rgba(255, 71, 87, 0.1); color: #ff4757;">
+          {errorMessage}
+        </div>
+      )}
+
+      <form method="POST">
+        <div class="row">
+          <!-- SEO Settings Card -->
+          <div class="col-lg-6">
+            <div class="glass-card p-5 mb-4">
+              <h4 class="fw-700 text-primary mb-4">SEO Configuration</h4>
+              
+              <div class="mb-4">
+                <label class="form-label text-white-50 fs-13 d-flex justify-content-between">
+                  <span>Meta Title Tag</span>
+                  <span class="opacity-50 char-counter"><span id="seo-title-count">0</span>/{constraints.seo_title.max}</span>
+                </label>
+                <input 
+                  type="text" 
+                  name="seo_title" 
+                  id="seo_title"
+                  class="form-control text-white bg-transparent border-secondary"
+                  value={fileContent.seo.title}
+                  maxlength={constraints.seo_title.max}
+                  required
+                >
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label text-white-50 fs-13 d-flex justify-content-between">
+                  <span>Meta Description</span>
+                  <span class="opacity-50 char-counter"><span id="seo-desc-count">0</span>/{constraints.seo_description.max}</span>
+                </label>
+                <textarea 
+                  name="seo_description" 
+                  id="seo_description"
+                  rows="4" 
+                  class="form-control text-white bg-transparent border-secondary"
+                  maxlength={constraints.seo_description.max}
+                  required
+                >{fileContent.seo.description}</textarea>
+              </div>
+
+              <div class="mb-4">
+                <label class="form-label text-white-50 fs-13 d-flex justify-content-between">
+                  <span>Meta Keywords</span>
+                  <span class="opacity-50 char-counter"><span id="seo-keys-count">0</span>/{constraints.seo_keywords.max}</span>
+                </label>
+                <textarea 
+                  name="seo_keywords" 
+                  id="seo_keywords"
+                  rows="3" 
+                  class="form-control text-white bg-transparent border-secondary"
+                  maxlength={constraints.seo_keywords.max}
+                >{fileContent.seo.keywords}</textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page Content Card -->
+          <div class="col-lg-6">
+            <div class="glass-card p-5 mb-4">
+              <h4 class="fw-700 text-primary mb-4">Content Settings (Integrity Lock Active)</h4>
+              
+              {Object.keys(fileContent.content).map((key) => {
+                const limit = constraints[key] ? constraints[key].max : 250;
+                const label = constraints[key] ? constraints[key].name : key.replace(/_/g, ' ');
+                const isTextArea = limit > 60;
+                
+                return (
+                  <div class="mb-4">
+                    <label class="form-label text-white-50 fs-13 d-flex justify-content-between">
+                      <span class="text-capitalize">{label}</span>
+                      <span class="opacity-50 char-counter"><span id={`${key}-count`}>0</span>/{limit}</span>
+                    </label>
+                    {isTextArea ? (
+                      <textarea 
+                        name={key} 
+                        id={key}
+                        rows="4" 
+                        class="form-control text-white bg-transparent border-secondary content-field"
+                        maxlength={limit}
+                        data-limit={limit}
+                        required
+                      >{fileContent.content[key]}</textarea>
+                    ) : (
+                      <input 
+                        type="text" 
+                        name={key} 
+                        id={key}
+                        class="form-control text-white bg-transparent border-secondary content-field"
+                        value={fileContent.content[key]}
+                        maxlength={limit}
+                        data-limit={limit}
+                        required
+                      />
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        <div class="row mt-3">
+          <div class="col-lg-12">
+            <button type="submit" class="btn-eighteen w-100 py-3 fw-700 uppercase tracking-widest">
+              Save Content & Meta Configuration
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Client-side character limits tracker -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        function setupCounter(inputId, counterId) {
+          const input = document.getElementById(inputId);
+          const counter = document.getElementById(counterId);
+          if (!input || !counter) return;
+          
+          const update = () => {
+            counter.innerText = input.value.length;
+            if (input.value.length >= input.maxLength * 0.9) {
+              counter.style.color = '#ff4757';
+            } else {
+              counter.style.color = '';
+            }
+          };
+          
+          input.addEventListener('input', update);
+          update();
+        }
+
+        // Setup SEO counters
+        setupCounter('seo_title', 'seo-title-count');
+        setupCounter('seo_description', 'seo-desc-count');
+        setupCounter('seo_keywords', 'seo-keys-count');
+
+        // Setup content counters dynamically
+        const fields = document.querySelectorAll('.content-field');
+        fields.forEach(field => {
+          setupCounter(field.id, `${field.id}-count`);
+        });
+      });
+    </script>
+  </body>
+</html>

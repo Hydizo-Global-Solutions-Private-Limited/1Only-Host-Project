@@ -1,0 +1,224 @@
+---
+import Layout from '../layouts/Layout.astro';
+import hostingData from '../data/pages/shared-hosting.json';
+
+export const prerender = true;
+
+const data = hostingData;
+
+// Compute dynamic basePrefix for relative path resolution
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) : './';
+---
+
+<Layout 
+  title={data.seo.title} 
+  description={data.seo.description} 
+  keywords={data.seo.keywords}
+>
+  <!-- Hero Banner -->
+  <div class="hero-banner-nine z-1 position-relative pt-150 pb-225 xl-pb-150 md-pb-120 mesh-bg-1" data-aos="fade-in">
+    <div class="container lg">
+      <div class="row">
+        <div class="col-lg-6 col-md-8">
+          <h1 class="hero-heading">{data.content.hero_title}</h1>
+          <p class="fs-24 pt-35 lg-pt-30 pe-xxl-5">{data.content.hero_subtitle}</p>
+          <p class="fs-22 text-white"><span class="fw-800 fs-36 text-accent">{data.content.hero_price_label.split('.')[0]}.</span> {data.content.hero_price_label.split('.')[1] || ''}</p>
+          <a href="/signup" class="btn-eighteen">Start Now</a> 
+        </div>
+      </div>
+      <div class="illustration"> <img src={`${basePrefix}images/avatar.webp`} alt=""> </div>
+    </div>
+    
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between flex-wrap mt-100 lg-mt-60 md-mt-40">
+        <div class="fact-feature mt-30 d-flex align-items-center">
+          <div class="icon d-flex align-items-center justify-content-center rounded-circle">
+            <svg width="27" height="20" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 8.28571L7 13L16.8571 1" stroke="white" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h3>Real-Time Customer Support</h3>
+        </div>
+        <div class="fact-feature mt-30 d-flex align-items-center">
+          <div class="icon d-flex align-items-center justify-content-center rounded-circle">
+            <svg width="27" height="20" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 8.28571L7 13L16.8571 1" stroke="white" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h3>Linux-Protected Hosting</h3>
+        </div>
+        <div class="fact-feature mt-30 d-flex align-items-center">
+          <div class="icon d-flex align-items-center justify-content-center rounded-circle">
+            <svg width="27" height="20" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 8.28571L7 13L16.8571 1" stroke="white" stroke-width="2.5"/>
+            </svg>
+          </div>
+          <h3>Free Domain, SSL, and Email</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Best Provider Reason Grid -->
+  <div class="block-feature-sixteen" data-aos="fade-up">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-11 m-auto">
+          <div class="title-four text-center mb-80 lg-mb-40 pe-xl-3 ps-xl-3">
+            <h2 class="fw-bold">{data.content.reason_title}</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card-style-seven position-relative text-center mt-30 pb-45 lg-pb-30"> 
+            <img src={`${basePrefix}images/response.svg`} alt="" class="icon m-auto">
+            <h4>Prompt & Friendly <br> Response</h4>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-style-seven position-relative text-center mt-30 pb-45 lg-pb-30"> 
+            <img src={`${basePrefix}images/free-website.svg`} alt="" class="icon m-auto">
+            <h4>Free Website <br> Migration</h4>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card-style-seven position-relative text-center mt-30 pb-45 lg-pb-30"> 
+            <img src={`${basePrefix}images/guaranteed.svg`} alt="" class="icon m-auto">
+            <h4>Highest Guaranteed <br> Uptime</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing Plans Section -->
+  <div class="pricing-section-six mt-120" data-aos="fade-up">
+    <div class="container lg">
+      <div class="row">
+        <div class="col-xl-12 col-lg-12 m-auto m-xl-0 text-center">
+          <div class="title-eleven">
+            <h2>High-Performance Web Hosting</h2>
+          </div>
+          <div class="fs-20 fw-500 mt-25 mb-15">Billing Cycle</div>
+          <nav class="pricing-nav-four d-flex justify-content-center mb-70">
+            <div class="nav nav-tabs justify-content-between" role="tablist"> 
+              <a class="nav-link active" id="monthly-tab" data-bs-toggle="tab" data-bs-target="#monthly" type="button" role="tab" aria-controls="monthly" aria-selected="true">Monthly</a> 
+              <a class="nav-link" id="yearly-tab" data-bs-toggle="tab" data-bs-target="#yearly" type="button" role="tab" aria-controls="yearly" aria-selected="false">Yearly</a> 
+            </div>
+          </nav>
+        </div>
+        
+        <div class="col-xl-12">
+          <div class="tab-content ps-xxl-5">
+            <!-- Monthly plans -->
+            <div class="tab-pane show active fade" id="monthly" role="tabpanel" aria-labelledby="monthly-tab" tabindex="0">
+              <div class="row">
+                <div class="col-lg-4 d-flex">
+                  <div class="pr-column w-100">
+                    <div class="pr-header text-center mb-25">
+                      <div class="plane-name">Starter</div>
+                      <div class="info1 fs-20">For those 'Getting Started'</div>
+                      <div class="save-line fs-20 fw-500">Save 75%</div>
+                      <div class="price">$3.99<sub>/mo*</sub></div>
+                      <div class="info2 fs-20">Regular price <del class="fw-500">$13.99</del></div>
+                    </div>
+                    <a href="/signup" class="btn-eleven w-100 d-flex justify-content-between align-items-center">Start Free Trial<span class="icon tran3s d-flex align-items-center justify-content-center"><i class="icon icon-chevron-right"></i></span></a>
+                    <h6>Features</h6>
+                    <ul class="style-none package-feature">
+                      <li>1 Website</li>
+                      <li>Free Domain Name</li>
+                      <li>Unlimited subdomains</li>
+                      <li>Fast SSD Storage</li>
+                      <li>10 Email Accounts</li>
+                      <li>WP Installer</li>
+                      <li>Free SSL Certificate</li>
+                      <li>Free Migration</li>
+                      <li>WP Website Builder</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 d-flex">
+                  <div class="pr-column w-100 md-mt-30">
+                    <div class="pr-header text-center mb-25">
+                      <div class="plane-name">Standard</div>
+                      <div class="info1 fs-20">For bloggers & average traffic</div>
+                      <div class="save-line fs-20 fw-500">Save 75%</div>
+                      <div class="price">$5.99<sub>/mo*</sub></div>
+                      <div class="info2 fs-20">Regular price <del class="fw-500">$23.99</del></div>
+                    </div>
+                    <a href="/signup" class="btn-eleven w-100 d-flex justify-content-between align-items-center">Start Free Trial<span class="icon tran3s d-flex align-items-center justify-content-center"><i class="icon icon-chevron-right"></i></span></a>
+                    <h6>Features</h6>
+                    <ul class="style-none package-feature">
+                      <li>10 Websites</li>
+                      <li>Free Domain Name</li>
+                      <li>Unlimited subdomains</li>
+                      <li>100 GB NVMe Storage</li>
+                      <li>Unlimited Emails</li>
+                      <li>WP Auto-Updates</li>
+                      <li>Free SSL Certificate</li>
+                      <li>Free Migration</li>
+                      <li>WP Website Builder</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div class="col-lg-4 d-flex">
+                  <div class="pr-column w-100 md-mt-30">
+                    <div class="pr-header text-center mb-25">
+                      <div class="plane-name">Professional</div>
+                      <div class="info1 fs-20">For growing business scales</div>
+                      <div class="save-line fs-20 fw-500">Save 80%</div>
+                      <div class="price">$7.99<sub>/mo*</sub></div>
+                      <div class="info2 fs-20">Regular price <del class="fw-500">$39.99</del></div>
+                    </div>
+                    <a href="/signup" class="btn-eleven w-100 d-flex justify-content-between align-items-center">Start Free Trial<span class="icon tran3s d-flex align-items-center justify-content-center"><i class="icon icon-chevron-right"></i></span></a>
+                    <h6>Features</h6>
+                    <ul class="style-none package-feature">
+                      <li>Unlimited Websites</li>
+                      <li>Free Domain Name</li>
+                      <li>Unlimited subdomains</li>
+                      <li>Unlimited NVMe Storage</li>
+                      <li>Unlimited Emails</li>
+                      <li>Priority Cloud Hosting</li>
+                      <li>Enterprise SSL Security</li>
+                      <li>Free Daily Backup</li>
+                      <li>WP Website Builder</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- We Listen Section -->
+  <div class="block-feature-sixteen pt-60 lg-pt-40">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 d-flex">
+          <div class="feature-block block-one w-100 mt-50 lg-mt-30 pe-0 glass-card" data-aos="fade-up">
+            <div class="row">
+              <div class="col-lg-6">
+                <h3>We Listen, We Care, We Solve!</h3>
+                <p class="fs-24">Any questions or topics you'd like to discuss? Feel free to share your thoughts, and let's engage in a conversation. We are here to support your success.</p>
+                <ul class="style-none list-item mt-50">
+                  <li>Round-the-Clock Assistance</li>
+                  <li>Prompt & Friendly Response</li>
+                  <li>99% User Satisfaction</li>
+                  <li>Expert Technical Handling</li>
+                </ul>
+              </div>
+              <div class="col-lg-6"> <img src={`${basePrefix}images/customer-support.webp`} alt="" class="ms-auto"> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

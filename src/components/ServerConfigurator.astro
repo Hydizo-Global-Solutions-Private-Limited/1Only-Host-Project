@@ -1,0 +1,227 @@
+---
+// ServerConfigurator.astro
+---
+<div class="server-configurator-section pt-80 pb-80" data-aos="fade-up">
+  <div class="container lg">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="title-eleven mb-30">
+          <h2>Configure Your <span class="text-gradient">Custom Cloud Server</span></h2>
+          <p class="fs-18 opacity-75 mt-3">Tailor CPU, RAM, and SSD storage to match your exact application requirements. Watch your estimated monthly pricing update instantly.</p>
+        </div>
+        
+        <div class="features-list mt-4 mb-4">
+          <div class="d-flex align-items-center mb-3">
+            <span class="badge-icon me-3"><i class="icon icon-flash"></i></span>
+            <div>
+              <h5 class="m-0 fw-600">Enterprise NVMe SSDs</h5>
+              <p class="m-0 fs-14 opacity-75">10x faster read/write speed than standard SSDs.</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center mb-3">
+            <span class="badge-icon me-3"><i class="icon icon-support1"></i></span>
+            <div>
+              <h5 class="m-0 fw-600">24/7 Server Management</h5>
+              <p class="m-0 fs-14 opacity-75">Our engineering team monitors your Node & database health 24/7.</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center">
+            <span class="badge-icon me-3"><i class="icon icon-server-2"></i></span>
+            <div>
+              <h5 class="m-0 fw-600">Free Weekly Auto Backups</h5>
+              <p class="m-0 fs-14 opacity-75">Restore any server state with one-click historical snapshotting.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="configurator-card glass-card p-5 mt-4 text-white">
+          <div class="slider-group mb-4">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="fw-600 fs-16 text-white opacity-90">CPU Cores</span>
+              <span id="cpu-val" class="text-accent fw-800">4 Cores</span>
+            </div>
+            <input type="range" class="form-range custom-slider" id="cpu-slider" min="1" max="16" step="1" value="4">
+            <div class="d-flex justify-content-between fs-12 opacity-50 mt-1">
+              <span>1 Core</span>
+              <span>16 Cores</span>
+            </div>
+          </div>
+          
+          <div class="slider-group mb-4">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="fw-600 fs-16 text-white opacity-90">RAM Size</span>
+              <span id="ram-val" class="text-accent fw-800">8 GB</span>
+            </div>
+            <input type="range" class="form-range custom-slider" id="ram-slider" min="2" max="64" step="2" value="8">
+            <div class="d-flex justify-content-between fs-12 opacity-50 mt-1">
+              <span>2 GB</span>
+              <span>64 GB</span>
+            </div>
+          </div>
+          
+          <div class="slider-group mb-4">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="fw-600 fs-16 text-white opacity-90">NVMe SSD Storage</span>
+              <span id="ssd-val" class="text-accent fw-800">120 GB</span>
+            </div>
+            <input type="range" class="form-range custom-slider" id="ssd-slider" min="20" max="1000" step="20" value="120">
+            <div class="d-flex justify-content-between fs-12 opacity-50 mt-1">
+              <span>20 GB</span>
+              <span>1000 GB</span>
+            </div>
+          </div>
+          
+          <div class="d-flex justify-content-around my-4 p-3 rounded" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.04);">
+            <!-- CPU Meter -->
+            <div class="text-center">
+              <svg width="45" height="45" viewBox="0 0 36 36" class="circular-meter">
+                <defs>
+                  <linearGradient id="solarGradMeter" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" style="stop-color:#FFD700; stop-opacity:1" />
+                    <stop offset="100%" style="stop-color:#FF007F; stop-opacity:1" />
+                  </linearGradient>
+                </defs>
+                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="3" />
+                <path id="cpu-circle" class="circle" stroke-dasharray="25, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="url(#solarGradMeter)" stroke-width="3.5" stroke-linecap="round" />
+              </svg>
+              <div class="fs-11 mt-1 text-white-50">CPU</div>
+            </div>
+            <!-- RAM Meter -->
+            <div class="text-center">
+              <svg width="45" height="45" viewBox="0 0 36 36" class="circular-meter">
+                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="3" />
+                <path id="ram-circle" class="circle" stroke-dasharray="12, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="url(#solarGradMeter)" stroke-width="3.5" stroke-linecap="round" />
+              </svg>
+              <div class="fs-11 mt-1 text-white-50">RAM</div>
+            </div>
+            <!-- DISK Meter -->
+            <div class="text-center">
+              <svg width="45" height="45" viewBox="0 0 36 36" class="circular-meter">
+                <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="3" />
+                <path id="ssd-circle" class="circle" stroke-dasharray="12, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="url(#solarGradMeter)" stroke-width="3.5" stroke-linecap="round" />
+              </svg>
+              <div class="fs-11 mt-1 text-white-50">SSD</div>
+            </div>
+          </div>
+
+          <div class="price-display text-center my-4 p-3 rounded" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
+            <div class="fs-12 text-white-50 uppercase tracking-widest">ESTIMATED PRICE</div>
+            <div class="display-5 fw-900 my-2 text-gradient">$<span id="price-val">19.99</span>/mo</div>
+            <div class="fs-12 text-white-50">Reg. price <del>$49.99</del> (Save 60%)</div>
+          </div>
+          
+          <a href="/signup" class="btn-eighteen w-100 text-center uppercase tracking-wider py-3 mt-2">Deploy Cyber Instance</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.text-gradient {
+  background: linear-gradient(90deg, #FF9E00, #FF007F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.text-accent {
+  color: #FF9E00;
+}
+.badge-icon {
+  width: 45px;
+  height: 45px;
+  background: rgba(255, 158, 0, 0.1);
+  color: #FF9E00;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.configurator-card {
+  background: rgba(9, 13, 30, 0.65);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+.custom-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.05);
+  outline: none;
+  transition: background 0.3s ease;
+}
+.custom-slider:focus {
+  background: rgba(255, 255, 255, 0.1);
+}
+.custom-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #FF9E00;
+  cursor: pointer;
+  box-shadow: 0 0 15px rgba(255, 158, 0, 0.8);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.custom-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: #FF007F;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.8);
+}
+.circular-meter .circle {
+  transition: stroke-dasharray 0.35s ease-in-out;
+}
+</style>
+
+<script is:inline>
+document.addEventListener('DOMContentLoaded', () => {
+  const cpuSlider = document.getElementById('cpu-slider');
+  const ramSlider = document.getElementById('ram-slider');
+  const ssdSlider = document.getElementById('ssd-slider');
+  
+  const cpuVal = document.getElementById('cpu-val');
+  const ramVal = document.getElementById('ram-val');
+  const ssdVal = document.getElementById('ssd-val');
+  const priceVal = document.getElementById('price-val');
+  
+  const cpuCircle = document.getElementById('cpu-circle');
+  const ramCircle = document.getElementById('ram-circle');
+  const ssdCircle = document.getElementById('ssd-circle');
+  
+  function updateConfigurator() {
+    if (!cpuSlider || !ramSlider || !ssdSlider) return;
+    
+    const cpu = parseInt(cpuSlider.value);
+    const ram = parseInt(ramSlider.value);
+    const ssd = parseInt(ssdSlider.value);
+    
+    cpuVal.innerText = `${cpu} Core${cpu > 1 ? 's' : ''}`;
+    ramVal.innerText = `${ram} GB`;
+    ssdVal.innerText = `${ssd} GB`;
+    
+    // Pricing calculation
+    // CPU base $3.00 per core, RAM base $1.20 per GB, SSD base $0.05 per GB
+    const price = (cpu * 3.50) + (ram * 1.50) + (ssd * 0.06);
+    priceVal.innerText = price.toFixed(2);
+    
+    // Update circular gauges
+    if (cpuCircle) cpuCircle.setAttribute('stroke-dasharray', `${((cpu / 16) * 100).toFixed(1)}, 100`);
+    if (ramCircle) ramCircle.setAttribute('stroke-dasharray', `${((ram / 64) * 100).toFixed(1)}, 100`);
+    if (ssdCircle) ssdCircle.setAttribute('stroke-dasharray', `${((ssd / 1000) * 100).toFixed(1)}, 100`);
+  }
+  
+  if (cpuSlider && ramSlider && ssdSlider) {
+    cpuSlider.addEventListener('input', updateConfigurator);
+    ramSlider.addEventListener('input', updateConfigurator);
+    ssdSlider.addEventListener('input', updateConfigurator);
+    updateConfigurator();
+  }
+});
+</script>

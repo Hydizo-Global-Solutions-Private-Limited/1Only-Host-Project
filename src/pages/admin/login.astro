@@ -1,0 +1,79 @@
+---
+export const prerender = false;
+
+// Handle Login Form Submission
+let errorMessage = '';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin123';
+
+if (Astro.request.method === 'POST') {
+  try {
+    const data = await Astro.request.formData();
+    const password = data.get('password');
+    
+    if (password === ADMIN_PASSWORD) {
+      Astro.cookies.set('1onlyhost_admin_session', 'authenticated', { 
+        path: '/',
+        httpOnly: true,
+        maxAge: 3600 // 1 hour session
+      });
+      return Astro.redirect('/admin');
+    } else {
+      errorMessage = 'Invalid administrator password.';
+    }
+  } catch (error) {
+    errorMessage = 'An error occurred during submission.';
+  }
+}
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - 1Only Host</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/design-system.css">
+  </head>
+  <body class="mesh-bg-dark d-flex align-items-center justify-content-center" style="min-height: 100vh; margin: 0;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-5">
+          <div class="glass-card p-5 text-white">
+            <div class="text-center mb-4">
+              <img src="/images/logo.svg" alt="1Only Host" class="mb-3" style="max-height: 50px;">
+              <h4 class="fw-700">Administrator Console</h4>
+              <p class="fs-14 opacity-50">Sign in to edit website content & SEO settings</p>
+            </div>
+            
+            {errorMessage && (
+              <div class="alert alert-danger border-0 text-center fs-14 py-2" style="background: rgba(255, 71, 87, 0.1); color: #ff4757;">
+                {errorMessage}
+              </div>
+            )}
+            
+            <form method="POST">
+              <div class="mb-4">
+                <label class="form-label text-white-50 fs-13">Enter Security Password</label>
+                <input 
+                  type="password" 
+                  name="password" 
+                  class="form-control" 
+                  placeholder="••••••••" 
+                  required
+                  style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff; border-radius: 8px; padding: 12px;"
+                >
+              </div>
+              <button 
+                type="submit" 
+                class="btn-eighteen w-100 py-3 uppercase tracking-wider fw-700 fs-13"
+                style="border-radius: 8px;"
+              >
+                Access Dashboard
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+<svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg">
+  <rect width="160" height="50" rx="8" fill="#0A1128" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+  <path d="M15 15 L27 10 L39 15 L39 28 C39 36 27 41 27 41 C27 41 15 36 15 28 Z" fill="#1e40af" stroke="#3b82f6" stroke-width="1.5" />
+  <rect x="20" y="18" width="14" height="9" rx="1.5" fill="#3b82f6" opacity="0.8" />
+  <line x1="20" y1="21" x2="34" y2="21" stroke="#fff" stroke-width="1" />
+  <text x="50" y="24" font-family="'Outfit', sans-serif" font-size="14" fill="#fff" font-weight="bold">PCI DSS</text>
+  <text x="50" y="38" font-family="'Inter', sans-serif" font-size="10" fill="#10b981" font-weight="bold" letter-spacing="1">COMPLIANT</text>
+</svg>

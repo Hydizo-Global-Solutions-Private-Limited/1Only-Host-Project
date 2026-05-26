@@ -1,0 +1,82 @@
+---
+import Layout from '../layouts/Layout.astro';
+import aboutData from '../data/pages/about-us.json';
+
+export const prerender = true;
+
+const data = aboutData;
+
+// Compute dynamic basePrefix for relative path resolution
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) : './';
+---
+
+<Layout 
+  title={data.seo.title} 
+  description={data.seo.description} 
+  keywords={data.seo.keywords}
+>
+  <!-- Hero Section -->
+  <div class="hero-banner-eight bg-twelve z-1 position-relative pt-150 pb-120 mesh-bg-1" data-aos="fade-in">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-xl-10 col-lg-10 col-md-10">
+          <h1 class="hero-heading">{data.content.hero_title}</h1>
+          <p class="fs-24 font-manrope pt-25 pb-15 pe-xxl-5">{data.content.hero_subtitle}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Story & Vision -->
+  <section class="section-gap pt-80 pb-80" data-aos="fade-up">
+    <div class="container lg">
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <div class="title-eleven mb-30">
+            <h2>We Power the Web with <span class="text-gradient">Integrity</span></h2>
+          </div>
+          <p class="fs-18 opacity-75">Founded in 2012, 1Only Host was built with a simple goal: to provide affordable, lightning-fast, and secure hosting solutions that businesses can trust without hidden pricing games.</p>
+          <p class="fs-18 opacity-75 mt-3">We own and manage our server infrastructure across globally distributed Tier-III data centers. By cutting out middle-tier providers, we deliver premium performance directly to our users.</p>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src={`${basePrefix}images/avatar.webp`} alt="1Only Host Team" class="img-fluid rounded shadow-lg" style="max-height: 380px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Metrics -->
+  <div class="feedback-section-nine position-relative z-1 pt-80 pb-80">
+    <div class="container">
+      <div class="row g-4 justify-content-center text-center">
+        <div class="col-md-4">
+          <div class="glass-card p-4">
+            <h2 class="display-5 fw-900 text-gradient mb-2">12,000+</h2>
+            <p class="fs-16 opacity-75 m-0">Active Web Instances</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card p-4">
+            <h2 class="display-5 fw-900 text-gradient mb-2">99.99%</h2>
+            <p class="fs-16 opacity-75 m-0">Uptime Maintained</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass-card p-4">
+            <h2 class="display-5 fw-900 text-gradient mb-2">24/7/365</h2>
+            <p class="fs-16 opacity-75 m-0">Human Support SLA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+.text-gradient {
+  background: linear-gradient(90deg, #FF9E00, #FF007F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+</style>

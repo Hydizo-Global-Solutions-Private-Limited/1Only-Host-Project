@@ -1,0 +1,92 @@
+---
+import fs from 'fs';
+import path from 'path';
+import pagesData from '../../data/pages.json';
+
+export const prerender = false;
+
+// Check Auth Cookie
+const authCookie = Astro.cookies.get('1onlyhost_admin_session');
+if (!authCookie || authCookie.value !== 'authenticated') {
+  return Astro.redirect('/admin/login');
+}
+
+// Handle Logout Action
+if (Astro.url.searchParams.get('action') === 'logout') {
+  Astro.cookies.delete('1onlyhost_admin_session', { path: '/' });
+  return Astro.redirect('/admin/login');
+}
+
+const pages = pagesData;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - 1Only Host</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/design-system.css">
+    <style>
+      .admin-table th {
+        background: rgba(255,255,255,0.05);
+        color: rgba(255,255,255,0.6);
+        border: none;
+        padding: 15px;
+      }
+      .admin-table td {
+        padding: 18px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        vertical-align: middle;
+      }
+      .admin-table tr:hover {
+        background: rgba(255,255,255,0.02);
+      }
+    </style>
+  </head>
+  <body class="mesh-bg-dark text-white" style="min-height: 100vh; padding: 40px 0;">
+    <div class="container lg">
+      <div class="d-flex justify-content-between align-items-center mb-5 pb-3 border-bottom border-secondary border-opacity-25">
+        <div>
+          <img src="/images/logo.svg" alt="1Only Host" style="max-height: 40px;" class="mb-2">
+          <h2 class="m-0 fw-800">Admin Control Panel</h2>
+        </div>
+        <a href="?action=logout" class="btn btn-outline-danger btn-sm px-4 rounded-pill">Sign Out</a>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="glass-card p-4">
+            <h4 class="fw-700 mb-4">Manage Website Pages</h4>
+            <div class="table-responsive">
+              <table class="table admin-table text-white mb-0">
+                <thead>
+                  <tr>
+                    <th>Page Name</th>
+                    <th>Route Path</th>
+                    <th>Database File</th>
+                    <th class="text-end">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {pages.map((p) => (
+                    <tr>
+                      <td class="fw-600">{p.name}</td>
+                      <td><code>{p.route}</code></td>
+                      <td class="text-white-50"><code>{p.file}</code></td>
+                      <td class="text-end">
+                        <a href={`/admin/edit/${p.id}`} class="btn btn-primary btn-sm px-4 rounded-pill">
+                          Edit Page Content & SEO
+                        </a>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

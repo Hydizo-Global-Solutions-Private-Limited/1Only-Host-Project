@@ -1,0 +1,32 @@
+[
+  {
+    "id": "home",
+    "name": "Home Page",
+    "file": "src/data/pages/home.json",
+    "route": "/"
+  },
+  {
+    "id": "shared-hosting",
+    "name": "Shared Hosting Page",
+    "file": "src/data/pages/shared-hosting.json",
+    "route": "/shared-hosting"
+  },
+  {
+    "id": "vps-server",
+    "name": "VPS Server Page",
+    "file": "src/data/pages/vps-server.json",
+    "route": "/vps-server"
+  },
+  {
+    "id": "about-us",
+    "name": "About Us Page",
+    "file": "src/data/pages/about-us.json",
+    "route": "/about-us"
+  },
+  {
+    "id": "contact",
+    "name": "Contact Page",
+    "file": "src/data/pages/contact.json",
+    "route": "/contact"
+  }
+]

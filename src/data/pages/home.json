@@ -1,0 +1,17 @@
+{
+  "seo": {
+    "title": "1Only Host - Reliable Web Hosting & Domain Services Provider",
+    "description": "1Only Host offers premium web hosting and domain services, providing fast, secure, and affordable solutions for businesses and individuals. Get started today!",
+    "keywords": "web hosting, domain services, reliable hosting, affordable hosting, secure hosting, domain registration, website hosting, cloud hosting, 1Only Host hosting, best web hosting, fast hosting services"
+  },
+  "content": {
+    "hero_title": "Get a <span>Domain</span> Name.",
+    "hero_subtitle": "Discover and buy your favorite domain names with us. Secure the perfect domain to enhance your online presence!",
+    "card_1_title": "WordPress Hosting",
+    "card_1_price": "$2.99/mo",
+    "card_2_title": "Website Hosting",
+    "card_2_price": "$2.99/mo",
+    "card_3_title": "Domain Names",
+    "card_3_price": "$2.99/mo"
+  }
+}

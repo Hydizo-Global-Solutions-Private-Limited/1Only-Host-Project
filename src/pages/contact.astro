@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import contactData from '../data/pages/contact.json';
+
+export const prerender = true;
+
+const data = contactData;
+---
+
+<Layout 
+  title={data.seo.title} 
+  description={data.seo.description} 
+  keywords={data.seo.keywords}
+>
+  <!-- Hero Section -->
+  <div class="hero-banner-eight bg-twelve z-1 position-relative pt-150 pb-120 mesh-bg-1" data-aos="fade-in">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-xl-10 col-lg-10 col-md-10">
+          <h1 class="hero-heading">{data.content.hero_title}</h1>
+          <p class="fs-24 font-manrope pt-25 pb-15 pe-xxl-5">{data.content.hero_subtitle}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Form & Addresses -->
+  <section class="section-gap pt-80 pb-80" data-aos="fade-up">
+    <div class="container lg">
+      <div class="row">
+        <!-- Contact details -->
+        <div class="col-lg-5">
+          <div class="title-eleven mb-4">
+            <h2>Contact Details</h2>
+          </div>
+          
+          <div class="mb-4">
+            <h5 class="fw-700">Support Desk</h5>
+            <p class="m-0 fs-16 opacity-75">For ticketing, server configuration, and DNS questions.</p>
+            <p class="fw-600 mt-2"><a href="mailto:support@1onlyhost.com" class="text-accent">support@1onlyhost.com</a></p>
+          </div>
+          
+          <div class="mb-4">
+            <h5 class="fw-700">Billing & Sales</h5>
+            <p class="m-0 fs-16 opacity-75">For pre-sales, reseller setups, and custom pricing questions.</p>
+            <p class="fw-600 mt-2"><a href="mailto:sales@1onlyhost.com" class="text-accent">sales@1onlyhost.com</a></p>
+          </div>
+          
+          <div>
+            <h5 class="fw-700">Telephone Hotlines</h5>
+            <p class="m-0 fs-16 opacity-75">Speak directly to an agent on shift.</p>
+            <p class="fw-600 mt-2 text-accent">+91 895 475 8694</p>
+          </div>
+        </div>
+        
+        <!-- Interactive Form -->
+        <div class="col-lg-7">
+          <div class="glass-card p-5">
+            <h3 class="mb-4 text-white">Send Us a Direct Message</h3>
+            
+            <form action="#" class="theme-form">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label class="form-label text-white-50">Full Name</label>
+                  <input type="text" class="form-control" placeholder="Enter name" required style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;">
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label text-white-50">Email Address</label>
+                  <input type="email" class="form-control" placeholder="Enter email" required style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;">
+                </div>
+              </div>
+              
+              <div class="mb-3">
+                <label class="form-label text-white-50">Subject</label>
+                <input type="text" class="form-control" placeholder="Subject description" required style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;">
+              </div>
+              
+              <div class="mb-4">
+                <label class="form-label text-white-50">Message Body</label>
+                <textarea class="form-control" rows="5" placeholder="Write message..." required style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;"></textarea>
+              </div>
+              
+              <button type="submit" class="btn-eighteen w-100 py-3 uppercase tracking-wider">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

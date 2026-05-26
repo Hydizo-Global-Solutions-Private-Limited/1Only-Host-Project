@@ -1,0 +1,15 @@
+{
+  "name": "1only-host",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/node": "^8.3.0",
+    "astro": "^4.8.5"
+  }
+}

@@ -1,0 +1,8 @@
+<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="60" cy="60" r="54" fill="#0A1128" stroke="#3A86FF" stroke-width="3" />
+  <circle cx="60" cy="60" r="48" fill="none" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="4,4" />
+  <path d="M60 32 L78 42 L78 68 L60 88 L42 68 L42 42 Z" fill="#1e3a8a" stroke="#ffd700" stroke-width="2" />
+  <path d="M52 58 L58 64 L68 48" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="60" y="104" font-family="'Outfit', sans-serif" font-size="9" fill="#fff" font-weight="bold" text-anchor="middle">ISO 9001 / 27001</text>
+  <text x="60" y="115" font-family="'Outfit', sans-serif" font-size="8" fill="#a1a1aa" text-anchor="middle">CERTIFIED</text>
+</svg>
