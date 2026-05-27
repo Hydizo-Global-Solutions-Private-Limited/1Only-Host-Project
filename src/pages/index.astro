@@ -671,9 +671,10 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
         <p class="text-white-50 fs-16 max-width-800 mx-auto">Your gateway to seamless connectivity and trusted services, available anywhere. Wherever you are, location doesn’t matter. <span class="text-accent fw-600">Best student hosting in india</span>.</p>
       </div>
       
-      <div class="map-wrapper mb-50 position-relative">
+      <div class="map-wrapper mb-50 position-relative" style="min-height: 500px; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,158,0,0.1); background: rgba(0,0,0,0.2);">
+        <img src={`${basePrefix}images/premium-global-map.png`} alt="Global Network Map" class="position-absolute w-100 h-100" style="object-fit: cover; top: 0; left: 0; z-index: 0; opacity: 0.7;">
         <!-- Connecting ping rings visual overlay (from central node India to Singapore & US) -->
-        <svg class="position-absolute w-100 h-100 d-none d-lg-block" style="top:0; left:0; pointer-events:none; z-index:0; opacity: 0.15;" viewBox="0 0 1000 500">
+        <svg class="position-absolute w-100 h-100 d-none d-lg-block" style="top:0; left:0; pointer-events:none; z-index:0; opacity: 0.25;" viewBox="0 0 1000 500">
           <path d="M 720, 310 Q 750, 325 780, 350" fill="none" stroke="#FF9E00" stroke-width="1.5" stroke-dasharray="4,4" />
           <path d="M 720, 310 Q 500, 260 280, 225" fill="none" stroke="#FF007F" stroke-width="1.5" stroke-dasharray="4,4" />
           <path d="M 720, 310 Q 620, 240 520, 200" fill="none" stroke="#FF9E00" stroke-width="1.5" stroke-dasharray="4,4" />
@@ -1734,6 +1735,65 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   font-weight: 300;
   animation: cursorBlink 0.8s infinite step-end;
 }
+/* ===== Map Node Animations ===== */
+.map-marker {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #FF9E00;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 5;
+  box-shadow: 0 0 15px rgba(255, 158, 0, 0.8);
+  transition: all 0.3s ease;
+}
+.map-marker::after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px solid rgba(255, 158, 0, 0.4);
+  border-radius: 50%;
+  animation: sonarPulse 2s infinite ease-out;
+  pointer-events: none;
+}
+@keyframes sonarPulse {
+  0% { transform: scale(0.5); opacity: 1; border-width: 2px; }
+  100% { transform: scale(2.5); opacity: 0; border-width: 0px; }
+}
+.map-marker:hover {
+  background: #FF007F;
+  box-shadow: 0 0 20px rgba(255, 0, 127, 0.9);
+  transform: scale(1.2);
+}
+.map-marker:hover::after {
+  border-color: rgba(255, 0, 127, 0.6);
+}
+.map-marker .tooltip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(2, 4, 10, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  white-space: nowrap;
+  border: 1px solid rgba(255, 158, 0, 0.2);
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+.map-marker:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  bottom: 120%;
+}
+
 @keyframes cursorBlink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
