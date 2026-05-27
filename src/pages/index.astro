@@ -35,7 +35,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   </div>
 
   <!-- Hero Section -->
-  <div class="hero-banner-eight bg-twelve z-1 position-relative pt-130 pb-160 xl-pb-140 md-p0 mesh-bg-1" data-aos="fade-in">
+  <div class="hero-banner-eight bg-twelve z-1 position-relative pt-180 pb-160 xl-pb-140 md-p0 mesh-bg-1" data-aos="fade-in">
     <!-- Animated Solar Orbit Graphic -->
     <div class="hero-orbit-wrapper d-none d-lg-block position-absolute" style="top: 15%; right: 10%; width: 320px; height: 320px; opacity: 0.3; pointer-events: none; z-index: 1;">
       <svg viewBox="0 0 200 200" width="100%" height="100%">
@@ -69,7 +69,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
             <span class="fs-12 text-white-50 uppercase tracking-widest fw-600">Active server nodes orbiting Sol-1: <span id="active-instances-ticker" class="text-accent fw-800">12,842</span></span>
           </div>
           
-          <h1 class="hero-heading fs-55 text-white fw-900 font-outfit" style="line-height: 1.15; font-size: 3.5rem;">Bring Your Vision to Life with <span class="text-gradient">Best Hosting Company in India</span> | 1Only Host</h1>
+          <h1 class="hero-heading text-white fw-900 font-outfit" style="line-height: 1.15; font-size: clamp(2.2rem, 6vw, 3.5rem);">Bring Your Vision to Life with <span class="text-gradient">Best Hosting Company in India</span> | 1Only Host</h1>
           
           <ul class="hero-features-list style-none mt-4 mb-4 ps-0 text-white">
             <li class="d-flex align-items-center mb-2.5 fs-16"><span class="hero-feature-dot me-3"><i class="icon icon-flash"></i></span> 99.9% Uptime Guarantee</li>
@@ -140,7 +140,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   </div>
 
   <!-- Promotions & Countdown Widget Block -->
-  <div class="container lg position-relative z-3" style="margin-top: -60px; margin-bottom: 60px;">
+  <div class="container lg position-relative z-3 my-4 my-lg-5">
     <div class="promo-countdown-widget">
       <div class="row align-items-center">
         <div class="col-lg-8">
@@ -322,9 +322,11 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
         <div class="col-lg-3 col-md-6 d-flex">
           <div class="glass-card p-4 d-flex flex-column w-100 justify-content-between position-relative overflow-hidden">
             <div>
-              <div class="icon-width-heading mb-3">
-                <span class="badge-icon me-3"><i class="icon icon-wordpress"></i></span>
-                <h4 class="fw-800 m-0 font-outfit fs-18">Best Shared hosting</h4>
+              <div class="mb-4 rounded-3 overflow-hidden" style="background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.05);">
+                <img src={`${basePrefix}images/shared_hosting_thumb.png`} alt="Shared Hosting" class="img-fluid w-100" style="object-fit: cover; height: 180px; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+              </div>
+              <div class="mb-3">
+                <h4 class="fw-800 m-0 font-outfit fs-20">Shared hosting</h4>
               </div>
               <p class="fs-14 opacity-75 mb-4" style="line-height: 1.6;">Ideal for blogs, portfolios, and small businesses, our shared hosting offers steady speed and robust security features. Start risk-free today with our satisfaction guarantee and enjoy peace of mind!</p>
             </div>
@@ -339,9 +341,11 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
           <div class="glass-card p-4 d-flex flex-column w-100 justify-content-between position-relative overflow-hidden border-accent-glow" style="background: rgba(255, 158, 0, 0.015);">
             <span class="position-absolute badge uppercase tracking-widest fs-9 py-1.5 px-3" style="top: 15px; right: 15px; background: linear-gradient(90deg, #FF9E00, #FF007F); color: #fff; font-weight: 800; border-radius: 4px;">Best selling</span>
             <div>
-              <div class="icon-width-heading mb-3">
-                <span class="badge-icon me-3"><i class="icon icon-web-hosting"></i></span>
-                <h4 class="fw-800 m-0 font-outfit fs-18">Reseller hosting</h4>
+              <div class="mb-4 rounded-3 overflow-hidden" style="background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.05);">
+                <img src={`${basePrefix}images/reseller_hosting_thumb.png`} alt="Reseller Hosting" class="img-fluid w-100" style="object-fit: cover; height: 180px; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+              </div>
+              <div class="mb-3">
+                <h4 class="fw-800 m-0 font-outfit fs-20">Reseller hosting</h4>
               </div>
               <p class="fs-14 opacity-75 mb-4" style="line-height: 1.6;">Grow your business with scalable reseller hosting. Tailored for agencies, freelancers, and business owners, it includes powerful tools for seamless management—all with a risk-free guarantee.</p>
             </div>
@@ -355,9 +359,11 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
         <div class="col-lg-3 col-md-6 d-flex">
           <div class="glass-card p-4 d-flex flex-column w-100 justify-content-between position-relative overflow-hidden">
             <div>
-              <div class="icon-width-heading mb-3">
-                <span class="badge-icon me-3"><i class="icon icon-server-2"></i></span>
-                <h4 class="fw-800 m-0 font-outfit fs-18">VPS servers</h4>
+              <div class="mb-4 rounded-3 overflow-hidden" style="background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.05);">
+                <img src={`${basePrefix}images/vps_hosting_thumb.png`} alt="VPS Servers" class="img-fluid w-100" style="object-fit: cover; height: 180px; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+              </div>
+              <div class="mb-3">
+                <h4 class="fw-800 m-0 font-outfit fs-20">VPS servers</h4>
               </div>
               <p class="fs-14 opacity-75 mb-4" style="line-height: 1.6;">Run high-powered sites effortlessly with our Virtual Private Servers. Perfect for custom setups, VPS server provides you with unmatched control, incredible speed, and top-notch security for your projects.</p>
             </div>
@@ -371,9 +377,11 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
         <div class="col-lg-3 col-md-6 d-flex">
           <div class="glass-card p-4 d-flex flex-column w-100 justify-content-between position-relative overflow-hidden">
             <div>
-              <div class="icon-width-heading mb-3">
-                <span class="badge-icon me-3"><i class="icon icon-support"></i></span>
-                <h4 class="fw-800 m-0 font-outfit fs-18">Dedicated servers</h4>
+              <div class="mb-4 rounded-3 overflow-hidden" style="background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.05);">
+                <img src={`${basePrefix}images/dedicated_server_thumb.png`} alt="Dedicated Servers" class="img-fluid w-100" style="object-fit: cover; height: 180px; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
+              </div>
+              <div class="mb-3">
+                <h4 class="fw-800 m-0 font-outfit fs-20">Dedicated servers</h4>
               </div>
               <p class="fs-14 opacity-75 mb-4" style="line-height: 1.6;">Achieve peak performance effortlessly with our dedicated servers. Designed for large sites and data-heavy projects, they offer top-tier security, unmatched reliability, and the resources you need for success.</p>
             </div>
@@ -694,7 +702,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
             <button id="run-ping-btn" class="btn-eighteen uppercase tracking-wider py-3 px-5 w-100 text-center">Ping Data Center Nodes</button>
           </div>
           <div class="col-lg-4">
-            <div class="p-4 rounded text-start fs-13 font-monospace" style="background: rgba(2, 4, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.05); min-height: 180px; max-height: 220px; color: var(--success); overflow-y: auto; line-height: 1.6;">
+            <div class="p-4 rounded text-start fs-13 font-monospace" style="background: rgba(2, 4, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.05); min-height: 180px; max-height: 220px; color: var(--success); overflow-y: auto; overflow-x: hidden; word-break: break-all; line-height: 1.6;">
               <div id="pinger-console">
                 <span style="color: #64748B;">// Network Diagnostics Console v1.0<br>// Press button to initiate ping sequences...</span>
               </div>
@@ -1000,6 +1008,10 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
 
 <style>
 /* Style Sheets and Layout variables */
+.hero-banner-eight .hero-heading span:before {
+  display: none !important;
+}
+
 .text-gradient {
   background: linear-gradient(90deg, #FF9E00, #FF007F);
   -webkit-background-clip: text;
@@ -1142,8 +1154,8 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
 /* Domain Search Bar Polish */
 #domain-search-form {
   position: relative;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: rgba(255, 255, 255, 0.05); /* Increased opacity for better visibility */
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50px;
   padding: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
@@ -1152,6 +1164,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
 }
 #domain-search-form:focus-within {
   border-color: rgba(255, 158, 0, 0.4);
+  background: rgba(255, 255, 255, 0.08);
   box-shadow: 0 0 25px rgba(255, 158, 0, 0.15);
 }
 #domain-search-input {
@@ -1162,6 +1175,9 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   font-size: 16px !important;
   outline: none !important;
   flex: 1;
+}
+#domain-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
 }
 #domain-search-form button {
   background: linear-gradient(90deg, #FF9E00, #FF007F) !important;
@@ -1721,6 +1737,41 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
 @keyframes cursorBlink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+/* ===== Responsive Mobile Tweaks ===== */
+@media (max-width: 767.98px) {
+  .pb-80 { padding-bottom: 40px !important; }
+  .pt-80 { padding-top: 40px !important; }
+  .pt-180 { padding-top: 120px !important; }
+  .pb-160 { padding-bottom: 60px !important; }
+  .mt-80 { margin-top: 40px !important; }
+  .py-80 { padding-top: 40px !important; padding-bottom: 40px !important; }
+  
+  #domain-search-form {
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 20px;
+    padding: 15px;
+  }
+  #domain-search-input {
+    padding-left: 15px !important;
+    text-align: center;
+  }
+  #domain-search-form button {
+    border-radius: 12px !important;
+    width: 100%;
+  }
+  .countdown-digits {
+    font-size: 24px;
+    min-width: 40px;
+  }
+  .promo-countdown-widget {
+    padding: 20px;
+  }
+  .cta-premium-card {
+    padding: 40px 20px;
+  }
 }
 </style>
 

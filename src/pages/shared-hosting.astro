@@ -1,10 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import hostingData from '../data/pages/shared-hosting.json';
+import sharedHostingData from '../data/pages/shared-hosting.json';
 
 export const prerender = true;
 
-const data = hostingData;
+const data = sharedHostingData;
 
 // Compute dynamic basePrefix for relative path resolution
 const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
@@ -16,209 +16,397 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   description={data.seo.description} 
   keywords={data.seo.keywords}
 >
-  <!-- Hero Banner -->
-  <div class="hero-banner-nine z-1 position-relative pt-150 pb-225 xl-pb-150 md-pb-120 mesh-bg-1" data-aos="fade-in">
-    <div class="container lg">
-      <div class="row">
-        <div class="col-lg-6 col-md-8">
-          <h1 class="hero-heading">{data.content.hero_title}</h1>
-          <p class="fs-24 pt-35 lg-pt-30 pe-xxl-5">{data.content.hero_subtitle}</p>
-          <p class="fs-22 text-white"><span class="fw-800 fs-36 text-accent">{data.content.hero_price_label.split('.')[0]}.</span> {data.content.hero_price_label.split('.')[1] || ''}</p>
-          <a href="/signup" class="btn-eighteen">Start Now</a> 
-        </div>
-      </div>
-      <div class="illustration"> <img src={`${basePrefix}images/avatar.webp`} alt=""> </div>
-    </div>
-    
+  <!-- Hero Section -->
+  <div class="hero-banner-eight bg-twelve z-1 position-relative pt-150 pb-120 mesh-bg-1" data-aos="fade-in">
     <div class="container">
-      <div class="d-flex align-items-center justify-content-between flex-wrap mt-100 lg-mt-60 md-mt-40">
-        <div class="fact-feature mt-30 d-flex align-items-center">
-          <div class="icon d-flex align-items-center justify-content-center rounded-circle">
-            <svg width="27" height="20" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 8.28571L7 13L16.8571 1" stroke="white" stroke-width="2.5"/>
-            </svg>
-          </div>
-          <h3>Real-Time Customer Support</h3>
-        </div>
-        <div class="fact-feature mt-30 d-flex align-items-center">
-          <div class="icon d-flex align-items-center justify-content-center rounded-circle">
-            <svg width="27" height="20" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 8.28571L7 13L16.8571 1" stroke="white" stroke-width="2.5"/>
-            </svg>
-          </div>
-          <h3>Linux-Protected Hosting</h3>
-        </div>
-        <div class="fact-feature mt-30 d-flex align-items-center">
-          <div class="icon d-flex align-items-center justify-content-center rounded-circle">
-            <svg width="27" height="20" viewBox="0 0 18 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1 8.28571L7 13L16.8571 1" stroke="white" stroke-width="2.5"/>
-            </svg>
-          </div>
-          <h3>Free Domain, SSL, and Email</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Why Best Provider Reason Grid -->
-  <div class="block-feature-sixteen" data-aos="fade-up">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-11 m-auto">
-          <div class="title-four text-center mb-80 lg-mb-40 pe-xl-3 ps-xl-3">
-            <h2 class="fw-bold">{data.content.reason_title}</h2>
+      <div class="row align-items-center">
+        <div class="col-lg-6">
+          <h1 class="hero-heading fw-900 font-outfit text-white mb-4" style="font-size: 3.5rem; line-height: 1.1;">
+            {data.content.hero.title}
+          </h1>
+          <p class="fs-22 font-inter pt-10 pb-15 pe-xxl-5 opacity-75 text-white lh-base">
+            {data.content.hero.subtitle}
+          </p>
+          <div class="d-flex align-items-center mt-20 gap-4">
+             <a href="#pricing" class="btn-eight hover-scale">Get Started</a>
+             <div class="text-white font-outfit fs-18 fw-500">
+                Starts at <span class="text-gradient fw-800 fs-24">₹{data.content.hero.price_start}</span>/mo
+             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="card-style-seven position-relative text-center mt-30 pb-45 lg-pb-30"> 
-            <img src={`${basePrefix}images/response.svg`} alt="" class="icon m-auto">
-            <h4>Prompt & Friendly <br> Response</h4>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="card-style-seven position-relative text-center mt-30 pb-45 lg-pb-30"> 
-            <img src={`${basePrefix}images/free-website.svg`} alt="" class="icon m-auto">
-            <h4>Free Website <br> Migration</h4>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="card-style-seven position-relative text-center mt-30 pb-45 lg-pb-30"> 
-            <img src={`${basePrefix}images/guaranteed.svg`} alt="" class="icon m-auto">
-            <h4>Highest Guaranteed <br> Uptime</h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Pricing Plans Section -->
-  <div class="pricing-section-six mt-120" data-aos="fade-up">
-    <div class="container lg">
-      <div class="row">
-        <div class="col-xl-12 col-lg-12 m-auto m-xl-0 text-center">
-          <div class="title-eleven">
-            <h2>High-Performance Web Hosting</h2>
-          </div>
-          <div class="fs-20 fw-500 mt-25 mb-15">Billing Cycle</div>
-          <nav class="pricing-nav-four d-flex justify-content-center mb-70">
-            <div class="nav nav-tabs justify-content-between" role="tablist"> 
-              <a class="nav-link active" id="monthly-tab" data-bs-toggle="tab" data-bs-target="#monthly" type="button" role="tab" aria-controls="monthly" aria-selected="true">Monthly</a> 
-              <a class="nav-link" id="yearly-tab" data-bs-toggle="tab" data-bs-target="#yearly" type="button" role="tab" aria-controls="yearly" aria-selected="false">Yearly</a> 
+        <div class="col-lg-6 mt-5 mt-lg-0 text-center">
+            <div class="hero-img-wrapper position-relative inline-block float-animation">
+               <div class="glow-backdrop position-absolute w-100 h-100 rounded-4 top-0 start-0" style="background: linear-gradient(45deg, rgba(255,158,0,0.3), rgba(255,0,127,0.3)); filter: blur(30px); z-index: -1;"></div>
+               <img src={`${basePrefix}images/shared-hosting-hero.png`} alt="Shared Hosting" class="img-fluid rounded-4 shadow-lg w-100 border border-light border-opacity-10" style="max-height: 450px; object-fit: cover;">
             </div>
-          </nav>
         </div>
-        
-        <div class="col-xl-12">
-          <div class="tab-content ps-xxl-5">
-            <!-- Monthly plans -->
-            <div class="tab-pane show active fade" id="monthly" role="tabpanel" aria-labelledby="monthly-tab" tabindex="0">
-              <div class="row">
-                <div class="col-lg-4 d-flex">
-                  <div class="pr-column w-100">
-                    <div class="pr-header text-center mb-25">
-                      <div class="plane-name">Starter</div>
-                      <div class="info1 fs-20">For those 'Getting Started'</div>
-                      <div class="save-line fs-20 fw-500">Save 75%</div>
-                      <div class="price">$3.99<sub>/mo*</sub></div>
-                      <div class="info2 fs-20">Regular price <del class="fw-500">$13.99</del></div>
-                    </div>
-                    <a href="/signup" class="btn-eleven w-100 d-flex justify-content-between align-items-center">Start Free Trial<span class="icon tran3s d-flex align-items-center justify-content-center"><i class="icon icon-chevron-right"></i></span></a>
-                    <h6>Features</h6>
-                    <ul class="style-none package-feature">
-                      <li>1 Website</li>
-                      <li>Free Domain Name</li>
-                      <li>Unlimited subdomains</li>
-                      <li>Fast SSD Storage</li>
-                      <li>10 Email Accounts</li>
-                      <li>WP Installer</li>
-                      <li>Free SSL Certificate</li>
-                      <li>Free Migration</li>
-                      <li>WP Website Builder</li>
-                    </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing Plans -->
+  <section id="pricing" class="pricing-section pt-120 pb-100 bg-twelve border-top border-light border-opacity-10 position-relative z-1">
+    <div class="container">
+      <div class="title-eleven text-center mb-50" data-aos="fade-up">
+        <h2 class="text-white font-outfit fw-800">{data.content.pricing.title}</h2>
+        <p class="fs-20 opacity-75 mt-3 text-white max-w-700 mx-auto">{data.content.pricing.subtitle}</p>
+      </div>
+
+      <!-- Pricing Toggle -->
+      <div class="pricing-toggle-wrapper d-flex justify-content-center mb-60" data-aos="fade-up" data-aos-delay="100">
+         <div class="glass-card premium-border rounded-pill p-2 d-inline-flex flex-wrap gap-2">
+            {data.content.pricing.cycles.map((cycle, index) => (
+               <button class={`billing-toggle-btn rounded-pill fw-600 font-outfit border-0 px-4 py-2 text-white transition-all ${index === 0 ? 'active' : ''}`} data-cycle={cycle}>
+                  {cycle}
+               </button>
+            ))}
+         </div>
+      </div>
+
+      <!-- Pricing Cards Grid -->
+      <div class="row g-4 justify-content-center">
+        {data.content.pricing.plans.map((plan, index) => (
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay={index * 100}>
+            <div class={`glass-card h-100 p-4 rounded-4 hover-lift premium-border position-relative d-flex flex-column ${plan.is_popular ? 'border-gradient-glow' : ''}`}>
+               {plan.is_popular && (
+                  <div class="position-absolute top-0 start-50 translate-middle badge bg-gradient-brand text-white px-3 py-1 rounded-pill fw-bold font-outfit letter-spacing-1 shadow">
+                     MOST POPULAR
                   </div>
-                </div>
-                
-                <div class="col-lg-4 d-flex">
-                  <div class="pr-column w-100 md-mt-30">
-                    <div class="pr-header text-center mb-25">
-                      <div class="plane-name">Standard</div>
-                      <div class="info1 fs-20">For bloggers & average traffic</div>
-                      <div class="save-line fs-20 fw-500">Save 75%</div>
-                      <div class="price">$5.99<sub>/mo*</sub></div>
-                      <div class="info2 fs-20">Regular price <del class="fw-500">$23.99</del></div>
-                    </div>
-                    <a href="/signup" class="btn-eleven w-100 d-flex justify-content-between align-items-center">Start Free Trial<span class="icon tran3s d-flex align-items-center justify-content-center"><i class="icon icon-chevron-right"></i></span></a>
-                    <h6>Features</h6>
-                    <ul class="style-none package-feature">
-                      <li>10 Websites</li>
-                      <li>Free Domain Name</li>
-                      <li>Unlimited subdomains</li>
-                      <li>100 GB NVMe Storage</li>
-                      <li>Unlimited Emails</li>
-                      <li>WP Auto-Updates</li>
-                      <li>Free SSL Certificate</li>
-                      <li>Free Migration</li>
-                      <li>WP Website Builder</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div class="col-lg-4 d-flex">
-                  <div class="pr-column w-100 md-mt-30">
-                    <div class="pr-header text-center mb-25">
-                      <div class="plane-name">Professional</div>
-                      <div class="info1 fs-20">For growing business scales</div>
-                      <div class="save-line fs-20 fw-500">Save 80%</div>
-                      <div class="price">$7.99<sub>/mo*</sub></div>
-                      <div class="info2 fs-20">Regular price <del class="fw-500">$39.99</del></div>
-                    </div>
-                    <a href="/signup" class="btn-eleven w-100 d-flex justify-content-between align-items-center">Start Free Trial<span class="icon tran3s d-flex align-items-center justify-content-center"><i class="icon icon-chevron-right"></i></span></a>
-                    <h6>Features</h6>
-                    <ul class="style-none package-feature">
-                      <li>Unlimited Websites</li>
-                      <li>Free Domain Name</li>
-                      <li>Unlimited subdomains</li>
-                      <li>Unlimited NVMe Storage</li>
-                      <li>Unlimited Emails</li>
-                      <li>Priority Cloud Hosting</li>
-                      <li>Enterprise SSL Security</li>
-                      <li>Free Daily Backup</li>
-                      <li>WP Website Builder</li>
-                    </ul>
-                  </div>
-                </div>
+               )}
+               
+               <h3 class="text-white font-outfit fw-800 text-uppercase letter-spacing-1 mb-2 fs-22">{plan.name}</h3>
+               
+               <!-- Dynamic Pricing Block -->
+               <div class="pricing-block my-4">
+                 {data.content.pricing.cycles.map((cycle, cIndex) => {
+                    const priceData = plan.prices[cycle];
+                    return (
+                       <div class={`price-cycle-view price-${cycle} ${cIndex !== 0 ? 'd-none' : ''}`}>
+                          {priceData.discount && (
+                             <div class="mb-2">
+                                <span class="text-decoration-line-through opacity-50 text-white fs-14 fw-500">₹{priceData.regular}</span>
+                                <span class="badge bg-danger text-white ms-2 px-2 py-1 rounded fs-12">{priceData.discount}</span>
+                             </div>
+                          )}
+                          <div class="d-flex align-items-baseline">
+                             <span class="fs-1 text-white fw-900 font-outfit lh-1">₹{priceData.current}</span>
+                             <span class="fs-16 opacity-75 text-white ms-1 fw-500">{priceData.period}</span>
+                          </div>
+                       </div>
+                    );
+                 })}
+               </div>
+
+               <a href="https://my.1onlyhost.com/store/shared-hosting" class="btn-eight hover-scale w-100 text-center mb-4 py-3">Get Started</a>
+
+               <div class="features-list flex-grow-1">
+                 <ul class="list-unstyled p-0 m-0">
+                    {plan.features.map(feature => (
+                       <li class="text-white opacity-75 font-inter fs-15 mb-3 d-flex align-items-start">
+                          <i class="bi bi-check2-circle text-gradient fs-5 me-2 lh-1 mt-1"></i>
+                          <span class="lh-sm">{feature}</span>
+                       </li>
+                    ))}
+                 </ul>
+               </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <div class="feature-section-why pt-100 pb-100 bg-twelve position-relative border-top border-light border-opacity-10">
+    <div class="container">
+      <div class="title-eleven text-center mb-60" data-aos="fade-up">
+        <h2 class="text-white font-outfit fw-800">{data.content.features_grid.title}</h2>
+        <p class="fs-20 opacity-75 mt-3 text-white max-w-700 mx-auto">{data.content.features_grid.subtitle}</p>
+      </div>
+      <div class="row g-4">
+        {data.content.features_grid.items.map((item, index) => (
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay={index * 50}>
+            <div class="glass-card h-100 p-4 rounded-4 hover-lift premium-border">
+              <div class="icon-box d-flex align-items-center justify-content-center rounded-3 mb-4" style="width: 60px; height: 60px; background: rgba(255,255,255,0.05);">
+                <i class={`${item.icon} fs-2 text-gradient`}></i>
               </div>
+              <h4 class="text-white mb-3 font-outfit fw-600 fs-18">{item.title}</h4>
+              <p class="fs-15 opacity-75 m-0 text-white font-inter lh-lg">{item.description}</p>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   </div>
 
-  <!-- We Listen Section -->
-  <div class="block-feature-sixteen pt-60 lg-pt-40">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 d-flex">
-          <div class="feature-block block-one w-100 mt-50 lg-mt-30 pe-0 glass-card" data-aos="fade-up">
-            <div class="row">
-              <div class="col-lg-6">
-                <h3>We Listen, We Care, We Solve!</h3>
-                <p class="fs-24">Any questions or topics you'd like to discuss? Feel free to share your thoughts, and let's engage in a conversation. We are here to support your success.</p>
-                <ul class="style-none list-item mt-50">
-                  <li>Round-the-Clock Assistance</li>
-                  <li>Prompt & Friendly Response</li>
-                  <li>99% User Satisfaction</li>
-                  <li>Expert Technical Handling</li>
-                </ul>
+  <!-- Comparison Table -->
+  <section class="comparison-section pt-100 pb-100 bg-twelve position-relative border-top border-light border-opacity-10">
+     <div class="container">
+        <div class="title-eleven text-center mb-60" data-aos="fade-up">
+          <h2 class="text-white font-outfit fw-800">{data.content.comparison.title}</h2>
+          <p class="fs-18 opacity-75 mt-3 text-white max-w-700 mx-auto">{data.content.comparison.subtitle}</p>
+        </div>
+
+        <div class="table-responsive glass-card premium-border rounded-4 p-4" data-aos="fade-up" data-aos-delay="100">
+           <table class="table table-dark table-hover table-borderless align-middle m-0 custom-compare-table">
+              <thead>
+                 <tr class="border-bottom border-light border-opacity-10 font-outfit fs-18">
+                    <th scope="col" class="py-4 text-white opacity-50 fw-500 w-25">Features</th>
+                    <th scope="col" class="py-4 text-center fw-800 text-white">STARTER</th>
+                    <th scope="col" class="py-4 text-center fw-800 text-gradient position-relative">PLATINUM</th>
+                    <th scope="col" class="py-4 text-center fw-800 text-white">ADVANCE</th>
+                    <th scope="col" class="py-4 text-center fw-800 text-white">ECOMMERCE</th>
+                 </tr>
+              </thead>
+              <tbody>
+                 {data.content.comparison.categories.map((cat, index) => (
+                    <>
+                       <tr class="category-row">
+                          <td colspan="5" class="pt-5 pb-3 font-outfit fw-700 text-white fs-20 letter-spacing-1">{cat.name}</td>
+                       </tr>
+                       {cat.rows.map(row => (
+                          <tr class="border-bottom border-light border-opacity-10 font-inter text-white opacity-75 fs-15">
+                             <td class="py-3 fw-500">{row.feature}</td>
+                             <td class="py-3 text-center">{row.starter}</td>
+                             <td class="py-3 text-center fw-600 text-white opacity-100" style="background: rgba(255,255,255,0.03);">{row.platinum}</td>
+                             <td class="py-3 text-center">{row.advance}</td>
+                             <td class="py-3 text-center">{row.ecommerce}</td>
+                          </tr>
+                       ))}
+                    </>
+                 ))}
+              </tbody>
+           </table>
+        </div>
+     </div>
+  </section>
+
+  <!-- Data Centers -->
+  <section class="datacenters-section pt-100 pb-100 position-relative border-top border-light border-opacity-10 bg-twelve" data-aos="fade-up">
+     <div class="container">
+        <div class="row align-items-center">
+           <div class="col-lg-5 mb-5 mb-lg-0 text-center text-lg-start">
+              <div class="title-eleven mb-50">
+                <h2 class="text-white font-outfit fw-800">{data.content.datacenters.title}</h2>
+                <p class="fs-18 opacity-75 mt-3">{data.content.datacenters.subtitle}</p>
               </div>
-              <div class="col-lg-6"> <img src={`${basePrefix}images/customer-support.webp`} alt="" class="ms-auto"> </div>
+              <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+                {data.content.datacenters.locations.map((loc, index) => (
+                   <div class="live-server-badge glass-card rounded-pill text-white px-4 py-2 fs-15 hover-glow premium-border d-flex align-items-center font-outfit fw-500" data-aos="zoom-in" data-aos-delay={index * 50}>
+                      <span class="pulsing-dot me-2"></span> {loc}
+                   </div>
+                ))}
+              </div>
+           </div>
+           <div class="col-lg-7 text-center">
+              <div class="glass-card p-2 rounded-4 float-animation-slow premium-border">
+                 <img src={`${basePrefix}images/global-map.png`} alt="Global Infrastructure Map" class="img-fluid rounded-4 shadow-lg w-100" style="object-fit: cover;">
+              </div>
+           </div>
+        </div>
+     </div>
+  </section>
+
+  <!-- Suppliers / Core Advantages -->
+  <div class="suppliers-section pt-100 pb-100 bg-twelve position-relative border-top border-light border-opacity-10">
+    <div class="container">
+      <div class="title-eleven text-center mb-60" data-aos="fade-up">
+        <h2 class="text-white font-outfit fw-800">{data.content.suppliers.title}</h2>
+        <p class="fs-20 opacity-75 mt-3 text-white max-w-700 mx-auto">{data.content.suppliers.subtitle}</p>
+      </div>
+      <div class="row g-4">
+        {data.content.suppliers.items.map((item, index) => (
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay={index * 50}>
+            <div class="glass-card h-100 p-4 rounded-4 hover-lift premium-border text-center">
+              <div class="icon-box d-inline-flex align-items-center justify-content-center rounded-circle mb-4" style="width: 70px; height: 70px; background: rgba(255,255,255,0.05);">
+                <i class={`${item.icon} fs-1 text-gradient`}></i>
+              </div>
+              <h4 class="text-white mb-3 font-outfit fw-600 fs-20">{item.title}</h4>
+              <p class="fs-15 opacity-75 m-0 text-white font-inter lh-lg">{item.description}</p>
             </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <section class="faq-section pt-100 pb-120 bg-twelve border-top border-light border-opacity-10 position-relative" data-aos="fade-in">
+    <div class="glow-backdrop position-absolute w-100 h-100 top-0 start-0" style="background: radial-gradient(circle at 50% 100%, rgba(255,0,127,0.05) 0%, transparent 60%); z-index: -1;"></div>
+    <div class="container">
+       <div class="title-eleven text-center mb-60">
+        <h2 class="text-white font-outfit fw-800">{data.content.faq.title}</h2>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="accordion accordion-flush" id="faqAccordion">
+            {data.content.faq.items.map((item, index) => (
+               <div class="accordion-item bg-transparent border-bottom border-light border-opacity-10 mb-3" data-aos="fade-up" data-aos-delay={index * 50}>
+                  <h2 class="accordion-header" id={`heading${index}`}>
+                    <button class="accordion-button collapsed bg-transparent text-white fs-20 fw-600 py-4 shadow-none font-outfit" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${index}`} aria-expanded="false" aria-controls={`collapse${index}`}>
+                      {item.q}
+                    </button>
+                  </h2>
+                  <div id={`collapse${index}`} class="accordion-collapse collapse" aria-labelledby={`heading${index}`} data-bs-parent="#faqAccordion">
+                    <div class="accordion-body text-white opacity-75 pt-0 pb-4 fs-16 lh-lg font-inter">
+                      {item.a}
+                    </div>
+                  </div>
+               </div>
+            ))}
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Bottom CTA Cards -->
+  <section class="bottom-cta-section pb-100 bg-twelve border-top border-light border-opacity-10 pt-100 position-relative">
+     <div class="container">
+        <div class="row g-4 justify-content-center">
+           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="0">
+              <div class="glass-card p-5 rounded-4 h-100 hover-lift premium-border d-flex flex-column align-items-center text-center">
+                 <i class="bi bi-headset fs-1 text-gradient mb-4"></i>
+                 <h3 class="text-white font-outfit fw-700 fs-24 mb-3">Site support</h3>
+                 <p class="text-white opacity-75 font-inter lh-lg mb-4 flex-grow-1">Learn while you build as we talk you through everything from your first domain onwards. Our Guru Guides have the answers.</p>
+                 <a href="https://1onlyhost.com/contact-us" class="btn-eight hover-scale px-4 py-2 fs-15">First site support</a>
+              </div>
+           </div>
+           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+              <div class="glass-card p-5 rounded-4 h-100 hover-lift premium-border d-flex flex-column align-items-center text-center">
+                 <i class="bi bi-journals fs-1 text-gradient mb-4"></i>
+                 <h3 class="text-white font-outfit fw-700 fs-24 mb-3">Discover our blog</h3>
+                 <p class="text-white opacity-75 font-inter lh-lg mb-4 flex-grow-1">See the latest industry news, get inspirational business tips, find our latest promos, and much more in our extensive blog.</p>
+                 <a href="https://1onlyhost.com/blog/" class="btn-eight hover-scale px-4 py-2 fs-15">Find Blogs</a>
+              </div>
+           </div>
+           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+              <div class="glass-card p-5 rounded-4 h-100 hover-lift premium-border d-flex flex-column align-items-center text-center">
+                 <i class="bi bi-arrow-repeat fs-1 text-gradient mb-4"></i>
+                 <h3 class="text-white font-outfit fw-700 fs-24 mb-3">Transfer your domain to us</h3>
+                 <p class="text-white opacity-75 font-inter lh-lg mb-4 flex-grow-1">Get extra support and savings by transferring your domain to us. Plus, carry over any time your domain has left.</p>
+                 <a href="https://my.1onlyhost.com/cart.php?a=add&domain=transfer" class="btn-eight hover-scale px-4 py-2 fs-15">Transfer to more</a>
+              </div>
+           </div>
+        </div>
+     </div>
+  </section>
+
 </Layout>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggles = document.querySelectorAll('.billing-toggle-btn');
+    
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', (e) => {
+        // Remove active class from all
+        toggles.forEach(btn => btn.classList.remove('active'));
+        // Add active class to clicked
+        e.target.classList.add('active');
+        
+        const selectedCycle = e.target.getAttribute('data-cycle');
+        
+        // Hide all price views
+        document.querySelectorAll('.price-cycle-view').forEach(view => {
+          view.classList.add('d-none');
+        });
+        
+        // Show selected price view
+        document.querySelectorAll(`.price-${selectedCycle}`).forEach(view => {
+          view.classList.remove('d-none');
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+.font-outfit { font-family: 'Outfit', sans-serif; }
+.font-inter { font-family: 'Inter', sans-serif; }
+.letter-spacing-1 { letter-spacing: 1px; }
+.text-gradient {
+  background: linear-gradient(90deg, #FF9E00, #FF007F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.bg-gradient-brand {
+  background: linear-gradient(90deg, #FF9E00, #FF007F);
+}
+.hover-lift { transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease; }
+.hover-lift:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.4); }
+.hover-glow { transition: box-shadow 0.3s ease, border-color 0.3s ease; }
+.hover-glow:hover { box-shadow: 0 0 20px rgba(255, 158, 0, 0.3); border-color: rgba(255, 158, 0, 0.5) !important; }
+.hover-scale { transition: transform 0.3s ease; }
+.hover-scale:hover { transform: scale(1.05); }
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+.premium-border {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+.border-gradient-glow {
+  border-color: rgba(255, 0, 127, 0.4);
+  box-shadow: 0 0 30px rgba(255, 0, 127, 0.1);
+}
+.border-gradient-glow::before {
+  content: '';
+  position: absolute;
+  top: -1px; left: -1px; right: -1px; bottom: -1px;
+  background: linear-gradient(135deg, #FF9E00, #FF007F);
+  z-index: -1;
+  border-radius: inherit;
+  opacity: 0.3;
+}
+.btn-eight {
+  background: linear-gradient(90deg, #FF9E00, #FF007F);
+  color: #fff;
+  padding: 14px 34px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 700;
+  display: inline-block;
+  transition: opacity 0.3s, transform 0.3s;
+  border: none;
+  box-shadow: 0 8px 20px rgba(255, 0, 127, 0.3);
+}
+.btn-eight:hover { opacity: 0.9; color: #fff; }
+.mesh-bg-1 {
+  background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,0.2) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,0.2) 0, transparent 50%);
+}
+.bg-twelve { background-color: #0d0f12; }
+.accordion-button::after { filter: invert(1); transition: transform 0.3s ease; }
+.accordion-button:not(.collapsed) { background-color: transparent; color: #fff; box-shadow: none; }
+.accordion-button:not(.collapsed)::after { filter: invert(0.5) sepia(1) saturate(5) hue-rotate(320deg); }
+
+/* Float Animations */
+.float-animation { animation: float 6s ease-in-out infinite; }
+.float-animation-slow { animation: float 8s ease-in-out infinite; }
+@keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-15px); } 100% { transform: translateY(0px); } }
+
+/* Pulsing Dot for Live Servers */
+.pulsing-dot { width: 10px; height: 10px; background-color: #00FF88; border-radius: 50%; position: relative; box-shadow: 0 0 10px #00FF88; }
+.pulsing-dot::after { content: ''; position: absolute; top: -4px; left: -4px; right: -4px; bottom: -4px; border: 2px solid #00FF88; border-radius: 50%; animation: pulse 2s linear infinite; opacity: 0; }
+@keyframes pulse { 0% { transform: scale(0.5); opacity: 0.8; } 100% { transform: scale(2); opacity: 0; } }
+
+/* Billing Toggle */
+.billing-toggle-btn {
+  background: transparent;
+  outline: none;
+}
+.billing-toggle-btn.active {
+  background: linear-gradient(90deg, #FF9E00, #FF007F);
+  box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
+}
+
+/* Custom Table */
+.custom-compare-table {
+  --bs-table-bg: transparent;
+}
+.custom-compare-table th, .custom-compare-table td {
+  border: none !important;
+}
+</style>

@@ -1,13 +1,279 @@
 {
   "seo": {
-    "title": "1Only Host - Reliable Shared Web Hosting Plans",
-    "description": "Premium Linux and Windows shared hosting solutions for small businesses, bloggers, and personal projects. Free SSL, domain, and 24/7 expert support included.",
-    "keywords": "shared hosting, web hosting, linux shared hosting, cheap hosting, reliable web hosting, hosting plans"
+    "title": "Premium and Cheap Shared Hosting Services | 1OnlyHost",
+    "description": "Easy, affordable shared hosting plans beyond expectations. Get a free .site Domain for a year when you choose our fast, secure, and reliable Shared hosting services.",
+    "keywords": "shared hosting, cheap hosting, premium hosting, india web hosting, litespeed server, cpanel shared hosting"
   },
   "content": {
-    "hero_title": "Affordable and Reliable Web Hosting",
-    "hero_subtitle": "Discover why we're renowned for excellence in web hosting services, reliability, and customer support to deliver a top-tier experience.",
-    "hero_price_label": "From $3.99/mo. Regular $17.99/mo.",
-    "reason_title": "The Reason We're Called the Best Web Hosting Services Provider"
+    "hero": {
+      "title": "Premium and Cheap Shared Hosting Services",
+      "subtitle": "Easy, affordable shared hosting plans beyond expectations. Get a free .site Domain for a year when you choose our fast, secure, and reliable Shared hosting services.",
+      "price_start": "40"
+    },
+    "pricing": {
+      "title": "Our Shared Hosting Plans",
+      "subtitle": "With flexible resources and unbeatable uptime, we provide the perfect platform for your website to thrive. Experience seamless performance and exceptional support with our premium Shared web Hosting services",
+      "cycles": ["Monthly", "Annually", "Biennially", "Triennially"],
+      "plans": [
+        {
+          "name": "STARTER",
+          "prices": {
+            "Monthly": { "current": "40", "period": "/Mo", "regular": null, "discount": null },
+            "Annually": { "current": "840", "period": "/year", "regular": "1200", "discount": "30% Off!" },
+            "Biennially": { "current": "1440", "period": "/2 years", "regular": "2400", "discount": "40% Off!" },
+            "Triennially": { "current": "1480", "period": "/3 years", "regular": "3600", "discount": "65% Off!" }
+          },
+          "features": [
+            "Host 1 Website",
+            "10GB NVME SSD",
+            "Unlimited Bandwidth",
+            "1 FTP Account",
+            "2 Email Accounts",
+            "5 MySQL DB",
+            "2 Sub Domains",
+            "No Parked Domains",
+            "Free SSL Certificate",
+            "Free Malware Scanner",
+            "Clustered DNS",
+            "Free Softaculous App Installer",
+            "Free Sitepad Website",
+            "Access to Basic Site Quality Monitoring tool in Cpanel",
+            "2 domains/sub-domains with Vulnerability Protection Powered by WP Toolkit"
+          ]
+        },
+        {
+          "name": "PLATINUM",
+          "is_popular": true,
+          "prices": {
+            "Monthly": { "current": "99", "period": "/Mo", "regular": null, "discount": null },
+            "Annually": { "current": "2388", "period": "/year", "regular": "3600", "discount": "35% Off!" },
+            "Biennially": { "current": "2576", "period": "/2 years", "regular": "7200", "discount": "50% Off!" },
+            "Triennially": { "current": "3580", "period": "/3 years", "regular": "10800", "discount": "62% Off!" }
+          },
+          "features": [
+            "Host 3 websites",
+            "25GB Disk Space",
+            "Unlimited Bandwidth",
+            "3 FTP Accounts",
+            "2 Addon Domains",
+            "10 Email Accounts",
+            "10 MySQL DB",
+            "5 Sub Domains",
+            "No Parked Domains",
+            "Free SSL Certificate",
+            "Free Malware Scanner",
+            "Clustered DNS",
+            "Free Softaculous App Installer",
+            "Free Sitepad Website",
+            "Access to Basic Site Quality Monitoring tool in Cpanel",
+            "10 domains/sub-domains with Vulnerability Protection Powered by WP Toolkit",
+            "Powered with Litespeed"
+          ]
+        },
+        {
+          "name": "ADVANCE",
+          "prices": {
+            "Monthly": { "current": "299", "period": "/Mo", "regular": null, "discount": null },
+            "Annually": { "current": "4299", "period": "/year", "regular": "6000", "discount": "30% Off!" },
+            "Biennially": { "current": "8399", "period": "/2 years", "regular": "12200", "discount": "30% Off!" },
+            "Triennially": { "current": "10700", "period": "/3 years", "regular": "18000", "discount": "46% Off!" }
+          },
+          "features": [
+            "Host 10 Websites",
+            "50GB NVMe SSD Disk Space",
+            "15 Subdomains",
+            "Free SSL Certificate",
+            "20 MySQL Database",
+            "25 Email Accounts",
+            "Free Auto Backup",
+            "Clustered DNS",
+            "Free Malware Scanner",
+            "Unlimited Bandwidth",
+            "10 FTP Accounts",
+            "9 Addon Domains",
+            "No Parked Domains",
+            "Free Softaculous App Installer",
+            "Free Sitepad Website",
+            "Access to Basic Site Quality Monitoring tool in Cpanel",
+            "10 domains/sub-domains with Vulnerability Protection Powered by WP Toolkit",
+            "Powered with Litespeed"
+          ]
+        },
+        {
+          "name": "ECOMMERCE",
+          "prices": {
+            "Monthly": { "current": "541", "period": "/Mo", "regular": null, "discount": null },
+            "Annually": { "current": "6499", "period": "/year", "regular": "14400", "discount": "55% Off!" },
+            "Biennially": { "current": "11900", "period": "/2 years", "regular": "28800", "discount": "58% Off!" },
+            "Triennially": { "current": "16500", "period": "/3 years", "regular": "43200", "discount": "61% Off!" }
+          },
+          "features": [
+            "Host 10 Websites or a Powerful Shopping Site",
+            "50GB SSD Disk Space",
+            "Unlimited Bandwidth",
+            "100 Emails",
+            "Unlimited MY SQL DB",
+            "20 Sub Domains",
+            "Free Softaculous App Installer",
+            "Free SSL Certificate",
+            "Secured by Imunify 360"
+          ]
+        }
+      ]
+    },
+    "features_grid": {
+      "title": "Shared Hosting Features",
+      "subtitle": "We are one of the Recognized Premium Shared Web hosting provider, which offer high-speed, great uptime and Auto Backup at such low rates.",
+      "items": [
+        {
+          "title": "Free SSL Certificates",
+          "description": "SSL is the major ranking factor, and we at 1OnlyHost provide you with free SSL certificates with all Premium shared web hosting plans.",
+          "icon": "bi bi-shield-lock"
+        },
+        {
+          "title": "Free .site Domain",
+          "description": "Get .site domain For Free when you buy our Shared Web Hosting Plan Annually",
+          "icon": "bi bi-globe"
+        },
+        {
+          "title": "Softaculous App Installer",
+          "description": "Choose from 450+ popular apps, including WordPress, Joomla, Drupal, OpenCart, and more! Install with a single click!",
+          "icon": "bi bi-box-seam"
+        },
+        {
+          "title": "Free Auto Backup",
+          "description": "Our system automatically performs full account backups every night for your peace of mind. To guarantee top performance, all backups are stored offsite.",
+          "icon": "bi bi-cloud-arrow-up"
+        },
+        {
+          "title": "Malware Protection",
+          "description": "Get free virus and malware protection with 1OnlyHost shared hosting services. When files are uploaded to the website, they are scanned automatically.",
+          "icon": "bi bi-bug"
+        },
+        {
+          "title": "Free Professional Email",
+          "description": "Enjoy a domain-based email address of your choice to better manage communication and represent your company.",
+          "icon": "bi bi-envelope-at"
+        },
+        {
+          "title": "99.9% Server Uptime",
+          "description": "We promise a high level of service availability and stability. We'll pay you account credits for downtime if your site is offline.",
+          "icon": "bi bi-activity"
+        },
+        {
+          "title": "NVMe SSD Storage",
+          "description": "All of our SSDs are powered by powerful NVME storage, providing you with the best website performance.",
+          "icon": "bi bi-hdd-network"
+        }
+      ]
+    },
+    "comparison": {
+      "title": "Compare Our Web Hosting Packages",
+      "subtitle": "We are one of the Recognized Premium Shared web hosting providers, which offers high-speed, great uptime and Auto Backup at such low rates. Did you know that all of our plans come with a Free .site Domain?",
+      "categories": [
+        {
+          "name": "Plan Features",
+          "rows": [
+            { "feature": "Websites Hosted", "starter": "1", "platinum": "3", "advance": "10", "ecommerce": "10" },
+            { "feature": "NVMe SSD Storage", "starter": "10 GB", "platinum": "25 GB", "advance": "50 GB", "ecommerce": "50 GB" },
+            { "feature": "Bandwidth", "starter": "Unlimited", "platinum": "Unlimited", "advance": "Unlimited", "ecommerce": "Unlimited" },
+            { "feature": "Sub Domains", "starter": "2", "platinum": "5", "advance": "15", "ecommerce": "20" },
+            { "feature": "Addon Domains", "starter": "0", "platinum": "2", "advance": "9", "ecommerce": "Unlimited" },
+            { "feature": "Free .site Domain", "starter": "Yes (Annually)", "platinum": "Yes (Annually)", "advance": "Yes (Annually)", "ecommerce": "Yes (Annually)" }
+          ]
+        },
+        {
+          "name": "Email Features",
+          "rows": [
+            { "feature": "Email Accounts", "starter": "2", "platinum": "10", "advance": "25", "ecommerce": "100" },
+            { "feature": "Spam Protection", "starter": "Yes", "platinum": "Yes", "advance": "Yes", "ecommerce": "Yes" }
+          ]
+        },
+        {
+          "name": "Databases Features",
+          "rows": [
+            { "feature": "MySQL Databases", "starter": "5", "platinum": "10", "advance": "20", "ecommerce": "Unlimited" },
+            { "feature": "phpMyAdmin", "starter": "Yes", "platinum": "Yes", "advance": "Yes", "ecommerce": "Yes" }
+          ]
+        },
+        {
+          "name": "Server Features",
+          "rows": [
+            { "feature": "Web Server", "starter": "Apache", "platinum": "LiteSpeed", "advance": "LiteSpeed", "ecommerce": "LiteSpeed" },
+            { "feature": "Free SSL Certificate", "starter": "Yes", "platinum": "Yes", "advance": "Yes", "ecommerce": "Yes" },
+            { "feature": "Malware Scanner", "starter": "Yes", "platinum": "Yes", "advance": "Yes", "ecommerce": "Imunify 360" },
+            { "feature": "Auto Backup", "starter": "Paid", "platinum": "Paid", "advance": "Free", "ecommerce": "Free" }
+          ]
+        }
+      ]
+    },
+    "datacenters": {
+      "title": "OUR GLOBAL DATA CENTERS",
+      "subtitle": "We offer server locations in:",
+      "locations": ["USA", "India", "France", "Singapore", "Finland", "Falkenstein", "Japan", "Australia"]
+    },
+    "suppliers": {
+      "title": "Our Suppliers",
+      "subtitle": "1OnlyHost relies on the most renowned and trusted technologies to provide better and unbeatable service",
+      "items": [
+        {
+          "title": "Cloud Linux OS",
+          "description": "CloudLinux, which is fully supported by cPanel, enables effective resource usage and better server stability.",
+          "icon": "bi bi-cloud"
+        },
+        {
+          "title": "Immunify 360",
+          "description": "At 1OnlyHost, Immunify 360 secures servers against malware, viruses, and hacking attempts.",
+          "icon": "bi bi-shield-check"
+        },
+        {
+          "title": "LiteSpeed Web Server",
+          "description": "Our servers have been configured to use LiteSpeed, which ensures that your website loads quickly.",
+          "icon": "bi bi-lightning-charge"
+        },
+        {
+          "title": "Free Migrations",
+          "description": "We can assist you with the transfer of your website to us and provide this service at no cost to you!",
+          "icon": "bi bi-arrow-left-right"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Your Shared Web Hosting Questions Answered",
+      "items": [
+        {
+          "q": "Who should use shared hosting?",
+          "a": "Shared hosting is ideal for individuals, small businesses, or startups with low to moderate traffic. It's perfect for personal blogs, portfolio sites, and small e-commerce stores."
+        },
+        {
+          "q": "What are the limitations of shared hosting?",
+          "a": "Because resources are shared with other users on the server, high traffic spikes or resource-intensive operations might be slightly constrained compared to a VPS or Dedicated server."
+        },
+        {
+          "q": "Is shared hosting secure?",
+          "a": "Yes! All our shared hosting plans include Free SSL certificates, malware scanning, and advanced security configurations to ensure your data stays safe."
+        },
+        {
+          "q": "Is a Money-Back Guarantee Provided?",
+          "a": "Yes, we offer a money-back guarantee. If you're not fully satisfied with our hosting performance, you can claim a refund within our stipulated timeframe."
+        },
+        {
+          "q": "Will my website's performance be affected by other sites?",
+          "a": "Yes, since resources are shared, the performance of your website can be impacted by traffic spikes or issues with other sites on the same server. However, CloudLinux ensures strict resource isolation."
+        },
+        {
+          "q": "Is website migration free when a customer purchases shared hosting from 1OnlyHost?",
+          "a": "Yes, our team provides free, seamless website migration assistance when you move your website to our shared hosting plans."
+        },
+        {
+          "q": "What is the Estimated Setup Time for My Web Hosting Upon Placing an Order Today?",
+          "a": "Your account is set up instantly upon successful payment. You can start building or migrating your website within minutes."
+        },
+        {
+          "q": "Is shared hosting suitable for e-commerce sites?",
+          "a": "Yes, our Ecommerce shared hosting plan is specifically optimized and secured (via Imunify360) for powerful shopping sites."
+        }
+      ]
+    }
   }
 }

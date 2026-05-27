@@ -4,163 +4,266 @@ interface Props {
 }
 const { basePrefix = './' } = Astro.props;
 ---
-<header class="theme-main-menu menu-style-nine sticky-menu menu-overlay glass-header">
-  <div class="inner-content gap-one">
-    <div class="top-header position-relative">
-      <div class="d-flex align-items-center">
-        <div class="logo order-lg-0 me-lg-5">
-          <a href="/" class="d-flex align-items-center">
-            <img src={`${basePrefix}images/logo.svg`} alt="1Only Host Logo">
-          </a>
-        </div>
-        
-        <div class="right-widget ms-auto order-lg-3">
-          <ul class="d-flex align-items-center style-none">
-            <li>
-              <a href="https://stats.uptimerobot.com/N58Y4fNjPY" target="_blank" class="status-indicator d-none d-lg-inline-flex me-4">
-                <span class="status-dot"></span> System Status
-              </a>
-            </li>
-            <li>
-              <a href="/login" class="login-btn-one fw-500 d-flex align-items-center tran3s">
-                <img src={`${basePrefix}images/user.svg`} alt="" class="me-2">
-                <span>Login</span>
-              </a>
-            </li>
-            <li class="d-none d-md-inline-block ms-3">
-              <a href="/signup" class="btn-eighteen">Register</a>
-            </li>
-          </ul>
-        </div>
-        
-        <nav class="navbar navbar-expand-lg p0 order-lg-2 ms-lg-5 ms-3">
-          <button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span></span>
-          </button>
-          
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav align-items-lg-center">
-              <li class="d-block d-lg-none">
-                <div class="logo">
-                  <a href="/" class="d-block">
-                    <img src={`${basePrefix}images/logo.svg`} alt="1Only Host">
-                  </a>
+<style>
+  /* Floating Glass Header Redesign */
+  .header-floating-glass {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1400px;
+    background: rgba(2, 4, 10, 0.65) !important;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid rgba(255, 158, 0, 0.15);
+    border-radius: 50px;
+    z-index: 1030;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    padding: 10px 20px;
+  }
+
+  .header-floating-glass:hover {
+    background: rgba(2, 4, 10, 0.8) !important;
+    border-color: rgba(255, 158, 0, 0.3);
+    box-shadow: 0 15px 50px rgba(255, 158, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .header-floating-glass .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding: 10px 20px !important;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+  }
+
+  .header-floating-glass .navbar-nav .nav-link:hover,
+  .header-floating-glass .navbar-nav .nav-item:hover .nav-link {
+    color: #FF9E00;
+    background: rgba(255, 158, 0, 0.08);
+  }
+
+  .premium-btn-register {
+    background: linear-gradient(135deg, #FF9E00, #FF007F);
+    color: #fff !important;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 10px 28px !important;
+    border-radius: 30px;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  .premium-btn-register:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 158, 0, 0.4);
+    color: #fff !important;
+  }
+
+  .dropdown-menu {
+    background: rgba(10, 12, 18, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 158, 0, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+  }
+
+  .dropdown-item {
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    padding: 8px 16px;
+  }
+
+  .dropdown-item:hover {
+    background: rgba(255, 158, 0, 0.1);
+    color: #FF9E00;
+    transform: translateX(5px);
+  }
+
+  .mega-menu-title {
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+  }
+
+  /* Status Indicator */
+  .status-indicator-glass {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+  }
+  
+  .status-indicator-glass:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+
+  .login-btn-glass {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    transition: color 0.3s ease;
+  }
+  
+  .login-btn-glass:hover {
+    color: #FF9E00;
+  }
+</style>
+
+<header class="header-floating-glass theme-main-menu">
+  <div class="d-flex align-items-center justify-content-between w-100">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="/" class="d-flex align-items-center">
+        <img src={`${basePrefix}images/logo.svg`} alt="1Only Host Logo" style="height: 38px;">
+      </a>
+    </div>
+    
+    <!-- Centered Navigation -->
+    <nav class="navbar navbar-expand-lg p-0">
+      <button class="navbar-toggler d-block d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav align-items-lg-center">
+          <!-- Domain Dropdown -->
+          <li class="nav-item dropdown mega-dropdown-sm mx-1">
+            <a class="nav-link dropdown-toggle font-outfit" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Domain</a>
+            <ul class="dropdown-menu">
+              <li class="row gx-1">
+                <div class="col-lg-4">
+                  <div class="menu-column">
+                    <h6 class="mega-menu-title">Register</h6>
+                    <ul class="style-none mega-dropdown-list ps-0">
+                      <li><a href="/domain-registration" class="dropdown-item">Register Domain</a></li>
+                      <li><a href="/bulk-domain-registration" class="dropdown-item">Bulk Registration</a></li>
+                      <li><a href="/new-domain-extensions" class="dropdown-item">New Extensions</a></li>
+                      <li><a href="/sunrise" class="dropdown-item">Sunrise Domains</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="menu-column">
+                    <h6 class="mega-menu-title">Transfer</h6>
+                    <ul class="style-none mega-dropdown-list ps-0">
+                      <li><a href="/domain-transfer" class="dropdown-item">Transfer Domain</a></li>
+                      <li><a href="/bulk-domain-transfer" class="dropdown-item">Bulk Transfer</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="menu-column">
+                    <h6 class="mega-menu-title">Add-ons</h6>
+                    <ul class="style-none mega-dropdown-list ps-0">
+                      <li><a href="/domain-name-suggestion-tool" class="dropdown-item">Name Suggestion</a></li>
+                      <li><a href="/domain-whois-lookup" class="dropdown-item">Whois Lookup</a></li>
+                      <li><a href="/premium-domain" class="dropdown-item">Premium Domains</a></li>
+                    </ul>
+                  </div>
                 </div>
               </li>
-              
-              <!-- Domain Dropdown -->
-              <li class="nav-item dropdown mega-dropdown-sm">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Domain</a>
-                <ul class="dropdown-menu">
-                  <li class="row gx-1">
-                    <div class="col-lg-4">
-                      <div class="menu-column">
-                        <h6 class="mega-menu-title">Register</h6>
-                        <ul class="style-none mega-dropdown-list">
-                          <li><a href="/domain-registration" class="dropdown-item"><span>Register Domain</span></a></li>
-                          <li><a href="/bulk-domain-registration" class="dropdown-item"><span>Bulk Domain Registration</span></a></li>
-                          <li><a href="/new-domain-extensions" class="dropdown-item"><span>New Domain Extensions</span></a></li>
-                          <li><a href="/sunrise" class="dropdown-item"><span>Sunrise Domains</span></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="menu-column">
-                        <h6 class="mega-menu-title">Transfer</h6>
-                        <ul class="style-none mega-dropdown-list">
-                          <li><a href="/domain-transfer" class="dropdown-item"><span>Transfer Domain</span></a></li>
-                          <li><a href="/bulk-domain-transfer" class="dropdown-item"><span>Bulk Domain Transfer</span></a></li>
-                          <li><a href="#" class="dropdown-item"><span>IDN Domain Registration</span></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="menu-column">
-                        <h6 class="mega-menu-title">Add-ons</h6>
-                        <ul class="style-none mega-dropdown-list">
-                          <li><a href="/free-with-domain-registration" class="dropdown-item"><span>Free with every domain</span></a></li>
-                          <li><a href="/domain-name-suggestion-tool" class="dropdown-item"><span>Name suggestion tool</span></a></li>
-                          <li><a href="/domain-whois-lookup" class="dropdown-item"><span>Whois lookup</span></a></li>
-                          <li><a href="/premium-domain" class="dropdown-item"><span>Premium Domains</span></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              
-              <!-- Hosting Dropdown -->
-              <li class="nav-item dropdown mega-dropdown-sm">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Hosting</a>
-                <ul class="dropdown-menu">
-                  <li class="row gx-1">
-                    <div class="col-lg-4">
-                      <div class="menu-column">
-                        <h6 class="mega-menu-title">Shared Hosting</h6>
-                        <ul class="style-none mega-dropdown-list">
-                          <li><a href="/shared-hosting" class="dropdown-item"><span>Linux Shared Hosting</span></a></li>
-                          <li><a href="/window-shared-hosting" class="dropdown-item"><span>Window Shared Hosting</span></a></li>
-                          <li><a href="/wordpress-hosting" class="dropdown-item"><span>WordPress Hosting</span></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="menu-column">
-                        <h6 class="mega-menu-title">Reseller Hosting</h6>
-                        <ul class="style-none mega-dropdown-list">
-                          <li><a href="/reseller-hosting" class="dropdown-item"><span>Linux Reseller Hosting</span></a></li>
-                          <li><a href="/window-reseller-hosting" class="dropdown-item"><span>Window Reseller Hosting</span></a></li>
-                          <li><a href="/cloud-hosting" class="dropdown-item"><span>Cloud Hosting</span></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="menu-column">
-                        <h6 class="mega-menu-title">Servers</h6>
-                        <ul class="style-none mega-dropdown-list">
-                          <li><a href="/vps-server" class="dropdown-item"><span>VPS Server</span></a></li>
-                          <li><a href="/dedicated-server" class="dropdown-item"><span>Linux Dedicated Server</span></a></li>
-                          <li><a href="/window-dedicated-server" class="dropdown-item"><span>Window Dedicated Server</span></a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              
-              <!-- Email Dropdown -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Email</a>
-                <ul class="dropdown-menu">
-                  <li><a href="/bussiness-email" class="dropdown-item"><span>Business Email</span></a></li>
-                  <li><a href="/titan-business-email" class="dropdown-item"><span>Titan Business Email</span></a></li>
-                  <li><a href="/enterprises-email" class="dropdown-item"><span>Enterprises Email</span></a></li>
-                  <li><a href="/google-workspace" class="dropdown-item"><span>Google Workspace</span></a></li>
-                </ul>
-              </li>
-              
-              <!-- Security Dropdown -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Security</a>
-                <ul class="dropdown-menu">
-                  <li><a href="/ssl-certificate" class="dropdown-item"><span>SSL Certificate</span></a></li>
-                  <li><a href="/sitelock-malware" class="dropdown-item"><span>Sitelock Malware</span></a></li>
-                  <li><a href="/codeguard-backup" class="dropdown-item"><span>CodeGuard Backup</span></a></li>
-                  <li><a href="/acronis-cyber-backup" class="dropdown-item"><span>Acronis Cyber Backup</span></a></li>
-                </ul>
-              </li>
-              
-              <li class="nav-item">
-                <a class="nav-link" href="/about-us">About Us</a>
-              </li>
-              
-              <li class="d-md-none ps-3 pe-3 mt-20">
-                <a href="/signup" class="btn-eighteen w-100">Register</a>
+            </ul>
+          </li>
+          
+          <!-- Hosting Dropdown -->
+          <li class="nav-item dropdown mega-dropdown-sm mx-1">
+            <a class="nav-link dropdown-toggle font-outfit" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Hosting</a>
+            <ul class="dropdown-menu" style="min-width: 600px;">
+              <li class="row gx-1">
+                <div class="col-lg-4">
+                  <div class="menu-column">
+                    <h6 class="mega-menu-title text-accent">Shared Hosting</h6>
+                    <ul class="style-none mega-dropdown-list ps-0">
+                      <li><a href="/shared-hosting" class="dropdown-item">Linux Shared Hosting</a></li>
+                      <li><a href="/window-shared-hosting" class="dropdown-item">Window Shared Hosting</a></li>
+                      <li><a href="/wordpress-hosting" class="dropdown-item">WordPress Hosting</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="menu-column">
+                    <h6 class="mega-menu-title" style="color: #FF007F;">Reseller Hosting</h6>
+                    <ul class="style-none mega-dropdown-list ps-0">
+                      <li><a href="/reseller-hosting" class="dropdown-item">Linux Reseller Hosting</a></li>
+                      <li><a href="/window-reseller-hosting" class="dropdown-item">Window Reseller Hosting</a></li>
+                      <li><a href="/cloud-hosting" class="dropdown-item">Cloud Hosting</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="menu-column">
+                    <h6 class="mega-menu-title" style="color: #00F5D4;">Servers</h6>
+                    <ul class="style-none mega-dropdown-list ps-0">
+                      <li><a href="/vps-server" class="dropdown-item">VPS Server</a></li>
+                      <li><a href="/dedicated-server" class="dropdown-item">Linux Dedicated Server</a></li>
+                      <li><a href="/window-dedicated-server" class="dropdown-item">Window Dedicated Server</a></li>
+                    </ul>
+                  </div>
+                </div>
               </li>
             </ul>
-          </div>
-        </nav>
+          </li>
+          
+          <!-- Email Dropdown -->
+          <li class="nav-item dropdown mx-1">
+            <a class="nav-link dropdown-toggle font-outfit" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Email</a>
+            <ul class="dropdown-menu">
+              <li><a href="/bussiness-email" class="dropdown-item">Business Email</a></li>
+              <li><a href="/titan-business-email" class="dropdown-item">Titan Business Email</a></li>
+              <li><a href="/enterprises-email" class="dropdown-item">Enterprises Email</a></li>
+              <li><a href="/google-workspace" class="dropdown-item">Google Workspace</a></li>
+            </ul>
+          </li>
+          
+          <!-- Security Dropdown -->
+          <li class="nav-item dropdown mx-1">
+            <a class="nav-link dropdown-toggle font-outfit" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Security</a>
+            <ul class="dropdown-menu">
+              <li><a href="/ssl-certificate" class="dropdown-item">SSL Certificate</a></li>
+              <li><a href="/sitelock-malware" class="dropdown-item">Sitelock Malware</a></li>
+              <li><a href="/codeguard-backup" class="dropdown-item">CodeGuard Backup</a></li>
+              <li><a href="/acronis-cyber-backup" class="dropdown-item">Acronis Cyber Backup</a></li>
+            </ul>
+          </li>
+          
+          <li class="nav-item mx-1">
+            <a class="nav-link font-outfit" href="/about-us">About Us</a>
+          </li>
+          
+          <li class="d-md-none mt-3">
+            <a href="/signup" class="premium-btn-register w-100 text-center d-block">Register</a>
+          </li>
+        </ul>
       </div>
+    </nav>
+    
+    <!-- Right Actions -->
+    <div class="right-widget d-none d-lg-flex align-items-center gap-3">
+      <a href="https://stats.uptimerobot.com/N58Y4fNjPY" target="_blank" class="status-indicator-glass text-decoration-none d-flex align-items-center">
+        <span class="status-dot me-2 pulsing" style="background-color: #00FF88; width: 6px; height: 6px; border-radius: 50%;"></span>
+        <span class="font-outfit fw-600">Status</span>
+      </a>
+      <a href="/login" class="login-btn-glass text-decoration-none fw-600 font-outfit d-flex align-items-center">
+        <i class="icon icon-user me-2"></i> Login
+      </a>
+      <a href="/signup" class="premium-btn-register text-decoration-none font-outfit">Register</a>
     </div>
   </div>
 </header>
