@@ -16,230 +16,427 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   description={data.seo.description} 
   keywords={data.seo.keywords}
 >
-  <!-- Hero Section -->
-  <div class="hero-banner-eight bg-twelve z-1 position-relative pt-150 pb-120 mesh-bg-1" data-aos="fade-in">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <h1 class="hero-heading fw-900 font-outfit" style="font-size: 3.5rem; line-height: 1.1;">{data.content.hero.title}</h1>
-          <p class="fs-22 font-inter pt-25 pb-15 pe-xxl-5 opacity-75 lh-base">{data.content.hero.subtitle}</p>
-          <a href="https://my.1onlyhost.com/store/free-trial/30-day" class="btn-eight mt-20 hover-scale">Experience a 30 days free trial today</a>
-        </div>
-        <div class="col-lg-6 mt-5 mt-lg-0 text-center">
-            <div class="hero-img-wrapper position-relative inline-block float-animation">
-               <div class="glow-backdrop position-absolute w-100 h-100 rounded-4 top-0 start-0" style="background: linear-gradient(45deg, rgba(255,158,0,0.3), rgba(255,0,127,0.3)); filter: blur(30px); z-index: -1;"></div>
-               <img src={`${basePrefix}images/datacenter.png`} alt="Data Center" class="img-fluid rounded-4 shadow-lg w-100 border border-light border-opacity-10" style="max-height: 450px; object-fit: cover;">
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- HERO SECTION — Cinematic Datacenter Split -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="about-hero-section position-relative overflow-hidden" data-aos="fade-in">
+    <!-- Background image with overlay -->
+    <div class="hero-bg-image position-absolute w-100 h-100 top-0 start-0" style={`background: url('${basePrefix}images/about-hero-datacenter.png') center/cover no-repeat;`}></div>
+    <div class="hero-overlay position-absolute w-100 h-100 top-0 start-0"></div>
+    
+    <div class="container position-relative z-2">
+      <div class="row align-items-center min-vh-75">
+        <div class="col-lg-7 py-5">
+          <div class="d-inline-flex align-items-center mb-4 px-3 py-1 rounded-pill" style="background: rgba(255, 158, 0, 0.1); border: 1px solid rgba(255, 158, 0, 0.2);">
+            <span class="status-dot pulsing me-2" style="background-color: #FF9E00; width: 8px; height: 8px; border-radius: 50%;"></span>
+            <span class="fs-12 text-white-50 uppercase tracking-widest fw-600">Est. 2019 · Hyderabad, India</span>
+          </div>
+          
+          <h1 class="text-white fw-900 font-outfit mb-4" style="font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.08;">
+            We Don't Just Host Websites.<br>
+            <span class="text-gradient">We Protect Dreams.</span>
+          </h1>
+          
+          <p class="text-white-50 fs-18 mb-4" style="max-width: 560px; line-height: 1.8;">
+            Born from a cybersecurity professional's frustration with insecure hosting, 1Only Host was built on one unshakeable principle: <strong class="text-white">your data deserves military-grade protection at an honest price.</strong>
+          </p>
+          
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="/shared-hosting" class="btn-eighteen py-3 px-5 uppercase tracking-wider fs-13 fw-700">Explore Our Plans</a>
+            <a href="#our-story" class="btn btn-outline-light py-3 px-5 uppercase tracking-wider fs-13 fw-600 rounded-pill" style="border-color: rgba(255,255,255,0.2);">Our Story ↓</a>
+          </div>
+          
+          <!-- Hero Stats Row -->
+          <div class="d-flex flex-wrap gap-4 mt-5 pt-4" style="border-top: 1px solid rgba(255,255,255,0.08);">
+            <div>
+              <div class="text-gradient font-outfit fw-900" style="font-size: 2rem; line-height: 1;">1000+</div>
+              <div class="fs-12 text-white-50 uppercase tracking-widest mt-1">Businesses Served</div>
             </div>
+            <div>
+              <div class="text-gradient font-outfit fw-900" style="font-size: 2rem; line-height: 1;">99.9%</div>
+              <div class="fs-12 text-white-50 uppercase tracking-widest mt-1">Uptime SLA</div>
+            </div>
+            <div>
+              <div class="text-gradient font-outfit fw-900" style="font-size: 2rem; line-height: 1;">8+</div>
+              <div class="fs-12 text-white-50 uppercase tracking-widest mt-1">Countries</div>
+            </div>
+            <div>
+              <div class="text-gradient font-outfit fw-900" style="font-size: 2rem; line-height: 1;">24/7</div>
+              <div class="fs-12 text-white-50 uppercase tracking-widest mt-1">Human Support</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Why Choose Us -->
-  <div class="feature-section-why z-1 pt-100 pb-100 bg-twelve position-relative border-top border-light border-opacity-10">
-    <div class="container">
-      <div class="row align-items-center mb-60">
-        <div class="col-lg-6 mb-4 mb-lg-0 text-center text-lg-start">
-          <div class="title-eleven">
-            <h2 class="text-white font-outfit fw-800">{data.content.why_choose_us.title}</h2>
-            <p class="fs-20 opacity-75 mt-3">{data.content.why_choose_us.subtitle}</p>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- MISSION & VISION — Split Panels -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-100 position-relative" data-aos="fade-up">
+    <div class="container lg">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-6">
+          <div class="glass-card p-2 rounded-4 position-relative overflow-hidden" style="border-color: rgba(255,158,0,0.15) !important;">
+            <img src={`${basePrefix}images/about-mission-vision.png`} alt="Our Mission - Global Connectivity" class="img-fluid rounded-4 w-100" style="object-fit: cover; min-height: 400px;">
           </div>
         </div>
         <div class="col-lg-6">
-           <div class="glass-card p-2 rounded-4 float-animation premium-border">
-              <img src={`${basePrefix}images/team-collab.png`} alt="Team Collaboration" class="img-fluid rounded-4 shadow-lg w-100" style="max-height: 300px; object-fit: cover;">
-           </div>
+          <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(255, 158, 0, 0.1); color: #FF9E00; border: 1px solid rgba(255, 158, 0, 0.2);">Our Purpose</span>
+          
+          <h2 class="text-white font-outfit fw-900 fs-36 mb-4">Mission & Vision</h2>
+          
+          <div class="glass-card p-4 rounded-4 mb-4" style="border-left: 3px solid #FF9E00 !important;">
+            <h4 class="text-white font-outfit fw-700 mb-2 d-flex align-items-center gap-2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF9E00" stroke-width="2"><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Our Mission
+            </h4>
+            <p class="text-white-50 m-0 fs-15" style="line-height: 1.7;">To democratize enterprise-grade web hosting by making military-grade security, blazing speed, and transparent pricing accessible to every business — from a student's first blog to a Fortune 500 enterprise.</p>
+          </div>
+          
+          <div class="glass-card p-4 rounded-4" style="border-left: 3px solid #FF007F !important;">
+            <h4 class="text-white font-outfit fw-700 mb-2 d-flex align-items-center gap-2">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF007F" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Our Vision
+            </h4>
+            <p class="text-white-50 m-0 fs-15" style="line-height: 1.7;">To become Asia's most trusted hosting partner by building an ecosystem where technology, education, and community empower every entrepreneur to launch, grow, and protect their online presence without fear.</p>
+          </div>
         </div>
       </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- CORE VALUES — Highlight Strip -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-60 position-relative" data-aos="fade-up">
+    <div class="container lg">
+      <div class="row g-4 text-center">
+        <div class="col-6 col-lg-3">
+          <div class="glass-card p-4 rounded-4 h-100" style="border-color: rgba(255,158,0,0.1) !important;">
+            <div class="d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3" style="width: 52px; height: 52px; background: rgba(255,158,0,0.1); border: 1px solid rgba(255,158,0,0.2);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF9E00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h5 class="text-white font-outfit fw-700 mb-1 fs-16">Security First</h5>
+            <p class="text-white-50 m-0 fs-13">Every decision starts with protecting your data</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="glass-card p-4 rounded-4 h-100" style="border-color: rgba(255,0,127,0.1) !important;">
+            <div class="d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3" style="width: 52px; height: 52px; background: rgba(255,0,127,0.1); border: 1px solid rgba(255,0,127,0.2);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FF007F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+            </div>
+            <h5 class="text-white font-outfit fw-700 mb-1 fs-16">Transparency</h5>
+            <p class="text-white-50 m-0 fs-13">No hidden fees, no surprises — ever</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="glass-card p-4 rounded-4 h-100" style="border-color: rgba(131,56,236,0.1) !important;">
+            <div class="d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3" style="width: 52px; height: 52px; background: rgba(131,56,236,0.1); border: 1px solid rgba(131,56,236,0.2);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#8338EC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h5 class="text-white font-outfit fw-700 mb-1 fs-16">Community</h5>
+            <p class="text-white-50 m-0 fs-13">We grow together with our users</p>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3">
+          <div class="glass-card p-4 rounded-4 h-100" style="border-color: rgba(255,215,0,0.1) !important;">
+            <div class="d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3" style="width: 52px; height: 52px; background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.2);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h5 class="text-white font-outfit fw-700 mb-1 fs-16">Innovation</h5>
+            <p class="text-white-50 m-0 fs-13">Building tools that shape the future</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- FOUNDER'S STORY — Premium Alternating Timeline -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section id="our-story" class="py-100 position-relative" data-aos="fade-up" style="border-top: 1px solid rgba(255,255,255,0.04);">
+    <div class="container lg">
+      <div class="text-center mb-70">
+        <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(255, 0, 127, 0.1); color: #FF007F; border: 1px solid rgba(255, 0, 127, 0.2);">Words By Our Founder</span>
+        <h2 class="text-white font-outfit fw-900 fs-36">Our Journey</h2>
+        <p class="text-white-50 fs-16 max-width-800 mx-auto mt-2">From losing 150+ client websites to building a technology brand trusted by thousands.</p>
+      </div>
+
+      <!-- Founder Portrait — Mobile Only -->
+      <div class="d-block d-lg-none text-center mb-5">
+        <div class="glass-card p-2 rounded-4 d-inline-block position-relative overflow-hidden mx-auto" style="border-color: rgba(255,158,0,0.15) !important; max-width: 300px;">
+          <img src={`${basePrefix}images/founder_portrait.png`} alt="Ramandeep Singh Sethi - Founder" class="img-fluid rounded-4 w-100" style="height: 350px; object-fit: cover;">
+          <div class="position-absolute bottom-0 start-0 w-100 p-3" style="background: linear-gradient(0deg, rgba(2,4,10,0.95) 20%, transparent 100%);">
+            <h6 class="text-white font-outfit fw-800 m-0 fs-15">Ramandeep Singh Sethi</h6>
+            <span class="text-gradient fs-11 fw-700 uppercase tracking-widest">Founder & CEO</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Premium Timeline -->
+      <div class="premium-timeline">
+        {data.content.journey.sections.map((sec, index) => {
+          const isLast = index === data.content.journey.sections.length - 1;
+          const isEven = index % 2 === 0;
+          return (
+            <div class={`tl-row ${isEven ? 'tl-left' : 'tl-right'} ${isLast ? 'tl-current' : ''}`} data-aos={isEven ? 'fade-right' : 'fade-left'} data-aos-delay={index * 60}>
+              
+              {/* Center Spine */}
+              <div class="tl-spine">
+                <div class="tl-year-badge">
+                  <span class="tl-year-text">{sec.year}</span>
+                </div>
+                {!isLast && <div class="tl-connector"></div>}
+              </div>
+
+              {/* Card */}
+              <div class="tl-card-wrapper">
+                <div class={`tl-card glass-card rounded-4 p-4 ${isLast ? 'tl-card-glow' : ''}`} style={isLast ? 'border-color: rgba(255,158,0,0.3) !important; background: rgba(255,158,0,0.03) !important;' : 'border-color: rgba(255,255,255,0.05) !important;'}>
+                  <div class="d-flex align-items-center gap-2 mb-2">
+                    <span class="tl-label-badge">{sec.label}</span>
+                    {isLast && <span class="tl-now-badge">NOW</span>}
+                  </div>
+                  <h4 class="text-white font-outfit fw-700 mb-2 fs-20">{sec.heading}</h4>
+                  <p class="text-white-50 m-0 fs-14" style="line-height: 1.75;">{sec.text}</p>
+                </div>
+                <div class="tl-arrow"></div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <!-- Founder Footer — Desktop -->
+      <div class="d-none d-lg-flex align-items-center justify-content-center mt-60 gap-4" data-aos="fade-up">
+        <div class="glass-card p-2 rounded-4 position-relative overflow-hidden" style="border-color: rgba(255,158,0,0.15) !important; width: 80px; height: 80px;">
+          <img src={`${basePrefix}images/founder_portrait.png`} alt="Ramandeep Singh Sethi" class="rounded-4 w-100 h-100" style="object-fit: cover;">
+        </div>
+        <div>
+          <h5 class="text-white font-outfit fw-800 m-0 fs-18">Ramandeep Singh Sethi</h5>
+          <span class="text-gradient fs-12 fw-700 uppercase tracking-widest">Founder & CEO · 1Only Host</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- WHY CHOOSE US — Icon Grid with Image -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-100 position-relative" data-aos="fade-up" style="border-top: 1px solid rgba(255,255,255,0.04);">
+    <div class="container lg">
+      <div class="row g-5 align-items-center mb-60">
+        <div class="col-lg-6">
+          <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(255, 158, 0, 0.1); color: #FF9E00; border: 1px solid rgba(255, 158, 0, 0.2);">Why Partner With Us</span>
+          <h2 class="text-white font-outfit fw-900 fs-36">{data.content.why_choose_us.title}</h2>
+          <p class="text-white-50 fs-16 mt-3" style="line-height: 1.7;">{data.content.why_choose_us.subtitle}</p>
+        </div>
+        <div class="col-lg-6">
+          <div class="glass-card p-2 rounded-4" style="border-color: rgba(255,158,0,0.12) !important;">
+            <img src={`${basePrefix}images/about-team-support.png`} alt="24/7 Expert Support Team" class="img-fluid rounded-4 w-100" style="height: 300px; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+      
       <div class="row g-4">
         {data.content.why_choose_us.reasons.map((reason, index) => (
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay={index * 100}>
-            <div class="glass-card h-100 p-5 rounded-4 hover-lift premium-border">
-              <div class="icon-box d-flex align-items-center justify-content-center rounded-circle mb-4" style="width: 70px; height: 70px; background: rgba(255,158,0,0.1); border: 1px solid rgba(255,158,0,0.2);">
-                <i class={`${reason.icon} fs-2 text-gradient`}></i>
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay={index * 80}>
+            <div class="glass-card h-100 p-4 rounded-4 hover-lift" style="border-color: rgba(255,255,255,0.05) !important;">
+              <div class="d-flex align-items-center justify-content-center rounded-3 mb-4" style={`width: 56px; height: 56px; background: ${index % 3 === 0 ? 'rgba(255,158,0,0.1)' : index % 3 === 1 ? 'rgba(255,0,127,0.1)' : 'rgba(131,56,236,0.1)'}; border: 1px solid ${index % 3 === 0 ? 'rgba(255,158,0,0.2)' : index % 3 === 1 ? 'rgba(255,0,127,0.2)' : 'rgba(131,56,236,0.2)'};`}>
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke={index % 3 === 0 ? '#FF9E00' : index % 3 === 1 ? '#FF007F' : '#8338EC'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  {index === 0 ? <><path d="M22 2L11 13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></> :
+                   index === 1 ? <><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></> :
+                   index === 2 ? <><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></> :
+                   index === 3 ? <><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></> :
+                   index === 4 ? <><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></> :
+                   <><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></>}
+                </svg>
               </div>
-              <h4 class="text-white mb-3 font-outfit fw-600">{reason.title}</h4>
-              <p class="fs-16 opacity-75 m-0 text-white font-inter lh-lg">{reason.description}</p>
+              <h5 class="text-white font-outfit fw-700 mb-2 fs-18">{reason.title}</h5>
+              <p class="text-white-50 m-0 fs-14" style="line-height: 1.7;">{reason.description}</p>
             </div>
           </div>
         ))}
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Our Journey -->
-  <section class="section-gap pt-100 pb-100 bg-twelve" data-aos="fade-up">
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- TECHNOLOGY STACK — with Security Image -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-100 position-relative" data-aos="fade-up" style="border-top: 1px solid rgba(255,255,255,0.04);">
     <div class="container lg">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-5 mb-lg-0">
-          <div class="title-eleven mb-50">
-            <h2 class="text-white font-outfit fw-800">{data.content.journey.title}</h2>
-            <p class="fs-22 text-gradient fw-600 font-outfit">{data.content.journey.subtitle}</p>
+      <div class="row g-5 align-items-center mb-60">
+        <div class="col-lg-6 order-lg-2">
+          <div class="glass-card p-2 rounded-4" style="border-color: rgba(255,0,127,0.12) !important;">
+            <img src={`${basePrefix}images/about-security-shield.png`} alt="Enterprise-Grade Security" class="img-fluid rounded-4 w-100" style="height: 350px; object-fit: cover;">
           </div>
-          <div class="journey-text text-white opacity-75 font-inter">
-            {data.content.journey.sections.map((sec, index) => (
-              <div class="mb-4" data-aos="fade-up" data-aos-delay={index * 100}>
-                <h4 class="text-white mb-2 fs-22 font-outfit fw-600">{sec.heading}</h4>
-                <p class="mb-0 lh-lg">{sec.text}</p>
+        </div>
+        <div class="col-lg-6 order-lg-1">
+          <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(131, 56, 236, 0.1); color: #8338EC; border: 1px solid rgba(131, 56, 236, 0.2);">Our Tech Stack</span>
+          <h2 class="text-white font-outfit fw-900 fs-36">{data.content.technology.title}</h2>
+          <p class="text-white-50 fs-16 mt-3" style="line-height: 1.7;">{data.content.technology.subtitle}</p>
+        </div>
+      </div>
+      
+      <div class="row g-4">
+        {data.content.technology.features.map((feature, index) => (
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay={index * 60}>
+            <div class="glass-card h-100 p-4 rounded-4 tech-card-hover" style="border-color: rgba(255,255,255,0.04) !important;">
+              <div class="d-flex align-items-center justify-content-center rounded-3 mb-3" style="width: 44px; height: 44px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06);">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF9E00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  {index === 0 ? <><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></> :
+                   index === 1 ? <><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></> :
+                   index === 2 ? <><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/></> :
+                   index === 3 ? <><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></> :
+                   index === 4 ? <><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></> :
+                   index === 5 ? <><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></> :
+                   index === 6 ? <><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></> :
+                   <><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></>}
+                </svg>
+              </div>
+              <h5 class="text-white font-outfit fw-700 m-0 mb-2 fs-16">{feature.name}</h5>
+              <p class="text-white-50 m-0 fs-14" style="line-height: 1.7;">{feature.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- DATA CENTERS — Global Map -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-100 position-relative" data-aos="fade-up" style="border-top: 1px solid rgba(255,255,255,0.04);">
+    <div class="container lg">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5 text-center text-lg-start">
+          <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(255, 215, 0, 0.1); color: #FFD700; border: 1px solid rgba(255, 215, 0, 0.2);">Global Infrastructure</span>
+          <h2 class="text-white font-outfit fw-900 fs-36">{data.content.datacenters.title}</h2>
+          <p class="text-white-50 fs-16 mt-3 mb-4" style="line-height: 1.7;">{data.content.datacenters.subtitle}</p>
+          
+          <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2">
+            {data.content.datacenters.locations.map((loc, index) => (
+              <div class="glass-card rounded-pill text-white px-3 py-2 fs-13 d-flex align-items-center font-outfit fw-600" style="border-color: rgba(255,158,0,0.15) !important;" data-aos="zoom-in" data-aos-delay={index * 50}>
+                <span class="me-2" style="width: 8px; height: 8px; background: #00FF88; border-radius: 50%; box-shadow: 0 0 6px #00FF88; display: inline-block;"></span>
+                {loc}
               </div>
             ))}
           </div>
         </div>
-        <div class="col-lg-6 text-center">
-          <div class="glass-card p-2 rounded-4 float-animation-slow premium-border">
-             <img src={`${basePrefix}images/founder_portrait.png`} alt="Ramandeep Singh Sethi - Founder" class="img-fluid rounded-4 shadow-lg w-100" style="min-height: 450px; object-fit: cover;">
+        <div class="col-lg-7 text-center">
+          <div class="glass-card p-2 rounded-4" style="border-color: rgba(255,158,0,0.12) !important;">
+            <img src={`${basePrefix}images/realistic-night-map.png`} alt="Global Data Center Infrastructure" class="img-fluid rounded-4 w-100" style="object-fit: cover;">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Innovative Technology -->
-  <div class="technology-section pt-100 pb-100 bg-twelve border-top border-light border-opacity-10">
-    <div class="container">
-       <div class="title-eleven text-center mb-60">
-        <h2 class="text-white font-outfit fw-800">{data.content.technology.title}</h2>
-        <p class="fs-20 opacity-75 mt-3">{data.content.technology.subtitle}</p>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- PARTNERS — Logo Grid -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-80 position-relative" data-aos="fade-up" style="border-top: 1px solid rgba(255,255,255,0.04);">
+    <div class="container lg">
+      <div class="text-center mb-50">
+        <h2 class="text-white font-outfit fw-900 fs-36 mb-3">The 1 Who Makes us Powerful</h2>
+        <p class="text-white-50 fs-16">Industry-leading technology partners who power our infrastructure</p>
       </div>
-      <div class="row g-4">
-        {data.content.technology.features.map((feature, index) => (
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay={index * 50}>
-            <div class="glass-card h-100 p-4 rounded-4 tech-card hover-lift premium-border">
-               <div class="d-flex align-items-center mb-3">
-                 <div class="icon-wrapper d-flex align-items-center justify-content-center rounded-3 me-3" style="width: 45px; height: 45px; background: rgba(255,255,255,0.05);">
-                    <i class={`${feature.icon} fs-4 text-gradient`}></i>
-                 </div>
-                 <h5 class="text-white m-0 font-outfit fw-600 fs-18">{feature.name}</h5>
-               </div>
-               <p class="fs-15 opacity-75 text-white m-0 font-inter lh-lg">{feature.description}</p>
-            </div>
+      
+      <div class="row justify-content-center g-4">
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="glass-card d-flex flex-column align-items-center justify-content-center text-center p-4 h-100 partner-hover" style="border-color: rgba(255,158,0,0.1) !important;">
+            <img src={`${basePrefix}images/logos/cpanel.png`} alt="cPanel" width="48" height="48" class="mb-3 rounded">
+            <span class="fs-14 fw-700 text-white font-outfit uppercase tracking-wider">cPanel</span>
           </div>
-        ))}
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="glass-card d-flex flex-column align-items-center justify-content-center text-center p-4 h-100 partner-hover" style="border-color: rgba(255,158,0,0.1) !important;">
+            <img src={`${basePrefix}images/logos/cpguard.svg`} alt="cPGuard" width="100" height="30" class="mb-3">
+            <span class="fs-14 fw-700 text-white font-outfit uppercase tracking-wider">cPGuard</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="glass-card d-flex flex-column align-items-center justify-content-center text-center p-4 h-100 partner-hover" style="border-color: rgba(255,158,0,0.1) !important;">
+            <img src={`${basePrefix}images/logos/cloudlinux.png`} alt="CloudLinux" width="48" height="48" class="mb-3 rounded">
+            <span class="fs-14 fw-700 text-white font-outfit uppercase tracking-wider">CloudLinux</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="glass-card d-flex flex-column align-items-center justify-content-center text-center p-4 h-100 partner-hover" style="border-color: rgba(255,158,0,0.1) !important;">
+            <img src={`${basePrefix}images/logos/sectigo.png`} alt="Sectigo" width="48" height="48" class="mb-3 rounded">
+            <span class="fs-14 fw-700 text-white font-outfit uppercase tracking-wider">Sectigo</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="glass-card d-flex flex-column align-items-center justify-content-center text-center p-4 h-100 partner-hover" style="border-color: rgba(255,158,0,0.1) !important;">
+            <img src={`${basePrefix}images/logos/virtualizor.png`} alt="Virtualizor" width="48" height="48" class="mb-3 rounded">
+            <span class="fs-14 fw-700 text-white font-outfit uppercase tracking-wider">Virtualizor</span>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="glass-card d-flex flex-column align-items-center justify-content-center text-center p-4 h-100 partner-hover" style="border-color: rgba(255,158,0,0.1) !important;">
+            <img src={`${basePrefix}images/logos/softaculous.png`} alt="Softaculous" width="48" height="48" class="mb-3 rounded">
+            <span class="fs-14 fw-700 text-white font-outfit uppercase tracking-wider">Softaculous</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <!-- Data Centers -->
-  <section class="datacenters-section pt-100 pb-100 position-relative border-top border-light border-opacity-10 bg-twelve" data-aos="fade-up">
-     <div class="container">
-        <div class="row align-items-center">
-           <div class="col-lg-5 mb-5 mb-lg-0 text-center text-lg-start">
-              <div class="title-eleven mb-50">
-                <h2 class="text-white font-outfit fw-800">{data.content.datacenters.title}</h2>
-                <p class="fs-18 opacity-75 mt-3">{data.content.datacenters.subtitle}</p>
-              </div>
-              <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
-                {data.content.datacenters.locations.map((loc, index) => (
-                   <div class="live-server-badge glass-card rounded-pill text-white px-4 py-2 fs-15 hover-glow premium-border d-flex align-items-center font-outfit fw-500" data-aos="zoom-in" data-aos-delay={index * 50}>
-                      <span class="pulsing-dot me-2"></span> {loc}
-                   </div>
-                ))}
-              </div>
-           </div>
-           <div class="col-lg-7 text-center">
-              <div class="glass-card p-2 rounded-4 float-animation-slow premium-border">
-                 <img src={`${basePrefix}images/global-map.png`} alt="Global Infrastructure Map" class="img-fluid rounded-4 shadow-lg w-100" style="object-fit: cover;">
-              </div>
-           </div>
-        </div>
-     </div>
   </section>
 
-  <!-- Partners Section (Marquee) -->
-  <div class="partners-section pt-100 pb-100 bg-twelve border-top border-light border-opacity-10 overflow-hidden">
-    <div class="container text-center mb-50">
-      <div class="title-eleven">
-        <h2 class="text-white font-outfit fw-800">{data.content.partners.title}</h2>
-        <p class="fs-18 opacity-75 mt-3">{data.content.partners.subtitle}</p>
-      </div>
-    </div>
-    <div class="marquee-wrapper">
-      <div class="marquee-content">
-        <!-- Double the items for infinite scroll effect -->
-        {data.content.partners.items.map((partner) => (
-           <div class="partner-badge glass-card px-5 py-3 rounded-3 text-white fw-bold fs-18 text-uppercase font-outfit mx-3 d-inline-flex align-items-center justify-content-center premium-border" style="min-width: 200px;">
-              {partner}
-           </div>
-        ))}
-        {data.content.partners.items.map((partner) => (
-           <div class="partner-badge glass-card px-5 py-3 rounded-3 text-white fw-bold fs-18 text-uppercase font-outfit mx-3 d-inline-flex align-items-center justify-content-center premium-border" style="min-width: 200px;">
-              {partner}
-           </div>
-        ))}
-      </div>
-    </div>
-  </div>
 
-  <!-- Blog Static View -->
-  <div class="blog-section pt-100 pb-100 bg-twelve border-top border-light border-opacity-10">
-    <div class="container">
-      <div class="title-eleven text-center mb-60">
-        <h2 class="text-white font-outfit fw-800">{data.content.blog.title}</h2>
-        <p class="fs-20 opacity-75 mt-3">{data.content.blog.subtitle}</p>
-      </div>
-      <div class="row g-4">
-         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="glass-card h-100 p-5 rounded-4 hover-lift premium-border d-flex flex-column">
-               <span class="text-gradient fw-bold fs-13 text-uppercase letter-spacing-1 mb-3 font-inter">November 19, 2024</span>
-               <h4 class="text-white mb-3 font-outfit fw-600">Arch Linux vs Gentoo: Which One is Right for You?</h4>
-               <p class="text-white opacity-75 fs-15 font-inter lh-lg mb-4 flex-grow-1">Wondering whether Arch Linux or Gentoo is the better choice for your system? In this detailed comparison, we break down...</p>
-               <a href="https://1onlyhost.com/arch-linux-vs-gentoo-which-one-is-right-for-you/" class="text-gradient fw-bold text-decoration-none d-inline-flex align-items-center font-outfit animated-link">
-                  Read More <i class="bi bi-arrow-right ms-2 transition-transform"></i>
-               </a>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="glass-card h-100 p-5 rounded-4 hover-lift premium-border d-flex flex-column">
-               <span class="text-gradient fw-bold fs-13 text-uppercase letter-spacing-1 mb-3 font-inter">November 19, 2024</span>
-               <h4 class="text-white mb-3 font-outfit fw-600">How to Set Up Payment Gateways in WHMCS: A Simple Guide</h4>
-               <p class="text-white opacity-75 fs-15 font-inter lh-lg mb-4 flex-grow-1">Setting up payment gateways in WHMCS doesn't have to be complicated. Follow this simple guide to configure PayPal, Stripe, and...</p>
-               <a href="https://1onlyhost.com/how-to-setup-payment-gateways-whmcs/" class="text-gradient fw-bold text-decoration-none d-inline-flex align-items-center font-outfit animated-link">
-                  Read More <i class="bi bi-arrow-right ms-2 transition-transform"></i>
-               </a>
-            </div>
-         </div>
-         <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="glass-card h-100 p-5 rounded-4 hover-lift premium-border d-flex flex-column">
-               <span class="text-gradient fw-bold fs-13 text-uppercase letter-spacing-1 mb-3 font-inter">November 19, 2024</span>
-               <h4 class="text-white mb-3 font-outfit fw-600">Litespeed vs Apache vs Nginx: Which Web Server is Best for Your Website?</h4>
-               <p class="text-white opacity-75 fs-15 font-inter lh-lg mb-4 flex-grow-1">Choosing the right web server is key to your website's success. In this post, we compare Litespeed vs Apache vs...</p>
-               <a href="https://1onlyhost.com/litespeed-vs-apache-vs-nginx/" class="text-gradient fw-bold text-decoration-none d-inline-flex align-items-center font-outfit animated-link">
-                  Read More <i class="bi bi-arrow-right ms-2 transition-transform"></i>
-               </a>
-            </div>
-         </div>
-      </div>
-      <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
-         <a href="https://1onlyhost.com/blog/" class="btn-eight hover-scale">Load More</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- FAQ Section -->
-  <section class="faq-section pt-100 pb-120 bg-twelve border-top border-light border-opacity-10 position-relative" data-aos="fade-in">
-    <div class="glow-backdrop position-absolute w-100 h-100 top-0 start-0" style="background: radial-gradient(circle at 50% 100%, rgba(255,0,127,0.05) 0%, transparent 60%); z-index: -1;"></div>
-    <div class="container">
-       <div class="title-eleven text-center mb-60">
-        <h2 class="text-white font-outfit fw-800">{data.content.faq.title}</h2>
-        <p class="fs-20 opacity-75 mt-3">{data.content.faq.subtitle}</p>
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- FAQ SECTION -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-100 position-relative" data-aos="fade-up" style="border-top: 1px solid rgba(255,255,255,0.04);">
+    <div class="container lg">
+      <div class="text-center mb-60">
+        <h2 class="text-white font-outfit fw-900 fs-36">{data.content.faq.title}</h2>
+        <p class="text-white-50 fs-16 mt-2">{data.content.faq.subtitle}</p>
       </div>
       <div class="row justify-content-center">
         <div class="col-lg-10">
-          <div class="accordion accordion-flush" id="faqAccordion">
+          <div class="accordion accordion-style-two style-two p0 bg-transparent shadow-none" id="aboutFaqAccordion">
             {data.content.faq.items.map((item, index) => (
-               <div class="accordion-item bg-transparent border-bottom border-light border-opacity-10 mb-3" data-aos="fade-up" data-aos-delay={index * 50}>
-                  <h2 class="accordion-header" id={`heading${index}`}>
-                    <button class="accordion-button collapsed bg-transparent text-white fs-20 fw-600 py-4 shadow-none font-outfit" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${index}`} aria-expanded="false" aria-controls={`collapse${index}`}>
-                      {item.q}
-                    </button>
-                  </h2>
-                  <div id={`collapse${index}`} class="accordion-collapse collapse" aria-labelledby={`heading${index}`} data-bs-parent="#faqAccordion">
-                    <div class="accordion-body text-white opacity-75 pt-0 pb-4 fs-16 lh-lg font-inter">
-                      {item.a}
-                    </div>
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay={index * 40}>
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#aboutFaq${index}`} aria-expanded="false" aria-controls={`aboutFaq${index}`}>{item.q}</button>
+                </h2>
+                <div id={`aboutFaq${index}`} class="accordion-collapse collapse" data-bs-parent="#aboutFaqAccordion">
+                  <div class="accordion-body">
+                    <p class="fs-16 opacity-85 text-white m-0">{item.a}</p>
                   </div>
-               </div>
+                </div>
+              </div>
             ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- CTA SECTION -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-80" data-aos="fade-up">
+    <div class="container lg">
+      <div class="cta-premium-card text-center">
+        <div class="position-relative z-2">
+          <span class="badge uppercase tracking-wider py-1.5 px-4 fs-10 mb-3 d-inline-block" style="background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px;">🚀 Ready to Join Us?</span>
+          <h2 class="text-white font-outfit fw-900 fs-36 mt-3 mb-3">Start Your Journey With 1Only Host</h2>
+          <p class="text-white-50 fs-16 max-width-800 mx-auto mb-4">Experience the hosting difference that 1000+ businesses already trust. Start with a risk-free 30-day trial.</p>
+          <div class="d-flex justify-content-center gap-3 flex-wrap">
+            <a href="/signup" class="btn-eighteen py-3 px-5 uppercase tracking-wider fs-13 fw-700 hero-btn-pulse">Start Free Trial</a>
+            <a href="/contact" class="btn btn-outline-light py-3 px-5 uppercase tracking-wider fs-13 fw-600 rounded-pill" style="border-color: rgba(255,255,255,0.15);">Contact Us</a>
           </div>
         </div>
       </div>
@@ -249,20 +446,245 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
 </Layout>
 
 <style>
-.font-outfit {
-  font-family: 'Outfit', sans-serif;
+/* ===== About Page Specific Styles ===== */
+
+/* Hero Section */
+.about-hero-section {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
 }
-.font-inter {
-  font-family: 'Inter', sans-serif;
+
+.hero-bg-image {
+  filter: brightness(0.35) contrast(1.1);
 }
-.letter-spacing-1 {
-  letter-spacing: 1px;
+
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(2,4,10,0.92) 0%, rgba(2,4,10,0.6) 50%, rgba(2,4,10,0.3) 100%);
 }
+
+.min-vh-75 {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Utility */
 .text-gradient {
   background: linear-gradient(90deg, #FF9E00, #FF007F);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.py-100 { padding-top: 100px; padding-bottom: 100px; }
+.py-80 { padding-top: 80px; padding-bottom: 80px; }
+.mb-60 { margin-bottom: 60px; }
+
+/* ===== Premium Alternating Timeline ===== */
+.premium-timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Center spine line */
+.premium-timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #FF9E00 0%, #FF007F 50%, #8338EC 100%);
+  transform: translateX(-50%);
+  border-radius: 3px;
+}
+
+/* Each timeline row */
+.tl-row {
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+/* Spine (center column) */
+.tl-spine {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Year badge */
+.tl-year-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FF9E00, #FF007F);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(255, 158, 0, 0.35), 0 0 40px rgba(255, 0, 127, 0.15);
+  border: 3px solid #02040A;
+  position: relative;
+  z-index: 6;
+}
+
+.tl-year-text {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* Connector between badges */
+.tl-connector {
+  width: 3px;
+  height: 40px;
+  background: transparent; /* spine line handles this */
+}
+
+/* Card wrapper positioning */
+.tl-card-wrapper {
+  width: calc(50% - 52px);
+  position: relative;
+}
+
+/* Left cards */
+.tl-left .tl-card-wrapper {
+  margin-right: auto;
+  margin-left: 0;
+  padding-right: 20px;
+}
+
+/* Right cards */
+.tl-right .tl-card-wrapper {
+  margin-left: auto;
+  margin-right: 0;
+  padding-left: 20px;
+}
+
+/* Arrow pointing to spine */
+.tl-arrow {
+  position: absolute;
+  top: 24px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.tl-left .tl-arrow {
+  right: 8px;
+  border-width: 10px 0 10px 12px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.03);
+}
+
+.tl-right .tl-arrow {
+  left: 8px;
+  border-width: 10px 12px 10px 0;
+  border-color: transparent rgba(255, 255, 255, 0.03) transparent transparent;
+}
+
+/* Card hover */
+.tl-card {
+  transition: all 0.3s ease;
+}
+.tl-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(255, 158, 0, 0.08) !important;
+  border-color: rgba(255, 158, 0, 0.2) !important;
+}
+
+/* Current era card glow */
+.tl-card-glow {
+  box-shadow: 0 0 30px rgba(255, 158, 0, 0.08), 0 0 60px rgba(255, 0, 127, 0.04) !important;
+}
+
+/* Label badge */
+.tl-label-badge {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #FF9E00;
+  background: rgba(255, 158, 0, 0.1);
+  border: 1px solid rgba(255, 158, 0, 0.2);
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+/* NOW badge */
+.tl-now-badge {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #fff;
+  background: linear-gradient(135deg, #FF9E00, #FF007F);
+  padding: 3px 10px;
+  border-radius: 4px;
+  animation: nowPulse 2s infinite ease-in-out;
+}
+
+@keyframes nowPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(255, 158, 0, 0.3); }
+  50% { box-shadow: 0 0 20px rgba(255, 158, 0, 0.5), 0 0 40px rgba(255, 0, 127, 0.2); }
+}
+
+/* Current era year badge special glow */
+.tl-current .tl-year-badge {
+  box-shadow: 0 0 25px rgba(255, 158, 0, 0.5), 0 0 50px rgba(255, 0, 127, 0.25);
+  animation: yearGlow 3s infinite ease-in-out;
+}
+
+@keyframes yearGlow {
+  0%, 100% { box-shadow: 0 0 25px rgba(255, 158, 0, 0.5), 0 0 50px rgba(255, 0, 127, 0.2); }
+  50% { box-shadow: 0 0 35px rgba(255, 158, 0, 0.7), 0 0 70px rgba(255, 0, 127, 0.35); }
+}
+
+/* Responsive: Stack on mobile */
+@media (max-width: 991px) {
+  .premium-timeline::before {
+    left: 24px;
+  }
+  .tl-spine {
+    left: 24px;
+  }
+  .tl-year-badge {
+    width: 48px;
+    height: 48px;
+  }
+  .tl-year-text {
+    font-size: 12px;
+  }
+  .tl-card-wrapper {
+    width: calc(100% - 70px);
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    padding-left: 20px !important;
+    padding-right: 0 !important;
+  }
+  .tl-left .tl-arrow,
+  .tl-right .tl-arrow {
+    left: 8px;
+    right: auto;
+    border-width: 10px 12px 10px 0;
+    border-color: transparent rgba(255, 255, 255, 0.03) transparent transparent;
+  }
+}
+
+.mb-70 { margin-bottom: 70px; }
+.mt-60 { margin-top: 60px; }
+
+/* Hover Lift */
 .hover-lift {
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
@@ -270,144 +692,51 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   transform: translateY(-8px);
   box-shadow: 0 15px 30px rgba(0,0,0,0.4);
 }
-.hover-glow {
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+
+/* Tech Card Hover */
+.tech-card-hover {
+  transition: all 0.3s ease;
 }
-.hover-glow:hover {
-  box-shadow: 0 0 20px rgba(255, 158, 0, 0.3);
-  border-color: rgba(255, 158, 0, 0.5) !important;
-}
-.hover-scale {
-  transition: transform 0.3s ease;
-}
-.hover-scale:hover {
-  transform: scale(1.05);
-}
-.glass-card {
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-}
-.premium-border {
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
-}
-.btn-eight {
-  background: linear-gradient(90deg, #FF9E00, #FF007F);
-  color: #fff;
-  padding: 14px 34px;
-  border-radius: 40px;
-  text-decoration: none;
-  font-weight: 700;
-  display: inline-block;
-  transition: opacity 0.3s, transform 0.3s;
-  border: none;
-  box-shadow: 0 8px 20px rgba(255, 0, 127, 0.3);
-}
-.btn-eight:hover {
-  opacity: 0.9;
-  color: #fff;
-}
-.mesh-bg-1 {
-  background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,0.2) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,0.2) 0, transparent 50%);
-}
-.bg-twelve {
-  background-color: #0d0f12;
-}
-.accordion-button::after {
-  filter: invert(1);
-  transition: transform 0.3s ease;
-}
-.accordion-button:not(.collapsed) {
-  background-color: transparent;
-  color: #fff;
-  box-shadow: none;
-}
-.accordion-button:not(.collapsed)::after {
-  filter: invert(0.5) sepia(1) saturate(5) hue-rotate(320deg);
+.tech-card-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 158, 0, 0.25) !important;
+  box-shadow: 0 12px 30px rgba(255, 158, 0, 0.08) !important;
 }
 
-/* Float Animations */
-.float-animation {
-  animation: float 6s ease-in-out infinite;
+/* Partner Hover */
+.partner-hover {
+  transition: all 0.3s ease;
 }
-.float-animation-slow {
-  animation: float 8s ease-in-out infinite;
-}
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-15px); }
-  100% { transform: translateY(0px); }
+.partner-hover:hover {
+  transform: translateY(-8px);
+  border-color: rgba(255, 158, 0, 0.4) !important;
+  box-shadow: 0 15px 30px rgba(255, 158, 0, 0.12) !important;
 }
 
-/* Pulsing Dot for Live Servers */
-.pulsing-dot {
-  width: 10px;
-  height: 10px;
-  background-color: #00FF88;
-  border-radius: 50%;
+/* CTA Card */
+.cta-premium-card {
+  background: linear-gradient(135deg, rgba(255, 158, 0, 0.06), rgba(255, 0, 127, 0.04));
+  border: 1px solid rgba(255, 158, 0, 0.15);
+  border-radius: 24px;
+  padding: 80px 40px;
   position: relative;
-  box-shadow: 0 0 10px #00FF88;
-}
-.pulsing-dot::after {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: -4px;
-  right: -4px;
-  bottom: -4px;
-  border: 2px solid #00FF88;
-  border-radius: 50%;
-  animation: pulse 2s linear infinite;
-  opacity: 0;
-}
-@keyframes pulse {
-  0% { transform: scale(0.5); opacity: 0.8; }
-  100% { transform: scale(2); opacity: 0; }
-}
-
-/* Infinite Marquee */
-.marquee-wrapper {
-  width: 100%;
   overflow: hidden;
-  white-space: nowrap;
-  position: relative;
 }
-/* Subtle fade on edges of marquee */
-.marquee-wrapper::before,
-.marquee-wrapper::after {
+.cta-premium-card::before {
   content: '';
   position: absolute;
-  top: 0;
-  width: 150px;
-  height: 100%;
-  z-index: 2;
-}
-.marquee-wrapper::before {
-  left: 0;
-  background: linear-gradient(to right, #0d0f12, transparent);
-}
-.marquee-wrapper::after {
-  right: 0;
-  background: linear-gradient(to left, #0d0f12, transparent);
-}
-.marquee-content {
-  display: inline-block;
-  animation: marquee 25s linear infinite;
-}
-.marquee-content:hover {
-  animation-play-state: paused;
-}
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 158, 0, 0.04) 0%, transparent 50%);
+  pointer-events: none;
 }
 
-/* Blog Read More Arrow Hover */
-.animated-link:hover .transition-transform {
-  transform: translateX(5px);
-}
-.transition-transform {
-  transition: transform 0.3s ease;
+/* Responsive */
+@media (max-width: 991px) {
+  .about-hero-section { min-height: 70vh; }
+  .hero-overlay { background: rgba(2,4,10,0.85); }
+  .min-vh-75 { min-height: auto; padding: 60px 0; }
 }
 </style>

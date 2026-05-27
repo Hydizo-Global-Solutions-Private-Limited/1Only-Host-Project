@@ -1,6 +1,6 @@
 {
   "seo": {
-    "title": "About - 1 Only Host",
+    "title": "About Us - 1Only Host | India's Trusted Premium Web Hosting Company",
     "description": "1Only Host is a premier web hosting company in India, committed to delivering top-quality hosting solutions for businesses of all sizes.",
     "keywords": "about 1only host, web hosting india, secure hosting"
   },
@@ -50,24 +50,46 @@
       "subtitle": "Words By Founder",
       "sections": [
         {
+          "year": "2017",
+          "label": "The Freelance Days",
           "heading": "The Beginning of My Journey",
           "text": "When I first jumped into the tech world as a freelancer, building websites felt like a thrilling adventure. But soon, I discovered a shocking truth: secure hosting options were nearly impossible to find. The hosting companies I came across charged sky-high fees and often left security in the dust."
         },
         {
+          "year": "2018",
+          "label": "The Wake-Up Call",
           "heading": "A Wake-Up Call",
           "text": "My journey took a wild turn when I encountered two unreliable hosting providers. One faced a serious data breach, leaving my clients in panic, while the other hiked their prices overnight due to rising cPanel fees. I lost over 150 websites—projects that took me countless hours to create. My clients were furious, and I felt crushed. As a cybersecurity professional, this was a wake-up call. How could I protect my clients when these companies failed me?"
         },
         {
+          "year": "2019",
+          "label": "A Company is Born",
           "heading": "The Birth of 1Only Host",
-          "text": "In the chaos, I realized I had to take matters into my own hands. I envisioned a hosting company that prioritized security, reliability, and affordability. And that’s how 1Only Host began, with a mission to provide 99% security and unbeatable uptime."
+          "text": "In the chaos, I realized I had to take matters into my own hands. I envisioned a hosting company that prioritized security, reliability, and affordability. And that's how 1Only Host began, with a mission to provide 99% security and unbeatable uptime."
         },
         {
+          "year": "2020",
+          "label": "Building the Foundation",
           "heading": "Starting from Scratch",
-          "text": "With just a small VPS server and a lot of determination, I started this journey in 2019. The first year was a whirlwind of manual sales and building connections, often late into the night. It wasn’t until 2020 that I finally secured the name 1OnlyHost.com."
+          "text": "With just a small VPS server and a lot of determination, I started this journey in 2019. The first year was a whirlwind of manual sales and building connections, often late into the night. It wasn't until 2020 that I finally secured the name 1OnlyHost.com."
         },
         {
+          "year": "2024",
+          "label": "Growth & Recognition",
           "heading": "Our Growth and Achievements",
-          "text": "Today, I’m excited to share that we have built a strong reputation in the VPS and dedicated server space, partnering with numerous data centers worldwide. We provide a comprehensive range of services, from domain registration to hosting solutions, including VPS, dedicated, and cloud servers. Each of our offerings reflects our commitment to creating a safe and empowering environment for businesses of all sizes."
+          "text": "Today, I'm excited to share that we have built a strong reputation in the VPS and dedicated server space, partnering with numerous data centers worldwide. We provide a comprehensive range of services, from domain registration to hosting solutions, including VPS, dedicated, and cloud servers. Each of our offerings reflects our commitment to creating a safe and empowering environment for businesses of all sizes."
+        },
+        {
+          "year": "2025",
+          "label": "Raising the Standard",
+          "heading": "A Shift Toward Premium Excellence",
+          "text": "2025 marked a major transformation for 1OnlyHost. As our infrastructure, support systems, and service quality evolved, we made the strategic decision to move beyond traditional affordable hosting and step into the premium hosting space. This transition was more than a pricing adjustment—it reflected our commitment to delivering greater value. We upgraded our shared hosting and reseller hosting plans with enhanced performance, stronger security, improved resource allocation, and more reliable support to match the elevated standards we set for ourselves. By investing in better technology and better customer experiences, we ensured that every service under 1OnlyHost delivered premium-quality hosting backed by real expertise and dependable infrastructure."
+        },
+        {
+          "year": "2026",
+          "label": "Beyond Hosting",
+          "heading": "Building Technology, Support & Innovation",
+          "text": "By 2026, 1OnlyHost evolved beyond being just a hosting provider. Leveraging years of experience in infrastructure management and cybersecurity, we expanded into providing professional IT and technical support services for web hosting companies worldwide. Our team began supporting hosting businesses behind the scenes, helping them manage servers, strengthen security, and deliver better experiences to their own customers. At the same time, 1OnlyHost entered a new era of innovation by launching powerful tools and introducing new products designed to simplify hosting, automation, and digital infrastructure management. Our mission grew stronger—to not only provide hosting solutions, but to build technology, deliver expert support, and create products that empower businesses and hosting providers alike. Today, 1OnlyHost stands as a growing technology brand driven by innovation, security, and a commitment to shaping the future of digital services."
         }
       ]
     },

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<link rel="icon" type="image/png" href="/icon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="OPSSHIELD" />
+<link rel="manifest" href="/site.manifest" />
+
+<link rel="stylesheet" href="/css/style.css?d=15012024">
+<link rel="stylesheet" href="/css/lite-style.css?d=15012024">
+<link rel="stylesheet" href="/css/pricing.css?d=15012024">
+<link rel="stylesheet" href="/css/inner-pages.css?d=15012024">
+    <title>cPGuard Lite Server Security - Linux Web Server Anti-Malware</title>
+    <meta name="description"
+        content="A lite version of cPGuard web app security suite for your Linux Web Application Servers">
+</head>
+
+<body>
+    <header class="dark has-banner-above"> <!-- has-banner-above is defined in the marketing include html-->
+    <!-- Christmas Promo start -->
+    <!-- <div id="siteNotificationBar" class="site-announcement active">
+        <a class="content" title="Offer valid for first year only" href="/cpguard-pricing.html">
+            <div class="notification-title">
+                <p style="font-size: 20px; font-weight: 500;">
+                    🎄 New year Special: Get 50% OFF on yearly plans with code YEAREND25 🎁
+                </p>
+            </div>
+            <div class="action-content">
+                <p style="font-size: 11px; margin-top: 2px; opacity: 0.85; font-weight: 500;font-style: italic;">
+                    *Offer valid for first year only
+                </p>
+                <p class="action" style="width: 110px;">Get Offer</p>
+            </div>
+        </a>
+    </div> -->
+    <!-- Christmas Promo end -->
+    <div class="header-main">
+        <nav>
+            <a title="cPGuard Security" href="/" class="logo">
+                <img src="/images/opsshield-logo.svg" alt="opsshield cybersecurity" />
+            </a>
+            <ul id="mainMenu" class="main-nav hide-sm">
+                <!-- to add new : update grid coloumn count @ header nav>ul -->
+                <li><a class="dropdown" rel="nofollow" href="#">Products</a>
+                    <div class="menu">
+
+                        <div class="menu-product">
+
+                            <div class="product">
+
+                                <div class="product-desc">
+                                    <a title="cPGuard Security" href="/index.html"><img class="logo"
+                                            src="/images/cpguard-logo.svg" /></a>
+
+                                    <h3 style="color: rgb(70, 66, 66);">cPGuard ultimate web server security</h3>
+                                    <p>Malware scanner, automatic cleanup of infected CMS files, advanced WAF,
+                                        IPDB abusive IP list and more with a centralized UI for management</p>
+                                </div>
+                                <ul>
+                                    <li class="heading">Know more</a></li>
+                                    <li><a title="cPGuard Security Features" href="/cpguard-features.html">Features</a>
+                                    </li>
+                                    <li><a title="cPGuard Security pricing" href="/cpguard-pricing.html">Pricing</a>
+                                    </li>
+                                    <li><a title="Try cPGuard Security" href="/try-cpguard.html">Try free</a></li>
+                                </ul>
+
+                                <ul>
+                                    <li class="heading"> panels</a></li>
+                                    <li><a title="cPGuard Security for cPanel" href="/cpanel.html">cPanel/WHM</a></li>
+                                    <li><a title="cPGuard Security for Directadmin"
+                                            href="/directadmin.html">Directadmin</a></li>
+                                    <li><a title="cPGuard Security for Plesk" href="/plesk.html">Plesk</a></li>
+                                    <li><a title="cPGuard Security Standalone" href="/standalone.html">Standalone</a>
+                                    </li>
+                                    <li class="heading"
+                                        title="Enhance, Runcloud, Interworx, Webuzo, Webmin, Cyberpanel, CWP">
+                                        and others</a></li>
+                                </ul>
+
+                            </div>
+
+                            <div class="product">
+
+                                <div class="product-desc">
+                                    <a title="cPGuard X Secured Control Panel" href="https://cpguardx.com/"
+                                        target="_blank"><img class="logo" style="width: 180px;height:50px;"
+                                            src="/images/cpguard-x-logo.png"
+                                            alt="cPGuard-X Secured Control Panel for best cybersecurity" /></a>
+                                    <h3 style="color: rgb(70, 66, 66);">cPGuard X Secured Control Panel</h3>
+                                    <p>Advanced Web Hosting Management, Secured by cPGuard</p>
+                                </div>
+                                <ul>
+                                    <li class="heading"><a rel="nofollow" href="#">Know more</a></li>
+                                    <li><a title="cPGuard X Secured Control Panel" href="https://cpguardx.com/"
+                                            target="_blank">Features</a></li>
+                                    <li><a title="cPGuard X Secured Control Panel Pricing"
+                                            href="/cpguard-pricing.html#X">Pricing</a></li>
+                                    <!-- <li><a title="Try cPGuard X Security" href="https://cpguardx.com/" target="_blank">Try free</a></li> -->
+
+                                </ul>
+                                <ul>
+                                    <li class="heading">&nbsp;</a></li>
+                                    <li><a title="Try cPGuard X Security" href="/try-cpguard-x.html">Try free</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="product">
+
+                                <div class="product-desc">
+                                    <a title="cPGuard Lite Security" href="/cpguard-lite.html"><img class="logo"
+                                            src="/images/cpguard-lite-logo.svg"
+                                            alt="cPGuard-Lite for best cybersecurity" /></a>
+                                    <h3 style="color: rgb(70, 66, 66);">cPGuard lite</h3>
+                                    <p>A lighter more affordable version of cPGuard</p>
+                                </div>
+                                <ul>
+                                    <li class="heading"><a rel="nofollow" href="#">Know more</a></li>
+                                    <li><a title="cPGuard Lite Security Features"
+                                            href="/cpguard-lite.html#product-discover">Features</a></li>
+                                    <li><a title="cPGuard Lite Security Pricing"
+                                            href="/cpguard-pricing.html#lite">Pricing</a></li>
+
+                                </ul>
+                                <ul>
+                                    <li class="heading">&nbsp;</a></li>
+                                    <li><a title="Try cPGuard Lite Security" href="/try-cpguard.html">Try free</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </li>
+                <li><a class="dropdown" rel="nofollow" href="#">Support</a>
+                    <div class="menu">
+                        <ul class="sub-menu">
+                            <li><a title="Support home" href="https://support.opsshield.com/">Support Home</a>
+                            </li>
+                            <li><a title="cPGuard Security Change Log" href="/changelog/">Change log</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a class="dropdown" rel="nofollow" href="#">Company</a>
+                    <div class="menu">
+                        <ul class="sub-menu">
+                            <li><a title="cPGuard Security About-us" href="/about-us.html">About us</a></li>
+                            <li><a title="cPGuard Security Careers" href="/careers.html">Careers</a></li>
+                            <li><a title="cPGuard Security Partners" href="/partners.html">Partners</a></li>
+                            <li><a title="cPGuard Security Contact" href="/contact-us.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a title="cPGuard Security Blogs" href="https://www.opsshield.com/blog/">Blog</a></li>
+            </ul>
+
+        </nav>
+
+
+        <ul class="nav-right">
+            <li><a target="_blank" title="cPGuard Security Login"
+                    href="https://manage.opsshield.com/client/login/">Login</a></li>
+            <li class="hide-sm hide-md"><a title="cPGuard Security Sales"
+                    href="https://manage.opsshield.com/plugin/support_manager/client_tickets/add/1/">Contact Sales</a>
+            </li>
+            <li class="hide-sm hide-md"><a class="button" title="cPGuard X Secured Control Panel"
+                    href="https://cpguardx.com/">Try cPGuard X</a></li>
+            <li class="hide-md hide-lg">
+                <a class="hamburger" title="cPGuard Security" href="#" onclick="showMenu()">
+
+                    <svg id="mobileMenuOpen" style="display:block" viewBox="0 0 100 90" width="25" height="25">
+                        <rect y="10" width="100" height="18" rx="5"></rect>
+                        <rect y="40" width="100" height="18" rx="5"></rect>
+                        <rect y="70" width="100" height="18" rx="5"></rect>
+                    </svg>
+
+                    <svg id="mobileMenuClose" style="display:none" viewBox="0 0 36 36" width="25" height="25">
+                        <g>
+                            <path class="st0"
+                                d="M6.2,3.5L3.5,6.2c-0.7,0.7-0.7,1.9,0,2.7l9.2,9.2l-9.2,9.2c-0.7,0.7-0.7,1.9,0,2.7l2.6,2.6   c0.7,0.7,1.9,0.7,2.7,0l9.2-9.2l9.2,9.2c0.7,0.7,1.9,0.7,2.7,0l2.6-2.6c0.7-0.7,0.7-1.9,0-2.7L23.3,18l9.2-9.2   c0.7-0.7,0.7-1.9,0-2.7l-2.6-2.6c-0.7-0.7-1.9-0.7-2.7,0L18,12.7L8.8,3.5C8.1,2.8,6.9,2.8,6.2,3.5z"
+                                id="close_1_" />
+                        </g>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<!-- Christmas Promo start -->
+<!-- <style>
+    #pricingPage #siteNotificationBar {
+        display: none !important;
+    }
+
+    #siteNotificationBar {
+        background: linear-gradient(135deg, #0f5f2e 0%, #196e39 50%, #034d1e 100%);
+        position: relative;
+        overflow: hidden;
+        align-items: center;
+    }
+
+    #siteNotificationBar::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image:
+            radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+            radial-gradient(circle at 90% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 20%),
+            radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 30%);
+        pointer-events: none;
+    }
+
+    #siteNotificationBar .content {
+        position: relative;
+        z-index: 1;
+        flex-wrap: wrap;
+        padding: 10px 15px;
+        display: flex
+    }
+
+    #siteNotificationBar .notification-title {
+        flex: 1;
+        min-width: 0;
+    }
+
+    #siteNotificationBar .notification-title p {
+        animation: shimmer 3s ease-in-out infinite;
+    }
+
+    #siteNotificationBar .action {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+
+    #siteNotificationBar .action-content {
+        display: flex;
+        align-items: baseline;
+    }
+
+    @keyframes shimmer {
+
+        0%,
+        100% {
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        50% {
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+        #siteNotificationBar .notification-title p {
+            font-size: 14px !important;
+        }
+
+        #siteNotificationBar .action {
+            width: 90px !important;
+            font-size: 13px;
+            padding: 8px 12px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #siteNotificationBar {
+            min-height: auto;
+        }
+
+        #siteNotificationBar .content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+            padding: 12px 10px;
+        }
+
+        #siteNotificationBar .notification-title p {
+            font-size: 13px !important;
+            line-height: 1.4;
+        }
+
+        #siteNotificationBar .action-content {
+            display: none;
+        }
+    }
+</style> -->
+<!-- Christmas Promo end -->
+<script>
+    function manualUpdate() {
+        handleScrollDebug();
+    }
+
+    function handleScrollDebug() {
+        var currentScrollPos = window.pageYOffset || window.scrollY || 0;
+        var notificationBar = document.getElementById("siteNotificationBar");
+        var threshold = 100;
+
+        var thresholdElement = document.getElementById("thresholdValue");
+        var scrollElement = document.getElementById("currentScrollValue");
+        var statusElement = document.getElementById("bannerStatus");
+
+        if (thresholdElement) {
+            thresholdElement.textContent = threshold;
+        }
+        if (scrollElement) {
+            scrollElement.textContent = Math.round(currentScrollPos);
+        }
+
+        if (!notificationBar) return;
+
+        if (currentScrollPos <= threshold) {
+            notificationBar.className = "site-announcement active";
+            notificationBar.style.display = "flex";
+            notificationBar.style.visibility = "visible";
+            notificationBar.style.opacity = "1";
+            notificationBar.style.height = "65px";
+            if (statusElement) statusElement.textContent = "visible";
+        } else {
+            notificationBar.className = "site-announcement expired";
+            notificationBar.style.display = "";
+            notificationBar.style.visibility = "";
+            notificationBar.style.opacity = "";
+            notificationBar.style.height = "";
+            if (statusElement) statusElement.textContent = "hidden";
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var banner = document.getElementById("siteNotificationBar");
+        if (banner) {
+            banner.className = "site-announcement active";
+        }
+
+        setTimeout(function () {
+            handleScrollDebug();
+        }, 100);
+
+        window.addEventListener('scroll', function () {
+            handleScrollDebug();
+        });
+
+        var throttleTimer = null;
+        window.addEventListener('scroll', function () {
+            if (throttleTimer) clearTimeout(throttleTimer);
+            throttleTimer = setTimeout(function () {
+                handleScrollDebug();
+            }, 16);
+        });
+    });
+</script>
+    <div class="content">
+        <section class="screenshot-normal full-right pt-12 pb-8 bg-light-blue">
+            <div>
+                <summary>
+                    <img src="/images/cpguard-logo.svg" width="250" alt="cPGuard cybersecurity" />
+                    <h1>404 Page Not Found</h1>
+                    <p>Sorry, the page you are looking for might be unavailable or does not exist.</p>
+                    <a href="/"><button>Go Home</button></a>
+                </summary>
+                <aside>
+                    <svg id="Flat_gradient" height="512" viewBox="0 0 64 64" width="512"
+                        xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                        data-name="Flat gradient">
+                        <linearGradient id="linear-gradient" gradientUnits="userSpaceOnUse" x1="4" x2="60" y1="32"
+                            y2="32">
+                            <stop offset="0" stop-color="#00c0ff" />
+                            <stop offset="1" stop-color="#5558ff" />
+                        </linearGradient>
+                        <path
+                            d="m55 9.12h-46a5.00181 5.00181 0 0 0 -5 5v3.76c.63 0 56-.07 56-.07v-3.69a5.00181 5.00181 0 0 0 -5-5zm-12.66 4.84a.98391.98391 0 0 1 -.86005.5.9719.9719 0 0 1 -.86-.5.91523.91523 0 0 1 -.14-.5 1 1 0 0 1 2 0 .91528.91528 0 0 1 -.13995.5zm6.08 0a.98372.98372 0 0 1 -.86.5.97185.97185 0 0 1 -.86-.5.91481.91481 0 0 1 -.14-.5 1 1 0 0 1 2 0 .91473.91473 0 0 1 -.14.5zm6.08 0a.98957.98957 0 0 1 -1.72 0 .91473.91473 0 0 1 -.14-.5 1 1 0 0 1 2 0 .91472.91472 0 0 1 -.14.5zm-50.5 35.92a5.00181 5.00181 0 0 0 5 5h46a5.00181 5.00181 0 0 0 5-5v-30.07s-55.41.07-56 .08zm35.67-21.54a1 1 0 0 1 2 0v6a.99655.99655 0 0 0 1 1h4a.99655.99655 0 0 0 1-1v-6a1 1 0 0 1 2 0v16a1 1 0 0 1 -2 0v-7.18a2.77172 2.77172 0 0 1 -1 .18h-4a2.996 2.996 0 0 1 -3-3zm-12.67 3.01a3.00883 3.00883 0 0 1 3-3h4a3.00883 3.00883 0 0 1 3 3v12a3.00234 3.00234 0 0 1 -3 3h-4a3.00234 3.00234 0 0 1 -3-3zm-12.67-2a1 1 0 0 1 2 0v4.99a.99655.99655 0 0 0 1 1h4a.99655.99655 0 0 0 1-1v-4.99a1 1 0 0 1 2 0v14.99a1 1 0 0 1 -2 0v-7.18a2.772 2.772 0 0 1 -1 .18h-4a3.00234 3.00234 0 0 1 -3-3zm14.67 14v-12a1.003 1.003 0 0 1 1-1h4a1.003 1.003 0 0 1 1 1v12a1.003 1.003 0 0 1 -1 1h-4a1.003 1.003 0 0 1 -1-1z"
+                            fill="url(#linear-gradient)" />
+                    </svg>
+                </aside>
+
+            </div>
+        </section>
+    </div>
+    <footer>
+    <section>
+        <div>
+            <div>
+                <a href="./" title="OPSSHIELD Home">
+                    <img class="logo" src="/images/opsshield-logo.svg" width="200" alt="opsshield cybersecurity" />
+                </a>
+                <p>© 2026 OPSSHIELD LLP.<br>
+                    All rights reserved
+                </p>
+            </div>
+            <div>
+                <h4>cPGuard</h4>
+                <ul>
+                    <li><a href="/cpguard-features.html" title="cPGuard Features">Features</a></li>
+                    <li><a href="/cpguard-pricing.html" title="cPGuard Pricing">Pricing</a></li>
+                    <li><a href="/try-cpguard.html" title="cPGuard try now">Try Free</a></li>
+                    <li><a href="/captcha.html" title="cPGuard captcha">Captcha</a></li>
+
+                </ul>
+                
+                <h4>cPGuard X</h4>
+                <ul>
+                    <li><a href="https://cpguardx.com/" title="cPGuard X Features" target="_blank">Features</a></li>
+                    <!-- <li><a href="/cpguard-x-pricing.html" title="cPGuard X Pricing">Pricing</a></li> -->
+                    <li><a href="https://cpguardx.com/" title="cPGuard X try now" target="_blank">Try Free</a></li>
+                    <!-- <li><a href="/captcha.html" title="cPGuard X captcha">Captcha</a></li> -->
+                </ul>
+
+                <h4>cPGuard lite</h4>
+                <ul>
+                    <li><a href="/cpguard-lite.html#product-discover" title="cPGuard Lite Features">Features</a></li>
+                    <li><a href="/cpguard-pricing.html#lite" title="cPGuard Lite Pricing">Pricing</a></li>
+                </ul>
+
+            </div>
+            <div>
+                <h4>SECURITY FOR</h4>
+                <ul>
+                    <li><a href="/cpguard-for-hosting.html" title="cPGuard for Hosting">Hosting Company</a></li>
+                    <li><a href="/cpguard-for-smallbusiness.html" title="cPGuard for small business">Small Business</a></li>
+                    <li><a href="/cpanel.html" title="cPGuard Security for cPanel">cPanel/WHM</a></li>
+                    <li><a href="/directadmin.html" title="cPGuard Security for DirectAdmin">DirectAdmin</a></li>
+                    <li><a href="/plesk.html" title="cPGuard Security for Plesk">Plesk</a></li>
+                    <li><a href="/cyberpanel.html" title="cPGuard Security for Cyberpanel">Cyberpanel</a></li>
+                    <li><a href="/interworx.html" title="cPGuard Security for Interworx">Interworx</a></li>
+                    <li><a href="/cwp.html" title="cPGuard Security for control web panel cwp">Control Web Panel</a></li>
+                    <li><a href="/enhance.html" title="cPGuard Security for Enhance">Enhance</a></li>
+                    <li><a href="/runcloud.html" title="cPGuard Security for Runcloud">Runcloud</a></li>
+                    <li><a href="/webmin.html" title="cPGuard Security for Webmin">Webmin</a></li>
+                    <li><a href="/webuzo.html" title="cPGuard Security for Webuzo">Webuzo</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>SUPPORT</h4>
+                <ul>
+                    <li><a href="https://www.opsshield.com/help/" target="_blank" title="cPGuard Security Knowledgebase">Knowledge base</a></li>
+                    <li><a href="https://manage.opsshield.com/plugin/support_manager/client_tickets/departments/"
+                            target="_blank" title="cPGuard Security Support">Raise a ticket</a></li>
+                    <li><a href="/changelog/" title="cPGuard Security Change Log" target="_blank">Change log</a></li>
+                </ul>
+                <h4>POLICY</h4>
+                <ul>
+                    <li><a href="/user-agreement.html" title="cPGuard Security License Agreements">License Agreements </a></li>
+                    <li><a href="/privacy-policy.html" title="cPGuard Security Privacy Policy">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>SOCIAL</h4>
+                <div class="social">
+
+                    <a href="https://x.com/opsshieldllp" title="cPGuard Security on X">
+                        <svg width="28" viewBox="0 0 512 512">
+                            <path d="M7.48,21.9,195.66,273.57,6.29,478.1H48.91L214.71,299l134,
+                                    179.11h145L294.93,212.33,471.2,21.9H428.58L275.89,186.82,152.51,21.9ZM70.16,53.3h66.63L431,
+                                    446.7H364.39Z"></path>
+                        </svg>
+                    </a>
+
+                    <a href="https://www.facebook.com/opsshield" title="cPGuard Security facebook page">
+                        <svg width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z" />
+                        </svg>
+                    </a>
+                    <a title="cPGuard Security linkedin profile"
+                        href="https://www.linkedin.com/company/opsshield/?original_referer=https%3A%2F%2Fwww.opsshield.com%2F">
+                        <svg width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="m23.994 24v-.001h.006v-8.802c0-4.306-.927-7.623-5.961-7.623-2.42 0-4.044 1.328-4.707 2.587h-.07v-2.185h-4.773v16.023h4.97v-7.934c0-2.089.396-4.109 2.983-4.109 2.549 0 2.587 2.384 2.587 4.243v7.801z" />
+                            <path d="m.396 7.977h4.976v16.023h-4.976z" />
+                            <path
+                                d="m2.882 0c-1.591 0-2.882 1.291-2.882 2.882s1.291 2.909 2.882 2.909 2.882-1.318 2.882-2.909c-.001-1.591-1.292-2.882-2.882-2.882z" />
+                        </svg>
+                    </a>
+
+                </div>
+
+                <h4>COMPANY</h4>
+                <ul>
+                    <li><a href="/about-us.html" title="cPGuard Security about-us">About us </a></li>
+                    <li><a href="/careers.html" title="cPGuard Security Careers">Careers</a></li>
+                    <li><a href="https://www.opsshield.com/blog/" title="cPGuard Security Blog">Blog</a></li>
+                    <li><a href="/partners.html" title="cPGuard Security Partners">Partners</a></li>
+                    <li><a href="/contact-us.html" title="cPGuard Security Contact us">Contact</a></li>
+                </ul>
+            </div>
+
+
+
+        </div>
+    </section>
+</footer>
+
+<div class="cookieconsent">
+    <div class="modal">
+        <div class="content">
+            <p>
+                We use cookies to ensure that we give you the best experience on our website. If you continue to use
+                this site we will assume that you are happy with it.
+            </p>
+        </div>
+        <div class="action">
+            <button onclick="toggleModal()">Ok, got it</button>
+        </div>
+    </div>
+</div>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-RDV0L07742"></script>
+ <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+     gtag('config', 'G-RDV0L07742');
+ </script>
+<script src="/js/script.js?d=15012024"></script>
+<script>
+    var mobileMenu = false;
+    var modal = document.querySelector(".cookieconsent");
+    function showMenu() {
+
+        if (mobileMenu) {
+            document.getElementById('mainMenu').classList.remove('mobile-menu');
+            document.getElementById('mobileMenuOpen').style.display = 'block';
+            document.getElementById('mobileMenuClose').style.display = 'none';
+
+
+        } else {
+            document.getElementById('mainMenu').classList.add('mobile-menu');
+            document.getElementById('mobileMenuOpen').style.display = 'none';
+            document.getElementById('mobileMenuClose').style.display = 'block';
+        }
+        mobileMenu = !mobileMenu;
+        console.log(document.getElementById('mainMenu').style.display);
+    }
+
+    function toggleModal() {
+        setCookie("CookieAccepted", true, Date.now() + 604800, "/");
+        modal.classList.toggle("show");
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(() => {
+            if (!getCookie('CookieAccepted')) {
+                toggleModal();
+            }
+        }, 1000);
+    });
+</script>
+
+</body>
+</html>

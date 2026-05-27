@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 100">
+  <polygon points="50,15 85,35 50,55 15,35" fill="#f59e0b"/>
+  <polygon points="15,45 50,65 85,45 85,65 50,85 15,65" fill="#f59e0b" opacity="0.8"/>
+  <polygon points="15,55 50,75 85,55 85,75 50,95 15,75" fill="#f59e0b" opacity="0.6"/>
+  <text x="100" y="65" font-family="'Outfit', sans-serif" font-size="55" font-weight="800" fill="#ffffff" letter-spacing="1">Softaculous</text>
+</svg>

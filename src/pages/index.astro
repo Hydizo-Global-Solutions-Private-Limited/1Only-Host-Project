@@ -671,49 +671,62 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
         <p class="text-white-50 fs-16 max-width-800 mx-auto">Your gateway to seamless connectivity and trusted services, available anywhere. Wherever you are, location doesn’t matter. <span class="text-accent fw-600">Best student hosting in india</span>.</p>
       </div>
       
-      <div class="map-wrapper mb-50 position-relative" style="min-height: 500px; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,158,0,0.1); background: rgba(0,0,0,0.2);">
-        <img src={`${basePrefix}images/premium-global-map.png`} alt="Global Network Map" class="position-absolute w-100 h-100" style="object-fit: cover; top: 0; left: 0; z-index: 0; opacity: 0.7;">
-        <!-- Connecting ping rings visual overlay (from central node India to Singapore & US) -->
-        <svg class="position-absolute w-100 h-100 d-none d-lg-block" style="top:0; left:0; pointer-events:none; z-index:0; opacity: 0.25;" viewBox="0 0 1000 500">
-          <path d="M 720, 310 Q 750, 325 780, 350" fill="none" stroke="#FF9E00" stroke-width="1.5" stroke-dasharray="4,4" />
-          <path d="M 720, 310 Q 500, 260 280, 225" fill="none" stroke="#FF007F" stroke-width="1.5" stroke-dasharray="4,4" />
-          <path d="M 720, 310 Q 620, 240 520, 200" fill="none" stroke="#FF9E00" stroke-width="1.5" stroke-dasharray="4,4" />
-        </svg>
-        
-        <div class="map-marker" style="top: 62%; left: 71%;"><span class="tooltip-text">India (Mumbai/Pune)</span></div>
-        <div class="map-marker" style="top: 58%; left: 72%;"><span class="tooltip-text">India (Delhi Noida)</span></div>
-        <div class="map-marker" style="top: 65%; left: 72%;"><span class="tooltip-text">India (Hyderabad Core)</span></div>
-        <div class="map-marker" style="top: 67%; left: 72%;"><span class="tooltip-text">India (Bangalore)</span></div>
-        <div class="map-marker" style="top: 70%; left: 78%;"><span class="tooltip-text">Singapore Core</span></div>
-        <div class="map-marker" style="top: 85%; left: 88%;"><span class="tooltip-text">Australia</span></div>
-        <div class="map-marker" style="top: 40%; left: 52%;"><span class="tooltip-text">Germany (Falkenstein)</span></div>
-        <div class="map-marker" style="top: 45%; left: 28%;"><span class="tooltip-text">USA East</span></div>
-        <div class="map-marker" style="top: 48%; left: 18%;"><span class="tooltip-text">USA West</span></div>
-        <div class="map-marker" style="top: 38%; left: 48%;"><span class="tooltip-text">France (Paris Edge)</span></div>
-        <div class="map-marker" style="top: 35%; left: 55%;"><span class="tooltip-text">Finland</span></div>
-        <div class="map-marker" style="top: 52%; left: 82%;"><span class="tooltip-text">Japan (Tokyo)</span></div>
-      </div>
+      <!-- Globe.gl 3D WebGL Library for Premium Volumetric Map -->
+      <script is:inline src="//unpkg.com/globe.gl"></script>
+      
+      <style>
+        /* Floating HUD Responsive Rules */
+        @media (max-width: 991px) {
+          .map-layer { height: 400px !important; border-bottom: 1px solid rgba(255,158,0,0.2); }
+          .hud-gradient-fade { display: none !important; }
+          .hud-ui-layer { position: relative !important; padding: 2rem 1rem !important; }
+          .hud-glass-panel { background: transparent !important; border: none !important; padding: 0 !important; backdrop-filter: none !important; }
+        }
+      </style>
 
-      <!-- Connection Latency Speed Checker Console & SOLAR STATION VISUAL -->
-      <div class="glass-card p-5 mt-4">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-5 text-start">
-            <h3 class="text-white fw-800 m-0 font-outfit fs-24">Test Server Latency</h3>
-            <p class="fs-15 opacity-75 mt-3 mb-4 text-white-50" style="line-height: 1.6;">Ping our edge nodes in real-time from your browser. Verify connection speeds and packet transport performance to our global data centers.</p>
-            <button id="run-ping-btn" class="btn-eighteen uppercase tracking-wider py-3 px-5 w-100 text-center">Ping Data Center Nodes</button>
-          </div>
-          <div class="col-lg-4">
-            <div class="p-4 rounded text-start fs-13 font-monospace" style="background: rgba(2, 4, 10, 0.7); border: 1px solid rgba(255, 255, 255, 0.05); min-height: 180px; max-height: 220px; color: var(--success); overflow-y: auto; overflow-x: hidden; word-break: break-all; line-height: 1.6;">
-              <div id="pinger-console">
-                <span style="color: #64748B;">// Network Diagnostics Console v1.0<br>// Press button to initiate ping sequences...</span>
+      <!-- Floating HUD Overlay Layout -->
+      <div class="hud-overlay-container mx-auto mb-50" style="position: relative; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,158,0,0.2); box-shadow: 0 20px 50px rgba(0,0,0,0.6); background: #02040A; max-width: 1200px;">
+        
+        <!-- The Interactive Map (Background Layer) -->
+        <div id="interactive-global-map" class="map-layer" style="width: 100%; height: 750px; z-index: 1;"></div>
+        
+        <!-- Gradient Overlay to make HUD readable -->
+        <div class="hud-gradient-fade d-none d-lg-block" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(0deg, rgba(2,4,10,0.98) 10%, rgba(2,4,10,0.7) 50%, rgba(2,4,10,0) 100%); z-index: 2; pointer-events: none;"></div>
+
+        <!-- The Floating HUD UI (Foreground Layer) -->
+        <div class="hud-ui-layer" style="position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; pointer-events: none; padding: 0 2rem 2rem 2rem;">
+          
+          <div class="hud-glass-panel w-100" style="pointer-events: auto; background: rgba(10, 15, 30, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,158,0,0.2); border-radius: 20px; padding: 2.5rem 2rem;">
+            
+            <div class="row align-items-center g-4">
+              <div class="col-lg-5 text-start">
+                <h3 class="text-white fw-800 m-0 font-outfit fs-24">Live Infrastructure</h3>
+                <p class="fs-15 opacity-75 mt-2 mb-4 text-white-50" style="line-height: 1.5;">Ping our edge nodes in real-time. Verify connection speeds and packet transport performance to our global data centers.</p>
+                <button id="run-ping-btn" class="btn-eighteen btn-ping-glow uppercase tracking-wider py-3 px-5 w-100 text-center" style="border: 1px solid rgba(255, 158, 0, 0.5);">Ping Data Center Nodes</button>
+              </div>
+              <div class="col-lg-4">
+                <div class="p-4 rounded text-start fs-13 font-monospace console-scanline position-relative" style="background: rgba(2, 4, 10, 0.85); border: 1px solid rgba(255, 158, 0, 0.15); min-height: 180px; max-height: 200px; color: var(--success); overflow-y: auto; overflow-x: hidden; word-break: break-all; line-height: 1.6; box-shadow: inset 0 0 20px rgba(0,0,0,0.8);">
+                  <div id="pinger-console" class="position-relative" style="z-index: 3;">
+                    <span style="color: #64748B;">// Network Diagnostics Console v2.0<br>// Press button to initiate ping sequences...</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3 text-center">
+                <div class="glass-card p-1 position-relative overflow-hidden" style="border-color: rgba(255, 158, 0, 0.3) !important; background: rgba(0,0,0,0.5);">
+                  <!-- Live Indicator -->
+                  <div class="position-absolute d-flex align-items-center" style="top: 15px; right: 15px; z-index: 2; background: rgba(0,0,0,0.7); padding: 4px 8px; border-radius: 12px; border: 1px solid rgba(255,0,0,0.3); backdrop-filter: blur(4px);">
+                    <div class="pulsing" style="width: 8px; height: 8px; background: #FF0033; border-radius: 50%; box-shadow: 0 0 8px #FF0033;"></div>
+                    <span class="text-white ms-2" style="font-size: 10px; font-weight: 800; letter-spacing: 1px;">LIVE</span>
+                  </div>
+                  <img src={`${basePrefix}images/premium-server-rack.png`} alt="Server Rack" class="img-fluid rounded" style="max-height: 160px; object-fit: cover; width: 100%; filter: contrast(1.15) saturate(1.2);">
+                  <div class="position-absolute bottom-0 start-0 w-100 p-3 pb-2" style="background: linear-gradient(0deg, rgba(2,4,10,0.95) 10%, transparent 100%); z-index: 1;">
+                    <div class="text-white fs-13 uppercase tracking-widest fw-800" style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">Sol-1 Core Servers</div>
+                    <div style="font-size: 10px; color: #00F5D4; letter-spacing: 1px;" class="font-monospace mt-1">SYS_STATUS: OPTIMAL</div>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-3 text-center">
-            <div class="glass-card p-1 position-relative overflow-hidden" style="border-color: rgba(255, 158, 0, 0.15) !important;">
-              <img src={`${basePrefix}images/datacenter-solar.png`} alt="Solar Datacenter" class="img-fluid rounded" style="max-height: 160px; object-fit: cover; width: 100%;">
-              <div class="fs-10 text-white-50 mt-1 uppercase tracking-widest">Sol-1 Relay Facility</div>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -926,39 +939,75 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   <!-- Partners Trust Grid -->
   <section class="trust-badge-container pb-80" data-aos="fade-up">
     <div class="container lg">
-      <div class="title-eleven text-center mb-40">
-        <h2 class="text-white font-outfit fw-900 fs-32">The 1 Who Makes us Powerful</h2>
-        <p class="text-white-50 fs-16">Explore Partners who trust us</p>
+      <div class="title-eleven text-center mb-50">
+        <h2 class="text-white font-outfit fw-900 fs-36 mb-3">The 1 Who Makes us Powerful</h2>
+        <p class="text-white-50 fs-18">Explore the Industry-Leading Technology Partners who trust us</p>
       </div>
       
-      <!-- Partners Visual Banner -->
-      <div class="text-center mb-40">
-        <div class="glass-card p-2 d-inline-block position-relative overflow-hidden" style="border-color: rgba(255, 158, 0, 0.1) !important; max-width: 850px; width: 100%;">
-          <img src={`${basePrefix}images/partners-trust-banner.png`} alt="Technology Partners - cPanel, CloudLinux, Sectigo, Softaculous" class="img-fluid rounded" style="box-shadow: 0 10px 30px rgba(255, 158, 0, 0.06);">
+      <div class="row justify-content-center g-4">
+        <!-- Partner 1 -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="partner-badge-card glass-card d-flex flex-column align-items-center justify-content-center text-center p-4 h-100" style="transition: all 0.3s ease;">
+            <img src={`${basePrefix}images/logos/cpanel.png`} alt="cPanel Logo" width="48" height="48" class="mb-3 partner-logo-img rounded">
+            <span class="fs-15 fw-700 text-white font-outfit tracking-wider uppercase">cPanel</span>
+          </div>
         </div>
-      </div>
-      
-      <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 bg-transparent border-0">
-        <div class="partner-badge-card glass-card px-4 py-3 d-flex align-items-center justify-content-center" style="min-width: 140px; height: 70px;">
-          <span class="fs-18 fw-700 text-white font-outfit tracking-wider">cPanel</span>
+        <!-- Partner 2 -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="partner-badge-card glass-card d-flex flex-column align-items-center justify-content-center text-center p-4 h-100" style="transition: all 0.3s ease;">
+            <img src={`${basePrefix}images/logos/cpguard.svg`} alt="cPGuard Logo" width="100" height="30" class="mb-3 partner-logo-img">
+            <span class="fs-15 fw-700 text-white font-outfit tracking-wider uppercase">cPGuard</span>
+          </div>
         </div>
-        <div class="partner-badge-card glass-card px-4 py-3 d-flex align-items-center justify-content-center" style="min-width: 140px; height: 70px;">
-          <span class="fs-18 fw-700 text-white font-outfit tracking-wider">cPGuard</span>
+        <!-- Partner 3 -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="partner-badge-card glass-card d-flex flex-column align-items-center justify-content-center text-center p-4 h-100" style="transition: all 0.3s ease;">
+            <img src={`${basePrefix}images/logos/cloudlinux.png`} alt="CloudLinux Logo" width="48" height="48" class="mb-3 partner-logo-img rounded">
+            <span class="fs-15 fw-700 text-white font-outfit tracking-wider uppercase">CloudLinux</span>
+          </div>
         </div>
-        <div class="partner-badge-card glass-card px-4 py-3 d-flex align-items-center justify-content-center" style="min-width: 140px; height: 70px;">
-          <span class="fs-18 fw-700 text-white font-outfit tracking-wider">CloudLinux</span>
+        <!-- Partner 4 -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="partner-badge-card glass-card d-flex flex-column align-items-center justify-content-center text-center p-4 h-100" style="transition: all 0.3s ease;">
+            <img src={`${basePrefix}images/logos/sectigo.png`} alt="Sectigo Logo" width="48" height="48" class="mb-3 partner-logo-img rounded">
+            <span class="fs-15 fw-700 text-white font-outfit tracking-wider uppercase">Sectigo</span>
+          </div>
         </div>
-        <div class="partner-badge-card glass-card px-4 py-3 d-flex align-items-center justify-content-center" style="min-width: 140px; height: 70px;">
-          <span class="fs-18 fw-700 text-white font-outfit tracking-wider">Sectigo</span>
+        <!-- Partner 5 -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="partner-badge-card glass-card d-flex flex-column align-items-center justify-content-center text-center p-4 h-100" style="transition: all 0.3s ease;">
+            <img src={`${basePrefix}images/logos/virtualizor.png`} alt="Virtualizor Logo" width="48" height="48" class="mb-3 partner-logo-img rounded">
+            <span class="fs-15 fw-700 text-white font-outfit tracking-wider uppercase">Virtualizor</span>
+          </div>
         </div>
-        <div class="partner-badge-card glass-card px-4 py-3 d-flex align-items-center justify-content-center" style="min-width: 140px; height: 70px;">
-          <span class="fs-18 fw-700 text-white font-outfit tracking-wider">Virtualizor</span>
-        </div>
-        <div class="partner-badge-card glass-card px-4 py-3 d-flex align-items-center justify-content-center" style="min-width: 140px; height: 70px;">
-          <span class="fs-18 fw-700 text-white font-outfit tracking-wider">Softaculous</span>
+        <!-- Partner 6 -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="partner-badge-card glass-card d-flex flex-column align-items-center justify-content-center text-center p-4 h-100" style="transition: all 0.3s ease;">
+            <img src={`${basePrefix}images/logos/softaculous.png`} alt="Softaculous Logo" width="48" height="48" class="mb-3 partner-logo-img rounded">
+            <span class="fs-15 fw-700 text-white font-outfit tracking-wider uppercase">Softaculous</span>
+          </div>
         </div>
       </div>
     </div>
+    <style>
+      .partner-badge-card {
+        border: 1px solid rgba(255, 158, 0, 0.1);
+        background: rgba(10, 15, 30, 0.4);
+      }
+      .partner-logo-img {
+        transition: transform 0.3s ease, filter 0.3s ease;
+      }
+      .partner-badge-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(255,158,0,0.15) !important;
+        border-color: rgba(255,158,0,0.4) !important;
+        background: rgba(10, 15, 30, 0.7);
+      }
+      .partner-badge-card:hover .partner-logo-img {
+        transform: scale(1.15);
+        filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
+      }
+    </style>
   </section>
 
   <!-- Interactive Testimonial Video Modal -->
@@ -1001,10 +1050,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-  <!-- WhatsApp Floating Chat -->
-  <a href="https://wa.me/918143016498" target="_blank" rel="noopener noreferrer" class="whatsapp-float" title="Chat with us on WhatsApp" aria-label="WhatsApp Chat">
-    <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-  </a>
+  <!-- Live Chat: Tawk.to widget will be added here -->
 </Layout>
 
 <style>
@@ -1699,31 +1745,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   box-shadow: 0 6px 20px rgba(255, 0, 127, 0.6);
 }
 
-/* ===== WhatsApp Float ===== */
-.whatsapp-float {
-  position: fixed;
-  bottom: 30px;
-  right: 25px;
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-  background: #25D366;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1050;
-  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
-  transition: all 0.3s ease;
-  animation: whatsappPulse 2s infinite ease-in-out;
-}
-.whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
-}
-@keyframes whatsappPulse {
-  0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
-  50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6), 0 0 0 8px rgba(37, 211, 102, 0.1); }
-}
+
 
 /* ===== Typewriter ===== */
 .typewriter-text {
@@ -1792,6 +1814,76 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   visibility: visible;
   opacity: 1;
   bottom: 120%;
+}
+
+/* Hyper-Pulse Ping Animation */
+.hyper-ping-active {
+  background: #00F5D4 !important;
+  box-shadow: 0 0 30px #00F5D4 !important;
+  transform: scale(2.0) !important;
+  z-index: 10 !important;
+}
+.hyper-ping-active::after {
+  animation: hyperPing 0.3s infinite ease-out !important;
+  border-color: #00F5D4 !important;
+}
+.hyper-ping-active .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+  bottom: 150%;
+  background: #00F5D4;
+  color: #000;
+  font-weight: 800;
+  border-color: #00F5D4;
+}
+
+@keyframes hyperPing {
+  0% { transform: scale(0.8); opacity: 1; border-width: 3px; }
+  100% { transform: scale(3.5); opacity: 0; border-width: 0px; }
+}
+
+/* ===== Premium Console Enhancements ===== */
+.console-scanline {
+  position: relative;
+}
+.console-scanline::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 4px, 6px 100%;
+  pointer-events: none;
+}
+.btn-ping-glow {
+  position: relative;
+  overflow: visible;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+.btn-ping-glow::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  background: linear-gradient(135deg, #FF9E00, #FF007F, #00F5D4);
+  z-index: -1;
+  border-radius: inherit;
+  filter: blur(12px);
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  animation: bgGlowPulse 3s infinite alternate;
+}
+.btn-ping-glow:hover::before {
+  opacity: 0.8;
+  filter: blur(16px);
+}
+@keyframes bgGlowPulse {
+  0% { opacity: 0.3; transform: scale(0.98); }
+  100% { opacity: 0.6; transform: scale(1.02); }
 }
 
 @keyframes cursorBlink {
@@ -2024,45 +2116,123 @@ function initDomainHUD() {
 function initLatencyPinger() {
     const pingBtn = document.getElementById('run-ping-btn');
     const consoleEl = document.getElementById('pinger-console');
-    if (!pingBtn || !consoleEl) return;
+    const mapEl = document.getElementById('interactive-global-map');
+    
+    if (!pingBtn || !consoleEl || !mapEl || typeof Globe === 'undefined') return;
 
     const pingNodes = [
-        { name: 'India Pune Edge', ip: '103.142.14.8', distance: '120 km' },
-        { name: 'India Noida Node', ip: '103.142.16.52', distance: '1,100 km' },
-        { name: 'Singapore Orbit Core', ip: '202.51.233.104', distance: '3,800 km' },
-        { name: 'Germany Falkenstein', ip: '46.4.92.115', distance: '6,200 km' },
-        { name: 'US East Gravity Hub', ip: '198.51.100.22', distance: '12,500 km' },
-        { name: 'France Paris Edge', ip: '82.165.29.17', distance: '7,400 km' },
-        { name: 'Finland Node', ip: '95.217.16.2', distance: '5,800 km' },
-        { name: 'Japan Tokyo Edge', ip: '210.140.10.1', distance: '6,100 km' }
+        { id: 'node-india', name: 'India Node', ip: '103.142.14.8', coords: [20.5937, 78.9629] },
+        { id: 'node-singapore', name: 'Singapore Core', ip: '202.51.233.104', coords: [1.3521, 103.8198] },
+        { id: 'node-australia', name: 'Australia Edge', ip: '119.42.100.10', coords: [-25.2744, 133.7751] },
+        { id: 'node-falkenstein', name: 'Falkenstein', ip: '46.4.92.115', coords: [50.4779, 12.3700] },
+        { id: 'node-usa', name: 'USA Hub', ip: '198.51.100.22', coords: [37.0902, -95.7129] },
+        { id: 'node-france', name: 'France Edge', ip: '82.165.29.17', coords: [46.2276, 2.2137] },
+        { id: 'node-finland', name: 'Finland Node', ip: '95.217.16.2', coords: [61.9241, 25.7482] },
+        { id: 'node-japan', name: 'Japan Tokyo', ip: '210.140.10.1', coords: [36.2048, 138.2529] },
+        { id: 'node-uae', name: 'UAE Hub', ip: '185.150.12.99', coords: [23.4241, 53.8478] }
     ];
+
+    // Generate Animated Arcs connecting from India (Node 0) to all other nodes
+    const arcsData = pingNodes.slice(1).map(node => ({
+        startLat: pingNodes[0].coords[0],
+        startLng: pingNodes[0].coords[1],
+        endLat: node.coords[0],
+        endLng: node.coords[1],
+        color: ['#00F5D4', '#FF007F']
+    }));
+
+    // Initialize 3D WebGL Globe
+    const myGlobe = Globe()(mapEl)
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+      .backgroundColor('rgba(0,0,0,0)')
+      .showAtmosphere(true)
+      .atmosphereColor('#00F5D4')
+      .atmosphereAltitude(0.15)
+      
+      // Rings (Data Center Points)
+      .ringsData(pingNodes)
+      .ringLat(d => d.coords[0])
+      .ringLng(d => d.coords[1])
+      .ringColor(() => '#FF9E00')
+      .ringMaxRadius(3)
+      .ringPropagationSpeed(2)
+      .ringRepeatPeriod(700)
+      
+      // Floating Cyber-Labels
+      .htmlElementsData(pingNodes)
+      .htmlLat(d => d.coords[0])
+      .htmlLng(d => d.coords[1])
+      .htmlElement(d => {
+        const el = document.createElement('div');
+        el.innerHTML = `
+          <div style="color: #fff; font-size: 11px; font-weight: 800; font-family: 'Outfit', sans-serif; letter-spacing: 1.5px; text-shadow: 0 0 10px #00F5D4; padding: 4px 10px; background: rgba(2,4,10,0.7); border-left: 2px solid #00F5D4; border-radius: 0 6px 6px 0; backdrop-filter: blur(4px); transform: translate(10px, -10px); pointer-events: none; white-space: nowrap; box-shadow: 5px 5px 15px rgba(0,0,0,0.5);">
+            ${d.name.split(' ')[0].toUpperCase()}
+          </div>
+        `;
+        return el;
+      })
+      
+      // Arcs (Network Connections)
+      .arcsData(arcsData)
+      .arcColor('color')
+      .arcDashLength(0.4)
+      .arcDashGap(0.2)
+      .arcDashInitialGap(() => Math.random() * 2)
+      .arcDashAnimateTime(2000)
+      .arcAltitudeAutoScale(0.3);
+
+    // Initial View
+    myGlobe.pointOfView({ lat: 20, lng: 70, altitude: 2 });
+    
+    // Auto-rotate the globe slowly
+    myGlobe.controls().autoRotate = true;
+    myGlobe.controls().autoRotateSpeed = 1.0;
+    myGlobe.controls().enableZoom = false;
+
+    // Handle responsive container resizing
+    window.addEventListener('resize', () => {
+        myGlobe.width(mapEl.clientWidth);
+        myGlobe.height(mapEl.clientHeight);
+    });
 
     pingBtn.addEventListener('click', () => {
         pingBtn.disabled = true;
         pingBtn.innerText = 'Pinging Core...';
         consoleEl.innerHTML = '<span style="color: #64748B;">// Initializing Sol-1 orbital ping sequence...</span><br>';
         
+        myGlobe.controls().autoRotate = false;
         let index = 0;
         
         function runNextPing() {
             if (index >= pingNodes.length) {
                 setTimeout(() => {
-                    consoleEl.innerHTML += `<br><span style="color: #00F5D4;">✔ DIAGNOSTICS COMPLETE. Optimal routing achieved. Uptime is 99.9% stable.</span>`;
+                    consoleEl.innerHTML += `<br><span style="color: #00F5D4;">✔ DIAGNOSTICS COMPLETE. Optimal routing achieved.</span>`;
                     pingBtn.disabled = false;
                     pingBtn.innerText = 'Ping Data Center Nodes';
                     consoleEl.scrollTop = consoleEl.scrollHeight;
-                }, 800);
+                    // Reset View and resume rotation
+                    myGlobe.pointOfView({ lat: 20, lng: 70, altitude: 2.5 }, 2000);
+                    myGlobe.controls().autoRotate = true;
+                }, 1000);
                 return;
             }
 
             const node = pingNodes[index];
+            
+            // 3D Camera Fly-To animation targeting the specific data center
+            myGlobe.pointOfView({ lat: node.coords[0], lng: node.coords[1], altitude: 1.5 }, 1200);
+
+            // Wait for fly animation to almost finish before printing ping
             setTimeout(() => {
-                const baseMs = Math.floor(10 + (index * 22) + (Math.random() * 6));
-                consoleEl.innerHTML += `<span>pinging ${node.name} [${node.ip}] - dist: ${node.distance} ➔ <strong style="color: #FF9E00;">${baseMs}ms</strong> (success)</span><br>`;
+                const baseMs = Math.floor(10 + (index * 15) + (Math.random() * 6));
+                consoleEl.innerHTML += `<span>pinging ${node.name} [${node.ip}] ➔ <strong style="color: #00F5D4;">${baseMs}ms</strong></span><br>`;
                 consoleEl.scrollTop = consoleEl.scrollHeight;
                 index++;
-                runNextPing();
-            }, 600);
+                
+                // Proceed to next node
+                setTimeout(runNextPing, 600);
+            }, 1200);
         }
 
         runNextPing();

@@ -118,37 +118,26 @@ const { basePrefix = './' } = Astro.props;
 <div class="footer-premium-glass pt-80 pb-30">
   <div class="container lg">
     <!-- Help Section Cards -->
-    <div class="row g-4 mb-80">
-      <div class="col-lg-4">
-        <div class="footer-glass-card d-flex align-items-center">
-          <div class="footer-icon-circle me-3">
-            <i class="icon icon-email"></i>
+    <div class="row g-4 mb-60 justify-content-center">
+      <div class="col-lg-10">
+        <div class="footer-glass-card d-flex flex-column flex-lg-row align-items-center justify-content-between p-4" style="background: rgba(10, 15, 30, 0.6); border: 1px solid rgba(255, 158, 0, 0.2);">
+          <div class="mb-4 mb-lg-0 text-center text-lg-start">
+            <h4 class="text-white mb-2 font-outfit">Questions? We’re here to help!</h4>
+            <p class="text-white-50 m-0">Available 24/7 , 7 days a week, 30 days a month.</p>
           </div>
-          <div>
-            <div class="text-white-50 fs-13 uppercase tracking-widest mb-1">Email Support</div>
-            <a href="mailto:support@1onlyhost.com" class="text-white fs-18 fw-600 text-decoration-none hover-accent">support@1onlyhost.com</a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="footer-glass-card d-flex align-items-center">
-          <div class="footer-icon-circle me-3">
-            <i class="icon icon-phone"></i>
-          </div>
-          <div>
-            <div class="text-white-50 fs-13 uppercase tracking-widest mb-1">24/7 Hotline</div>
-            <span class="text-white fs-18 fw-600">+91 895 475 8694</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-        <div class="footer-glass-card d-flex align-items-center">
-          <div class="footer-icon-circle me-3">
-            <i class="icon icon-chat"></i>
-          </div>
-          <div>
-            <div class="text-white-50 fs-13 uppercase tracking-widest mb-1">Sales Inquiry</div>
-            <a href="mailto:sales@1onlyhost.com" class="text-white fs-18 fw-600 text-decoration-none hover-accent">sales@1onlyhost.com</a>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="mailto:support@1onlyhost.com" class="btn btn-primary d-flex align-items-center gap-2 px-4 py-2" style="background: linear-gradient(135deg, #FF9E00, #FF007F); border: none; border-radius: 8px; color: #fff; font-weight: 600;">
+              <i class="fi fi-rr-envelope"></i> Send Mail
+            </a>
+            <a href="/knowledgebase" class="btn btn-outline-light d-flex align-items-center gap-2 px-4 py-2" style="border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff;">
+              <i class="fi fi-rr-book-alt"></i> Knowledge Base
+            </a>
+            <a href="/video-guides" class="btn btn-outline-light d-flex align-items-center gap-2 px-4 py-2" style="border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff;">
+              <i class="fi fi-rr-play-alt"></i> Video Guides
+            </a>
+            <a href="/support" class="btn btn-outline-light d-flex align-items-center gap-2 px-4 py-2" style="border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: #fff;">
+              <i class="fi fi-rr-headset"></i> Submit Ticket
+            </a>
           </div>
         </div>
       </div>
@@ -165,69 +154,106 @@ const { basePrefix = './' } = Astro.props;
           Empowering businesses with blazing-fast, secure, and reliable web hosting solutions across the globe. Built on our robust Heliocentric Cloud infrastructure.
         </p>
         <div class="d-flex align-items-center gap-2">
-          <a href="#" class="social-icon-modern"><i class="fi fi-brands-facebook"></i></a>
-          <a href="#" class="social-icon-modern"><i class="fi fi-brands-twitter-alt"></i></a>
-          <a href="#" class="social-icon-modern"><i class="fi fi-brands-instagram"></i></a>
-          <a href="#" class="social-icon-modern"><i class="fi fi-brands-linkedin"></i></a>
+          <a href="#" class="social-icon-modern" aria-label="Facebook"><i class="fi fi-brands-facebook"></i></a>
+          <a href="#" class="social-icon-modern" aria-label="Instagram"><i class="fi fi-brands-instagram"></i></a>
+          <a href="#" class="social-icon-modern" aria-label="YouTube"><i class="fi fi-brands-youtube"></i></a>
+          <a href="#" class="social-icon-modern" aria-label="LinkedIn"><i class="fi fi-brands-linkedin"></i></a>
         </div>
       </div>
       
       <div class="col-lg-2 col-6 mb-40">
-        <h5 class="footer-nav-title">Hosting</h5>
+        <h5 class="footer-nav-title">Domain and Hosting</h5>
         <ul class="style-none ps-0">
           <li><a href="/shared-hosting" class="footer-link-modern">Shared Hosting</a></li>
-          <li><a href="/wordpress-hosting" class="footer-link-modern">WordPress Hosting</a></li>
-          <li><a href="/reseller-hosting" class="footer-link-modern">Reseller Hosting</a></li>
-          <li><a href="/cloud-hosting" class="footer-link-modern">Cloud Hosting</a></li>
-          <li><a href="/vps-server" class="footer-link-modern">VPS Server</a></li>
-          <li><a href="/dedicated-server" class="footer-link-modern">Dedicated Server</a></li>
+          <li><a href="/reseller-hosting" class="footer-link-modern">Reseller hosting</a></li>
+          <li><a href="/student-hosting" class="footer-link-modern">Student hosting</a></li>
+          <li><a href="/domain-registration" class="footer-link-modern">Domain registration</a></li>
+          <li><a href="/domain-transfer" class="footer-link-modern">Domain transfer</a></li>
         </ul>
       </div>
       
       <div class="col-lg-2 col-6 mb-40">
-        <h5 class="footer-nav-title">Business</h5>
+        <h5 class="footer-nav-title">Servers</h5>
         <ul class="style-none ps-0">
-          <li><a href="/bussiness-email" class="footer-link-modern">Business Email</a></li>
-          <li><a href="/titan-business-email" class="footer-link-modern">Titan Email</a></li>
-          <li><a href="/enterprises-email" class="footer-link-modern">Enterprise Email</a></li>
-          <li><a href="/google-workspace" class="footer-link-modern">Google Workspace</a></li>
+          <li><a href="/indian-vps" class="footer-link-modern">Indian VPS</a></li>
+          <li><a href="/dedicated-server" class="footer-link-modern">Dedicated server</a></li>
+          <li><a href="/cloud-server" class="footer-link-modern">Cloud server</a></li>
+          <li><a href="/indian-dedicated-servers" class="footer-link-modern">Indian Dedicated Servers</a></li>
         </ul>
       </div>
       
       <div class="col-lg-2 col-6 mb-40">
-        <h5 class="footer-nav-title">Security</h5>
+        <h5 class="footer-nav-title">Important links</h5>
         <ul class="style-none ps-0">
-          <li><a href="/ssl-certificate" class="footer-link-modern">SSL Certificate</a></li>
-          <li><a href="/sitelock-malware" class="footer-link-modern">Sitelock Malware</a></li>
-          <li><a href="/codeguard-backup" class="footer-link-modern">CodeGuard Backup</a></li>
-          <li><a href="/acronis-cyber-backup" class="footer-link-modern">Acronis Backup</a></li>
+          <li><a href="/affiliate" class="footer-link-modern">Join as Affiliate</a></li>
+          <li><a href="/data-center" class="footer-link-modern">Data Center Locations</a></li>
+          <li><a href="/login" class="footer-link-modern">Login</a></li>
+          <li><a href="/support" class="footer-link-modern">Create Support Ticket</a></li>
         </ul>
       </div>
       
       <div class="col-lg-2 col-6 mb-40">
         <h5 class="footer-nav-title">Company</h5>
         <ul class="style-none ps-0">
-          <li><a href="/about-us" class="footer-link-modern">About Us</a></li>
-          <li><a href="/contact" class="footer-link-modern">Contact Us</a></li>
-          <li><a href="/privacy-policy" class="footer-link-modern">Privacy Policy</a></li>
-          <li><a href="/legal-agreement" class="footer-link-modern">Legal Agreement</a></li>
-          <li><a href="#" class="footer-link-modern">Knowledgebase</a></li>
+          <li><a href="/about-us" class="footer-link-modern">About</a></li>
+          <li><a href="/blogs" class="footer-link-modern">Blogs</a></li>
+          <li><a href="/sitemap" class="footer-link-modern">Sitemap</a></li>
+          <li><a href="/careers" class="footer-link-modern">Careers</a></li>
+          <li><a href="/certification" class="footer-link-modern">Certification</a></li>
+          <li><a href="/contact" class="footer-link-modern">Contact us</a></li>
         </ul>
       </div>
     </div>
     
     <div class="border-top border-light border-opacity-10 pt-4 mt-2">
+      <!-- Legal Links -->
+      <div class="row mb-3">
+        <div class="col-12 text-center">
+          <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
+            <a href="/terms-of-service" class="text-white-50 hover-white fs-13 text-decoration-none">Terms of Service</a>
+            <a href="/privacy-policy" class="text-white-50 hover-white fs-13 text-decoration-none">Privacy Policy</a>
+            <a href="/refunds-policy" class="text-white-50 hover-white fs-13 text-decoration-none">Refunds Policy</a>
+            <a href="/service-level-agreement" class="text-white-50 hover-white fs-13 text-decoration-none">Service level agreement</a>
+            <a href="/infringement" class="text-white-50 hover-white fs-13 text-decoration-none">Infringement</a>
+          </div>
+        </div>
+      </div>
+      
       <div class="row align-items-center">
-        <div class="col-md-6 text-center text-md-start">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
           <p class="text-white-50 fs-14 m-0">
-            Copyright © {new Date().getFullYear()} <span class="text-white fw-600">1Only Host</span>. All Rights Reserved.
+            Copyright © {new Date().getFullYear()} <span class="text-white fw-600">1Onlyhost</span>, Child Company of <a href="https://hydizo.com" target="_blank" class="text-white text-decoration-none hover-accent">Hydizo Global Solutions Private Limited and UK Limited.</a>
           </p>
         </div>
-        <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
-          <img src={`${basePrefix}images/cards.png`} alt="Payment Methods" class="img-fluid" style="height: 24px; opacity: 0.7; filter: grayscale(100%); transition: filter 0.3s;" onmouseover="this.style.filter='grayscale(0%)'" onmouseout="this.style.filter='grayscale(100%)'">
+        <div class="col-md-6 mt-4 mt-md-0">
+          <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-end align-items-center">
+            <div class="payment-badge"><img src={`${basePrefix}images/payments/visa.svg`} alt="Visa" style="height: 16px; width: auto; object-fit: contain;"></div>
+            <div class="payment-badge"><img src={`${basePrefix}images/payments/mastercard.svg`} alt="Mastercard" style="height: 22px; width: auto; object-fit: contain;"></div>
+            <div class="payment-badge"><img src={`${basePrefix}images/payments/paypal.svg`} alt="PayPal" style="height: 18px; width: auto; object-fit: contain;"></div>
+            <div class="payment-badge"><img src={`${basePrefix}images/payments/discover.svg`} alt="Discover" style="height: 14px; width: auto; object-fit: contain;"></div>
+            <div class="payment-badge"><img src={`${basePrefix}images/payments/upi.svg`} alt="UPI" style="height: 22px; width: auto; object-fit: contain;"></div>
+            <div class="payment-badge"><img src={`${basePrefix}images/payments/stripe.svg`} alt="Stripe" style="height: 22px; width: auto; object-fit: contain;"></div>
+          </div>
         </div>
       </div>
     </div>
+    <style>
+      .payment-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 36px;
+        min-width: 52px;
+        padding: 0 10px;
+        background: #fff;
+        border-radius: 6px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .payment-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255,255,255,0.15);
+      }
+    </style>
   </div>
 </div>
 

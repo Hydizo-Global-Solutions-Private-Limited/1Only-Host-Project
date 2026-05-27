@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100">
+  <path d="M45 15 L15 30 L15 60 L45 85 L75 60 L75 30 Z" fill="none" stroke="#10b981" stroke-width="8"/>
+  <path d="M45 35 L30 45 L30 60 L45 70 L60 60 L60 45 Z" fill="#10b981"/>
+  <text x="100" y="65" font-family="'Outfit', sans-serif" font-size="55" font-weight="800" fill="#ffffff" letter-spacing="1">Sectigo</text>
+</svg>
