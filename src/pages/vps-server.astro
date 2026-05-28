@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ServerConfigurator from '../components/ServerConfigurator.astro';
+import DataCentersGlobe from '../components/DataCentersGlobe.astro';
 import vpsData from '../data/pages/vps-server.json';
 
 export const prerender = true;
@@ -65,6 +66,8 @@ const data = vpsData;
           </div>
         </div>
       </div>
-    </div>
   </section>
+
+  <!-- Global Infrastructure Map & Latency Pinger -->
+  <DataCentersGlobe />
 </Layout>

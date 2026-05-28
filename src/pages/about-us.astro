@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import DataCentersGlobe from '../components/DataCentersGlobe.astro';
 import aboutData from '../data/pages/about-us.json';
 
 export const prerender = true;
@@ -312,33 +313,9 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
 
 
   <!-- ═══════════════════════════════════════════════════ -->
-  <!-- DATA CENTERS — Global Map -->
+  <!-- DATA CENTERS — Interactive 3D Globe (Reusable Component) -->
   <!-- ═══════════════════════════════════════════════════ -->
-  <section class="py-100 position-relative" data-aos="fade-up" style="border-top: 1px solid rgba(255,255,255,0.04);">
-    <div class="container lg">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-5 text-center text-lg-start">
-          <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(255, 215, 0, 0.1); color: #FFD700; border: 1px solid rgba(255, 215, 0, 0.2);">Global Infrastructure</span>
-          <h2 class="text-white font-outfit fw-900 fs-36">{data.content.datacenters.title}</h2>
-          <p class="text-white-50 fs-16 mt-3 mb-4" style="line-height: 1.7;">{data.content.datacenters.subtitle}</p>
-          
-          <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-2">
-            {data.content.datacenters.locations.map((loc, index) => (
-              <div class="glass-card rounded-pill text-white px-3 py-2 fs-13 d-flex align-items-center font-outfit fw-600" style="border-color: rgba(255,158,0,0.15) !important;" data-aos="zoom-in" data-aos-delay={index * 50}>
-                <span class="me-2" style="width: 8px; height: 8px; background: #00FF88; border-radius: 50%; box-shadow: 0 0 6px #00FF88; display: inline-block;"></span>
-                {loc}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div class="col-lg-7 text-center">
-          <div class="glass-card p-2 rounded-4" style="border-color: rgba(255,158,0,0.12) !important;">
-            <img src={`${basePrefix}images/realistic-night-map.png`} alt="Global Data Center Infrastructure" class="img-fluid rounded-4 w-100" style="object-fit: cover;">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <DataCentersGlobe />
 
 
   <!-- ═══════════════════════════════════════════════════ -->

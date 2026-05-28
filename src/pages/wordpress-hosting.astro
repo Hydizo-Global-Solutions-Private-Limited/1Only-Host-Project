@@ -1,11 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import DataCentersGlobe from '../components/DataCentersGlobe.astro';
-import sharedHostingData from '../data/pages/shared-hosting.json';
+import wordpressHostingData from '../data/pages/wordpress-hosting.json';
 
 export const prerender = true;
 
-const data = sharedHostingData;
+const data = wordpressHostingData;
 
 const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
 const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) : './';
@@ -27,13 +27,13 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
     <div class="container position-relative z-2">
       <div class="row align-items-center sh-hero-inner">
         <div class="col-lg-7 py-5">
-          <div class="d-inline-flex align-items-center mb-4 px-3 py-1 rounded-pill" style="background: rgba(255, 158, 0, 0.1); border: 1px solid rgba(255, 158, 0, 0.2);">
-            <span style="background-color: #00FF88; width: 8px; height: 8px; border-radius: 50%; display: inline-block; box-shadow: 0 0 6px #00FF88;" class="me-2"></span>
-            <span class="fs-12 text-white-50 uppercase tracking-widest fw-600">Premium Shared Hosting</span>
+          <div class="d-inline-flex align-items-center mb-4 px-3 py-1 rounded-pill" style="background: rgba(131, 56, 236, 0.1); border: 1px solid rgba(131, 56, 236, 0.2);">
+            <span style="background-color: #8338EC; width: 8px; height: 8px; border-radius: 50%; display: inline-block; box-shadow: 0 0 6px #8338EC;" class="me-2"></span>
+            <span class="fs-12 text-white-50 uppercase tracking-widest fw-600">Managed WordPress Hosting</span>
           </div>
           
           <h1 class="text-white fw-900 font-outfit mb-4" style="font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.08;">
-            {data.content.hero.title.split(' ').slice(0, -1).join(' ')} <span class="text-gradient">{data.content.hero.title.split(' ').pop()}</span>
+            High-Performance <span class="text-gradient">WordPress</span>
           </h1>
           
           <p class="text-white-50 fs-17 mb-4" style="max-width: 560px; line-height: 1.8;">
@@ -52,8 +52,8 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
         </div>
         
         <div class="col-lg-5 d-none d-lg-block">
-          <div class="glass-card p-2 rounded-4 position-relative overflow-hidden" style="border-color: rgba(255,158,0,0.12) !important;">
-            <img src={`${basePrefix}images/shared-hosting-dashboard.png`} alt="Server Performance Dashboard" class="img-fluid rounded-4 w-100" style="height: 380px; object-fit: cover;">
+          <div class="glass-card p-2 rounded-4 position-relative overflow-hidden" style="border-color: rgba(131,56,236,0.12) !important;">
+            <img src={`${basePrefix}images/shared-hosting-dashboard.png`} alt="WordPress Site Speed Dashboard" class="img-fluid rounded-4 w-100" style="height: 380px; object-fit: cover;">
           </div>
         </div>
       </div>
@@ -69,32 +69,32 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
       <div class="row g-3 text-center">
         <div class="col-6 col-md">
           <div class="d-flex align-items-center justify-content-center gap-2 text-white-50 fs-13 fw-600 font-outfit">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF9E00" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Free SSL
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8338EC" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            1-Click Installer
           </div>
         </div>
         <div class="col-6 col-md">
           <div class="d-flex align-items-center justify-content-center gap-2 text-white-50 fs-13 fw-600 font-outfit">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF007F" stroke-width="2"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M9 12l2 2 4-4"/></svg>
-            30-Day Money Back
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FF007F" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            Auto Backups
           </div>
         </div>
         <div class="col-6 col-md">
           <div class="d-flex align-items-center justify-content-center gap-2 text-white-50 fs-13 fw-600 font-outfit">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8338EC" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            Free Migration
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            LiteSpeed Cache
           </div>
         </div>
         <div class="col-6 col-md">
           <div class="d-flex align-items-center justify-content-center gap-2 text-white-50 fs-13 fw-600 font-outfit">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            99.9% Uptime
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFD700" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+            Staging Sites
           </div>
         </div>
         <div class="col-6 col-md">
           <div class="d-flex align-items-center justify-content-center gap-2 text-white-50 fs-13 fw-600 font-outfit">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00FF88" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-            NVMe SSD
+            NVMe Storage
           </div>
         </div>
       </div>
@@ -108,7 +108,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   <section id="pricing" class="py-100 position-relative" data-aos="fade-up">
     <div class="container">
       <div class="text-center mb-50">
-        <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(255, 158, 0, 0.1); color: #FF9E00; border: 1px solid rgba(255, 158, 0, 0.2);">Pricing</span>
+        <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(131, 56, 236, 0.1); color: #8338EC; border: 1px solid rgba(131, 56, 236, 0.2);">Pricing</span>
         <h2 class="text-white font-outfit fw-900 fs-36">{data.content.pricing.title}</h2>
         <p class="text-white-50 fs-16 mt-2 max-w-700 mx-auto">{data.content.pricing.subtitle}</p>
       </div>
@@ -116,7 +116,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
       <!-- Currency + Billing Toggles -->
       <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-3 mb-50">
         <!-- Currency Toggle -->
-        <div class="glass-card rounded-pill p-1 d-inline-flex" style="border-color: rgba(255,158,0,0.15) !important;">
+        <div class="glass-card rounded-pill p-1 d-inline-flex" style="border-color: rgba(131,56,236,0.15) !important;">
           <button class="currency-toggle-btn rounded-pill fw-700 font-outfit border-0 px-4 py-2 text-white fs-13 active" data-currency="inr">
             ₹ INR
           </button>
@@ -138,12 +138,12 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
       <!-- Pricing Cards -->
       <div class="row g-4 justify-content-center">
         {data.content.pricing.plans.map((plan, pIndex) => (
-          <div class="col-xl-3 col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay={pIndex * 80}>
-            <div class={`sh-pricing-card glass-card h-100 rounded-4 p-4 d-flex flex-column position-relative ${plan.is_popular ? 'sh-popular' : ''}`} style={`border-color: ${plan.is_popular ? 'rgba(255,0,127,0.3)' : 'rgba(255,255,255,0.05)'} !important;`}>
+          <div class="col-xl-4 col-lg-6 col-md-6" data-aos="fade-up" data-aos-delay={pIndex * 80}>
+            <div class={`sh-pricing-card glass-card h-100 rounded-4 p-4 d-flex flex-column position-relative ${plan.is_popular ? 'sh-popular' : ''}`} style={`border-color: ${plan.is_popular ? 'rgba(131,56,236,0.3)' : 'rgba(255,255,255,0.05)'} !important;`}>
               
               {plan.is_popular && (
                 <div class="position-absolute top-0 start-50 translate-middle">
-                  <span class="badge px-3 py-2 rounded-pill fw-800 font-outfit fs-10 uppercase tracking-widest text-white" style="background: linear-gradient(135deg, #FF9E00, #FF007F); box-shadow: 0 4px 15px rgba(255,0,127,0.3);">MOST POPULAR</span>
+                  <span class="badge px-3 py-2 rounded-pill fw-800 font-outfit fs-10 uppercase tracking-widest text-white" style="background: linear-gradient(135deg, #8338EC, #FF007F); box-shadow: 0 4px 15px rgba(131,56,236,0.3);">MOST POPULAR</span>
                 </div>
               )}
               
@@ -159,7 +159,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
                       {priceINR.discount && (
                         <div class="mb-1">
                           <span class="text-decoration-line-through opacity-40 text-white fs-13">₹{priceINR.regular}</span>
-                          <span class="ms-2 fs-11 fw-700 text-white px-2 py-0.5 rounded" style="background: rgba(255,0,127,0.2); color: #FF007F !important;">{priceINR.discount}</span>
+                          <span class="ms-2 fs-11 fw-700 text-white px-2 py-0.5 rounded" style="background: rgba(131,56,236,0.2); color: #8338EC !important;">{priceINR.discount}</span>
                         </div>
                       )}
                       <div class="d-flex align-items-baseline">
@@ -171,7 +171,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
                       {priceUSD.discount && (
                         <div class="mb-1">
                           <span class="text-decoration-line-through opacity-40 text-white fs-13">${priceUSD.regular}</span>
-                          <span class="ms-2 fs-11 fw-700 text-white px-2 py-0.5 rounded" style="background: rgba(255,0,127,0.2); color: #FF007F !important;">{priceUSD.discount}</span>
+                          <span class="ms-2 fs-11 fw-700 text-white px-2 py-0.5 rounded" style="background: rgba(131,56,236,0.2); color: #8338EC !important;">{priceUSD.discount}</span>
                         </div>
                       )}
                       <div class="d-flex align-items-baseline">
@@ -190,7 +190,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
               <div class="sh-features-list flex-grow-1 mt-2">
                 {plan.features.map(feature => (
                   <div class="d-flex align-items-start gap-2 mb-2">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF9E00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8338EC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-1"><polyline points="20 6 9 17 4 12"/></svg>
                     <span class="text-white-50 fs-13 font-inter">{feature}</span>
                   </div>
                 ))}
@@ -210,13 +210,13 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
     <div class="container">
       <div class="row g-5 align-items-center mb-60">
         <div class="col-lg-6">
-          <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(131, 56, 236, 0.1); color: #8338EC; border: 1px solid rgba(131, 56, 236, 0.2);">What's Included</span>
+          <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(131, 56, 236, 0.1); color: #8338EC; border: 1px solid rgba(131, 56, 236, 0.2);">WP Stack</span>
           <h2 class="text-white font-outfit fw-900 fs-36">{data.content.features_grid.title}</h2>
           <p class="text-white-50 fs-16 mt-3" style="line-height: 1.7;">{data.content.features_grid.subtitle}</p>
         </div>
         <div class="col-lg-6">
           <div class="glass-card p-2 rounded-4" style="border-color: rgba(131,56,236,0.12) !important;">
-            <img src={`${basePrefix}images/shared-hosting-speed.png`} alt="Blazing Fast Performance" class="img-fluid rounded-4 w-100" style="height: 300px; object-fit: cover;">
+            <img src={`${basePrefix}images/shared-hosting-speed.png`} alt="Lightning Fast WordPress Loads" class="img-fluid rounded-4 w-100" style="height: 300px; object-fit: cover;">
           </div>
         </div>
       </div>
@@ -225,8 +225,8 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
         {data.content.features_grid.items.map((item, index) => (
           <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay={index * 60}>
             <div class="glass-card h-100 p-4 rounded-4 sh-feature-card" style="border-color: rgba(255,255,255,0.04) !important;">
-              <div class="d-flex align-items-center justify-content-center rounded-3 mb-3" style={`width: 48px; height: 48px; background: ${index % 4 === 0 ? 'rgba(255,158,0,0.1)' : index % 4 === 1 ? 'rgba(255,0,127,0.1)' : index % 4 === 2 ? 'rgba(131,56,236,0.1)' : 'rgba(255,215,0,0.1)'}; border: 1px solid ${index % 4 === 0 ? 'rgba(255,158,0,0.2)' : index % 4 === 1 ? 'rgba(255,0,127,0.2)' : index % 4 === 2 ? 'rgba(131,56,236,0.2)' : 'rgba(255,215,0,0.2)'};`}>
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={index % 4 === 0 ? '#FF9E00' : index % 4 === 1 ? '#FF007F' : index % 4 === 2 ? '#8338EC' : '#FFD700'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <div class="d-flex align-items-center justify-content-center rounded-3 mb-3" style={`width: 48px; height: 48px; background: ${index % 4 === 0 ? 'rgba(131,56,236,0.1)' : index % 4 === 1 ? 'rgba(255,0,127,0.1)' : index % 4 === 2 ? 'rgba(0,245,212,0.1)' : 'rgba(255,215,0,0.1)'}; border: 1px solid ${index % 4 === 0 ? 'rgba(131,56,236,0.2)' : index % 4 === 1 ? 'rgba(255,0,127,0.2)' : index % 4 === 2 ? 'rgba(0,245,212,0.2)' : 'rgba(255,215,0,0.2)'};`}>
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={index % 4 === 0 ? '#8338EC' : index % 4 === 1 ? '#FF007F' : index % 4 === 2 ? '#00F5D4' : '#FFD700'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   {index === 0 ? <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/> :
                    index === 1 ? <><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></> :
                    index === 2 ? <><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/></> :
@@ -253,7 +253,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   <section class="py-100 position-relative" data-aos="fade-up" style="border-top: 1px solid rgba(255,255,255,0.04);">
     <div class="container">
       <div class="text-center mb-60">
-        <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(255, 0, 127, 0.1); color: #FF007F; border: 1px solid rgba(255, 0, 127, 0.2);">Detailed Comparison</span>
+        <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(255, 0, 127, 0.1); color: #FF007F; border: 1px solid rgba(255, 0, 127, 0.2);">Comparison</span>
         <h2 class="text-white font-outfit fw-900 fs-36">{data.content.comparison.title}</h2>
         <p class="text-white-50 fs-16 mt-2 max-w-700 mx-auto">{data.content.comparison.subtitle}</p>
       </div>
@@ -263,19 +263,18 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
           <thead>
             <tr>
               <th scope="col" class="py-4 text-white-50 fw-500 font-outfit fs-15" style="width: 28%;">Features</th>
-              <th scope="col" class="py-4 text-center text-white fw-800 font-outfit fs-15 uppercase">Starter</th>
+              <th scope="col" class="py-4 text-center text-white fw-800 font-outfit fs-15 uppercase">WP-Starter</th>
               <th scope="col" class="py-4 text-center fw-800 font-outfit fs-15 uppercase sh-popular-col">
-                <span class="text-gradient">Platinum</span>
+                <span class="text-gradient">WP-Standard</span>
               </th>
-              <th scope="col" class="py-4 text-center text-white fw-800 font-outfit fs-15 uppercase">Advance</th>
-              <th scope="col" class="py-4 text-center text-white fw-800 font-outfit fs-15 uppercase">Ecommerce</th>
+              <th scope="col" class="py-4 text-center text-white fw-800 font-outfit fs-15 uppercase">WP-Professional</th>
             </tr>
           </thead>
           <tbody>
             {data.content.comparison.categories.map((cat) => (
               <>
                 <tr>
-                  <td colspan="5" class="pt-4 pb-2 font-outfit fw-700 text-gradient fs-14 uppercase tracking-widest">{cat.name}</td>
+                  <td colspan="4" class="pt-4 pb-2 font-outfit fw-700 text-gradient fs-14 uppercase tracking-widest">{cat.name}</td>
                 </tr>
                 {cat.rows.map(row => (
                   <tr class="sh-compare-row">
@@ -283,7 +282,6 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
                     <td class="py-3 text-center text-white-50 font-inter fs-14">{row.starter === '✓' ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00FF88" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> : row.starter === '—' ? <span class="opacity-25">—</span> : row.starter}</td>
                     <td class="py-3 text-center fw-600 text-white font-inter fs-14 sh-popular-col">{row.platinum === '✓' ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00FF88" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> : row.platinum}</td>
                     <td class="py-3 text-center text-white-50 font-inter fs-14">{row.advance === '✓' ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00FF88" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> : row.advance}</td>
-                    <td class="py-3 text-center text-white-50 font-inter fs-14">{row.ecommerce === '✓' ? <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00FF88" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> : row.ecommerce}</td>
                   </tr>
                 ))}
               </>
@@ -296,12 +294,12 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
 
 
   <!-- ═══════════════════════════════════════════════════ -->
-  <!-- WHY 1ONLY HOST — Powered by Industry Leaders -->
+  <!-- WHY WORDPRESS HOSTING — Specs -->
   <!-- ═══════════════════════════════════════════════════ -->
   <section class="py-100 position-relative" data-aos="fade-up" style="border-top: 1px solid rgba(255,255,255,0.04);">
     <div class="container">
       <div class="text-center mb-60">
-        <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(255, 215, 0, 0.1); color: #FFD700; border: 1px solid rgba(255, 215, 0, 0.2);">Our Technology</span>
+        <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(255, 215, 0, 0.1); color: #FFD700; border: 1px solid rgba(255, 215, 0, 0.2);">WordPress Engine</span>
         <h2 class="text-white font-outfit fw-900 fs-36">{data.content.suppliers.title}</h2>
         <p class="text-white-50 fs-16 mt-2 max-w-700 mx-auto">{data.content.suppliers.subtitle}</p>
       </div>
@@ -310,8 +308,8 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
         {data.content.suppliers.items.map((item, index) => (
           <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay={index * 80}>
             <div class="glass-card h-100 p-4 rounded-4 text-center sh-feature-card" style="border-color: rgba(255,255,255,0.05) !important;">
-              <div class="d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3" style={`width: 60px; height: 60px; background: ${index === 0 ? 'rgba(255,158,0,0.1)' : index === 1 ? 'rgba(255,0,127,0.1)' : index === 2 ? 'rgba(131,56,236,0.1)' : 'rgba(255,215,0,0.1)'}; border: 1px solid ${index === 0 ? 'rgba(255,158,0,0.2)' : index === 1 ? 'rgba(255,0,127,0.2)' : index === 2 ? 'rgba(131,56,236,0.2)' : 'rgba(255,215,0,0.2)'};`}>
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={index === 0 ? '#FF9E00' : index === 1 ? '#FF007F' : index === 2 ? '#8338EC' : '#FFD700'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <div class="d-flex align-items-center justify-content-center rounded-circle mx-auto mb-3" style={`width: 60px; height: 60px; background: ${index === 0 ? 'rgba(131,56,236,0.1)' : index === 1 ? 'rgba(255,0,127,0.1)' : index === 2 ? 'rgba(0,245,212,0.1)' : 'rgba(255,215,0,0.1)'}; border: 1px solid ${index === 0 ? 'rgba(131,56,236,0.2)' : index === 1 ? 'rgba(255,0,127,0.2)' : index === 2 ? 'rgba(0,245,212,0.2)' : 'rgba(255,215,0,0.2)'};`}>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={index === 0 ? '#8338EC' : index === 1 ? '#FF007F' : index === 2 ? '#00F5D4' : '#FFD700'} stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   {index === 0 ? <><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></> :
                    index === 1 ? <><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></> :
                    index === 2 ? <><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></> :
@@ -335,48 +333,18 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
 
 
   <!-- ═══════════════════════════════════════════════════ -->
-  <!-- FAQ -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <section class="py-100 position-relative" data-aos="fade-up" style="border-top: 1px solid rgba(255,255,255,0.04);">
-    <div class="container">
-      <div class="text-center mb-60">
-        <h2 class="text-white font-outfit fw-900 fs-36">{data.content.faq.title}</h2>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-10">
-          <div class="accordion accordion-style-two style-two p0 bg-transparent shadow-none" id="sharedFaqAccordion">
-            {data.content.faq.items.map((item, index) => (
-              <div class="accordion-item" data-aos="fade-up" data-aos-delay={index * 40}>
-                <h2 class="accordion-header">
-                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#sharedFaq${index}`} aria-expanded="false" aria-controls={`sharedFaq${index}`}>{item.q}</button>
-                </h2>
-                <div id={`sharedFaq${index}`} class="accordion-collapse collapse" data-bs-parent="#sharedFaqAccordion">
-                  <div class="accordion-body">
-                    <p class="fs-16 opacity-85 text-white m-0">{item.a}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ═══════════════════════════════════════════════════ -->
   <!-- CTA -->
   <!-- ═══════════════════════════════════════════════════ -->
   <section class="py-80" data-aos="fade-up">
     <div class="container">
       <div class="sh-cta-banner text-center">
         <div class="position-relative z-2">
-          <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3 d-inline-block" style="background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px;">🚀 Ready to Launch?</span>
-          <h2 class="text-white font-outfit fw-900 fs-36 mt-3 mb-3">Start Hosting in Under 60 Seconds</h2>
-          <p class="text-white-50 fs-16 max-w-700 mx-auto mb-4">Instant setup, 30-day money-back guarantee, free migration. Zero risk.</p>
+          <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3 d-inline-block" style="background: rgba(255,255,255,0.08); color: #fff; border: 1px solid rgba(255,255,255,0.1); border-radius: 20px;">🚀 Optimized WP Platforms</span>
+          <h2 class="text-white font-outfit fw-900 fs-36 mt-3 mb-3">Launch Your WordPress Blog or Store Today</h2>
+          <p class="text-white-50 fs-16 max-w-700 mx-auto mb-4">WordPress pre-installed, active caching modules, AI malware filtering, staging environments. Fast & Secure.</p>
           <div class="d-flex justify-content-center gap-3 flex-wrap">
             <a href="#pricing" class="btn-eighteen py-3 px-5 uppercase tracking-wider fs-13 fw-700">Choose Your Plan</a>
-            <a href="/contact" class="btn btn-outline-light py-3 px-5 uppercase tracking-wider fs-13 fw-600 rounded-pill" style="border-color: rgba(255,255,255,0.15);">Talk to Sales</a>
+            <a href="/contact" class="btn btn-outline-light py-3 px-5 uppercase tracking-wider fs-13 fw-600 rounded-pill" style="border-color: rgba(255,255,255,0.15);">Talk to WordPress Sales</a>
           </div>
         </div>
       </div>
@@ -462,7 +430,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ===== Utility ===== */
 .text-gradient {
-  background: linear-gradient(90deg, #FF9E00, #FF007F);
+  background: linear-gradient(90deg, #8338EC, #FF007F);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -485,8 +453,8 @@ document.addEventListener('DOMContentLoaded', () => {
   transition: all 0.3s ease;
 }
 .currency-toggle-btn.active {
-  background: linear-gradient(135deg, #FF9E00, #FF007F);
-  box-shadow: 0 4px 15px rgba(255, 0, 127, 0.3);
+  background: linear-gradient(135deg, #8338EC, #FF007F);
+  box-shadow: 0 4px 15px rgba(131, 56, 236, 0.3);
 }
 
 /* ===== Billing Toggle ===== */
@@ -508,21 +476,21 @@ document.addEventListener('DOMContentLoaded', () => {
   box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 .sh-popular {
-  background: rgba(255, 0, 127, 0.03) !important;
-  box-shadow: 0 0 40px rgba(255, 0, 127, 0.06);
+  background: rgba(131, 56, 236, 0.03) !important;
+  box-shadow: 0 0 40px rgba(131, 56, 236, 0.06);
 }
 .sh-popular::before {
   content: '';
   position: absolute;
   inset: -1px;
-  background: linear-gradient(135deg, rgba(255,158,0,0.3), rgba(255,0,127,0.3));
+  background: linear-gradient(135deg, rgba(131,56,236,0.3), rgba(255,0,127,0.3));
   border-radius: inherit;
   z-index: -1;
 }
 
 /* CTA Buttons */
 .sh-cta-primary {
-  background: linear-gradient(135deg, #FF9E00, #FF007F);
+  background: linear-gradient(135deg, #8338EC, #FF007F);
   text-decoration: none;
   border: none;
   box-shadow: 0 6px 20px rgba(255, 0, 127, 0.3);
@@ -540,8 +508,8 @@ document.addEventListener('DOMContentLoaded', () => {
   transition: all 0.3s ease;
 }
 .sh-cta-outline:hover {
-  border-color: rgba(255, 158, 0, 0.4);
-  background: rgba(255, 158, 0, 0.05);
+  border-color: rgba(131, 56, 236, 0.4);
+  background: rgba(131, 56, 236, 0.05);
 }
 
 /* ===== Feature Cards ===== */
@@ -550,8 +518,8 @@ document.addEventListener('DOMContentLoaded', () => {
 }
 .sh-feature-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(255, 158, 0, 0.2) !important;
-  box-shadow: 0 12px 30px rgba(255, 158, 0, 0.06) !important;
+  border-color: rgba(131, 56, 236, 0.2) !important;
+  box-shadow: 0 12px 30px rgba(131, 56, 236, 0.06) !important;
 }
 
 /* ===== Comparison Table ===== */
@@ -570,13 +538,13 @@ document.addEventListener('DOMContentLoaded', () => {
   background: rgba(255, 255, 255, 0.02);
 }
 .sh-popular-col {
-  background: rgba(255, 0, 127, 0.03);
+  background: rgba(131, 56, 236, 0.03);
 }
 
 /* ===== CTA Banner ===== */
 .sh-cta-banner {
-  background: linear-gradient(135deg, rgba(255, 158, 0, 0.06), rgba(255, 0, 127, 0.04));
-  border: 1px solid rgba(255, 158, 0, 0.15);
+  background: linear-gradient(135deg, rgba(131, 56, 236, 0.06), rgba(255, 0, 127, 0.04));
+  border: 1px solid rgba(131, 56, 236, 0.15);
   border-radius: 24px;
   padding: 80px 40px;
   position: relative;
@@ -589,7 +557,7 @@ document.addEventListener('DOMContentLoaded', () => {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at 30% 50%, rgba(255, 158, 0, 0.04) 0%, transparent 50%);
+  background: radial-gradient(circle at 30% 50%, rgba(131, 56, 236, 0.04) 0%, transparent 50%);
   pointer-events: none;
 }
 

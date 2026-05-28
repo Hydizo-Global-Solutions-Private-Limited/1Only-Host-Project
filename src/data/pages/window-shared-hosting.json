@@ -1,0 +1,210 @@
+{
+  "seo": {
+    "title": "Premium Windows Shared Hosting | Plesk, MSSQL & ASP.NET | 1OnlyHost",
+    "description": "High-performance Windows shared hosting powered by Plesk. Support for ASP.NET, MSSQL, PHP, and free SSL. Fast, secure, and reliable hosting for Windows environments.",
+    "keywords": "windows hosting, plesk shared hosting, asp.net hosting, mssql hosting, window shared hosting india"
+  },
+  "content": {
+    "hero": {
+      "title": "Premium Windows Hosting At Its Best",
+      "subtitle": "Blazing-fast Windows servers with Plesk Control Panel, MSSQL Database, ASP.NET framework support, and 99.9% uptime. High availability backed by 24/7 expert assistance.",
+      "price_start_inr": "199",
+      "price_start_usd": "2.21"
+    },
+    "pricing": {
+      "title": "Windows Shared Hosting Plans",
+      "subtitle": "Choose the perfect Windows hosting plan. Every plan includes Plesk, Free SSL, secure FTP, and professional email accounts.",
+      "cycles": ["Monthly", "Annually", "Biennially", "Triennially"],
+      "plans": [
+        {
+          "name": "WIN-STARTER",
+          "purchase_link_inr": "https://my.1onlyhost.com/store/window-shared-hosting",
+          "purchase_link_usd": "https://my.1onlyhost.com/store/window-shared-hosting?currency=2",
+          "prices_inr": {
+            "Monthly": { "current": "199", "period": "/mo", "regular": null, "discount": null },
+            "Annually": { "current": "2028", "period": "/yr", "regular": "2700", "discount": "25% Off" },
+            "Biennially": { "current": "3576", "period": "/2yr", "regular": "5400", "discount": "33% Off" },
+            "Triennially": { "current": "4644", "period": "/3yr", "regular": "8100", "discount": "42% Off" }
+          },
+          "prices_usd": {
+            "Monthly": { "current": "2.21", "period": "/mo", "regular": null, "discount": null },
+            "Annually": { "current": "22.53", "period": "/yr", "regular": "30.00", "discount": "25% Off" },
+            "Biennially": { "current": "39.73", "period": "/2yr", "regular": "60.00", "discount": "33% Off" },
+            "Triennially": { "current": "51.60", "period": "/3yr", "regular": "90.00", "discount": "42% Off" }
+          },
+          "features": [
+            "Host 1 Website",
+            "15GB SSD Storage",
+            "Unlimited Bandwidth",
+            "5 Email Accounts",
+            "2 MSSQL Databases",
+            "2 MySQL Databases",
+            "Free SSL Certificate",
+            "Plesk Control Panel",
+            "ASP.NET 4.8 / Core 8.0",
+            "PHP 8.2 & PHP 8.3",
+            "Free Website Migration",
+            "24/7 Premium Support"
+          ]
+        },
+        {
+          "name": "WIN-STANDARD",
+          "is_popular": true,
+          "purchase_link_inr": "https://my.1onlyhost.com/store/window-shared-hosting",
+          "purchase_link_usd": "https://my.1onlyhost.com/store/window-shared-hosting?currency=2",
+          "prices_inr": {
+            "Monthly": { "current": "299", "period": "/mo", "regular": null, "discount": null },
+            "Annually": { "current": "2988", "period": "/yr", "regular": "4000", "discount": "25% Off" },
+            "Biennially": { "current": "5256", "period": "/2yr", "regular": "8000", "discount": "34% Off" },
+            "Triennially": { "current": "6804", "period": "/3yr", "regular": "12000", "discount": "43% Off" }
+          },
+          "prices_usd": {
+            "Monthly": { "current": "3.32", "period": "/mo", "regular": null, "discount": null },
+            "Annually": { "current": "33.20", "period": "/yr", "regular": "44.44", "discount": "25% Off" },
+            "Biennially": { "current": "58.40", "period": "/2yr", "regular": "88.89", "discount": "34% Off" },
+            "Triennially": { "current": "75.60", "period": "/3yr", "regular": "133.33", "discount": "43% Off" }
+          },
+          "features": [
+            "Host 5 Websites",
+            "40GB SSD Storage",
+            "Unlimited Bandwidth",
+            "20 Email Accounts",
+            "5 MSSQL Databases",
+            "5 MySQL Databases",
+            "Free SSL Certificate",
+            "Plesk Control Panel",
+            "ASP.NET 4.8 / Core 8.0",
+            "PHP 8.2 & PHP 8.3",
+            "Free Website Migration",
+            "24/7 Premium Support"
+          ]
+        },
+        {
+          "name": "WIN-PROFESSIONAL",
+          "purchase_link_inr": "https://my.1onlyhost.com/store/window-shared-hosting",
+          "purchase_link_usd": "https://my.1onlyhost.com/store/window-shared-hosting?currency=2",
+          "prices_inr": {
+            "Monthly": { "current": "499", "period": "/mo", "regular": null, "discount": null },
+            "Annually": { "current": "5028", "period": "/yr", "regular": "6800", "discount": "26% Off" },
+            "Biennially": { "current": "8856", "period": "/2yr", "regular": "13600", "discount": "35% Off" },
+            "Triennially": { "current": "11484", "period": "/3yr", "regular": "20400", "discount": "43% Off" }
+          },
+          "prices_usd": {
+            "Monthly": { "current": "5.54", "period": "/mo", "regular": null, "discount": null },
+            "Annually": { "current": "55.87", "period": "/yr", "regular": "75.56", "discount": "26% Off" },
+            "Biennially": { "current": "98.40", "period": "/2yr", "regular": "151.11", "discount": "35% Off" },
+            "Triennially": { "current": "127.60", "period": "/3yr", "regular": "226.67", "discount": "43% Off" }
+          },
+          "features": [
+            "Host 10 Websites",
+            "80GB SSD Storage",
+            "Unlimited Bandwidth",
+            "50 Email Accounts",
+            "10 MSSQL Databases",
+            "10 MySQL Databases",
+            "Free SSL Certificate",
+            "Plesk Control Panel",
+            "ASP.NET 4.8 / Core 8.0",
+            "PHP 8.2 & PHP 8.3",
+            "Free Website Migration",
+            "24/7 Premium Support"
+          ]
+        }
+      ]
+    },
+    "features_grid": {
+      "title": "Built for Windows Server Efficiency",
+      "subtitle": "All plans include powerful Plesk features, ASP.NET application pools, and enterprise database integrations out of the box.",
+      "items": [
+        {
+          "title": "Plesk Obsidian Control",
+          "description": "Manage websites, files, emails, and MSSQL databases with the industry's most popular Windows panel interface."
+        },
+        {
+          "title": "ASP.NET & .NET Core",
+          "description": "Native support for modern .NET Frameworks, including classic ASP, ASP.NET 3.5, 4.8, and .NET Core 8.x."
+        },
+        {
+          "title": "MSSQL & MySQL Databases",
+          "description": "Create both Microsoft SQL Server and MySQL databases side-by-side inside your Plesk panel."
+        },
+        {
+          "title": "Free Website Migrations",
+          "description": "We migrate your entire Plesk/Windows website configurations smoothly with zero downtime."
+        },
+        {
+          "title": "Secure FTP & WebDAV",
+          "description": "Upload and manage directories safely with WebDAV and FTPS encryption mechanisms."
+        },
+        {
+          "title": "Spam Protection Email",
+          "description": "Domain-linked email addresses secured with anti-spam filters and MailEnable integration."
+        },
+        {
+          "title": "99.9% Uptime Guarantee",
+          "description": "Redundant IIS server pooling and web application isolation keeps your sites performing around the clock."
+        },
+        {
+          "title": "SSD-Accelerated Racks",
+          "description": "Windows IIS server arrays backed by enterprise solid state drives for high-throughput disk requests."
+        }
+      ]
+    },
+    "comparison": {
+      "title": "Compare Windows Plans Side by Side",
+      "subtitle": "Pick the right server allocation for your ASP.NET application or database setup.",
+      "categories": [
+        {
+          "name": "Resources & Frameworks",
+          "rows": [
+            { "feature": "Websites Hosted", "starter": "1", "platinum": "5", "advance": "10", "ecommerce": "15" },
+            { "feature": "Storage", "starter": "15 GB SSD", "platinum": "40 GB SSD", "advance": "80 GB SSD", "ecommerce": "120 GB SSD" },
+            { "feature": "Bandwidth", "starter": "Unlimited", "platinum": "Unlimited", "advance": "Unlimited", "ecommerce": "Unlimited" },
+            { "feature": "IIS Application Pool", "starter": "Dedicated", "platinum": "Dedicated", "advance": "Dedicated", "ecommerce": "Dedicated" },
+            { "feature": "Classic ASP / .NET Core", "starter": "✓", "platinum": "✓", "advance": "✓", "ecommerce": "✓" }
+          ]
+        },
+        {
+          "name": "Database & Email",
+          "rows": [
+            { "feature": "MSSQL Databases", "starter": "2", "platinum": "5", "advance": "10", "ecommerce": "20" },
+            { "feature": "MySQL Databases", "starter": "2", "platinum": "5", "advance": "10", "ecommerce": "20" },
+            { "feature": "Email Accounts", "starter": "5", "platinum": "20", "advance": "50", "ecommerce": "100" },
+            { "feature": "Mailbox Storage", "starter": "500 MB", "platinum": "1 GB", "advance": "2 GB", "ecommerce": "5 GB" }
+          ]
+        },
+        {
+          "name": "Security & Administration",
+          "rows": [
+            { "feature": "Control Panel", "starter": "Plesk", "platinum": "Plesk", "advance": "Plesk", "ecommerce": "Plesk" },
+            { "feature": "Free SSL", "starter": "✓", "platinum": "✓", "advance": "✓", "ecommerce": "✓" },
+            { "feature": "DDoS Shielding", "starter": "✓", "platinum": "✓", "advance": "✓", "ecommerce": "✓" },
+            { "feature": "FTP/FTPS Accounts", "starter": "1", "platinum": "5", "advance": "10", "ecommerce": "20" }
+          ]
+        }
+      ]
+    },
+    "suppliers": {
+      "title": "Powered by Microsoft Technology",
+      "subtitle": "Built on top of stable IIS server arrays, Plesk panels, and modern Intel processors.",
+      "items": [
+        {
+          "title": "Plesk Control Panel",
+          "description": "Full administrative tools to manage websites, files, ASP.NET application pools, and databases."
+        },
+        {
+          "title": "Windows Server 2022",
+          "description": "Equipped with the latest Microsoft IIS 10.0 web serving components for extreme reliability."
+        },
+        {
+          "title": "MSSQL Support",
+          "description": "Native integration with Microsoft SQL Server database engines to power database-driven web apps."
+        },
+        {
+          "title": "Intel Xeon CPUs",
+          "description": "Enterprise-grade processors designed for maximum computing throughput and high availability."
+        }
+      ]
+    }
+  }
+}

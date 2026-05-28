@@ -1,0 +1,209 @@
+{
+  "seo": {
+    "title": "Optimized WordPress Hosting Services | Fast & Reliable | 1OnlyHost",
+    "description": "Premium WordPress hosting plans. Pre-configured WordPress with LiteSpeed cache, auto-updates, free SSL, staging environment, and daily malware protection.",
+    "keywords": "wordpress hosting, wp hosting, managed wordpress, fast wordpress hosting, wordpress india"
+  },
+  "content": {
+    "hero": {
+      "title": "Stunning WordPress Hosting Optimized for Speed",
+      "subtitle": "Unleash your site's full potential with our custom WordPress hosting platform. Pre-configured LiteSpeed caching, auto-backups, and SSD storage.",
+      "price_start_inr": "99",
+      "price_start_usd": "1.10"
+    },
+    "pricing": {
+      "title": "WordPress Managed Plans",
+      "subtitle": "Get WordPress pre-installed. Choose the plan that scales with your growth. All plans include 1-click installer and LiteSpeed cache.",
+      "cycles": ["Monthly", "Annually", "Biennially", "Triennially"],
+      "plans": [
+        {
+          "name": "WP-STARTER",
+          "purchase_link_inr": "https://my.1onlyhost.com/store/wordpress-hosting",
+          "purchase_link_usd": "https://my.1onlyhost.com/store/wordpress-hosting?currency=2",
+          "prices_inr": {
+            "Monthly": { "current": "99", "period": "/mo", "regular": null, "discount": null },
+            "Annually": { "current": "948", "period": "/yr", "regular": "1400", "discount": "32% Off" },
+            "Biennially": { "current": "1656", "period": "/2yr", "regular": "2800", "discount": "40% Off" },
+            "Triennially": { "current": "2124", "period": "/3yr", "regular": "4200", "discount": "49% Off" }
+          },
+          "prices_usd": {
+            "Monthly": { "current": "1.10", "period": "/mo", "regular": null, "discount": null },
+            "Annually": { "current": "10.53", "period": "/yr", "regular": "15.56", "discount": "32% Off" },
+            "Biennially": { "current": "18.40", "period": "/2yr", "regular": "31.11", "discount": "40% Off" },
+            "Triennially": { "current": "23.60", "period": "/3yr", "regular": "46.67", "discount": "49% Off" }
+          },
+          "features": [
+            "Host 1 WordPress Site",
+            "10GB NVMe SSD Storage",
+            "Unlimited Bandwidth",
+            "5 Email Accounts",
+            "LiteSpeed Cache Plugin",
+            "1-Click WordPress Install",
+            "WordPress Auto-Updates",
+            "Free SSL Certificate",
+            "Auto Backup & Restore",
+            "DDoS Core Protection",
+            "Free Website Migration"
+          ]
+        },
+        {
+          "name": "WP-STANDARD",
+          "is_popular": true,
+          "purchase_link_inr": "https://my.1onlyhost.com/store/wordpress-hosting",
+          "purchase_link_usd": "https://my.1onlyhost.com/store/wordpress-hosting?currency=2",
+          "prices_inr": {
+            "Monthly": { "current": "199", "period": "/mo", "regular": null, "discount": null },
+            "Annually": { "current": "2028", "period": "/yr", "regular": "3000", "discount": "32% Off" },
+            "Biennially": { "current": "3576", "period": "/2yr", "regular": "6000", "discount": "40% Off" },
+            "Triennially": { "current": "4644", "period": "/3yr", "regular": "9000", "discount": "49% Off" }
+          },
+          "prices_usd": {
+            "Monthly": { "current": "2.21", "period": "/mo", "regular": null, "discount": null },
+            "Annually": { "current": "22.53", "period": "/yr", "regular": "33.33", "discount": "32% Off" },
+            "Biennially": { "current": "39.73", "period": "/2yr", "regular": "66.67", "discount": "40% Off" },
+            "Triennially": { "current": "51.60", "period": "/3yr", "regular": "100.00", "discount": "49% Off" }
+          },
+          "features": [
+            "Host 3 WordPress Sites",
+            "30GB NVMe SSD Storage",
+            "Unlimited Bandwidth",
+            "20 Email Accounts",
+            "LiteSpeed Cache Plugin",
+            "WP CLI & SSH Access",
+            "WordPress Auto-Updates",
+            "Free SSL Certificate",
+            "Auto Backup & Restore",
+            "Imunify360 Protection",
+            "Staging Environment",
+            "Free Website Migration"
+          ]
+        },
+        {
+          "name": "WP-PROFESSIONAL",
+          "purchase_link_inr": "https://my.1onlyhost.com/store/wordpress-hosting",
+          "purchase_link_usd": "https://my.1onlyhost.com/store/wordpress-hosting?currency=2",
+          "prices_inr": {
+            "Monthly": { "current": "399", "period": "/mo", "regular": null, "discount": null },
+            "Annually": { "current": "4068", "period": "/yr", "regular": "6000", "discount": "32% Off" },
+            "Biennially": { "current": "7176", "period": "/2yr", "regular": "12000", "discount": "40% Off" },
+            "Triennially": { "current": "9324", "period": "/3yr", "regular": "18000", "discount": "48% Off" }
+          },
+          "prices_usd": {
+            "Monthly": { "current": "4.43", "period": "/mo", "regular": null, "discount": null },
+            "Annually": { "current": "45.20", "period": "/yr", "regular": "66.67", "discount": "32% Off" },
+            "Biennially": { "current": "79.73", "period": "/2yr", "regular": "133.33", "discount": "40% Off" },
+            "Triennially": { "current": "103.60", "period": "/3yr", "regular": "200.00", "discount": "48% Off" }
+          },
+          "features": [
+            "Host 10 WordPress Sites",
+            "70GB NVMe SSD Storage",
+            "Unlimited Bandwidth",
+            "50 Email Accounts",
+            "LiteSpeed Cache Plugin",
+            "WP CLI & SSH Access",
+            "WordPress Auto-Updates",
+            "Free SSL Certificate",
+            "Auto Backup & Restore",
+            "Imunify360 Protection",
+            "Staging Environment",
+            "Priority Support 24/7",
+            "Free Website Migration"
+          ]
+        }
+      ]
+    },
+    "features_grid": {
+      "title": "Optimized WordPress Platform",
+      "subtitle": "Designed to speed up your page loads, simplify core management, and secure your installations automatically.",
+      "items": [
+        {
+          "title": "Pre-configured LiteSpeed",
+          "description": "Equipped with LiteSpeed Web Cache plugin for up to 10x faster page loading speeds than standard servers."
+        },
+        {
+          "title": "One-Click Installs & Staging",
+          "description": "Spin up a new WordPress sandbox environment, test layout changes safely, and push live with 1-click."
+        },
+        {
+          "title": "Core Auto-Updates",
+          "description": "Keep plugins, themes, and WordPress core up-to-date automatically to close vulnerability windows."
+        },
+        {
+          "title": "Free Website Migrations",
+          "description": "Our WordPress technicians handle the entire transfer from your old host without downtime."
+        },
+        {
+          "title": "WordPress CLI Tooling",
+          "description": "Manage plugins, update cores, and run administrative tasks from the terminal command-line interface."
+        },
+        {
+          "title": "Real-time Firewalling",
+          "description": "Proactively blocks brute-force attempts on wp-login.php and scans file modifications automatically."
+        },
+        {
+          "title": "99.9% Uptime Guarantee",
+          "description": "Distributed hardware architectures ensure that your site stays online and accessible around the clock."
+        },
+        {
+          "title": "High Speed NVMe Storage",
+          "description": "Fast read/write cycles load assets and execute PHP scripts instantly on solid state servers."
+        }
+      ]
+    },
+    "comparison": {
+      "title": "Compare WordPress Plans Side by Side",
+      "subtitle": "Discover the differences in databases, domains, caching, and security tooling.",
+      "categories": [
+        {
+          "name": "Resources & Performance",
+          "rows": [
+            { "feature": "WordPress Sites", "starter": "1", "platinum": "3", "advance": "10", "ecommerce": "25" },
+            { "feature": "Storage", "starter": "10 GB NVMe", "platinum": "30 GB NVMe", "advance": "70 GB NVMe", "ecommerce": "120 GB NVMe" },
+            { "feature": "LiteSpeed Caching", "starter": "✓", "platinum": "✓", "advance": "✓", "ecommerce": "✓" },
+            { "feature": "Auto Backups", "starter": "Daily", "platinum": "Daily", "advance": "Daily", "ecommerce": "Daily" },
+            { "feature": "WP-CLI Access", "starter": "—", "platinum": "✓", "advance": "✓", "ecommerce": "✓" }
+          ]
+        },
+        {
+          "name": "Databases & Email",
+          "rows": [
+            { "feature": "MySQL Databases", "starter": "2", "platinum": "10", "advance": "Unlimited", "ecommerce": "Unlimited" },
+            { "feature": "Email Accounts", "starter": "5", "platinum": "20", "advance": "50", "ecommerce": "100" },
+            { "feature": "Webmail Interface", "starter": "✓", "platinum": "✓", "advance": "✓", "ecommerce": "✓" }
+          ]
+        },
+        {
+          "name": "Security Tools",
+          "rows": [
+            { "feature": "Free SSL", "starter": "✓", "platinum": "✓", "advance": "✓", "ecommerce": "✓" },
+            { "feature": "Brute Force Filter", "starter": "✓", "platinum": "✓", "advance": "✓", "ecommerce": "✓" },
+            { "feature": "WAF & Security Hub", "starter": "Core WAF", "platinum": "Imunify360", "advance": "Imunify360", "ecommerce": "Imunify360" },
+            { "feature": "Staging Tool", "starter": "—", "platinum": "✓", "advance": "✓", "ecommerce": "✓" }
+          ]
+        }
+      ]
+    },
+    "suppliers": {
+      "title": "Engineered for Peak WordPress Speeds",
+      "subtitle": "Built with industry-leading stacks to ensure your blog or store is loading instantly.",
+      "items": [
+        {
+          "title": "LiteSpeed Web Server",
+          "description": "LSCache plugin runs direct hardware-level cache handoffs, bypassing PHP overhead entirely."
+        },
+        {
+          "title": "Auto Updates System",
+          "description": "Ensures WordPress core databases and security patches are automatically applied for peace of mind."
+        },
+        {
+          "title": "Imunify360 AI Shield",
+          "description": "Advanced firewalls detect and counter WordPress-specific injection scripts and exploits."
+        },
+        {
+          "title": "Developer Tooling",
+          "description": "Equipped with Git version control, SSH pipelines, and WP-CLI for complete automation control."
+        }
+      ]
+    }
+  }
+}

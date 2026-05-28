@@ -1,0 +1,205 @@
+---
+/**
+ * DataCentersGlobe.astro
+ * Reusable "Our Data Centers Across the Globe" section
+ * Features: 3D WebGL Globe, Ping Console, Live Infrastructure HUD
+ * Usage: <DataCentersGlobe />
+ */
+
+// Compute dynamic basePrefix
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) : './';
+---
+
+<!-- Global Infrastructure Map & Latency Pinger -->
+<section class="network-map-section pt-40 pb-80" data-aos="fade-up">
+  <div class="container lg">
+    <div class="title-eleven text-center mb-50">
+      <h2 class="text-white font-outfit fw-900 fs-32">Our Data Centers Across the Globe</h2>
+      <p class="text-white-50 fs-16 max-width-800 mx-auto">Your gateway to seamless connectivity and trusted services, available anywhere. Wherever you are, location doesn't matter. <span class="text-accent fw-600">Best student hosting in india</span>.</p>
+    </div>
+    
+    <!-- Globe.gl 3D WebGL Library for Premium Volumetric Map -->
+    <script is:inline src="//unpkg.com/globe.gl"></script>
+    
+    <style>
+      /* Floating HUD Responsive Rules */
+      @media (max-width: 991px) {
+        .map-layer { height: 400px !important; border-bottom: 1px solid rgba(255,158,0,0.2); }
+        .hud-gradient-fade { display: none !important; }
+        .hud-ui-layer { position: relative !important; padding: 2rem 1rem !important; }
+        .hud-glass-panel { background: transparent !important; border: none !important; padding: 0 !important; backdrop-filter: none !important; }
+      }
+    </style>
+
+    <!-- Floating HUD Overlay Layout -->
+    <div class="hud-overlay-container mx-auto mb-50" style="position: relative; border-radius: 24px; overflow: hidden; border: 1px solid rgba(255,158,0,0.2); box-shadow: 0 20px 50px rgba(0,0,0,0.6); background: #02040A; max-width: 1200px;">
+      
+      <!-- The Interactive Map (Background Layer) -->
+      <div id="interactive-global-map" class="map-layer" style="width: 100%; height: 750px; z-index: 1;"></div>
+      
+      <!-- Gradient Overlay to make HUD readable -->
+      <div class="hud-gradient-fade d-none d-lg-block" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 60%; background: linear-gradient(0deg, rgba(2,4,10,0.98) 10%, rgba(2,4,10,0.7) 50%, rgba(2,4,10,0) 100%); z-index: 2; pointer-events: none;"></div>
+
+      <!-- The Floating HUD UI (Foreground Layer) -->
+      <div class="hud-ui-layer" style="position: absolute; bottom: 0; left: 0; width: 100%; z-index: 3; pointer-events: none; padding: 0 2rem 2rem 2rem;">
+        
+        <div class="hud-glass-panel w-100" style="pointer-events: auto; background: rgba(10, 15, 30, 0.5); backdrop-filter: blur(12px); border: 1px solid rgba(255,158,0,0.2); border-radius: 20px; padding: 2.5rem 2rem;">
+          
+          <div class="row align-items-center g-4">
+            <div class="col-lg-5 text-start">
+              <h3 class="text-white fw-800 m-0 font-outfit fs-24">Live Infrastructure</h3>
+              <p class="fs-15 opacity-75 mt-2 mb-4 text-white-50" style="line-height: 1.5;">Ping our edge nodes in real-time. Verify connection speeds and packet transport performance to our global data centers.</p>
+              <button id="run-ping-btn" class="btn-eighteen btn-ping-glow uppercase tracking-wider py-3 px-5 w-100 text-center" style="border: 1px solid rgba(255, 158, 0, 0.5);">Ping Data Center Nodes</button>
+            </div>
+            <div class="col-lg-4">
+              <div class="p-4 rounded text-start fs-13 font-monospace console-scanline position-relative" style="background: rgba(2, 4, 10, 0.85); border: 1px solid rgba(255, 158, 0, 0.15); min-height: 180px; max-height: 200px; color: var(--success); overflow-y: auto; overflow-x: hidden; word-break: break-all; line-height: 1.6; box-shadow: inset 0 0 20px rgba(0,0,0,0.8);">
+                <div id="pinger-console" class="position-relative" style="z-index: 3;">
+                  <span style="color: #64748B;">// Network Diagnostics Console v2.0<br>// Press button to initiate ping sequences...</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 text-center">
+              <div class="glass-card p-1 position-relative overflow-hidden" style="border-color: rgba(255, 158, 0, 0.3) !important; background: rgba(0,0,0,0.5);">
+                <!-- Live Indicator -->
+                <div class="position-absolute d-flex align-items-center" style="top: 15px; right: 15px; z-index: 2; background: rgba(0,0,0,0.7); padding: 4px 8px; border-radius: 12px; border: 1px solid rgba(255,0,0,0.3); backdrop-filter: blur(4px);">
+                  <div class="pulsing" style="width: 8px; height: 8px; background: #FF0033; border-radius: 50%; box-shadow: 0 0 8px #FF0033;"></div>
+                  <span class="text-white ms-2" style="font-size: 10px; font-weight: 800; letter-spacing: 1px;">LIVE</span>
+                </div>
+                <img src={`${basePrefix}images/premium-server-rack.png`} alt="Server Rack" class="img-fluid rounded" style="max-height: 160px; object-fit: cover; width: 100%; filter: contrast(1.15) saturate(1.2);">
+                <div class="position-absolute bottom-0 start-0 w-100 p-3 pb-2" style="background: linear-gradient(0deg, rgba(2,4,10,0.95) 10%, transparent 100%); z-index: 1;">
+                  <div class="text-white fs-13 uppercase tracking-widest fw-800" style="text-shadow: 0 2px 4px rgba(0,0,0,0.8);">Sol-1 Core Servers</div>
+                  <div style="font-size: 10px; color: #00F5D4; letter-spacing: 1px;" class="font-monospace mt-1">SYS_STATUS: OPTIMAL</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+// === Data Centers Globe & Pinger Initialization ===
+// Only initialize if not already initialized (prevents double-init on multi-page)
+if (!window.__globeInitialized) {
+  window.__globeInitialized = true;
+  
+  function initGlobeAndPinger() {
+    const pingBtn = document.getElementById('run-ping-btn');
+    const consoleEl = document.getElementById('pinger-console');
+    const mapEl = document.getElementById('interactive-global-map');
+    
+    if (!pingBtn || !consoleEl || !mapEl || typeof Globe === 'undefined') return;
+
+    const pingNodes = [
+      { id: 'node-india', name: 'India Node', ip: '103.142.14.8', coords: [20.5937, 78.9629] },
+      { id: 'node-singapore', name: 'Singapore Core', ip: '202.51.233.104', coords: [1.3521, 103.8198] },
+      { id: 'node-australia', name: 'Australia Edge', ip: '119.42.100.10', coords: [-25.2744, 133.7751] },
+      { id: 'node-falkenstein', name: 'Falkenstein', ip: '46.4.92.115', coords: [50.4779, 12.3700] },
+      { id: 'node-usa', name: 'USA Hub', ip: '198.51.100.22', coords: [37.0902, -95.7129] },
+      { id: 'node-france', name: 'France Edge', ip: '82.165.29.17', coords: [46.2276, 2.2137] },
+      { id: 'node-finland', name: 'Finland Node', ip: '95.217.16.2', coords: [61.9241, 25.7482] },
+      { id: 'node-japan', name: 'Japan Tokyo', ip: '210.140.10.1', coords: [36.2048, 138.2529] },
+      { id: 'node-uae', name: 'UAE Hub', ip: '185.150.12.99', coords: [23.4241, 53.8478] }
+    ];
+
+    const arcsData = pingNodes.slice(1).map(node => ({
+      startLat: pingNodes[0].coords[0],
+      startLng: pingNodes[0].coords[1],
+      endLat: node.coords[0],
+      endLng: node.coords[1],
+      color: ['#00F5D4', '#FF007F']
+    }));
+
+    const myGlobe = Globe()(mapEl)
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+      .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+      .backgroundColor('rgba(0,0,0,0)')
+      .showAtmosphere(true)
+      .atmosphereColor('#00F5D4')
+      .atmosphereAltitude(0.15)
+      .ringsData(pingNodes)
+      .ringLat(d => d.coords[0])
+      .ringLng(d => d.coords[1])
+      .ringColor(() => '#FF9E00')
+      .ringMaxRadius(3)
+      .ringPropagationSpeed(2)
+      .ringRepeatPeriod(700)
+      .htmlElementsData(pingNodes)
+      .htmlLat(d => d.coords[0])
+      .htmlLng(d => d.coords[1])
+      .htmlElement(d => {
+        const el = document.createElement('div');
+        el.innerHTML = `
+          <div style="color: #fff; font-size: 11px; font-weight: 800; font-family: 'Outfit', sans-serif; letter-spacing: 1.5px; text-shadow: 0 0 10px #00F5D4; padding: 4px 10px; background: rgba(2,4,10,0.7); border-left: 2px solid #00F5D4; border-radius: 0 6px 6px 0; backdrop-filter: blur(4px); transform: translate(10px, -10px); pointer-events: none; white-space: nowrap; box-shadow: 5px 5px 15px rgba(0,0,0,0.5);">
+            ${d.name.split(' ')[0].toUpperCase()}
+          </div>
+        `;
+        return el;
+      })
+      .arcsData(arcsData)
+      .arcColor('color')
+      .arcDashLength(0.4)
+      .arcDashGap(0.2)
+      .arcDashInitialGap(() => Math.random() * 2)
+      .arcDashAnimateTime(2000)
+      .arcAltitudeAutoScale(0.3);
+
+    myGlobe.pointOfView({ lat: 20, lng: 70, altitude: 2 });
+    myGlobe.controls().autoRotate = true;
+    myGlobe.controls().autoRotateSpeed = 1.0;
+    myGlobe.controls().enableZoom = false;
+
+    window.addEventListener('resize', () => {
+      myGlobe.width(mapEl.clientWidth);
+      myGlobe.height(mapEl.clientHeight);
+    });
+
+    pingBtn.addEventListener('click', () => {
+      pingBtn.disabled = true;
+      pingBtn.innerText = 'Pinging Core...';
+      consoleEl.innerHTML = '<span style="color: #64748B;">// Initializing Sol-1 orbital ping sequence...</span><br>';
+      
+      myGlobe.controls().autoRotate = false;
+      let index = 0;
+      
+      function runNextPing() {
+        if (index >= pingNodes.length) {
+          setTimeout(() => {
+            consoleEl.innerHTML += `<br><span style="color: #00F5D4;">✔ DIAGNOSTICS COMPLETE. Optimal routing achieved.</span>`;
+            pingBtn.disabled = false;
+            pingBtn.innerText = 'Ping Data Center Nodes';
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+            myGlobe.pointOfView({ lat: 20, lng: 70, altitude: 2.5 }, 2000);
+            myGlobe.controls().autoRotate = true;
+          }, 1000);
+          return;
+        }
+
+        const node = pingNodes[index];
+        myGlobe.pointOfView({ lat: node.coords[0], lng: node.coords[1], altitude: 1.5 }, 1200);
+
+        setTimeout(() => {
+          const baseMs = Math.floor(10 + (index * 15) + (Math.random() * 6));
+          consoleEl.innerHTML += `<span>pinging ${node.name} [${node.ip}] ➔ <strong style="color: #00F5D4;">${baseMs}ms</strong></span><br>`;
+          consoleEl.scrollTop = consoleEl.scrollHeight;
+          index++;
+          setTimeout(runNextPing, 600);
+        }, 1200);
+      }
+
+      runNextPing();
+    });
+  }
+
+  // Wait for globe.gl script to load, then init
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => setTimeout(initGlobeAndPinger, 500));
+  } else {
+    setTimeout(initGlobeAndPinger, 500);
+  }
+}
+</script>
