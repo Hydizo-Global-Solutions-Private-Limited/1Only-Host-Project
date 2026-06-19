@@ -73,5 +73,122 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
         once: true
       });
     </script>
+    
+    <!-- Premium Billing/Currency Switcher Handler -->
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', () => {
+        let currentCurrency = localStorage.getItem('user_currency') || 'USD';
+        let currentCycle = localStorage.getItem('user_billing_cycle') || 'monthly';
+        
+        function updateToggleButtonsUI() {
+          document.querySelectorAll('.currency-toggle-pill button').forEach(btn => {
+            if (btn.getAttribute('data-currency') === currentCurrency) {
+              btn.classList.add('active');
+            } else {
+              btn.classList.remove('active');
+            }
+          });
+          
+          document.querySelectorAll('.cycle-toggle-pill button').forEach(btn => {
+            if (btn.getAttribute('data-cycle') === currentCycle) {
+              btn.classList.add('active');
+            } else {
+              btn.classList.remove('active');
+            }
+          });
+        }
+        
+        function updateAllPrices() {
+          const symbol = currentCurrency === 'USD' ? '$' : '₹';
+          
+          // Select all pricing elements
+          const standardPrices = document.querySelectorAll('[data-usd-monthly]');
+          const regularPrices = document.querySelectorAll('[data-reg-usd-monthly]');
+          const vpsPriceVal = document.getElementById('price-val');
+          const vpsRegPriceDel = document.getElementById('reg-price-del');
+          
+          // Add updating animation class
+          standardPrices.forEach(el => el.classList.add('price-updating'));
+          regularPrices.forEach(el => el.classList.add('price-updating'));
+          if (vpsPriceVal) vpsPriceVal.classList.add('price-updating');
+          if (vpsRegPriceDel) vpsRegPriceDel.classList.add('price-updating');
+          
+          // Perform state updates and fade-in after a short delay (180ms matches transition)
+          setTimeout(() => {
+            // 1. Switch active bootstrap tab pane if present
+            const monthlyPane = document.getElementById('monthly');
+            const yearlyPane = document.getElementById('yearly');
+            
+            if (monthlyPane && yearlyPane) {
+              if (currentCycle === 'monthly') {
+                monthlyPane.classList.add('show', 'active');
+                yearlyPane.classList.remove('show', 'active');
+              } else {
+                yearlyPane.classList.add('show', 'active');
+                monthlyPane.classList.remove('show', 'active');
+              }
+            }
+            
+            // 2. Update standard price values
+            standardPrices.forEach(el => {
+              const key = `data-${currentCurrency.toLowerCase()}-${currentCycle.toLowerCase()}`;
+              const val = el.getAttribute(key);
+              if (val !== null) {
+                const sub = el.querySelector('sub');
+                if (sub) {
+                  el.innerHTML = `${symbol}${val}${sub.outerHTML}`;
+                } else {
+                  el.textContent = `${symbol}${val}`;
+                }
+              }
+            });
+            
+            // 3. Update regular/strikethrough price values
+            regularPrices.forEach(el => {
+              const key = `data-reg-${currentCurrency.toLowerCase()}-${currentCycle.toLowerCase()}`;
+              const val = el.getAttribute(key);
+              if (val !== null) {
+                el.textContent = `${symbol}${val}`;
+              }
+            });
+            
+            // 4. Dispatch dynamic custom event for reactive Astro components (e.g. VPS Configurator)
+            document.dispatchEvent(new CustomEvent('billingChange', {
+              detail: { currency: currentCurrency, cycle: currentCycle }
+            }));
+            
+            // Remove updating animation class
+            standardPrices.forEach(el => el.classList.remove('price-updating'));
+            regularPrices.forEach(el => el.classList.remove('price-updating'));
+            if (vpsPriceVal) vpsPriceVal.classList.remove('price-updating');
+            if (vpsRegPriceDel) vpsRegPriceDel.classList.remove('price-updating');
+          }, 180);
+        }
+        
+        // Delegate click events on switchers
+        document.addEventListener('click', (e) => {
+          const currencyBtn = e.target.closest('.currency-toggle-pill button');
+          const cycleBtn = e.target.closest('.cycle-toggle-pill button');
+          
+          if (currencyBtn) {
+            currentCurrency = currencyBtn.getAttribute('data-currency');
+            localStorage.setItem('user_currency', currentCurrency);
+            updateToggleButtonsUI();
+            updateAllPrices();
+          }
+          
+          if (cycleBtn) {
+            currentCycle = cycleBtn.getAttribute('data-cycle');
+            localStorage.setItem('user_billing_cycle', currentCycle);
+            updateToggleButtonsUI();
+            updateAllPrices();
+          }
+        });
+        
+        // Initial setup
+        updateToggleButtonsUI();
+        updateAllPrices();
+      });
+    </script>
   </body>
 </html>

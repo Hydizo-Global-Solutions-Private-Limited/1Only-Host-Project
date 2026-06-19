@@ -108,8 +108,8 @@
 
           <div class="price-display text-center my-4 p-3 rounded" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05);">
             <div class="fs-12 text-white-50 uppercase tracking-widest">ESTIMATED PRICE</div>
-            <div class="display-5 fw-900 my-2 text-gradient">$<span id="price-val">19.99</span>/mo</div>
-            <div class="fs-12 text-white-50">Reg. price <del>$49.99</del> (Save 60%)</div>
+            <div class="display-5 fw-900 my-2 text-gradient"><span id="symbol-val">$</span><span id="price-val">19.99</span>/<span id="cycle-val">mo</span></div>
+            <div class="fs-12 text-white-50">Reg. price <del id="reg-price-del">$49.99</del> <span id="save-pct">(Save 60%)</span></div>
           </div>
           
           <a href="/signup" class="btn-eighteen w-100 text-center uppercase tracking-wider py-3 mt-2">Deploy Cyber Instance</a>
@@ -194,6 +194,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const cpuCircle = document.getElementById('cpu-circle');
   const ramCircle = document.getElementById('ram-circle');
   const ssdCircle = document.getElementById('ssd-circle');
+
+  let currentCurrency = localStorage.getItem('user_currency') || 'USD';
+  let currentCycle = localStorage.getItem('user_billing_cycle') || 'monthly';
+
+  document.addEventListener('billingChange', (e) => {
+    currentCurrency = e.detail.currency;
+    currentCycle = e.detail.cycle;
+    updateConfigurator();
+  });
   
   function updateConfigurator() {
     if (!cpuSlider || !ramSlider || !ssdSlider) return;
@@ -207,9 +216,53 @@ document.addEventListener('DOMContentLoaded', () => {
     ssdVal.innerText = `${ssd} GB`;
     
     // Pricing calculation
-    // CPU base $3.00 per core, RAM base $1.20 per GB, SSD base $0.05 per GB
-    const price = (cpu * 3.50) + (ram * 1.50) + (ssd * 0.06);
-    priceVal.innerText = price.toFixed(2);
+    // CPU base $3.50 per core, RAM base $1.50 per GB, SSD base $0.06 per GB
+    let basePriceUsd = (cpu * 3.50) + (ram * 1.50) + (ssd * 0.06);
+    let regPriceUsd = basePriceUsd * 2.5; // Let's say regular price is 2.5x
+    
+    // Multipliers for cycles
+    let multiplier = 1.0;
+    let discountPct = 60; // Base discount percentage
+    if (currentCycle === 'annually') {
+      multiplier = 0.9;
+      discountPct = 64; // annual discount
+    } else if (currentCycle === 'biennially') {
+      multiplier = 0.8;
+      discountPct = 68; // biennial discount
+    } else if (currentCycle === 'triennially') {
+      multiplier = 0.7;
+      discountPct = 72; // triennial discount
+    }
+    
+    let priceValUsd = basePriceUsd * multiplier;
+    
+    // Currency conversion
+    let currencySymbol = '$';
+    let convertedPrice = priceValUsd;
+    let convertedReg = regPriceUsd;
+    
+    if (currentCurrency === 'INR') {
+      currencySymbol = '₹';
+      convertedPrice = priceValUsd * 85;
+      convertedReg = regPriceUsd * 85;
+    }
+    
+    // Display cycle text
+    let cycleSuffix = 'mo';
+    
+    // Update elements
+    const symbolVal = document.getElementById('symbol-val');
+    if (symbolVal) symbolVal.innerText = currencySymbol;
+    priceVal.innerText = convertedPrice.toFixed(2);
+    
+    const cycleVal = document.getElementById('cycle-val');
+    if (cycleVal) cycleVal.innerText = cycleSuffix;
+    
+    const regPriceDel = document.getElementById('reg-price-del');
+    if (regPriceDel) regPriceDel.innerText = `${currencySymbol}${convertedReg.toFixed(2)}`;
+    
+    const savePct = document.getElementById('save-pct');
+    if (savePct) savePct.innerText = `(Save ${discountPct}%)`;
     
     // Update circular gauges
     if (cpuCircle) cpuCircle.setAttribute('stroke-dasharray', `${((cpu / 16) * 100).toFixed(1)}, 100`);

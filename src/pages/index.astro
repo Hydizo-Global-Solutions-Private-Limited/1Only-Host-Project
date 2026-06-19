@@ -321,7 +321,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
       <div class="row g-4 text-white">
         <!-- Card 1: Shared Hosting -->
         <div class="col-lg-3 col-md-6 d-flex">
-          <div class="glass-card p-4 d-flex flex-column w-100 justify-content-between position-relative overflow-hidden">
+          <div class="glass-card p-4 d-flex flex-column w-100 justify-content-between position-relative overflow-hidden premium-hosting-card">
             <div>
               <div class="mb-4 rounded-3 overflow-hidden" style="background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.05);">
                 <img src={`${basePrefix}images/shared_hosting_thumb.png`} alt="Shared Hosting" class="img-fluid w-100" style="object-fit: cover; height: 180px; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
@@ -332,15 +332,15 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
               <p class="fs-14 opacity-75 mb-4" style="line-height: 1.6;">Ideal for blogs, portfolios, and small businesses, our shared hosting offers steady speed and robust security features. Start risk-free today with our satisfaction guarantee and enjoy peace of mind!</p>
             </div>
             <div>
-              <a href="/shared-hosting" class="btn btn-sm btn-outline-light w-100 py-2 fs-12 uppercase tracking-wider rounded-pill">Learn more</a>
+              <a href="/shared-hosting" class="btn btn-sm btn-eighteen w-100 py-2 fs-12 uppercase tracking-wider rounded-pill">Learn more</a>
             </div>
           </div>
         </div>
         
         <!-- Card 2: Reseller Hosting -->
         <div class="col-lg-3 col-md-6 d-flex">
-          <div class="glass-card p-4 d-flex flex-column w-100 justify-content-between position-relative overflow-hidden border-accent-glow" style="background: rgba(255, 158, 0, 0.015);">
-            <span class="position-absolute badge uppercase tracking-widest fs-9 py-1.5 px-3" style="top: 15px; right: 15px; background: linear-gradient(90deg, #FF9E00, #FF007F); color: #fff; font-weight: 800; border-radius: 4px;">Best selling</span>
+          <div class="glass-card p-4 d-flex flex-column w-100 justify-content-between position-relative overflow-hidden premium-hosting-card">
+            <span class="position-absolute badge uppercase tracking-widest fs-9 py-1.5 px-3" style="top: 15px; right: 15px; background: linear-gradient(90deg, #FF9E00, #FF007F); color: #fff; font-weight: 800; border-radius: 4px; z-index: 10;">Best selling</span>
             <div>
               <div class="mb-4 rounded-3 overflow-hidden" style="background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.05);">
                 <img src={`${basePrefix}images/reseller_hosting_thumb.png`} alt="Reseller Hosting" class="img-fluid w-100" style="object-fit: cover; height: 180px; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
@@ -358,7 +358,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
         
         <!-- Card 3: VPS Servers -->
         <div class="col-lg-3 col-md-6 d-flex">
-          <div class="glass-card p-4 d-flex flex-column w-100 justify-content-between position-relative overflow-hidden">
+          <div class="glass-card p-4 d-flex flex-column w-100 justify-content-between position-relative overflow-hidden premium-hosting-card">
             <div>
               <div class="mb-4 rounded-3 overflow-hidden" style="background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.05);">
                 <img src={`${basePrefix}images/vps_hosting_thumb.png`} alt="VPS Servers" class="img-fluid w-100" style="object-fit: cover; height: 180px; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
@@ -369,14 +369,14 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
               <p class="fs-14 opacity-75 mb-4" style="line-height: 1.6;">Run high-powered sites effortlessly with our Virtual Private Servers. Perfect for custom setups, VPS server provides you with unmatched control, incredible speed, and top-notch security for your projects.</p>
             </div>
             <div>
-              <a href="/vps-server" class="btn btn-sm btn-outline-light w-100 py-2 fs-12 uppercase tracking-wider rounded-pill">Learn more</a>
+              <a href="/vps-server" class="btn btn-sm btn-eighteen w-100 py-2 fs-12 uppercase tracking-wider rounded-pill">Learn more</a>
             </div>
           </div>
         </div>
         
         <!-- Card 4: Dedicated Servers -->
         <div class="col-lg-3 col-md-6 d-flex">
-          <div class="glass-card p-4 d-flex flex-column w-100 justify-content-between position-relative overflow-hidden">
+          <div class="glass-card p-4 d-flex flex-column w-100 justify-content-between position-relative overflow-hidden premium-hosting-card">
             <div>
               <div class="mb-4 rounded-3 overflow-hidden" style="background: rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.05);">
                 <img src={`${basePrefix}images/dedicated_server_thumb.png`} alt="Dedicated Servers" class="img-fluid w-100" style="object-fit: cover; height: 180px; transition: transform 0.4s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">
@@ -387,7 +387,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
               <p class="fs-14 opacity-75 mb-4" style="line-height: 1.6;">Achieve peak performance effortlessly with our dedicated servers. Designed for large sites and data-heavy projects, they offer top-tier security, unmatched reliability, and the resources you need for success.</p>
             </div>
             <div>
-              <a href="/dedicated-server" class="btn btn-sm btn-outline-light w-100 py-2 fs-12 uppercase tracking-wider rounded-pill">Learn more</a>
+              <a href="/dedicated-server" class="btn btn-sm btn-eighteen w-100 py-2 fs-12 uppercase tracking-wider rounded-pill">Learn more</a>
             </div>
           </div>
         </div>
@@ -1198,6 +1198,56 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
 .border-accent-glow:hover {
   border-color: rgba(255, 158, 0, 0.6) !important;
   box-shadow: 0 0 25px rgba(255, 158, 0, 0.2) !important;
+}
+
+/* Premium Hosting Cards Upgrades */
+@keyframes borderGradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.premium-hosting-card {
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) !important;
+  background: rgba(255, 158, 0, 0.008) !important; /* Subtle solar warm base tint */
+}
+
+.glass-card.premium-hosting-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 1.2px;
+  background: linear-gradient(90deg, #FF9E00, #FF007F, #8338EC, #FF9E00) !important;
+  background-size: 300% 300% !important;
+  animation: borderGradientMove 8s infinite linear !important;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0) !important;
+  -webkit-mask-composite: xor !important;
+  mask-composite: exclude !important;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.5;
+  transition: opacity 0.4s ease !important;
+}
+
+.premium-hosting-card:hover {
+  transform: translateY(-8px) scale(1.03) !important;
+  background: rgba(255, 158, 0, 0.02) !important;
+  box-shadow: 0 15px 35px rgba(255, 158, 0, 0.15), 0 0 20px rgba(255, 0, 127, 0.1) !important;
+}
+
+.glass-card.premium-hosting-card:hover::before {
+  opacity: 1 !important;
+  animation: borderGradientMove 4s infinite linear !important; /* Speed up gradient movement slightly on hover */
 }
 
 /* Video Testimonials Feedbacks */

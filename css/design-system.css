@@ -706,6 +706,88 @@ p {
     transition: var(--transition-base) !important;
 }
 
+/* Premium Billing/Currency Toggle styling */
+.billing-switcher-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 767px) {
+  .billing-switcher-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+.pill-container {
+  display: inline-flex;
+  background: #090b16 !important;
+  border: 1px solid rgba(131, 56, 236, 0.15) !important;
+  border-radius: 50px;
+  padding: 5px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(131, 56, 236, 0.08) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+}
+
+/* Specific glows for currency toggle container */
+.currency-toggle-pill {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 0, 127, 0.1) !important;
+}
+
+.pill-container .toggle-btn {
+  background: transparent !important;
+  border: 1px solid transparent !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  white-space: nowrap;
+  letter-spacing: 0.5px;
+}
+
+.pill-container .toggle-btn:hover {
+  color: #FFFFFF !important;
+}
+
+/* Active Currency Switcher Button (Orange-to-Pink gradient with white text) */
+.currency-toggle-pill .toggle-btn.active {
+  background: linear-gradient(95deg, #FF7B00 0%, #FF007F 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 15px rgba(255, 0, 127, 0.4), 0 0 15px rgba(255, 123, 0, 0.3) !important;
+  font-weight: 700;
+}
+
+/* Active Cycle Switcher Button (Dark raised background with white text) */
+.cycle-toggle-pill .toggle-btn.active {
+  background: rgba(255, 255, 255, 0.09) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #FFFFFF !important;
+  box-shadow: inset 0 1px 1px rgba(255,255,255,0.1), 0 4px 12px rgba(0,0,0,0.4) !important;
+  font-weight: 700;
+}
+
+/* Dynamic Price Updates Transition */
+.price, .info2 del, #price-val, #reg-price-del {
+  transition: opacity 0.18s cubic-bezier(0.4, 0, 0.2, 1), transform 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
+}
+.price-updating {
+  opacity: 0.15 !important;
+  transform: scale(0.92) translateY(2px) !important;
+}
+
+
 
 
 
