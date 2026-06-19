@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import DataCentersGlobe from '../components/DataCentersGlobe.astro';
 import windowHostingData from '../data/pages/window-shared-hosting.json';
 
 export const prerender = true;
@@ -326,10 +325,6 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   </section>
 
 
-  <!-- ═══════════════════════════════════════════════════ -->
-  <!-- DATA CENTERS — Interactive 3D Globe (Reusable Component) -->
-  <!-- ═══════════════════════════════════════════════════ -->
-  <DataCentersGlobe />
 
 
   <!-- ═══════════════════════════════════════════════════ -->

@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import DataCentersGlobe from '../components/DataCentersGlobe.astro';
 import homepageData from '../data/pages/home.json';
 
 export const prerender = true;
@@ -664,8 +663,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
     </div>
   </div>
 
-  <!-- Global Infrastructure Map & Latency Pinger (Reusable Component) -->
-  <DataCentersGlobe />
+
 
 
   <!-- WordPress Blog Feed Section -->

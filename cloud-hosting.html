@@ -228,10 +228,21 @@
           <div class="title-eleven">
             <h2>High-Performance Cloud Hosting.</h2>
           </div>
-          <div class="fs-20 fw-500  mt-25 mb-15">Billing Cycle</div>
-          <nav class="pricing-nav-four d-flex justify-content-center mb-70 ">
-            <div class="nav nav-tabs justify-content-between" role="tablist"> <a class="nav-link active" id="monthly-tab" data-bs-toggle="tab" data-bs-target="#monthly" type="button" role="tab" aria-controls="monthly" aria-selected="true">Monthly</a> <a class="nav-link" id="yearly-tab" data-bs-toggle="tab" data-bs-target="#yearly" type="button" role="tab" aria-controls="yearly" aria-selected="false">Yearly</a> </div>
-          </nav>
+        <div class="billing-switcher-container">
+          <!-- Currency Toggle -->
+          <div class="currency-toggle-pill pill-container">
+            <button type="button" class="toggle-btn" data-currency="INR">₹ INR</button>
+            <button type="button" class="toggle-btn" data-currency="USD">$ USD</button>
+          </div>
+          
+          <!-- Billing Cycle Toggle -->
+          <div class="cycle-toggle-pill pill-container">
+            <button type="button" class="toggle-btn" data-cycle="monthly">Monthly</button>
+            <button type="button" class="toggle-btn" data-cycle="annually">Annually</button>
+            <button type="button" class="toggle-btn" data-cycle="biennially">Biennially</button>
+            <button type="button" class="toggle-btn" data-cycle="triennially">Triennially</button>
+          </div>
+        </div>
         </div>
         <div class="col-xl-12">
           <div class="tab-content ps-xxl-5">
@@ -243,8 +254,8 @@
                       <div class="plane-name">Starter</div>
                       <div class="info1 fs-20">For those 'Getting Started'</div>
                       <div class="save-line fs-20 fw-500">Save 75%</div>
-                      <div class="price">$3.99<sub>/mo*</sub></div>
-                      <div class="info2 fs-20">Reguler price <del class="fw-500 ">$13.99</del></div>
+                      <div class="price" data-usd-monthly="3.99" data-inr-monthly="339" data-usd-annually="3.59" data-inr-annually="305" data-usd-biennially="3.19" data-inr-biennially="271" data-usd-triennially="2.79" data-inr-triennially="237">$3.99<sub>/mo*</sub></div>
+                      <div class="info2 fs-20">Reguler price <del class="fw-500" data-reg-usd-monthly="13.99" data-reg-inr-monthly="1189" data-reg-usd-annually="12.59" data-reg-inr-annually="1070" data-reg-usd-biennially="11.19" data-reg-inr-biennially="951" data-reg-usd-triennially="9.79" data-reg-inr-triennially="832">$13.99</del></div>
                     </div>
                     <a href="#" class="btn-eleven w-100 d-flex justify-content-between align-items-center">Start Free Trial<span class="icon tran3s d-flex align-items-center justify-content-center"><i class="icon icon-chevron-right"></i></span></a>
                     <h6>Features</h6>
@@ -267,8 +278,8 @@
                       <div class="plane-name">Standard</div>
                       <div class="info1 fs-20">For bloggers & websites with avg. traffic</div>
                       <div class="save-line fs-20 fw-500">Save 75%</div>
-                      <div class="price">$3.99<sub>/mo*</sub></div>
-                      <div class="info2 fs-20">Reguler price <del class="fw-500 ">$13.99</del></div>
+                      <div class="price" data-usd-monthly="3.99" data-inr-monthly="339" data-usd-annually="3.59" data-inr-annually="305" data-usd-biennially="3.19" data-inr-biennially="271" data-usd-triennially="2.79" data-inr-triennially="237">$3.99<sub>/mo*</sub></div>
+                      <div class="info2 fs-20">Reguler price <del class="fw-500" data-reg-usd-monthly="13.99" data-reg-inr-monthly="1189" data-reg-usd-annually="12.59" data-reg-inr-annually="1070" data-reg-usd-biennially="11.19" data-reg-inr-biennially="951" data-reg-usd-triennially="9.79" data-reg-inr-triennially="832">$13.99</del></div>
                     </div>
                     <a href="#" class="btn-eleven w-100 d-flex justify-content-between align-items-center">Start Free Trial<span class="icon tran3s d-flex align-items-center justify-content-center"><i class="icon icon-chevron-right"></i></span></a>
                     <h6>Features</h6>
@@ -291,8 +302,8 @@
                       <div class="plane-name">Professional</div>
                       <div class="info1 fs-20">For growing business with scaling needs</div>
                       <div class="save-line fs-20 fw-500">Save 80%</div>
-                      <div class="price">$7.99<sub>/mo*</sub></div>
-                      <div class="info2 fs-20">Reguler price <del class="fw-500 ">$29.99</del></div>
+                      <div class="price" data-usd-monthly="7.99" data-inr-monthly="679" data-usd-annually="7.19" data-inr-annually="611" data-usd-biennially="6.39" data-inr-biennially="543" data-usd-triennially="5.59" data-inr-triennially="475">$7.99<sub>/mo*</sub></div>
+                      <div class="info2 fs-20">Reguler price <del class="fw-500" data-reg-usd-monthly="29.99" data-reg-inr-monthly="2549" data-reg-usd-annually="26.99" data-reg-inr-annually="2294" data-reg-usd-biennially="23.99" data-reg-inr-biennially="2039" data-reg-usd-triennially="20.99" data-reg-inr-triennially="1784">$29.99</del></div>
                     </div>
                     <a href="#" class="btn-eleven w-100 d-flex justify-content-between align-items-center">Start Free Trial<span class="icon tran3s d-flex align-items-center justify-content-center"><i class="icon icon-chevron-right"></i></span></a>
                     <h6>Features</h6>
@@ -319,8 +330,8 @@
                       <div class="plane-name">Personal</div>
                       <div class="info1 fs-20">Available for single person</div>
                       <div class="save-line fs-20 fw-500">Save 75%</div>
-                      <div class="price">$3.99<sub>/mo*</sub></div>
-                      <div class="info2 fs-20">Reguler price <del class="fw-500 ">$13.99</del></div>
+                      <div class="price" data-usd-monthly="3.99" data-inr-monthly="339" data-usd-annually="3.59" data-inr-annually="305" data-usd-biennially="3.19" data-inr-biennially="271" data-usd-triennially="2.79" data-inr-triennially="237">$3.99<sub>/mo*</sub></div>
+                      <div class="info2 fs-20">Reguler price <del class="fw-500" data-reg-usd-monthly="13.99" data-reg-inr-monthly="1189" data-reg-usd-annually="12.59" data-reg-inr-annually="1070" data-reg-usd-biennially="11.19" data-reg-inr-biennially="951" data-reg-usd-triennially="9.79" data-reg-inr-triennially="832">$13.99</del></div>
                     </div>
                     <a href="#" class="btn-eleven w-100 d-flex justify-content-between align-items-center">Start Free Trial<span class="icon tran3s d-flex align-items-center justify-content-center"><i class="icon icon-chevron-right"></i></span></a>
                     <h6>Features</h6>
@@ -343,8 +354,8 @@
                       <div class="plane-name">Business</div>
                       <div class="info1 fs-20">Available for single person</div>
                       <div class="save-line fs-20 fw-500">Save 80%</div>
-                      <div class="price">$7.99<sub>/mo*</sub></div>
-                      <div class="info2 fs-20">Reguler price <del class="fw-500 ">$29.99</del></div>
+                      <div class="price" data-usd-monthly="7.99" data-inr-monthly="679" data-usd-annually="7.19" data-inr-annually="611" data-usd-biennially="6.39" data-inr-biennially="543" data-usd-triennially="5.59" data-inr-triennially="475">$7.99<sub>/mo*</sub></div>
+                      <div class="info2 fs-20">Reguler price <del class="fw-500" data-reg-usd-monthly="29.99" data-reg-inr-monthly="2549" data-reg-usd-annually="26.99" data-reg-inr-annually="2294" data-reg-usd-biennially="23.99" data-reg-inr-biennially="2039" data-reg-usd-triennially="20.99" data-reg-inr-triennially="1784">$29.99</del></div>
                     </div>
                     <a href="#" class="btn-eleven w-100 d-flex justify-content-between align-items-center">Start Free Trial<span class="icon tran3s d-flex align-items-center justify-content-center"><i class="icon icon-chevron-right"></i></span></a>
                     <h6>Features</h6>
@@ -367,8 +378,8 @@
                       <div class="plane-name">Business</div>
                       <div class="info1 fs-20">Available for single person</div>
                       <div class="save-line fs-20 fw-500">Save 80%</div>
-                      <div class="price">$7.99<sub>/mo*</sub></div>
-                      <div class="info2 fs-20">Reguler price <del class="fw-500 ">$29.99</del></div>
+                      <div class="price" data-usd-monthly="7.99" data-inr-monthly="679" data-usd-annually="7.19" data-inr-annually="611" data-usd-biennially="6.39" data-inr-biennially="543" data-usd-triennially="5.59" data-inr-triennially="475">$7.99<sub>/mo*</sub></div>
+                      <div class="info2 fs-20">Reguler price <del class="fw-500" data-reg-usd-monthly="29.99" data-reg-inr-monthly="2549" data-reg-usd-annually="26.99" data-reg-inr-annually="2294" data-reg-usd-biennially="23.99" data-reg-inr-biennially="2039" data-reg-usd-triennially="20.99" data-reg-inr-triennially="1784">$29.99</del></div>
                     </div>
                     <a href="#" class="btn-eleven w-100 d-flex justify-content-between align-items-center">Start Free Trial<span class="icon tran3s d-flex align-items-center justify-content-center"><i class="icon icon-chevron-right"></i></span></a>
                     <h6>Features</h6>

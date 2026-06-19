@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import DataCentersGlobe from '../components/DataCentersGlobe.astro';
 
 interface Props {
   title?: string;
@@ -53,6 +54,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
     <div class="main-page-wrapper">
       <Header basePrefix={basePrefix} />
       <slot />
+      <DataCentersGlobe />
       <Footer basePrefix={basePrefix} />
     </div>
 
