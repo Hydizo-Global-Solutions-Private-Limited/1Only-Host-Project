@@ -76,7 +76,5 @@
     <!-- "Host" brand name in high-contrast clean white -->
     <text x="84" y="36" font-family="'Outfit', sans-serif" font-size="28" font-weight="400" fill="#FFFFFF" letter-spacing="-0.5">Host</text>
     
-    <!-- Modern space-grade subtext -->
-    <text x="1" y="49" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" fill="#8338EC" letter-spacing="4.2" opacity="0.9">HELIOCENTRIC CLOUD</text>
   </g>
 </svg>
