@@ -16,6 +16,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   description={data.seo.description} 
   keywords={data.seo.keywords}
 >
+<div class="homepage-custom-font">
   <!-- Scroll Progress Bar -->
   <div id="scroll-progress-bar" class="scroll-progress-bar"></div>
 
@@ -35,7 +36,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   </div>
 
   <!-- Hero Section -->
-  <div class="hero-banner-eight bg-twelve z-1 position-relative pt-180 pb-160 xl-pb-140 md-p0 mesh-bg-1" data-aos="fade-in">
+  <div class="hero-banner-eight bg-twelve z-1 position-relative pt-220 pb-160 xl-pb-140 md-p0 mesh-bg-1" data-aos="fade-in">
     <!-- Animated Solar Orbit Graphic -->
     <div class="hero-orbit-wrapper d-none d-lg-block position-absolute" style="top: 15%; right: 10%; width: 320px; height: 320px; opacity: 0.3; pointer-events: none; z-index: 1;">
       <svg viewBox="0 0 200 200" width="100%" height="100%">
@@ -60,23 +61,23 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
       </svg>
     </div>
 
-    <div class="container">
+    <div class="container" style="padding-top: 145px !important; position: relative; z-index: 10;">
       <div class="row align-items-center">
-        <div class="col-lg-7 text-start">
+        <div class="col-lg-8 col-xl-8 text-start">
           <!-- Solar active instances status banner -->
           <div class="d-inline-flex align-items-center mb-3 px-3 py-1 rounded-pill" style="background: rgba(255, 158, 0, 0.08); border: 1px solid rgba(255, 158, 0, 0.15); box-shadow: 0 0 15px rgba(255, 158, 0, 0.05);">
             <span class="status-dot pulsing me-2" style="background-color: var(--accent-color); width: 8px; height: 8px; border-radius: 50%; display: inline-block; animation: pulse-glow 2s infinite ease-in-out;"></span>
             <span class="fs-12 text-white-50 uppercase tracking-widest fw-600">Active server nodes orbiting Sol-1: <span id="active-instances-ticker" class="text-accent fw-800">12,842</span></span>
           </div>
           
-          <h1 class="hero-heading text-white fw-900 font-outfit" style="line-height: 1.15; font-size: clamp(2.2rem, 6vw, 3.5rem);">Bring Your Vision to Life with <span class="text-gradient">Best Hosting Company in India</span> | 1Only Host</h1>
+          <h1 class="hero-heading text-white fw-500 font-outfit" style="line-height: 1.15; font-size: clamp(2.2rem, 6vw, 3.5rem);">Bring Your Vision to Life with <span class="text-gradient">Best Hosting Company in India</span> | 1Only Host</h1>
           
           <ul class="hero-features-list style-none mt-4 mb-4 ps-0 text-white">
-            <li class="d-flex align-items-center mb-2.5 fs-16"><span class="hero-feature-dot me-3"><i class="icon icon-flash"></i></span> 99.9% Uptime Guarantee</li>
-            <li class="d-flex align-items-center mb-2.5 fs-16"><span class="hero-feature-dot me-3"><i class="icon icon-flash"></i></span> Blazing-Fast Load Times</li>
-            <li class="d-flex align-items-center mb-2.5 fs-16"><span class="hero-feature-dot me-3"><i class="icon icon-flash"></i></span> 24/7 Expert Support</li>
-            <li class="d-flex align-items-center mb-2.5 fs-16"><span class="hero-feature-dot me-3"><i class="icon icon-flash"></i></span> Effortless Control Panel</li>
-            <li class="d-flex align-items-center mb-2.5 fs-16"><span class="hero-feature-dot me-3"><i class="icon icon-flash"></i></span> Free SSL & DDoS Protection</li>
+            <li class="d-flex align-items-center mb-2.5 fs-16 fw-600"><span class="hero-feature-dot me-3"><i class="icon icon-flash"></i></span> 99.9% Uptime Guarantee</li>
+            <li class="d-flex align-items-center mb-2.5 fs-16 fw-600"><span class="hero-feature-dot me-3"><i class="icon icon-flash"></i></span> Blazing-Fast Load Times</li>
+            <li class="d-flex align-items-center mb-2.5 fs-16 fw-600"><span class="hero-feature-dot me-3"><i class="icon icon-flash"></i></span> 24/7 Expert Support</li>
+            <li class="d-flex align-items-center mb-2.5 fs-16 fw-600"><span class="hero-feature-dot me-3"><i class="icon icon-flash"></i></span> Effortless Control Panel</li>
+            <li class="d-flex align-items-center mb-2.5 fs-16 fw-600"><span class="hero-feature-dot me-3"><i class="icon icon-flash"></i></span> Free SSL & DDoS Protection</li>
           </ul>
           
           <div class="mt-4">
@@ -90,7 +91,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
           </div>
         </div>
         
-        <div class="col-lg-5 d-none d-lg-block text-center position-relative">
+        <div class="col-lg-4 col-xl-4 d-none d-lg-block text-center position-relative">
           <img src={`${basePrefix}images/solar-cloud-hero.png`} alt="Bring Your Vision to Life" class="img-fluid hero-image-glow" style="max-height: 420px; filter: drop-shadow(0 10px 30px rgba(255, 158, 0, 0.15));">
         </div>
       </div>
@@ -306,15 +307,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
     <div class="container lg">
       <div class="title-eleven text-center mb-50">
         <h2 class="text-white font-outfit fw-900 fs-32">Our web hosting services</h2>
-        <p class="text-white-50 fs-16 max-width-800 mx-auto">Explore web hosting services built for speed, security, and simplicity. From startups to enterprises, our plans from the Best Hosting Company in India deliver maximum reliability.</p>
-      </div>
-      
-      <!-- Service Illustration Banner -->
-      <div class="text-center mb-50">
-        <div class="glass-card p-2 d-inline-block position-relative overflow-hidden" style="border-color: rgba(255, 158, 0, 0.1) !important; max-width: 750px;">
-          <img src={`${basePrefix}images/service-icons-set.png`} alt="Hosting Services Overview - Shared, Reseller, VPS, Dedicated" class="img-fluid rounded" style="box-shadow: 0 15px 40px rgba(255, 158, 0, 0.08);">
-          <div class="position-absolute" style="bottom: 0; left: 0; right: 0; height: 60%; background: linear-gradient(to top, rgba(2, 4, 10, 0.8), transparent); pointer-events: none;"></div>
-        </div>
+        <p class="text-white fw-500 fs-18 max-width-800 mx-auto" style="opacity: 0.95;">Explore web hosting services built for speed, security, and simplicity. From startups to enterprises, our plans from the Best Hosting Company in India deliver maximum reliability.</p>
       </div>
       
       <div class="row g-4 text-white">
@@ -448,11 +441,11 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   </section>
 
   <!-- Choose Wisely Section -->
-  <div class="choose-wisely-section pb-80" data-aos="fade-up">
+  <div class="choose-wisely-section pt-80 pb-80" data-aos="fade-up">
     <div class="container lg">
       <div class="title-eleven text-center mb-50">
         <h2 class="text-white font-outfit fw-900 fs-32">Choose Wisely: The Right Web Hosting Partner Matters</h2>
-        <p class="text-white-50 fs-16">Discover why we're the Best Hosting Company in India and how we can support your success.</p>
+        <p class="text-white fw-500 fs-18" style="opacity: 0.95;">Discover why we're the Best Hosting Company in India and how we can support your success.</p>
       </div>
       
       <!-- Choose Wisely Split Layout: Infographic + Cards -->
@@ -679,7 +672,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
       </div>
       
       <div class="text-center mt-50">
-        <a href="/blog" class="btn-eighteen py-3 px-5 uppercase tracking-wider fs-13">Visit Our Blog</a>
+        <a href="https://1onlyhost.com/blog" class="btn-eighteen py-3 px-5 uppercase tracking-wider fs-13" target="_blank" rel="noopener noreferrer">Visit Our Blog</a>
       </div>
     </div>
   </section>
@@ -855,9 +848,9 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
           <span class="badge uppercase tracking-wider py-1.5 px-4 fs-10 mb-3 d-inline-block" style="background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px;">🚀 Ready to Launch?</span>
           <h2 class="text-white font-outfit fw-900 fs-36 mt-3 mb-3">Power Your Dreams with Sol-1 Infrastructure</h2>
           <p class="text-white-50 fs-16 max-width-800 mx-auto mb-4">Join 1000+ businesses already orbiting on our premium hosting platform. Start with a risk-free 30-day trial and experience why we're the Best Hosting Company in India.</p>
-          <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <div class="d-flex justify-content-center gap-3 flex-wrap align-items-center">
             <a href="/signup" class="btn-eighteen py-3 px-5 uppercase tracking-wider fs-13 fw-700 hero-btn-pulse">Start Free Trial</a>
-            <a href="/contact-us" class="btn btn-outline-light py-3 px-5 uppercase tracking-wider fs-13 fw-600 rounded-pill" style="border-color: rgba(255, 255, 255, 0.15);">Talk to an Expert</a>
+            <a href="/contact" class="btn btn-outline-light uppercase tracking-wider fs-13 fw-600 rounded-pill" style="border: 1px solid rgba(255, 255, 255, 0.15) !important; padding: 13px 35px !important; line-height: 1.2 !important; display: inline-flex; align-items: center; justify-content: center;">Talk to an Expert</a>
           </div>
           <div class="d-flex justify-content-center gap-4 mt-4 flex-wrap">
             <span class="fs-12 text-white-50"><i class="icon icon-checked me-1 text-accent"></i> No credit card required</span>
@@ -870,7 +863,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   </section>
 
   <!-- Partners Trust Grid -->
-  <section class="trust-badge-container pb-80" data-aos="fade-up">
+  <section class="trust-badge-container pt-80 pb-80" data-aos="fade-up">
     <div class="container lg">
       <div class="title-eleven text-center mb-50">
         <h2 class="text-white font-outfit fw-900 fs-36 mb-3">The 1 Who Makes us Powerful</h2>
@@ -909,14 +902,14 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
         <!-- Partner 5 -->
         <div class="col-6 col-md-4 col-lg-2">
           <div class="partner-badge-card glass-card d-flex flex-column align-items-center justify-content-center text-center p-4 h-100" style="transition: all 0.3s ease;">
-            <img src={`${basePrefix}images/logos/virtualizor.png`} alt="Virtualizor Logo" width="48" height="48" class="mb-3 partner-logo-img rounded">
+            <img src={`${basePrefix}images/logos/virtualizor_real.png`} alt="Virtualizor Logo" width="48" height="48" class="mb-3 partner-logo-img rounded">
             <span class="fs-15 fw-700 text-white font-outfit tracking-wider uppercase">Virtualizor</span>
           </div>
         </div>
         <!-- Partner 6 -->
         <div class="col-6 col-md-4 col-lg-2">
           <div class="partner-badge-card glass-card d-flex flex-column align-items-center justify-content-center text-center p-4 h-100" style="transition: all 0.3s ease;">
-            <img src={`${basePrefix}images/logos/softaculous.png`} alt="Softaculous Logo" width="48" height="48" class="mb-3 partner-logo-img rounded">
+            <img src={`${basePrefix}images/logos/softaculous_real.gif`} alt="Softaculous Logo" width="48" height="48" class="mb-3 partner-logo-img rounded">
             <span class="fs-15 fw-700 text-white font-outfit tracking-wider uppercase">Softaculous</span>
           </div>
         </div>
@@ -946,7 +939,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   <!-- Interactive Testimonial Video Modal -->
   <div id="video-feedback-modal" class="custom-video-modal d-none">
     <div class="modal-backdrop-close" id="modal-close-overlay"></div>
-    <div class="modal-card glass-card">
+    <div class="modal-card glass-card p-4">
       <div class="modal-header d-flex justify-content-between align-items-center mb-3">
         <h5 id="modal-client-name" class="m-0 text-white fw-700 font-outfit">Client Testimonial</h5>
         <button type="button" id="modal-close-btn" class="close-btn">&times;</button>
@@ -984,9 +977,64 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
   </button>
 
   <!-- Live Chat: Tawk.to widget will be added here -->
+</div>
 </Layout>
 
-<style>
+<style is:global>
+/* Pure White Text & Less Broad Fonts Overrides Scoped to Home Page */
+.homepage-custom-font h1, 
+.homepage-custom-font h2, 
+.homepage-custom-font h3, 
+.homepage-custom-font h4, 
+.homepage-custom-font h5, 
+.homepage-custom-font h6, 
+.homepage-custom-font p, 
+.homepage-custom-font li, 
+.homepage-custom-font span:not(.btn):not(.btn-eighteen):not(.btn-sixteen):not(.btn-three):not(.btn-eleven), 
+.homepage-custom-font a:not(.btn):not(.btn-eighteen):not(.btn-sixteen):not(.btn-three):not(.btn-eleven), 
+.homepage-custom-font strong, 
+.homepage-custom-font small,
+.homepage-custom-font .text-white-50, 
+.homepage-custom-font .text-white-60, 
+.homepage-custom-font .text-white-70, 
+.homepage-custom-font .text-white-75, 
+.homepage-custom-font .text-white-80,
+.homepage-custom-font .text-white, 
+.homepage-custom-font .text-gradient, 
+.homepage-custom-font .text-accent, 
+.homepage-custom-font .countdown-digits, 
+.homepage-custom-font .tl-year-text, 
+.homepage-custom-font .status-dot {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.homepage-custom-font .text-gradient, 
+.homepage-custom-font .countdown-digits {
+  background: none !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.homepage-custom-font h1, 
+.homepage-custom-font h2, 
+.homepage-custom-font h3, 
+.homepage-custom-font h4, 
+.homepage-custom-font h5, 
+.homepage-custom-font h6,
+.homepage-custom-font .hero-heading,
+.homepage-custom-font .fw-900, 
+.homepage-custom-font .fw-800,
+.homepage-custom-font [class*="fw-900"], 
+.homepage-custom-font [class*="fw-800"] {
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+}
+
+.homepage-custom-font .fw-700, 
+.homepage-custom-font [class*="fw-700"] {
+  font-weight: 600 !important;
+}
+
 /* Style Sheets and Layout variables */
 .hero-banner-eight .hero-heading span:before {
   display: none !important;
@@ -1946,7 +1994,7 @@ async function fetchWordPressPosts() {
         }
     } catch (error) {
         console.error('Error fetching WP posts:', error);
-        container.innerHTML = '<div class="text-center w-100 text-white-50">Visit our blog at <a href="/blog" class="text-accent">1onlyhost.com/blog</a> for updates.</div>';
+        container.innerHTML = '<div class="text-center w-100 text-white-50">Visit our blog at <a href="https://1onlyhost.com/blog" target="_blank" class="text-accent">1onlyhost.com/blog</a> for updates.</div>';
     }
 }
 
@@ -2114,6 +2162,7 @@ function initVideoModal() {
     
     const triggers = document.querySelectorAll('.video-feedback-trigger');
     let isPlaying = true;
+    let currentText = '';
     
     triggers.forEach(trigger => {
         trigger.addEventListener('click', (e) => {
@@ -2126,17 +2175,49 @@ function initVideoModal() {
             isPlaying = true;
             if (playBtn) playBtn.innerText = 'Pause Feed';
             
-            setTimeout(() => {
-                if (isPlaying) {
-                    videoStatus.innerText = `Streaming high-fidelity video feedback for ${name} [Active]`;
-                }
-            }, 1200);
+            // Extract the actual feedback text from trigger card paragraph
+            const paragraph = trigger.querySelector('p');
+            currentText = paragraph ? paragraph.innerText.replace(/"/g, '') : '';
+            
+            // Speech Synthesis
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(currentText);
+                utterance.rate = 0.95;
+                utterance.volume = 1.0;
+                utterance.pitch = 1.0;
+                
+                utterance.onend = () => {
+                    if (isPlaying) {
+                        videoStatus.innerText = `Finished audio playback for ${name}.`;
+                        isPlaying = false;
+                        if (playBtn) playBtn.innerText = 'Restart Audio';
+                    }
+                };
+                
+                // Speak after connection delay
+                setTimeout(() => {
+                    if (isPlaying) {
+                        videoStatus.innerText = `Streaming high-fidelity video & audio feedback for ${name} [Active]`;
+                        window.speechSynthesis.speak(utterance);
+                    }
+                }, 1000);
+            } else {
+                setTimeout(() => {
+                    if (isPlaying) {
+                        videoStatus.innerText = `Streaming high-fidelity video feedback for ${name} [Active]`;
+                    }
+                }, 1200);
+            }
         });
     });
     
     function closeModal() {
         modal.classList.add('d-none');
         document.body.style.overflow = '';
+        if ('speechSynthesis' in window) {
+            window.speechSynthesis.cancel();
+        }
     }
     
     closeBtn.addEventListener('click', closeModal);
@@ -2144,13 +2225,42 @@ function initVideoModal() {
     
     if (playBtn) {
         playBtn.addEventListener('click', () => {
-            isPlaying = !isPlaying;
-            if (isPlaying) {
-                playBtn.innerText = 'Pause Feed';
-                videoStatus.innerText = 'Streaming feed active...';
+            if ('speechSynthesis' in window) {
+                if (window.speechSynthesis.speaking) {
+                    if (window.speechSynthesis.paused) {
+                        window.speechSynthesis.resume();
+                        isPlaying = true;
+                        playBtn.innerText = 'Pause Feed';
+                        videoStatus.innerText = 'Streaming feed active...';
+                    } else {
+                        window.speechSynthesis.pause();
+                        isPlaying = false;
+                        playBtn.innerText = 'Resume Feed';
+                        videoStatus.innerText = 'Feed paused.';
+                    }
+                } else {
+                    // Restart audio
+                    window.speechSynthesis.cancel();
+                    const utterance = new SpeechSynthesisUtterance(currentText);
+                    utterance.rate = 0.95;
+                    utterance.onend = () => {
+                        videoStatus.innerText = `Finished audio playback.`;
+                        if (playBtn) playBtn.innerText = 'Restart Audio';
+                    };
+                    window.speechSynthesis.speak(utterance);
+                    isPlaying = true;
+                    playBtn.innerText = 'Pause Feed';
+                    videoStatus.innerText = 'Streaming feed active...';
+                }
             } else {
-                playBtn.innerText = 'Resume Feed';
-                videoStatus.innerText = 'Feed paused.';
+                isPlaying = !isPlaying;
+                if (isPlaying) {
+                    playBtn.innerText = 'Pause Feed';
+                    videoStatus.innerText = 'Streaming feed active...';
+                } else {
+                    playBtn.innerText = 'Resume Feed';
+                    videoStatus.innerText = 'Feed paused.';
+                }
             }
         });
     }
@@ -2158,9 +2268,25 @@ function initVideoModal() {
     if (rewindBtn) {
         rewindBtn.addEventListener('click', () => {
             videoStatus.innerText = 'Reconnecting to stream...';
-            setTimeout(() => {
-                videoStatus.innerText = 'Streaming feed active...';
-            }, 600);
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel();
+                const utterance = new SpeechSynthesisUtterance(currentText);
+                utterance.rate = 0.95;
+                utterance.onend = () => {
+                    videoStatus.innerText = `Finished audio playback.`;
+                    if (playBtn) playBtn.innerText = 'Restart Audio';
+                };
+                setTimeout(() => {
+                    videoStatus.innerText = 'Streaming feed active...';
+                    window.speechSynthesis.speak(utterance);
+                    isPlaying = true;
+                    if (playBtn) playBtn.innerText = 'Pause Feed';
+                }, 600);
+            } else {
+                setTimeout(() => {
+                    videoStatus.innerText = 'Streaming feed active...';
+                }, 600);
+            }
         });
     }
 }

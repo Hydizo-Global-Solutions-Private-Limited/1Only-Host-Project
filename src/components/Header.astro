@@ -8,7 +8,7 @@ const { basePrefix = './' } = Astro.props;
   /* Floating Glass Header Redesign */
   .header-floating-glass {
     position: fixed;
-    top: 20px;
+    top: 55px; /* Clear the announcement bar at top of page */
     left: 50%;
     transform: translateX(-50%);
     width: 95%;
@@ -21,7 +21,10 @@ const { basePrefix = './' } = Astro.props;
     z-index: 1030;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    padding: 10px 20px;
+    padding: 0 !important;
+    height: 70px !important;
+    display: flex !important;
+    align-items: center !important;
   }
 
   .header-floating-glass:hover {
@@ -127,7 +130,7 @@ const { basePrefix = './' } = Astro.props;
 </style>
 
 <header class="header-floating-glass theme-main-menu">
-  <div class="d-flex align-items-center justify-content-between w-100">
+  <div class="container d-flex align-items-center justify-content-between w-100">
     <!-- Logo -->
     <div class="logo">
       <a href="/" class="d-flex align-items-center">
@@ -267,3 +270,19 @@ const { basePrefix = './' } = Astro.props;
     </div>
   </div>
 </header>
+
+<script is:inline>
+  function handleHeaderScroll() {
+    const header = document.querySelector('.header-floating-glass');
+    if (header) {
+      if (window.scrollY > 40) {
+        header.style.top = '15px';
+      } else {
+        header.style.top = '55px';
+      }
+    }
+  }
+  window.addEventListener('scroll', handleHeaderScroll, { passive: true });
+  // Call once on initial load
+  handleHeaderScroll();
+</script>

@@ -18,6 +18,7 @@ const {
 // Compute dynamic basePrefix for relative path resolution
 const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
 const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) : './';
+const isHome = pathSegments.length === 0 || (pathSegments.length === 1 && (pathSegments[0] === 'index.html' || pathSegments[0] === 'index'));
 ---
 
 <!doctype html>
@@ -43,7 +44,7 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
-  <body>
+  <body class={isHome ? "is-home-page" : ""}>
     <!-- Floating Space Nebulas Background -->
     <div class="space-nebulas">
       <div class="nebula nebula-amber"></div>

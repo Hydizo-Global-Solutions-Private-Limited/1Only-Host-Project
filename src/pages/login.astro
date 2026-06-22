@@ -1,0 +1,85 @@
+---
+// login.astro
+export const prerender = true;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1Only Host - Reliable Web Hosting & Domain Services Provider</title>
+<meta name="description" content="1Only Host offers premium web hosting and domain services, providing fast, secure, and affordable solutions for businesses and individuals. Get started today!">
+<meta name="keywords" content="web hosting, domain services, reliable hosting, affordable hosting, secure hosting, domain registration, website hosting, cloud hosting, 1Only Host hosting, best web hosting, fast hosting services">
+<link rel="icon" type="image/png" sizes="56x56" href="/images/favicon.png">
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" media="all">
+<link rel="stylesheet" type="text/css" href="/css/style.min.css" media="all">
+<link rel="stylesheet" type="text/css" href="/css/responsive.css" media="all">
+<link rel="stylesheet" type="text/css" href="/css/ekiticons.css" media="all">
+<link rel='stylesheet' type='text/css' href='/css/design-system.css'>
+<link rel='stylesheet' href='https://unpkg.com/aos@next/dist/aos.css' />
+</head>
+
+<body>
+<div class="main-page-wrapper">
+  <header class="theme-main-menu menu-style-two sticky-menu menu-overlay glass-header">
+    <div class="inner-content gap-one">
+      <div class="top-header position-relative">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="logo order-lg-0"> <a href="/" class="d-flex align-items-center"> <img src="/images/logo.png" alt="" style="height: 38px;"> </a> </div>
+          <div><a href="/" class="fw-500 text-white">Go to home</a></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="login-page position-relative z-1 d-flex align-items-center justify-content-center">
+    <div class="bg-wrapper">
+      <div class="user-data-form">
+        <div class="form-wrapper">
+          <div class="mb-50 sm-mb-30 text-center">
+            <h2>Login</h2>
+            <p>Don’t have any account? <a href="/signup">Register</a></p>
+          </div>
+          <form action="#">
+            <div class="row">
+              <div class="col-12">
+                <div class="input-group-meta position-relative mb-30">
+                  <label>Email*</label>
+                  <input type="email" placeholder="Youremail@gmail.com" class="text-white">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="input-group-meta position-relative mb-20">
+                  <label>Password*</label>
+                  <input type="password" placeholder="Enter Password" class="pass_log_id text-white">
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="agreement-checkbox d-flex justify-content-between align-items-center">
+                  <div>
+                    <input type="checkbox" id="remember">
+                    <label for="remember">Keep me logged in</label>
+                  </div>
+                  <a href="#">Forget Password?</a> </div>
+              </div>
+              <div class="col-12">
+                <button class="btn-eighteen w-100 tran3s d-block mt-20 mb-50">Login</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <p class="copyright-text"> <span class="fw-500">Copyright © 2026 1Only Host.</span> All Right Reserved</p>
+  </div>
+  
+  <script is:inline src="/js/jquery.min.js"></script> 
+  <script is:inline src="/js/bootstrap.bundle.min.js"></script> 
+  <script is:inline src="/js/slick.min.js"></script> 
+  <script is:inline src="/js/jquery.lazy.min.js"></script> 
+  <script is:inline src="/js/jquery.counterup.min.js"></script> 
+  <script is:inline src="/js/jquery.waypoints.min.js"></script> 
+  <script is:inline src="/js/validator.js"></script> 
+  <script is:inline src="/js/theme.js"></script> 
+</div>
+</body>
+</html>

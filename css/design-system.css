@@ -787,6 +787,126 @@ p {
   transform: scale(0.92) translateY(2px) !important;
 }
 
+/* --- Antigravity Custom Fixes --- */
+
+/* 1. Hide the yellow decorator underline/box under hero headings span globally */
+.hero-banner-eight .hero-heading span::before,
+.hero-banner-eight .hero-heading span::after,
+.hero-banner-eight .hero-heading span:before,
+.hero-banner-eight .hero-heading span:after {
+    display: none !important;
+    background: transparent !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+/* 2. Fix the color of lists inside hero-banner-eight so they are bright and crisp */
+.hero-banner-eight li {
+    color: #FFFFFF !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    opacity: 0.95 !important;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
+}
+
+.hero-banner-eight li svg, .hero-banner-eight li svg path {
+    stroke: #FF9E00 !important;
+}
+
+/* 3. Sleek feedback testimonial slider cards sizing & padding */
+.feedback-section-nine .feedback-block {
+    max-width: 650px !important;
+    margin: 0 auto !important;
+    padding: 30px 35px !important;
+    border-radius: 20px !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 158, 0, 0.15) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.feedback-section-nine .feedback-block blockquote {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+    color: #FFFFFF !important;
+}
+
+.feedback-section-nine .feedback-block .name {
+    color: #FFFFFF !important;
+}
+
+/* 4. Fix form input focus text color compatibility */
+input.text-white::placeholder {
+    color: rgba(255,255,255,0.4) !important;
+}
+
+/* ═══════════════════════════════════════════════════
+   5. Home Page Color & Font Weight Overrides
+   ═══════════════════════════════════════════════════ */
+body.is-home-page,
+body.is-home-page h1,
+body.is-home-page h2,
+body.is-home-page h3,
+body.is-home-page h4,
+body.is-home-page h5,
+body.is-home-page h6,
+body.is-home-page p,
+body.is-home-page li,
+body.is-home-page span:not(.btn):not(.btn-eighteen):not(.btn-sixteen):not(.btn-three):not(.btn-eleven):not(.badge),
+body.is-home-page a:not(.btn):not(.btn-eighteen):not(.btn-sixteen):not(.btn-three):not(.btn-eleven),
+body.is-home-page strong,
+body.is-home-page small,
+body.is-home-page .text-white-50,
+body.is-home-page .text-white-60,
+body.is-home-page .text-white-70,
+body.is-home-page .text-white-75,
+body.is-home-page .text-white-80,
+body.is-home-page .text-white,
+body.is-home-page .text-gradient,
+body.is-home-page .text-accent,
+body.is-home-page .countdown-digits,
+body.is-home-page .tl-year-text,
+body.is-home-page .status-dot {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+
+body.is-home-page .text-gradient,
+body.is-home-page .countdown-digits {
+    background: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+body.is-home-page h1,
+body.is-home-page h2,
+body.is-home-page h3,
+body.is-home-page h4,
+body.is-home-page h5,
+body.is-home-page h6,
+body.is-home-page .hero-heading,
+body.is-home-page .fw-900,
+body.is-home-page .fw-800,
+body.is-home-page [class*="fw-900"],
+body.is-home-page [class*="fw-800"] {
+    font-weight: 600 !important;
+    letter-spacing: -0.02em !important;
+}
+
+body.is-home-page .fw-700,
+body.is-home-page [class*="fw-700"] {
+    font-weight: 600 !important;
+}
+
+body.is-home-page .hero-banner-eight {
+    padding-top: 220px !important;
+}
+
+body.is-home-page .text-gradient,
+body.is-home-page .hero-heading span {
+    font-weight: 600 !important;
+}
+
+
 
 
 
