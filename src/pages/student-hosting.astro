@@ -500,4 +500,70 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
 .accordion-button:focus {
   box-shadow: none !important;
 }
+
+/* ===== Comparison Table ===== */
+.sh-compare-table {
+  --bs-table-bg: transparent !important;
+  --bs-table-color: #fff !important;
+  background: transparent !important;
+  color: #fff !important;
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+}
+.sh-compare-table th {
+  border: none !important;
+  background: transparent !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  padding: 20px 16px !important;
+  font-weight: 700;
+}
+.sh-compare-table td {
+  border: none !important;
+  background: transparent !important;
+  padding: 16px 16px !important;
+}
+.sh-compare-row {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  transition: all 0.25s ease;
+}
+.sh-compare-row:hover {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Highlighted Popular Column "1Only Student Plan" */
+.sh-compare-table th.sh-popular-col,
+.sh-compare-table td.sh-popular-col {
+  background: rgba(131, 56, 236, 0.04) !important; /* Semi-transparent purple highlight */
+  position: relative;
+}
+.sh-compare-table th.sh-popular-col {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background: rgba(131, 56, 236, 0.08) !important;
+}
+.sh-compare-table tr:last-child td.sh-popular-col {
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.sh-popular-col::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(131, 56, 236, 0.25), rgba(0, 245, 212, 0.15));
+  pointer-events: none;
+}
+.sh-popular-col::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(131, 56, 236, 0.25), rgba(0, 245, 212, 0.15));
+  pointer-events: none;
+}
 </style>
