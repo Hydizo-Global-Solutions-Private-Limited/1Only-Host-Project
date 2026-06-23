@@ -17,6 +17,9 @@ export const prerender = true;
 <link rel="stylesheet" type="text/css" href="/css/ekiticons.css" media="all">
 <link rel='stylesheet' type='text/css' href='/css/design-system.css'>
 <link rel='stylesheet' href='https://unpkg.com/aos@next/dist/aos.css' />
+<script is:inline>
+  window.location.replace("https://my.1onlyhost.com/dologin.php");
+</script>
 </head>
 
 <body>
@@ -37,20 +40,20 @@ export const prerender = true;
         <div class="form-wrapper">
           <div class="mb-50 sm-mb-30 text-center">
             <h2>Login</h2>
-            <p>Don’t have any account? <a href="/signup">Register</a></p>
+            <p>Don’t have an account? <a href="https://my.1onlyhost.com/register.php">Click here to register with us</a></p>
           </div>
-          <form action="#">
+          <form method="post" action="https://my.1onlyhost.com/dologin.php">
             <div class="row">
               <div class="col-12">
                 <div class="input-group-meta position-relative mb-30">
                   <label>Email*</label>
-                  <input type="email" placeholder="Youremail@gmail.com" class="text-white">
+                  <input type="text" name="username" placeholder="Youremail@gmail.com" class="text-white" required>
                 </div>
               </div>
               <div class="col-12">
                 <div class="input-group-meta position-relative mb-20">
                   <label>Password*</label>
-                  <input type="password" placeholder="Enter Password" class="pass_log_id text-white">
+                  <input type="password" name="password" placeholder="Enter Password" class="pass_log_id text-white" autocomplete="off" required>
                 </div>
               </div>
               <div class="col-12">
@@ -59,10 +62,10 @@ export const prerender = true;
                     <input type="checkbox" id="remember">
                     <label for="remember" style="color: rgba(255, 255, 255, 0.8) !important;">Keep me logged in</label>
                   </div>
-                  <a href="#">Forget Password?</a> </div>
+                  <a href="https://my.1onlyhost.com/password/reset">Forget Password?</a> </div>
               </div>
               <div class="col-12">
-                <button class="btn-eighteen w-100 tran3s d-block mt-20 mb-50">Login</button>
+                <button type="submit" class="btn-eighteen w-100 tran3s d-block mt-20 mb-50">Login</button>
               </div>
             </div>
           </form>
