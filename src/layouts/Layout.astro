@@ -53,7 +53,7 @@ const isHome = pathSegments.length === 0 || (pathSegments.length === 1 && (pathS
     </div>
 
     <div class="main-page-wrapper">
-      <Header basePrefix={basePrefix} />
+      <Header basePrefix={basePrefix} isHome={isHome} />
       <slot />
       <DataCentersGlobe />
       <Footer basePrefix={basePrefix} />

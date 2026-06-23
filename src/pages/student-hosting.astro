@@ -1,0 +1,503 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+export const prerender = true;
+
+const title = "Best Student Hosting in India - 1Only Host";
+const description = "Affordable, high-performance, and secure web hosting designed specifically for students in India. Build your blog or website with a free domain and SSL.";
+const keywords = "student hosting, best student hosting india, cheap student hosting, student web hosting, free domain hosting, 1Only Host student, budget hosting";
+
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) : './';
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- HERO SECTION -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div class="sh-hero position-relative overflow-hidden" data-aos="fade-in">
+    <div class="sh-hero-bg position-absolute w-100 h-100 top-0 start-0" style={`background: url('${basePrefix}images/about-hero-datacenter.png') center/cover no-repeat;`}></div>
+    <div class="sh-hero-overlay position-absolute w-100 h-100 top-0 start-0"></div>
+    
+    <div class="container position-relative z-2">
+      <div class="row align-items-center sh-hero-inner">
+        <div class="col-lg-7 py-5">
+          <div class="d-inline-flex align-items-center mb-4 px-3 py-1 rounded-pill" style="background: rgba(131, 56, 236, 0.1); border: 1px solid rgba(131, 56, 236, 0.2);">
+            <span style="background-color: #8338EC; width: 8px; height: 8px; border-radius: 50%; display: inline-block; box-shadow: 0 0 6px #8338EC;" class="me-2"></span>
+            <span class="fs-12 text-white-50 uppercase tracking-widest fw-600">Empowering the Next Gen Builders</span>
+          </div>
+          
+          <h1 class="text-white fw-900 font-outfit mb-4" style="font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.08;">
+            BEST STUDENT <span class="text-gradient">HOSTING</span> IN INDIA
+          </h1>
+          
+          <p class="text-white-50 fs-17 mb-4" style="max-width: 560px; line-height: 1.8;">
+            We empower the student community to build their blog or website with top-tier speed, premium support, and rock-solid web security.
+          </p>
+
+          <!-- Feature checkmarks in hero -->
+          <div class="row g-2 mb-4 fs-14 fw-500 text-white-50 font-outfit" style="max-width: 600px;">
+            <div class="col-sm-6 d-flex align-items-center gap-2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00FF88" stroke-width="3" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Free Domain</span>
+            </div>
+            <div class="col-sm-6 d-flex align-items-center gap-2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00FF88" stroke-width="3" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Free SSL Certificate</span>
+            </div>
+            <div class="col-sm-6 d-flex align-items-center gap-2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00FF88" stroke-width="3" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>1GB SSD Disk Space</span>
+            </div>
+            <div class="col-sm-6 d-flex align-items-center gap-2">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#00FF88" stroke-width="3" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Professional Email Accounts</span>
+            </div>
+          </div>
+          
+          <div class="d-flex flex-wrap align-items-center gap-4 mt-4">
+            <a href="#plans" class="btn-eighteen py-3 px-5 uppercase tracking-wider fs-13 fw-700">View Plans</a>
+            <a href="https://my.1onlyhost.com/register.php" class="btn btn-outline-light py-3 px-5 uppercase tracking-wider fs-13 fw-600 rounded-pill" style="border-color: rgba(255,255,255,0.15);">Buy Now</a>
+            <div class="text-white font-outfit fs-14 fw-500">
+              <span class="opacity-75">⚡ Lightning Fast Website Loading</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="glass-card p-2 rounded-4 position-relative overflow-hidden" style="border-color: rgba(131,56,236,0.12) !important;">
+            <img src={`${basePrefix}images/student-hosting-hero.png`} alt="best student hosting in india" class="img-fluid rounded-4 w-100" style="height: 380px; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- PRICING SECTION -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-100 position-relative" id="plans" style="background: rgba(2, 4, 10, 0.4);">
+    <div class="container lg">
+      <div class="row align-items-center justify-content-center">
+        <div class="col-lg-6 mb-5 mb-lg-0 text-center text-lg-start pe-lg-5">
+          <div class="d-inline-flex align-items-center mb-3 px-3 py-1 rounded-pill" style="background: rgba(0, 245, 212, 0.1); border: 1px solid rgba(0, 245, 212, 0.2);">
+            <span style="background-color: #00F5D4; width: 6px; height: 6px; border-radius: 50%; display: inline-block;" class="me-2"></span>
+            <span class="fs-11 text-white-50 uppercase tracking-widest fw-600">Unbeatable Price</span>
+          </div>
+          <h2 class="text-white font-outfit fw-900 fs-38 mb-3">Designed for Students, Priced for Student Budgets.</h2>
+          <p class="text-white-50 fs-16 mb-4" style="line-height: 1.8;">
+            Get everything you need to start your website. No complex setup, no expensive add-ons. Switch between currencies using the global switcher above.
+          </p>
+          
+          <!-- Currency Indicator Box -->
+          <div class="glass-card p-4 rounded-4 text-start mt-4" style="border-left: 3px solid #00F5D4 !important;">
+            <div class="billing-switcher-container p-0 border-0 mb-3 justify-content-start d-flex gap-2">
+              <span class="text-white-50 fs-14 fw-600 font-outfit me-3 align-self-center">Select currency:</span>
+              <div class="currency-toggle-pill pill-container m-0">
+                <button type="button" class="toggle-btn" data-currency="INR">₹ INR</button>
+                <button type="button" class="toggle-btn" data-currency="USD">$ USD</button>
+              </div>
+            </div>
+            <p class="text-white-50 m-0 fs-13">Changing currency changes the display pricing dynamically across the entire website.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-8">
+          <div class="sh-pricing-card glass-card p-4 rounded-4 position-relative overflow-hidden d-flex flex-column shadow-lg" style="border: 2px solid rgba(0, 245, 212, 0.3) !important;">
+            <!-- Popular Ribbon -->
+            <div class="position-absolute px-4 py-1 text-white fs-11 fw-700 uppercase tracking-wider" style="background: linear-gradient(135deg, #00F5D4, #8338EC); top: 20px; right: -30px; transform: rotate(45deg); width: 140px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+              Student Plan
+            </div>
+
+            <div class="pr-header text-center mb-3">
+              <h4 class="text-white font-outfit fw-800 fs-24 mb-1">Student Hosting Plan</h4>
+              <div class="save-line fs-14 text-white-50 fw-600 uppercase tracking-wider mb-3" style="color: #00F5D4 !important;">Best Value for Undergrads & Developers</div>
+              
+              <!-- Dynamic Price Display -->
+              <div class="price text-white font-outfit fw-900 fs-48 my-3" data-usd-annually="6.99" data-inr-annually="549" data-usd-monthly="6.99" data-inr-monthly="549">
+                ₹549<sub class="fs-16 opacity-50 fw-400">/Year</sub>
+              </div>
+            </div>
+
+            <!-- Features list -->
+            <ul class="style-none package-feature mb-4 flex-fill ps-0 text-white-50 fs-14">
+              <li class="d-flex align-items-center gap-2 mb-2 pb-2" style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="3" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>1GB</strong> SSD Disk Space</span>
+              </li>
+              <li class="d-flex align-items-center gap-2 mb-2 pb-2" style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="3" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>5GB</strong> Bandwidth</span>
+              </li>
+              <li class="d-flex align-items-center gap-2 mb-2 pb-2" style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="3" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Free</strong> .site domain included</span>
+              </li>
+              <li class="d-flex align-items-center gap-2 mb-2 pb-2" style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="3" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>1</strong> Professional Email Account</span>
+              </li>
+              <li class="d-flex align-items-center gap-2 mb-2 pb-2" style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="3" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Free</strong> SSL Certificate</span>
+              </li>
+              <li class="d-flex align-items-center gap-2 mb-2 pb-2" style="border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="3" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>Free</strong> Easy Website Builder</span>
+              </li>
+              <li class="d-flex align-items-center gap-2" style="border-bottom: none;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00F5D4" stroke-width="3" class="flex-shrink-0"><polyline points="20 6 9 17 4 12"/></svg>
+                <span><strong>No Contract</strong> or Hidden Fees</span>
+              </li>
+            </ul>
+
+            <a href="https://my.1onlyhost.com/cart.php?a=add&pid=14" class="btn-eighteen text-center w-100 py-3 rounded-pill uppercase tracking-wider fs-13 fw-700" style="background: linear-gradient(135deg, #00F5D4, #8338EC); border: none; box-shadow: 0 4px 15px rgba(0, 245, 212, 0.3);">
+              Buy Now
+            </a>
+
+            <!-- Secure Checkout Trust Badges -->
+            <div class="d-flex flex-wrap align-items-center justify-content-center gap-3 mt-4 pt-3" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+              <span class="fs-11 text-white-50 uppercase tracking-widest fw-600 w-100 text-center mb-1">Guaranteed Secure Transactions</span>
+              <img src={`${basePrefix}images/razorpay-badge.svg`} alt="Razorpay Secure Checkout" style="height: 20px; opacity: 0.7; filter: brightness(10);" class="img-fluid">
+              <img src={`${basePrefix}images/sectigo-badge.svg`} alt="Sectigo SSL Secure" style="height: 24px; opacity: 0.75;" class="img-fluid">
+              <img src={`${basePrefix}images/pci-dss-badge.svg`} alt="PCI-DSS Compliant" style="height: 20px; opacity: 0.7;" class="img-fluid">
+              <img src={`${basePrefix}images/gdpr-badge.svg`} alt="GDPR Compliant Data Safe" style="height: 22px; opacity: 0.7;" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- COMPARISON TABLE SECTION -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-100 position-relative" data-aos="fade-up" style="border-top: 1px solid rgba(255,255,255,0.04);">
+    <div class="container lg">
+      <div class="text-center mb-60">
+        <span class="badge uppercase tracking-wider py-1 px-3 fs-10 mb-3" style="background: rgba(255, 0, 127, 0.1); color: #FF007F; border: 1px solid rgba(255, 0, 127, 0.2);">Detailed Comparison</span>
+        <h2 class="text-white font-outfit fw-900 fs-36">Free vs Paid: Value That Matters</h2>
+        <p class="text-white-50 fs-16 mt-2 max-w-700 mx-auto">Compare the Student Hosting Plan against typical free hosts and standard competitor options to see the difference.</p>
+      </div>
+
+      <div class="table-responsive glass-card rounded-4 p-4 shadow-lg" style="border-color: rgba(255,255,255,0.06) !important;">
+        <table class="table table-borderless align-middle m-0 sh-compare-table">
+          <thead>
+            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08) !important;">
+              <th scope="col" class="py-4 text-white-50 fw-500 font-outfit fs-15" style="width: 30%;">Features</th>
+              <th scope="col" class="py-4 text-center text-white-50 fw-600 font-outfit fs-15 uppercase">Free Web Hosts</th>
+              <th scope="col" class="py-4 text-center fw-800 font-outfit fs-15 uppercase sh-popular-col">
+                <span class="text-gradient">1Only Student Plan</span>
+              </th>
+              <th scope="col" class="py-4 text-center text-white-50 fw-600 font-outfit fs-15 uppercase">Competitor Basic</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Category: Resource Allocations -->
+            <tr>
+              <td colspan="4" class="pt-4 pb-2 font-outfit fw-700 text-gradient fs-14 uppercase tracking-widest">Resource Allocations</td>
+            </tr>
+            <tr class="sh-compare-row">
+              <td class="py-3 fw-500 text-white font-inter fs-14">SSD Disk Space</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">500 MB (Slow HDD)</td>
+              <td class="py-3 text-center fw-700 text-white font-inter fs-14 sh-popular-col" style="color: #00FF88 !important;">1 GB NVMe SSD</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">1 GB (Standard SSD)</td>
+            </tr>
+            <tr class="sh-compare-row">
+              <td class="py-3 fw-500 text-white font-inter fs-14">Bandwidth / Traffic</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">1 GB / Month</td>
+              <td class="py-3 text-center fw-700 text-white font-inter fs-14 sh-popular-col" style="color: #00FF88 !important;">5 GB Premium</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">2 GB / Month</td>
+            </tr>
+            <tr class="sh-compare-row">
+              <td class="py-3 fw-500 text-white font-inter fs-14">Websites Allowed</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">1 Subdomain only</td>
+              <td class="py-3 text-center fw-700 text-white font-inter fs-14 sh-popular-col" style="color: #00FF88 !important;">1 Custom Domain</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">1 Custom Domain</td>
+            </tr>
+            <tr class="sh-compare-row">
+              <td class="py-3 fw-500 text-white font-inter fs-14">MySQL Databases</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">1 Database</td>
+              <td class="py-3 text-center fw-700 text-white font-inter fs-14 sh-popular-col" style="color: #00FF88 !important;">Unlimited Databases</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">1 Database</td>
+            </tr>
+
+            <!-- Category: Domain & Branding -->
+            <tr>
+              <td colspan="4" class="pt-4 pb-2 font-outfit fw-700 text-gradient fs-14 uppercase tracking-widest">Domain & Branding</td>
+            </tr>
+            <tr class="sh-compare-row">
+              <td class="py-3 fw-500 text-white font-inter fs-14">Free Domain Name</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">None</td>
+              <td class="py-3 text-center fw-700 text-white font-inter fs-14 sh-popular-col" style="color: #00FF88 !important;">Yes (.site/.online)</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">None (Requires purchase)</td>
+            </tr>
+            <tr class="sh-compare-row">
+              <td class="py-3 fw-500 text-white font-inter fs-14">Ad Placement</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14" style="color: #FF007F;">Forced Popup Ads</td>
+              <td class="py-3 text-center fw-700 text-white font-inter fs-14 sh-popular-col" style="color: #00FF88 !important;">100% Ad-Free</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">Ad-Free</td>
+            </tr>
+            <tr class="sh-compare-row">
+              <td class="py-3 fw-500 text-white font-inter fs-14">Email Accounts</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">None</td>
+              <td class="py-3 text-center fw-700 text-white font-inter fs-14 sh-popular-col" style="color: #00FF88 !important;">1 cPanel Account</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">None (Paid addon)</td>
+            </tr>
+
+            <!-- Category: Security & Control -->
+            <tr>
+              <td colspan="4" class="pt-4 pb-2 font-outfit fw-700 text-gradient fs-14 uppercase tracking-widest">Security & Control</td>
+            </tr>
+            <tr class="sh-compare-row">
+              <td class="py-3 fw-500 text-white font-inter fs-14">SSL Certificates</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">Self-Signed/None</td>
+              <td class="py-3 text-center fw-700 text-white font-inter fs-14 sh-popular-col" style="color: #00FF88 !important;">Free Unlimited AutoSSL</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">Additional Charge</td>
+            </tr>
+            <tr class="sh-compare-row">
+              <td class="py-3 fw-500 text-white font-inter fs-14">Control Panel</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">None / Custom Basic</td>
+              <td class="py-3 text-center fw-700 text-white font-inter fs-14 sh-popular-col" style="color: #00FF88 !important;">cPanel Control Panel</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">Custom dashboard</td>
+            </tr>
+            <tr class="sh-compare-row">
+              <td class="py-3 fw-500 text-white font-inter fs-14">Uptime SLA</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">~95.0% (Unreliable)</td>
+              <td class="py-3 text-center fw-700 text-white font-inter fs-14 sh-popular-col" style="color: #00FF88 !important;">99.9% Uptime Guarantee</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">99.0% Uptime</td>
+            </tr>
+            <tr class="sh-compare-row">
+              <td class="py-3 fw-500 text-white font-inter fs-14">Priority Customer Support</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">None (Forums only)</td>
+              <td class="py-3 text-center fw-700 text-white font-inter fs-14 sh-popular-col" style="color: #00FF88 !important;">24/7 Priority Support</td>
+              <td class="py-3 text-center text-white-50 font-inter fs-14">Email support only</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- ACCORDION FAQ SECTION -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-80 position-relative" style="background: rgba(2, 4, 10, 0.4);">
+    <div class="container lg">
+      <div class="row text-center mb-50">
+        <div class="col-xl-9 col-lg-10 m-auto">
+          <div class="d-inline-flex align-items-center mb-3 px-3 py-1 rounded-pill" style="background: rgba(0, 245, 212, 0.1); border: 1px solid rgba(0, 245, 212, 0.2);">
+            <span style="background-color: #00F5D4; width: 6px; height: 6px; border-radius: 50%; display: inline-block;" class="me-2"></span>
+            <span class="fs-11 text-white-50 uppercase tracking-widest fw-600">Got Questions?</span>
+          </div>
+          <h2 class="text-white font-outfit fw-900 fs-32 mb-3">Frequently Asked Questions</h2>
+          <p class="text-white-50 fs-15 m-0">Find quick answers to common questions about our student hosting plans in India.</p>
+        </div>
+      </div>
+      
+      <div class="col-lg-8 mx-auto">
+        <div class="accordion accordion-flush" id="faqAccordion">
+          
+          <!-- Question 1 -->
+          <div class="glass-card rounded-4 mb-3 overflow-hidden" style="border-color: rgba(255,255,255,0.06);">
+            <h2 class="accordion-header mb-0">
+              <button class="accordion-button collapsed bg-transparent text-white font-outfit fw-700 py-3 shadow-none border-0 d-flex justify-content-between align-items-center w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne" style="outline: none; text-align: left;">
+                How can 1Only Host offer web hosting at just ₹549/year?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-white-50 fs-14 py-3 px-4" style="border-top: 1px solid rgba(255,255,255,0.05); line-height: 1.7;">
+                1Only Host is dedicated to supporting the student community in India. We optimize resource allocation on our cloud servers to offer a highly affordable entry point for undergrads, developers, and students building their first blogs or portfolios.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="glass-card rounded-4 mb-3 overflow-hidden" style="border-color: rgba(255,255,255,0.06);">
+            <h2 class="accordion-header mb-0">
+              <button class="accordion-button collapsed bg-transparent text-white font-outfit fw-700 py-3 shadow-none border-0 d-flex justify-content-between align-items-center w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="outline: none; text-align: left;">
+                Can I install WordPress on the Student Hosting Plan?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-white-50 fs-14 py-3 px-4" style="border-top: 1px solid rgba(255,255,255,0.05); line-height: 1.7;">
+                Yes! The Student Hosting Plan fully supports WordPress, cPanel, and one-click app installers, allowing you to deploy WordPress, Joomla, or custom Node/HTML sites instantly.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="glass-card rounded-4 mb-3 overflow-hidden" style="border-color: rgba(255,255,255,0.06);">
+            <h2 class="accordion-header mb-0">
+              <button class="accordion-button collapsed bg-transparent text-white font-outfit fw-700 py-3 shadow-none border-0 d-flex justify-content-between align-items-center w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="outline: none; text-align: left;">
+                How do I claim my free .site domain name?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-white-50 fs-14 py-3 px-4" style="border-top: 1px solid rgba(255,255,255,0.05); line-height: 1.7;">
+                The free .site domain is automatically bundled with your annual Student Hosting Plan purchase. Simply enter the domain name you want during checkout, and it will be registered with a 100% discount.
+              </div>
+            </div>
+          </div>
+
+          <!-- Question 4 -->
+          <div class="glass-card rounded-4 mb-0 overflow-hidden" style="border-color: rgba(255,255,255,0.06);">
+            <h2 class="accordion-header mb-0">
+              <button class="accordion-button collapsed bg-transparent text-white font-outfit fw-700 py-3 shadow-none border-0 d-flex justify-content-between align-items-center w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" style="outline: none; text-align: left;">
+                Are there any hidden costs or contracts?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body text-white-50 fs-14 py-3 px-4" style="border-top: 1px solid rgba(255,255,255,0.05); line-height: 1.7;">
+                None at all. 1Only Host practices complete billing transparency. There are no contracts, no setup fees, and no hidden charges. Renewals are priced transparently.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- BOTTOM CTA BANNER -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <section class="py-100 position-relative overflow-hidden">
+    <div class="container lg">
+      <div class="sh-cta-banner text-center" data-aos="zoom-in" style="background: linear-gradient(135deg, rgba(0, 245, 212, 0.08), rgba(131, 56, 236, 0.08)); border: 1px solid rgba(0, 245, 212, 0.2); border-radius: 24px; padding: 80px 40px;">
+        <h2 class="text-white font-outfit fw-900 fs-38 mb-3">Ready to Launch Your Project Online?</h2>
+        <p class="text-white-50 fs-16 mb-4 max-w-700 mx-auto" style="line-height: 1.8;">
+          Join thousands of Indian students building their portfolios, blogs, and websites with 1Only Host. Get cPanel, free SSL, and a free domain today.
+        </p>
+        <a href="https://my.1onlyhost.com/cart.php?a=add&pid=14" class="btn-eighteen py-3 px-5 uppercase tracking-wider fs-13 fw-700" style="background: linear-gradient(135deg, #00F5D4, #8338EC); border: none; box-shadow: 0 4px 15px rgba(0, 245, 212, 0.3);">
+          Get Started for ₹549/yr
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- GOOGLE SCHEMA MARKUP -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Product",
+          "name": "1Only Host Student Hosting Plan",
+          "description": "High-performance, secure, and affordable web hosting designed for students in India. Includes free .site domain, free SSL, and 1GB SSD space.",
+          "image": "https://1onlyhost.com/images/student-hosting-hero.png",
+          "offers": {
+            "@type": "Offer",
+            "price": "549.00",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock",
+            "priceValidUntil": "2027-12-31"
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How can 1Only Host offer web hosting at just ₹549/year?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "1Only Host is dedicated to supporting the student community in India. We optimize resource allocation on our cloud servers to offer a highly affordable entry point for undergrads, developers, and students building their first portfolios."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I install WordPress on the Student Hosting Plan?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes! The Student Hosting Plan fully supports WordPress, cPanel, and one-click app installers, allowing you to deploy WordPress, Joomla, or custom Node/HTML sites instantly."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I claim my free .site domain name?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The free .site domain is automatically bundled with your annual Student Hosting Plan purchase. Simply enter the domain name you want during checkout, and it will be registered with a 100% discount."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are there any hidden costs or contracts?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "None at all. 1Only Host practices complete billing transparency. There are no contracts, no setup fees, and no hidden charges. Renewals are priced transparently."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+
+</Layout>
+
+<style>
+/* ===== Hero ===== */
+.sh-hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding-top: 100px; /* Clearance for the header */
+}
+.sh-hero-bg {
+  filter: brightness(0.25) contrast(1.1);
+}
+.sh-hero-overlay {
+  background: linear-gradient(90deg, rgba(2,4,10,0.92) 0%, rgba(2,4,10,0.65) 50%, rgba(2,4,10,0.4) 100%);
+}
+.sh-hero-inner {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+}
+
+/* ===== Utility ===== */
+.text-gradient {
+  background: linear-gradient(90deg, #FF9E00, #FF007F);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+.py-100 { padding-top: 100px; padding-bottom: 100px; }
+
+/* ===== Pricing Cards ===== */
+.sh-pricing-card {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.sh-pricing-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+  .sh-hero { min-height: 70vh; padding-top: 120px !important; }
+  .sh-hero-overlay { background: rgba(2,4,10,0.88); }
+  .sh-hero-inner { min-height: auto; padding: 40px 0; }
+}
+
+/* ===== Accordion Customization ===== */
+.accordion-button::after {
+  filter: invert(1);
+}
+.accordion-button:not(.collapsed) {
+  background-color: transparent !important;
+  color: #00F5D4 !important;
+}
+.accordion-button:focus {
+  box-shadow: none !important;
+}
+</style>

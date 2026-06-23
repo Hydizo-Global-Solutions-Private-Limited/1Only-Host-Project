@@ -1,14 +1,15 @@
 ---
 interface Props {
   basePrefix?: string;
+  isHome?: boolean;
 }
-const { basePrefix = './' } = Astro.props;
+const { basePrefix = './', isHome = false } = Astro.props;
 ---
 <style>
   /* Floating Glass Header Redesign */
   .header-floating-glass {
     position: fixed;
-    top: 55px; /* Clear the announcement bar at top of page */
+    top: 20px; /* Floating slightly below the top by default */
     left: 50%;
     transform: translateX(-50%);
     width: 95%;
@@ -253,9 +254,13 @@ const { basePrefix = './' } = Astro.props;
       font-size: 15px !important;
     }
   }
+
+  .header-floating-glass.at-home {
+    top: 55px; /* Clear the announcement bar at top of page */
+  }
 </style>
 
-<header class="header-floating-glass theme-main-menu">
+<header class={`header-floating-glass theme-main-menu ${isHome ? 'at-home' : 'not-home'}`}>
   <div class="container d-flex align-items-center justify-content-between w-100">
     <!-- Logo -->
     <div class="logo">
@@ -323,6 +328,7 @@ const { basePrefix = './' } = Astro.props;
                       <li><a href="/shared-hosting" class="dropdown-item">Linux Shared Hosting</a></li>
                       <li><a href="/window-shared-hosting" class="dropdown-item">Window Shared Hosting</a></li>
                       <li><a href="/wordpress-hosting" class="dropdown-item">WordPress Hosting</a></li>
+                      <li><a href="/student-hosting" class="dropdown-item">Student Hosting</a></li>
                     </ul>
                   </div>
                 </div>

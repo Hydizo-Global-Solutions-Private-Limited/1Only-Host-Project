@@ -906,6 +906,22 @@ body.is-home-page .hero-heading span {
     font-weight: 600 !important;
 }
 
+/* --- Responsive Hero Top Padding Fixes --- */
+@media (max-width: 991px) {
+    .hero-banner-eight, 
+    .hero-banner-nine, 
+    .hero-banner-three, 
+    .hero-banner-two, 
+    .hero-banner-one,
+    .hero-banner-seven,
+    .inner-banner-one,
+    .sh-hero, 
+    .about-hero-section {
+        padding-top: 120px !important;
+    }
+}
+
+
 
 
 

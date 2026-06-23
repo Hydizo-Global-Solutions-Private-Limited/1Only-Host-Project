@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+export const prerender = true;
+
+const title = "Service Level Agreement (SLA) | 1Only Host";
+const description = "Read the Service Level Agreement (SLA) for 1Only Host. Learn about our 99.9% uptime guarantee, maintenance parameters, and response commitments.";
+const keywords = "SLA, Service Level Agreement, hosting uptime, server reliability, compensation credit, 1Only Host SLA";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <div class="hero-banner-eight bg-twelve z-1 position-relative pt-130 pb-160 xl-pb-140 md-p0 mesh-bg-1" data-aos="fade-in">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10 text-center">
+          <h1 class="hero-heading" style="background: linear-gradient(90deg, #FF9E00, #FF007F); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Service Level Agreement</h1>
+          <p class="fs-22 font-manrope pt-25 pb-25 pe-xxl-5">Our commitment to providing industry-leading server reliability, uptime guarantees, and swift technical support response times.</p>
+          <a href="#more" class="btn-eighteen">Read SLA</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section-gap" id="more">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <div class="col-xl-11">
+          <div class="p-5 rounded-4" style="background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); box-shadow: var(--shadow-premium); border-radius: 16px;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">1. Introduction</h3>
+            <p>This Service Level Agreement ("SLA") outlines the network and server performance standards that 1Only Host commits to delivering to you. This SLA applies to our Shared Hosting, Reseller Hosting, VPS Servers, and Dedicated Servers. Our objective is to ensure optimal system performance and minimal disruptions to your business applications.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">2. Uptime Guarantee</h3>
+            <p>We commit to maintaining a **99.9% Network and Hardware Uptime** guarantee for all hosting plans and servers. Uptime is calculated monthly, based on our internal monitoring tools and third-party validation monitors. If we fall below this target, you are entitled to request service credits as outlined below.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">3. Credit Schedule</h3>
+            <p>In the event that server uptime falls below our 99.9% guarantee, credits are issued to your billing account according to the following schedule:</p>
+            <div class="table-responsive my-4" style="border: 1px solid var(--glass-border); border-radius: 8px; overflow: hidden; background: rgba(255, 255, 255, 0.02);">
+              <table class="table text-white mb-0" style="font-size: 15px;">
+                <thead>
+                  <tr style="background: rgba(255, 158, 0, 0.15);">
+                    <th style="padding: 12px; border-bottom: 1px solid var(--glass-border);">Monthly Uptime Percentage</th>
+                    <th style="padding: 12px; border-bottom: 1px solid var(--glass-border);">Service Credit Issued</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td style="padding: 12px; border-bottom: 1px solid var(--glass-border);">99.9% to 100.0%</td>
+                    <td style="padding: 12px; border-bottom: 1px solid var(--glass-border);">Standard Target (No Credit)</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 12px; border-bottom: 1px solid var(--glass-border);">99.0% to 99.89%</td>
+                    <td style="padding: 12px; border-bottom: 1px solid var(--glass-border);">10% of monthly hosting fee</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 12px; border-bottom: 1px solid var(--glass-border);">98.0% to 98.99%</td>
+                    <td style="padding: 12px; border-bottom: 1px solid var(--glass-border);">25% of monthly hosting fee</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 12px; border-bottom: 1px solid var(--glass-border);">95.0% to 97.99%</td>
+                    <td style="padding: 12px; border-bottom: 1px solid var(--glass-border);">50% of monthly hosting fee</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 12px;">Less than 95.0%</td>
+                    <td style="padding: 12px;">100% of monthly hosting fee</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>Credits will be applied directly to future invoices for the specific services that experienced the downtime. Credits cannot exceed 100% of your service fee for any single calendar month.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">4. Maintenance Windows</h3>
+            <p>To keep our systems fast and secure, regular hardware, software, and kernel maintenance is required:</p>
+            <ul class="features list-check-two mb-4" style="color: var(--text-muted);">
+              <li>**Scheduled Maintenance**: Occurs during off-peak hours (usually between 12:00 AM and 4:00 AM server local time). Clients are notified at least **48 hours** in advance. Scheduled maintenance downtime is excluded from SLA calculations.</li>
+              <li>**Emergency Maintenance**: Critical security patches or hardware failures may require immediate action. While we aim to alert clients immediately, emergency updates are handled with priority and are excluded from SLA calculations if completed within 2 hours.</li>
+            </ul>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">5. Downtime Exclusions</h3>
+            <p>No SLA credit will be issued if the downtime or service degradation is caused by:</p>
+            <ul class="features list-check-two mb-4" style="color: var(--text-muted);">
+              <li>DNS propagation delays, registration expirations, or third-party DNS provider issues.</li>
+              <li>Customer application coding bugs, database script loops, or local connection failures.</li>
+              <li>Network anomalies originating outside our server core (upstream transit provider routing failures).</li>
+              <li>Distributed Denial of Service (DDoS) attacks or network congestion beyond our reasonable control.</li>
+              <li>Force Majeure events (natural disasters, war, government intervention, or massive telecom outages).</li>
+            </ul>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">6. Monitoring Tools</h3>
+            <p>We deploy internal active polling monitors that query our nodes every **60 seconds**. Outage calculations are based solely on these automated checks. We also publish a public status portal showing real-time metrics for node loads, memory status, and network routing speeds.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">7. Support Response Commitments</h3>
+            <p>We classify technical support tickets by urgency to ensure critical issues are handled immediately:</p>
+            <ul class="features list-check-two mb-4" style="color: var(--text-muted);">
+              <li>**Priority 1 (Critical)**: Entire server or network node offline. Response target: **15 minutes** or less.</li>
+              <li>**Priority 2 (High)**: Major service degradation (e.g. mail service failing, website loading slowly). Response target: **1 hour** or less.</li>
+              <li>**Priority 3 (Normal)**: Standard account queries, software configurations, or backup restorations. Response target: **4 hours** or less.</li>
+              <li>**Priority 4 (Low)**: General questions, billing issues, or pre-sales consultations. Response target: **8 hours** or less.</li>
+            </ul>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">8. Credit Claim Process</h3>
+            <p>SLA credits are not automatically calculated. To submit a claim, you must log in to the Client Portal and open a ticket with the **Billing Department** within **7 days** of the downtime incident. The ticket must detail the date, time, and service affected, along with any external validation logs (such as UptimeRobot reports).</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">9. Contact Information</h3>
+            <p>For any queries relating to service performance, scheduled updates, or SLA credits, please open a support ticket or contact our SLA team at <a href="mailto:support@1onlyhost.com" style="color: var(--accent-color);">support@1onlyhost.com</a>.</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

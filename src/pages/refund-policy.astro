@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+export const prerender = true;
+
+const title = "Refund Policy | 1Only Host";
+const description = "Understand the refund eligibility rules, money-back guarantees, and cancellation processes for 1Only Host hosting, domains, and servers.";
+const keywords = "refund policy, money back guarantee, cancel hosting, domain refunds, 1Only Host refunds";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <div class="hero-banner-eight bg-twelve z-1 position-relative pt-130 pb-160 xl-pb-140 md-p0 mesh-bg-1" data-aos="fade-in">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10 text-center">
+          <h1 class="hero-heading" style="background: linear-gradient(90deg, #FF9E00, #FF007F); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Refund Policy</h1>
+          <p class="fs-22 font-manrope pt-25 pb-25 pe-xxl-5">Read about our money-back guarantees, cancellations, and product refund eligibility at 1Only Host.</p>
+          <a href="#more" class="btn-eighteen">Read Policy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section-gap" id="more">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <div class="col-xl-11">
+          <div class="p-5 rounded-4" style="background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); box-shadow: var(--shadow-premium); border-radius: 16px;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">1. Introduction</h3>
+            <p>At 1Only Host, we aim to ensure complete satisfaction with our cloud hosting infrastructure and domain solutions. Because provisioning server space, software license locks, and domain names incurs immediate fees with registries and software vendors, we maintain a clear policy outlining when refunds are available.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">2. Hosting Refund Eligibility</h3>
+            <p>We provide a **30-Day Money-Back Guarantee** for our standard hosting products, which include:</p>
+            <ul class="features list-check-two mb-4" style="color: var(--text-muted);">
+              <li>Linux Shared Hosting</li>
+              <li>Windows Shared Hosting</li>
+              <li>WordPress Hosting</li>
+              <li>Linux Reseller Hosting</li>
+              <li>Windows Reseller Hosting</li>
+            </ul>
+            <p>If you cancel these services within 30 days of the initial purchase date, you are eligible for a full refund of the hosting fees. Refunds are not issued for subscriptions cancelled after the 30-day window has expired.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">3. Non-Refundable Services</h3>
+            <p>Certain components, add-ons, or setup charges cannot be refunded under any circumstances due to upfront third-party costs. These include:</p>
+            <ul class="features list-check-two mb-4" style="color: var(--text-muted);">
+              <li>Administrative Setup Fees or Custom Configuration Charges.</li>
+              <li>Software Licenses (including cPanel, Plesk, WHMCS, LiteSpeed, CloudLinux, Imunify360).</li>
+              <li>Any third-party extensions, billing templates, or custom theme modules.</li>
+              <li>Titan Business Email and Enterprise Email plans once mailbox data is activated.</li>
+            </ul>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">4. Domain Registration Refund Rules</h3>
+            <p>Domain name registrations, transfers, and renewals are final. Once a domain request is submitted to the registry, it is instantly registered under your ownership and cannot be undone or refunded. This applies to standard extensions (.com, .net, .org) and premium/country-code extensions (.xyz, .in, etc.). We advise double-checking domain spellings before proceeding to checkout.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">5. SSL Certificate Refund Rules</h3>
+            <p>SSL Certificates (Sectigo, etc.) are refundable within **25 days** of the purchase date, provided the certificate has not yet been issued, validated, or installed on a server. Once the SSL has been activated and issued by the Certificate Authority, it becomes non-refundable.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">6. VPS and Dedicated Server Refund Rules</h3>
+            <p>Virtual Private Servers (VPS) and Dedicated Server configurations are handled as follows:</p>
+            <ul class="features list-check-two mb-4" style="color: var(--text-muted);">
+              <li>**VPS Servers**: VPS plans include a **7-Day Money-Back Guarantee**. Cancellations made within 7 days of provisioning will receive a full refund, excluding any cPanel/Plesk licensing add-ons.</li>
+              <li>**Dedicated Servers**: Dedicated server setups are custom-provisioned to order and are strictly **non-refundable**. Once a dedicated rack is deployed, hardware costs are committed.</li>
+            </ul>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">7. Renewal Refund Rules</h3>
+            <p>All automated renewals of hosting subscriptions, domain names, backup plans (CodeGuard, Acronis), and licenses are non-refundable. To prevent unwanted charges, you must request cancellation or disable the automatic renewal toggle in your Client Area at least **5 days** prior to the invoice date.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">8. Cancellation Process</h3>
+            <p>To request a refund and cancel your service, you must complete the following steps:</p>
+            <ol class="mb-4" style="color: var(--text-muted); padding-left: 20px; line-height: 1.8;">
+              <li>Log in to your 1Only Host Client Dashboard.</li>
+              <li>Navigate to your active Services, select the service you wish to terminate, and click **Request Cancellation**.</li>
+              <li>Provide a reason for cancellation and select either "Immediate" or "End of Billing Period" termination.</li>
+              <li>Open a support ticket with the **Billing Department** requesting your refund within the eligible guarantee window.</li>
+            </ol>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">9. Refund Processing Time</h3>
+            <p>Eligible refund requests are processed within **5 to 7 business days** of receiving your billing ticket. Once approved, the funds will be issued back to the original payment source (Visa/Mastercard, UPI, Stripe, Razorpay, or PayPal). Bank settlement timeframes may vary depending on your financial institution.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">10. Abuse and Fraud Exceptions</h3>
+            <p>No refunds will be granted if your account is suspended or terminated due to violations of our Terms and Conditions (such as spamming, phishing, network scanning, copyright infringements, or hosting malicious files). Fraudulent chargeback disputes will lead to permanent account lockout and data termination.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">11. Contact Information</h3>
+            <p>For refund requests or billing issues, please open a support ticket or reach out to our billing team at <a href="mailto:support@1onlyhost.com" style="color: var(--accent-color);">support@1onlyhost.com</a>.</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

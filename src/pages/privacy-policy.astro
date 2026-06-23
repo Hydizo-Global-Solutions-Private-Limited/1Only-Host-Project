@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+export const prerender = true;
+
+const title = "Privacy Policy | 1Only Host";
+const description = "Read the Privacy Policy for 1Only Host. Learn how we collect, store, protect, and handle your personal, domain WHOIS, and payment billing data.";
+const keywords = "privacy policy, data collection, cookie usage, payment security, WHOIS privacy, 1Only Host data safety";
+---
+
+<Layout title={title} description={description} keywords={keywords}>
+  <div class="hero-banner-eight bg-twelve z-1 position-relative pt-130 pb-160 xl-pb-140 md-p0 mesh-bg-1" data-aos="fade-in">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-10 text-center">
+          <h1 class="hero-heading" style="background: linear-gradient(90deg, #FF9E00, #FF007F); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Privacy Policy</h1>
+          <p class="fs-22 font-manrope pt-25 pb-25 pe-xxl-5">Learn how 1Only Host collects, stores, protects, and uses your personal and billing data to deliver secure hosting solutions.</p>
+          <a href="#more" class="btn-eighteen">Read Policy</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section-gap" id="more">
+    <div class="container">
+      <div class="row g-4 justify-content-center">
+        <div class="col-xl-11">
+          <div class="p-5 rounded-4" style="background: var(--glass-bg); border: 1px solid var(--glass-border); backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur); box-shadow: var(--shadow-premium); border-radius: 16px;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">1. Introduction</h3>
+            <p>At 1Only Host ("we", "our", "us"), protecting your privacy is our primary concern. This Privacy Policy details how we handle the personal information collected from users ("you", "your") of our web hosting, domain registration, VPS, dedicated servers, backup solutions, and related services. We are committed to maintaining compliance with the General Data Protection Regulation (GDPR), CCPA, and global data privacy standards.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">2. Information Collected</h3>
+            <p>We collect various types of data to provide, secure, and improve our services, including:</p>
+            <ul class="features list-check-two mb-4" style="color: var(--text-muted);">
+              <li>**Personal Identification**: Full name, email address, physical address, phone number, and company name.</li>
+              <li>**Technical Connection Logs**: IP addresses, browser types, device configurations, network routing data, and access timestamps.</li>
+              <li>**Domain Details**: Registry contact profiles (registrant name, organization, administrative and technical email).</li>
+            </ul>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">3. How Information is Used</h3>
+            <p>We process collected information to fulfill our agreements and operate secure servers, specifically for:</p>
+            <ul class="features list-check-two mb-4" style="color: var(--text-muted);">
+              <li>Provisioning hosting packages, server configurations, and email accounts.</li>
+              <li>Processing monthly, annual, biennial, or triennial renewals.</li>
+              <li>Detecting, preventing, and mitigating security threats, spam, malware, or server intrusions.</li>
+              <li>Communicating system status alerts, support ticket updates, and marketing notices (with consent).</li>
+            </ul>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">4. Cookies and Analytics</h3>
+            <p>We utilize persistent and session cookies to recognize authenticated user dashboard sessions, remember currency choices (INR vs USD) and billing cycle settings, and compile anonymous website usage statistics via analytics tools. You may disable cookies in your browser settings, though doing so may prevent certain client area sections from functioning.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">5. Payment Information Handling</h3>
+            <p>1Only Host complies strictly with PCI-DSS standards. We do not store raw credit card details on our local servers. All payments are processed directly through certified third-party payment gateways (Stripe, Razorpay, and PayPal) utilizing secure tokenized communication protocols.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">6. Domain and WHOIS Information</h3>
+            <p>By registering a domain, registry regulations require us to share registration data with ICANN-accredited registries. To protect your details from public scrapers, we offer a **WHOIS Privacy Protection** add-on that shields your private email and phone number from public registries.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">7. Data Protection and Security</h3>
+            <p>We implement advanced technical safeguards to protect your records: all database connections utilize TLS/SSL encryption, virtual containers are isolated, and server clusters are protected by hardware firewalls and Imunify360 security modules to scan and intercept threats.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">8. Sharing with Service Providers</h3>
+            <p>We only share data with trusted third parties to run our infrastructure (e.g., ICANN domain registries, spam prevention services, customer support portals, and backup service providers). We ensure these partners sign confidentiality and data protection agreements.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">9. User Rights</h3>
+            <p>Under GDPR and CCPA, you have the right to access your personal data, request corrections, request erasure ("right to be forgotten"), restrict processing, and port your customer data records. You can manage these rights directly within your account settings or by contacting our support team.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">10. Data Retention</h3>
+            <p>We retain your personal details for as long as your hosting or domain accounts remain active. Following cancellation of services, connection logs are deleted after 90 days, and billing records are archived as required for tax auditing laws.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">11. Policy Updates</h3>
+            <p>We may update this Privacy Policy to reflect changing regulations or server operations. Major changes will be highlighted on our homepage, and the date of the latest revision will always be noted at the top of the page.</p>
+            
+            <hr class="border-secondary my-4" style="opacity: 0.15;">
+            
+            <h3 class="mb-3 font-outfit" style="color: #FFFFFF !important;">12. Contact Information</h3>
+            <p>If you have any questions, concerns, or requests regarding this Privacy Policy, please contact our Data Protection Officer (DPO) at <a href="mailto:support@1onlyhost.com" style="color: var(--accent-color);">support@1onlyhost.com</a>.</p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

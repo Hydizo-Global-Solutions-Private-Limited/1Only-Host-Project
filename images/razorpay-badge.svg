@@ -1,7 +1,0 @@
-<svg viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg">
-  <rect width="160" height="50" rx="8" fill="#0A1128" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
-  <path d="M18 35 L30 15 L22 15 L26 10 L14 26 L22 26 Z" fill="#2563eb" />
-  <path d="M26 35 L38 15 L30 15 L34 10 L22 26 L30 26 Z" fill="#3b82f6" opacity="0.6" />
-  <text x="50" y="24" font-family="'Outfit', sans-serif" font-size="14" fill="#fff" font-weight="bold">Razorpay</text>
-  <text x="50" y="38" font-family="'Inter', sans-serif" font-size="10" fill="#2563eb" font-weight="bold" letter-spacing="1">SECURE PAYMENTS</text>
-</svg>
