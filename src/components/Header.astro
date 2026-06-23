@@ -274,7 +274,7 @@ const { basePrefix = './' } = Astro.props;
         <ul class="navbar-nav align-items-lg-center">
           <!-- Domain Dropdown -->
           <li class="nav-item dropdown mega-dropdown-sm mx-1">
-            <a class="nav-link dropdown-toggle font-outfit" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Domain</a>
+            <a class="nav-link dropdown-toggle font-outfit" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" onclick="if(window.innerWidth < 992) { event.preventDefault(); event.stopImmediatePropagation(); window.toggleMobileDropdown(this); }">Domain</a>
             <ul class="dropdown-menu">
               <li class="row gx-1">
                 <div class="col-lg-4">
@@ -313,7 +313,7 @@ const { basePrefix = './' } = Astro.props;
           
           <!-- Hosting Dropdown -->
           <li class="nav-item dropdown mega-dropdown-sm mx-1">
-            <a class="nav-link dropdown-toggle font-outfit" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Hosting</a>
+            <a class="nav-link dropdown-toggle font-outfit" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" onclick="if(window.innerWidth < 992) { event.preventDefault(); event.stopImmediatePropagation(); window.toggleMobileDropdown(this); }">Hosting</a>
             <ul class="dropdown-menu" style="min-width: 600px;">
               <li class="row gx-1">
                 <div class="col-lg-4">
@@ -352,7 +352,7 @@ const { basePrefix = './' } = Astro.props;
           
           <!-- Email Dropdown -->
           <li class="nav-item dropdown mx-1">
-            <a class="nav-link dropdown-toggle font-outfit" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Email</a>
+            <a class="nav-link dropdown-toggle font-outfit" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" onclick="if(window.innerWidth < 992) { event.preventDefault(); event.stopImmediatePropagation(); window.toggleMobileDropdown(this); }">Email</a>
             <ul class="dropdown-menu">
               <li><a href="/bussiness-email" class="dropdown-item">Business Email</a></li>
               <li><a href="/titan-business-email" class="dropdown-item">Titan Business Email</a></li>
@@ -363,7 +363,7 @@ const { basePrefix = './' } = Astro.props;
           
           <!-- Security Dropdown -->
           <li class="nav-item dropdown mx-1">
-            <a class="nav-link dropdown-toggle font-outfit" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Security</a>
+            <a class="nav-link dropdown-toggle font-outfit" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" onclick="if(window.innerWidth < 992) { event.preventDefault(); event.stopImmediatePropagation(); window.toggleMobileDropdown(this); }">Security</a>
             <ul class="dropdown-menu">
               <li><a href="/ssl-certificate" class="dropdown-item">SSL Certificate</a></li>
               <li><a href="/sitelock-malware" class="dropdown-item">Sitelock Malware</a></li>
@@ -412,46 +412,33 @@ const { basePrefix = './' } = Astro.props;
   // Call once on initial load
   handleHeaderScroll();
 
-  // Custom mobile dropdown click toggle behavior (avoiding Bootstrap conflicts in custom styling)
-  function initMobileDropdowns() {
-    const dropdownToggles = document.querySelectorAll('.header-floating-glass .dropdown-toggle');
-    dropdownToggles.forEach(toggle => {
-      // Prevent duplicate attachment
-      if (toggle.dataset.mobileDropdownInit) return;
-      toggle.dataset.mobileDropdownInit = "true";
-      
-      toggle.addEventListener('click', (e) => {
-        if (window.innerWidth < 992) {
-          e.preventDefault();
-          e.stopPropagation();
-          const parent = toggle.closest('.dropdown');
-          const menu = parent ? parent.querySelector('.dropdown-menu') : null;
-          if (!menu) return;
-          
-          const isShown = menu.classList.contains('show');
-          
-          // Accordion style close all mobile dropdowns in this header
-          document.querySelectorAll('.header-floating-glass .dropdown-menu').forEach(m => {
-            m.classList.remove('show');
-          });
-          document.querySelectorAll('.header-floating-glass .dropdown-toggle').forEach(t => {
-            t.classList.remove('show');
-          });
-          
-          // Toggle current one
-          if (!isShown) {
-            menu.classList.add('show');
-            toggle.classList.add('show');
-          }
-        }
-      });
+  // On mobile viewports, remove data-bs-toggle to prevent Bootstrap JS interference
+  if (window.innerWidth < 992) {
+    document.querySelectorAll('.header-floating-glass .dropdown-toggle').forEach(el => {
+      el.removeAttribute('data-bs-toggle');
     });
   }
 
-  // Run on initial load and setup event listener
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initMobileDropdowns);
-  } else {
-    initMobileDropdowns();
-  }
+  // Global toggle handler called directly by inline onclick on mobile viewports
+  window.toggleMobileDropdown = function(toggle) {
+    const parent = toggle.closest('.dropdown');
+    const menu = parent ? parent.querySelector('.dropdown-menu') : null;
+    if (!menu) return;
+    
+    const isShown = menu.classList.contains('show');
+    
+    // Accordion style: Close all mobile dropdowns first
+    document.querySelectorAll('.header-floating-glass .dropdown-menu').forEach(m => {
+      m.classList.remove('show');
+    });
+    document.querySelectorAll('.header-floating-glass .dropdown-toggle').forEach(t => {
+      t.classList.remove('show');
+    });
+    
+    // Toggle state of target dropdown
+    if (!isShown) {
+      menu.classList.add('show');
+      toggle.classList.add('show');
+    }
+  };
 </script>
