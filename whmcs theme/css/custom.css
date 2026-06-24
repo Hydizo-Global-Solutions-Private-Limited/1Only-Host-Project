@@ -1,0 +1,1002 @@
+/* *****************************************************
+
+    ** Custom Stylesheet for 1Only Host **
+    Heliocentric Space Theme & Glassmorphism Reskin
+
+***************************************************** */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+
+html {
+    font-size: 14px;
+}
+
+:root {
+    --white: #ffffff;
+
+    /* Heliocentric Theme Neutral Colors */
+    --neutral-50: #090d1e;
+    --neutral-100: #0c122b;
+    --neutral-200: #121b3d;
+    --neutral-300: #1b2654;
+    --neutral-400: #94a3b8;
+    --neutral-500: #64748b;
+    --neutral-600: #475569;
+    --neutral-700: #334155;
+    --neutral-800: #1e293b;
+    --neutral-900: #0f172a;
+    --neutral-950: #02040a;
+
+    /* Theme Primary Colors */
+    --primary: #FF9E00;          /* Solar Amber */
+    --primary-lifted: #FF7B00;   /* Solar Orange */
+    --primary-accented: #FFD700; /* Solar Gold */
+
+    /* Secondary colors */
+    --secondary: #8338EC;        /* Cosmic Violet */
+    --secondary-lifted: #9b5de5;
+    --secondary-accented: #c77dff;
+
+    /* Success colors */
+    --success: #00F5D4;          /* Neon Cyan */
+    --success-lifted: #00e5c4;
+    --success-accented: #00ccb0;
+
+    /* Info colors */
+    --info: #00b4d8;
+    --info-lifted: #0096c7;
+    --info-accented: #03045e;
+
+    /* Notice colors */
+    --notice: #FF007F;           /* Solar Coral */
+    --notice-lifted: #e6006f;
+    --notice-accented: #cc0060;
+
+    /* Warning colors */
+    --warning: #ffb703;
+    --warning-lifted: #fb8500;
+    --warning-accented: #d97706;
+
+    /* Error colors */
+    --error: #ef4444;
+    --error-lifted: #dc2626;
+    --error-accented: #b91c1c;
+
+    /* Grayscale overrides */
+    --grayscale: #1e293b;
+    --grayscale-lifted: #334155;
+    --grayscale-accented: #475569;
+
+    /* Neutral Overrides */
+    --neutral: #0f172a;
+    --neutral-lifted: #1e293b;
+    --neutral-accented: #334155;
+
+    /* Text colors */
+    --text-inverted: #02040a;
+    --text-muted: #94a3b8;
+    --text-lifted: #cbd5e1;
+    --text-accented: #ffffff;
+    --text: #e2e8f0;
+
+    /* Border colors */
+    --border-muted: rgba(255, 255, 255, 0.05);
+    --border: rgba(255, 158, 0, 0.15);
+    --border-lifted: rgba(255, 158, 0, 0.3);
+    --border-accented: rgba(255, 0, 127, 0.4);
+
+    /* Background colors */
+    --bg: #02040a;
+    --bg-muted: rgba(9, 13, 30, 0.4);
+    --bg-lifted: rgba(9, 13, 30, 0.7);
+    --bg-accented: rgba(12, 18, 43, 0.85);
+    --bg-inverted: #e2e8f0;
+
+    /* Fonts */
+    --font-main: 'Outfit', 'Inter', sans-serif;
+
+    /* Glassmorphism settings */
+    --glass-bg: rgba(9, 13, 30, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.06);
+    --glass-blur: blur(20px);
+    --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    --shadow-amber: 0 10px 25px rgba(255, 158, 0, 0.25);
+    --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* --- Global Body & Backgrounds --- */
+body {
+    background-color: var(--bg) !important;
+    background-attachment: fixed;
+    color: var(--text) !important;
+    font-family: var(--font-main) !important;
+    letter-spacing: 0.2px;
+}
+
+/* Floating Space Nebulas Background */
+.space-nebulas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.nebula {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: 0.15;
+    mix-blend-mode: screen;
+    animation: floatNebula 25s infinite alternate ease-in-out;
+}
+
+.nebula-amber {
+    top: -10%;
+    right: 5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255,158,0,0.8) 0%, rgba(255,158,0,0) 70%);
+}
+
+.nebula-violet {
+    bottom: -15%;
+    left: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(131,56,236,0.8) 0%, rgba(131,56,236,0) 70%);
+    animation-delay: -5s;
+}
+
+.nebula-coral {
+    top: 40%;
+    left: 45%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,0,127,0.7) 0%, rgba(255,0,127,0) 70%);
+    animation-delay: -10s;
+}
+
+@keyframes floatNebula {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(40px, 40px) scale(1.15); }
+}
+
+/* --- Layout wrapper --- */
+.main-page-wrapper {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#main-body {
+    padding-top: 150px;
+    padding-bottom: 60px;
+    flex: 1;
+}
+
+/* Shift content down when logged-in topbar is present */
+.topbar ~ #main-body {
+    padding-top: 220px !important;
+}
+
+/* --- Headings --- */
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: var(--white) !important;
+    font-family: var(--font-main) !important;
+    font-weight: 700 !important;
+}
+
+a {
+    color: var(--primary);
+    transition: var(--transition-base);
+}
+a:hover {
+    color: var(--primary-lifted);
+    text-decoration: none;
+}
+
+/* --- WHMCS Breadcrumb Reskin --- */
+.master-breadcrumb {
+    background: transparent !important;
+    padding: 110px 0 0 0 !important;
+    margin-bottom: -90px !important;
+    position: relative;
+    z-index: 5;
+}
+
+.topbar ~ .master-breadcrumb {
+    padding-top: 170px !important;
+}
+
+.breadcrumb {
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 30px !important;
+    padding: 8px 24px !important;
+}
+
+.breadcrumb-item, .breadcrumb-item a {
+    color: var(--text-muted) !important;
+    font-size: 0.9rem;
+}
+.breadcrumb-item.active {
+    color: var(--primary) !important;
+}
+
+/* --- Card & Sidebar Reskin (Glassmorphism) --- */
+.card, .sidebar, .sidebar .list-group-item, .pr-column, .tile, .login-container {
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 16px !important;
+    box-shadow: var(--shadow-premium) !important;
+    color: var(--text) !important;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: var(--transition-base);
+}
+
+.card:hover, .tile:hover {
+    border-color: var(--border) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(255, 158, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+.card-header {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+    padding: 18px 24px !important;
+}
+
+.card-body {
+    padding: 24px !important;
+}
+
+.card-footer {
+    background: rgba(255, 255, 255, 0.01) !important;
+    border-top: 1px solid var(--glass-border) !important;
+    padding: 16px 24px !important;
+}
+
+/* --- Client Area Home Tiles Reskin --- */
+.tiles .tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    position: relative;
+    border-radius: 16px !important;
+    margin: 10px;
+    text-decoration: none;
+    transition: var(--transition-base);
+    overflow: hidden;
+    min-height: 125px;
+}
+
+.tiles .tile i {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-size: 1.8rem !important;
+    margin: 0 !important;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--notice) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: var(--transition-base);
+}
+
+.tiles .tile .stat {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--white) !important;
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.tiles .tile .title {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tiles .tile .highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 0 0 16px 16px;
+    opacity: 0.7;
+    transition: var(--transition-base);
+}
+
+.tiles .tile:hover .highlight {
+    height: 4px;
+    opacity: 1;
+}
+
+.bg-color-blue { background: linear-gradient(90deg, #00b4d8, #00f5d4) !important; }
+.bg-color-green { background: linear-gradient(90deg, #00F5D4, #00e5c4) !important; }
+.bg-color-red { background: linear-gradient(90deg, #FF007F, #8338EC) !important; }
+.bg-color-gold { background: linear-gradient(90deg, #FF9E00, #FF007F) !important; }
+
+/* Card Header Button styling */
+.card-header .btn-default,
+.card-header .btn[class*="bg-color-"] {
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 30px !important;
+    color: var(--text-lifted) !important;
+    padding: 6px 16px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: none !important;
+    transition: var(--transition-base);
+}
+
+.card-header .btn-default:hover,
+.card-header .btn[class*="bg-color-"]:hover {
+    border-color: var(--primary) !important;
+    color: var(--primary) !important;
+    background: rgba(255, 158, 0, 0.05) !important;
+}
+
+/* Sidebar Custom Details Styles */
+.sidebar .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar .card-header h3 {
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    color: var(--white) !important;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.sidebar .card-header h3 i:first-child {
+    margin-right: 10px;
+    color: var(--primary);
+}
+
+.sidebar .card-header .card-minimise {
+    margin-top: 4px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.sidebar .card-body {
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.sidebar .card-body strong,
+.sidebar .card-body b {
+    font-style: normal;
+    font-weight: 700 !important;
+    color: var(--white) !important;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.sidebar .card-footer .btn,
+.sidebar .btn,
+.sidebar button {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--notice) 100%) !important;
+    border: none !important;
+    border-radius: 30px !important;
+    color: var(--white) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    width: 100%;
+    padding: 10px 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: var(--shadow-amber) !important;
+    transition: var(--transition-base);
+}
+
+.sidebar .card-footer .btn:hover,
+.sidebar .btn:hover,
+.sidebar button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(255, 0, 127, 0.35) !important;
+}
+
+/* --- Sidebar Menu overrides --- */
+.sidebar .list-group-item {
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
+    border-radius: 0 !important;
+    color: var(--text-muted) !important;
+    padding: 14px 20px !important;
+    transition: var(--transition-base);
+}
+
+.sidebar .list-group-item:last-child {
+    border-bottom: none !important;
+}
+
+.sidebar .list-group-item:hover, .sidebar .list-group-item.active {
+    background: rgba(255, 158, 0, 0.08) !important;
+    color: var(--primary) !important;
+    padding-left: 25px !important;
+}
+
+.sidebar .list-group-item.active {
+    font-weight: 700;
+    border-left: 3px solid var(--primary) !important;
+}
+
+/* --- Form Fields & Inputs Reskin --- */
+.form-control, select, textarea {
+    background: rgba(2, 4, 10, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 10px !important;
+    color: var(--white) !important;
+    padding: 10px 16px !important;
+    transition: var(--transition-base) !important;
+}
+
+.form-control:focus, select:focus, textarea:focus {
+    background: rgba(2, 4, 10, 0.7) !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 0 0 3px rgba(255, 158, 0, 0.2) !important;
+    outline: none !important;
+}
+
+label {
+    color: var(--text-lifted);
+    font-weight: 500;
+}
+
+/* --- Premium Buttons (Solar Gradients) --- */
+.btn-primary, .btn-info, .btn-success {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--notice) 100%) !important;
+    border: none !important;
+    border-radius: 30px !important;
+    padding: 10px 24px !important;
+    font-weight: 700 !important;
+    color: var(--white) !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    box-shadow: var(--shadow-amber) !important;
+    transition: var(--transition-base) !important;
+}
+
+.btn-primary:hover, .btn-info:hover, .btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 25px rgba(255, 0, 127, 0.35) !important;
+    opacity: 0.95;
+}
+
+.btn-secondary, .btn-default {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 30px !important;
+    padding: 10px 24px !important;
+    font-weight: 700 !important;
+    color: var(--text-lifted) !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: var(--transition-base) !important;
+}
+
+.btn-secondary:hover, .btn-default:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: var(--white) !important;
+}
+
+/* --- Badge Reskin --- */
+.badge {
+    padding: 6px 12px !important;
+    border-radius: 20px !important;
+    font-weight: 600 !important;
+    font-size: 0.75rem !important;
+}
+
+.badge-success {
+    background-color: rgba(0, 245, 212, 0.15) !important;
+    color: var(--success) !important;
+    border: 1px solid rgba(0, 245, 212, 0.3);
+}
+
+.badge-info {
+    background-color: rgba(0, 180, 216, 0.15) !important;
+    color: var(--info-lifted) !important;
+    border: 1px solid rgba(0, 180, 216, 0.3);
+}
+
+.badge-warning {
+    background-color: rgba(255, 183, 3, 0.15) !important;
+    color: var(--warning) !important;
+    border: 1px solid rgba(255, 183, 3, 0.3);
+}
+
+.badge-danger {
+    background-color: rgba(239, 68, 68, 0.15) !important;
+    color: var(--error) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+/* --- Table Reskin --- */
+.table {
+    color: var(--text) !important;
+}
+
+.table thead th {
+    border-bottom: 2px solid var(--glass-border) !important;
+    color: var(--white) !important;
+    font-weight: 700;
+}
+
+.table td, .table th {
+    border-top: 1px solid var(--glass-border) !important;
+    padding: 16px !important;
+    vertical-align: middle !important;
+}
+
+/* --- Floating Glass Header Custom Styling (Mapped to Astro layout) --- */
+.header-floating-glass {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+    max-width: 1400px;
+    background: rgba(2, 4, 10, 0.65) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid rgba(255, 158, 0, 0.15) !important;
+    border-radius: 50px;
+    z-index: 1030;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    transition: var(--transition-base);
+    padding: 0 !important;
+    height: 70px !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+.header-floating-glass .navbar {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: 100%;
+}
+
+.header-floating-glass:hover {
+    background: rgba(2, 4, 10, 0.8) !important;
+    border-color: rgba(255, 158, 0, 0.3) !important;
+}
+
+.header-floating-glass.logged-in {
+    top: 70px !important; /* Push down to clear the fixed topbar */
+}
+
+.header-floating-glass .navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    padding: 10px 20px !important;
+    border-radius: 30px;
+    transition: var(--transition-base);
+}
+
+.header-floating-glass .navbar-nav .nav-link:hover,
+.header-floating-glass .navbar-nav .nav-item:hover .nav-link {
+    color: #FF9E00 !important;
+    background: rgba(255, 158, 0, 0.08) !important;
+}
+
+/* --- Footer Premium Glass styling --- */
+.footer-premium-glass {
+    background: #02040A !important;
+    border-top: 1px solid rgba(255, 158, 0, 0.1) !important;
+    padding: 60px 0 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.footer-premium-glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 158, 0, 0.5), transparent);
+}
+
+.footer-glass-card {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 16px;
+    padding: 24px;
+    transition: var(--transition-base);
+}
+
+.footer-glass-card:hover {
+    background: rgba(255, 158, 0, 0.04) !important;
+    border-color: rgba(255, 158, 0, 0.2) !important;
+    transform: translateY(-5px);
+}
+
+.footer-nav-title {
+    color: #fff !important;
+    font-family: var(--font-main);
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-nav-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, #FF9E00, #FF007F);
+    border-radius: 2px;
+}
+
+.footer-link-modern {
+    color: rgba(255, 255, 255, 0.6) !important;
+    text-decoration: none;
+    transition: var(--transition-base);
+    display: inline-block;
+    padding: 4px 0;
+    font-size: 15px;
+}
+
+.footer-link-modern:hover {
+    color: #FF9E00 !important;
+    transform: translateX(5px);
+}
+
+/* --- Premium Clientarea Enhancements --- */
+.topbar {
+    background: rgba(9, 13, 30, 0.8) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1040;
+}
+
+.topbar .btn {
+    color: var(--text-muted) !important;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.topbar .btn:hover {
+    color: var(--primary) !important;
+}
+
+.logo-img {
+    height: 38px !important;
+    max-height: 38px !important;
+    width: auto !important;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.navbar-brand .logo-img {
+    height: 38px !important;
+    max-height: 38px !important;
+    width: auto !important;
+}
+
+.main-navbar-wrapper {
+    background: transparent !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.03) !important;
+    padding: 10px 0 !important;
+}
+
+.input-group-text {
+    background: rgba(2, 4, 10, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: var(--primary) !important;
+}
+
+/* Homepage Action Cards (reskin how-can-we-help & account cards) */
+.action-icon-btns a {
+    background: var(--glass-bg) !important;
+    border: 1px solid var(--glass-border) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
+    border-radius: 16px !important;
+    color: var(--text) !important;
+    padding: 30px 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    transition: var(--transition-base) !important;
+    box-shadow: var(--shadow-premium) !important;
+    font-weight: 700 !important;
+    font-size: 1.05rem !important;
+    margin-bottom: 15px;
+    text-decoration: none !important;
+}
+
+.action-icon-btns a:hover {
+    transform: translateY(-6px) !important;
+    border-color: var(--primary) !important;
+    box-shadow: 0 15px 35px rgba(255, 158, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    color: var(--primary) !important;
+}
+
+.action-icon-btns a .ico-container {
+    background: rgba(255, 158, 0, 0.08) !important;
+    width: 65px;
+    height: 65px;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 18px !important;
+    transition: var(--transition-base) !important;
+}
+
+.action-icon-btns a:hover .ico-container {
+    background: var(--primary) !important;
+    box-shadow: 0 0 25px rgba(255, 158, 0, 0.4) !important;
+}
+
+.action-icon-btns a .ico-container i {
+    font-size: 26px !important;
+    color: var(--primary) !important;
+    transition: var(--transition-base) !important;
+}
+
+.action-icon-btns a:hover .ico-container i {
+    color: #02040A !important;
+}
+
+/* Custom Login Page styling overrides */
+.login-form {
+    margin: 40px auto !important;
+    max-width: 520px !important;
+    width: 100% !important;
+}
+
+.login-form .card {
+    background: rgba(9, 13, 30, 0.75) !important;
+    border: 1px solid rgba(255, 158, 0, 0.2) !important;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Alert Boxes Reskin */
+.alert {
+    background: rgba(9, 13, 30, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px !important;
+    color: var(--text-lifted) !important;
+    padding: 16px 20px !important;
+}
+
+.alert-danger {
+    border-color: rgba(239, 68, 68, 0.3) !important;
+    border-left: 4px solid var(--error) !important;
+}
+
+.alert-warning {
+    border-color: rgba(255, 183, 3, 0.3) !important;
+    border-left: 4px solid var(--warning) !important;
+}
+
+.alert-success {
+    border-color: rgba(0, 245, 212, 0.3) !important;
+    border-left: 4px solid var(--success) !important;
+}
+
+.alert-info {
+    border-color: rgba(0, 180, 216, 0.3) !important;
+    border-left: 4px solid var(--info-lifted) !important;
+}
+
+/* --- WHMCS Invoice & Quote Specific Reskins --- */
+.invoice-container {
+    background: var(--glass-bg) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 20px !important;
+    box-shadow: var(--shadow-premium) !important;
+    padding: 40px !important;
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+    color: var(--text) !important;
+}
+
+.invoice-container hr {
+    border-top: 1px solid var(--glass-border) !important;
+}
+
+.invoice-status {
+    margin-bottom: 20px;
+}
+
+.invoice-status span {
+    font-size: 1.25rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 10px 24px !important;
+    border-radius: 30px !important;
+    display: inline-block;
+}
+
+.invoice-status .unpaid {
+    background-color: rgba(255, 183, 3, 0.15) !important;
+    color: var(--warning) !important;
+    border: 1px solid rgba(255, 183, 3, 0.3);
+}
+
+.invoice-status .paid {
+    background-color: rgba(0, 245, 212, 0.15) !important;
+    color: var(--success) !important;
+    border: 1px solid rgba(0, 245, 212, 0.3);
+}
+
+.invoice-status .cancelled, .invoice-status .refunded {
+    background-color: rgba(239, 68, 68, 0.15) !important;
+    color: var(--error) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.invoice-container .table-responsive {
+    background: rgba(2, 4, 10, 0.3) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.invoice-container .table {
+    margin-bottom: 0 !important;
+}
+
+.invoice-container .table th, .invoice-container .table td {
+    padding: 14px 20px !important;
+}
+
+/* Custom background nebulas on stand-alone viewinvoice pages */
+body.invoice-page {
+    background-color: var(--bg) !important;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Popup Email Viewer backdrop reskin */
+#popup-backdrop {
+    background-color: var(--bg) !important;
+    padding: 20px;
+    color: var(--text) !important;
+}
+
+#popup-backdrop .card {
+    background: var(--glass-bg) !important;
+    border: 1px solid var(--glass-border) !important;
+}
+
+#popup-backdrop iframe {
+    background: #ffffff !important;
+    border-radius: 8px;
+}
+
+/* --- WHMCS Global Hardcoded Override Classes --- */
+.bg-white, 
+.landing-page.bg-white,
+.home-domain-search.bg-white,
+.tab-content.bg-white,
+.content-block.bg-white {
+    background-color: var(--glass-bg) !important;
+    background: var(--glass-bg) !important;
+    border: 1px solid var(--glass-border) !important;
+    color: var(--text) !important;
+}
+
+.bg-light,
+.navbar-light.bg-light,
+.card.bg-light {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid var(--glass-border) !important;
+    color: var(--text-lifted) !important;
+}
+
+/* --- WHMCS Verification Banner (Matches the landing page top promotion bar) --- */
+.verification-banner {
+    background: linear-gradient(135deg, #FF9E00 0%, #FF007F 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    padding: 12px 0 !important;
+    position: fixed;
+    top: 50px; /* Align directly under the fixed topbar */
+    left: 0;
+    width: 100%;
+    z-index: 1039;
+    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.2);
+}
+
+.verification-banner i, .verification-banner span, .verification-banner .text {
+    color: #ffffff !important;
+}
+
+.verification-banner .btn.close {
+    color: #ffffff !important;
+    text-shadow: none !important;
+    opacity: 0.8;
+}
+
+.verification-banner .btn-action {
+    background: rgba(255, 255, 255, 0.15) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+    border-radius: 30px !important;
+    padding: 6px 16px !important;
+    font-weight: 700 !important;
+    font-size: 0.8rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: var(--transition-base) !important;
+}
+
+.verification-banner .btn-action:hover {
+    background: #ffffff !important;
+    color: #02040A !important;
+}
+
+/* Push navigation bar down further if email verification banner is active */
+.verification-banner ~ .header-floating-glass {
+    top: 120px !important;
+}
+.verification-banner ~ #main-body {
+    padding-top: 270px !important;
+}
+.verification-banner ~ .master-breadcrumb {
+    padding-top: 220px !important;
+}
