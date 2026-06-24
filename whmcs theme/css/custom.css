@@ -575,46 +575,175 @@ label {
     backdrop-filter: blur(20px) saturate(180%) !important;
     -webkit-backdrop-filter: blur(20px) saturate(180%) !important;
     border: 1px solid rgba(255, 158, 0, 0.15) !important;
-    border-radius: 50px;
+    border-radius: 50px !important;
     z-index: 1030;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
     transition: var(--transition-base);
-    padding: 0 !important;
+    padding: 0 30px !important;
     height: 70px !important;
     display: flex !important;
     align-items: center !important;
+    justify-content: space-between !important;
 }
 
 .header-floating-glass .navbar {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    width: 100%;
+    width: auto;
 }
 
 .header-floating-glass:hover {
     background: rgba(2, 4, 10, 0.8) !important;
     border-color: rgba(255, 158, 0, 0.3) !important;
+    box-shadow: 0 15px 50px rgba(255, 158, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .header-floating-glass.logged-in {
     top: 70px !important; /* Push down to clear the fixed topbar */
 }
 
+/* Ensure top-level navigation links get styled with white and solar amber colors */
+.header-floating-glass .navbar-nav > li > a,
 .header-floating-glass .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.85) !important;
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 0.5px;
-    padding: 10px 20px !important;
+    padding: 10px 14px !important; /* Adjusted horizontal padding to 14px to prevent overflow */
     border-radius: 30px;
     transition: var(--transition-base);
+    display: inline-block;
+    text-decoration: none;
 }
 
+.header-floating-glass .navbar-nav > li > a:hover,
+.header-floating-glass .navbar-nav > li:hover > a,
 .header-floating-glass .navbar-nav .nav-link:hover,
 .header-floating-glass .navbar-nav .nav-item:hover .nav-link {
     color: #FF9E00 !important;
     background: rgba(255, 158, 0, 0.08) !important;
+}
+
+/* Show dropdown on hover for desktop screens */
+@media (min-width: 1200px) {
+    .header-floating-glass .navbar-nav li.dropdown:hover > .dropdown-menu {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+    }
+}
+
+/* Dropdown Menu Glassmorphism Overrides */
+.header-floating-glass .dropdown-menu {
+    background: rgba(10, 12, 18, 0.95) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 158, 0, 0.15) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5) !important;
+    padding: 15px !important;
+    margin-top: 10px !important;
+}
+
+.header-floating-glass .dropdown-menu li {
+    background: transparent !important;
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.header-floating-glass .dropdown-menu a,
+.header-floating-glass .dropdown-item {
+    color: rgba(255, 255, 255, 0.8) !important;
+    background: transparent !important;
+    border-radius: 8px !important;
+    transition: all 0.2s ease !important;
+    padding: 8px 16px !important;
+    display: block !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+}
+
+.header-floating-glass .dropdown-menu a:hover,
+.header-floating-glass .dropdown-item:hover,
+.header-floating-glass .dropdown-menu li:hover > a {
+    background: rgba(255, 158, 0, 0.1) !important;
+    color: #FF9E00 !important;
+    transform: translateX(5px) !important;
+}
+
+.header-floating-glass .dropdown-menu .dropdown-divider {
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    margin: 8px 0 !important;
+}
+
+/* Search Form styling inside the header */
+.header-floating-glass .search {
+    max-width: 220px !important;
+}
+
+.header-floating-glass .search .form-control {
+    background: rgba(2, 4, 10, 0.5) !important;
+    border: 1px solid rgba(255, 158, 0, 0.15) !important;
+    border-radius: 30px !important;
+    height: 38px !important;
+    padding: 6px 15px !important;
+    font-size: 13px !important;
+    color: #fff !important;
+}
+
+.header-floating-glass .search .btn {
+    background: transparent !important;
+    border: none !important;
+    color: rgba(255, 158, 0, 0.7) !important;
+    padding: 0 10px !important;
+}
+
+.header-floating-glass .search .btn:hover {
+    color: #FF9E00 !important;
+}
+
+/* Cart Button styling */
+.header-floating-glass .cart-btn {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 50% !important;
+    width: 38px !important;
+    height: 38px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0 !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+}
+
+.header-floating-glass .cart-btn:hover {
+    background: rgba(255, 158, 0, 0.08) !important;
+    border-color: rgba(255, 158, 0, 0.3) !important;
+}
+
+.header-floating-glass .cart-btn i {
+    color: #fff !important;
+    font-size: 15px !important;
+}
+
+.header-floating-glass .cart-btn:hover i {
+    color: #FF9E00 !important;
+}
+
+.header-floating-glass .cart-btn #cartItemCount {
+    position: absolute !important;
+    top: -5px !important;
+    right: -5px !important;
+    padding: 2px 6px !important;
+    font-size: 9px !important;
+    border-radius: 50% !important;
+    background: #FF007F !important;
+    border: 1px solid #02040A !important;
 }
 
 /* --- Footer Premium Glass styling --- */
@@ -796,7 +925,7 @@ label {
 
 /* Custom Login Page styling overrides */
 .login-form {
-    margin: 40px auto !important;
+    margin: 110px auto 40px auto !important; /* Adjusted top margin to 110px to create proper gap */
     max-width: 520px !important;
     width: 100% !important;
 }
@@ -999,4 +1128,49 @@ body.invoice-page {
 }
 .verification-banner ~ .master-breadcrumb {
     padding-top: 220px !important;
+}
+
+/* Professional Logout Glass Button */
+.header-floating-glass .logout-btn-glass {
+    background: rgba(255, 0, 127, 0.08) !important;
+    border: 1px solid rgba(255, 0, 127, 0.25) !important;
+    border-radius: 30px !important;
+    padding: 8px 18px !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    color: #FF007F !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    box-shadow: 0 4px 12px rgba(255, 0, 127, 0.1) !important;
+    text-decoration: none !important;
+}
+
+.header-floating-glass .logout-btn-glass:hover {
+    background: linear-gradient(135deg, #FF9E00, #FF007F) !important;
+    color: #fff !important;
+    border-color: transparent !important;
+    box-shadow: 0 8px 20px rgba(255, 0, 127, 0.3) !important;
+    transform: translateY(-1px) !important;
+}
+
+.header-floating-glass .logout-btn-glass i {
+    font-size: 14px !important;
+    color: inherit !important;
+}
+
+/* WHMCS Store Pages (Shopping Cart) Top Padding Push */
+.template-products #main-body,
+.template-configureproduct #main-body,
+.template-viewcart #main-body,
+.template-store #main-body {
+    padding-top: 190px !important;
+}
+
+/* Specific class logic for the login page card gap */
+.template-login .login-form {
+    margin-top: 110px !important;
 }

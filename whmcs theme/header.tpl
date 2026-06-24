@@ -7,7 +7,7 @@
     {include file="$template/includes/head.tpl"}
     {$headoutput}
 </head>
-<body class="primary-bg-color" data-phone-cc-input="{$phoneNumberInputStyle}">
+<body class="primary-bg-color template-{$templatefile}" data-phone-cc-input="{$phoneNumberInputStyle}">
     {if $captcha}{$captcha->getMarkup()}{/if}
     {$headeroutput}
 
@@ -85,15 +85,24 @@
         {/if}
 
         <header id="header" class="header header-floating-glass {if $loggedin}logged-in{/if}">
+        <div class="container-fluid px-4 d-flex align-items-center justify-content-between w-100">
+            <!-- Logo -->
+            <a class="navbar-brand mr-3" href="{$WEB_ROOT}/index.php">
+                <img src="{$WEB_ROOT}/templates/{$template}/images/logo.svg" alt="{$companyname}" class="logo-img" style="height: 38px;">
+            </a>
 
-        <div class="navbar navbar-light">
-            <div class="container">
-                <a class="navbar-brand mr-3" href="{$WEB_ROOT}/index.php">
-                    <img src="{$WEB_ROOT}/templates/1onlyhost/images/logo.png" alt="{$companyname}" class="logo-img" style="height: 38px;">
-                </a>
+            <!-- Navigation and Controls -->
+            <div class="d-flex align-items-center flex-grow-1 justify-content-end">
+                <!-- Centered Main Navigation (Desktop) -->
+                <nav class="navbar navbar-expand-xl p-0 d-none d-xl-block">
+                    <ul id="nav" class="navbar-nav align-items-center">
+                        {include file="$template/includes/navbar.tpl" navbar=$primaryNavbar}
+                    </ul>
+                </nav>
 
-                <form method="post" action="{routePath('knowledgebase-search')}" class="form-inline ml-auto">
-                    <div class="input-group search d-none d-xl-flex">
+                <!-- Search Bar (Desktop only) -->
+                <form method="post" action="{routePath('knowledgebase-search')}" class="form-inline d-none d-xl-flex ml-3 mr-2">
+                    <div class="input-group search">
                         <div class="input-group-prepend">
                             <button class="btn btn-default" type="submit">
                                 <i class="fas fa-search"></i>
@@ -103,53 +112,74 @@
                     </div>
                 </form>
 
-                <ul class="navbar-nav toolbar">
-                    <li class="nav-item ml-3">
-                        <a class="btn nav-link cart-btn" href="{$WEB_ROOT}/cart.php?a=view">
-                            <i class="far fa-shopping-cart fa-fw"></i>
-                            <span id="cartItemCount" class="badge badge-info">{$cartitemcount}</span>
-                            <span class="sr-only">{lang key="carttitle"}</span>
-                        </a>
-                    </li>
-                    <li class="nav-item ml-3 d-xl-none">
-                        <button class="btn nav-link" type="button" data-toggle="collapse" data-target="#mainNavbar">
-                            <span class="fas fa-bars fa-fw"></span>
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="navbar navbar-expand-xl main-navbar-wrapper">
-            <div class="container">
-                <div class="collapse navbar-collapse" id="mainNavbar">
-                    <form method="post" action="{routePath('knowledgebase-search')}" class="d-xl-none">
-                        <div class="input-group search w-100 mb-2">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-default" type="submit">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                            <input class="form-control prepended-form-control" type="text" name="search" placeholder="{lang key="searchOurKnowledgebase"}...">
-                        </div>
-                    </form>
-                    <ul id="nav" class="navbar-nav mr-auto">
-                        {include file="$template/includes/navbar.tpl" navbar=$primaryNavbar}
-                    </ul>
-                    <ul class="navbar-nav ml-auto">
+                <!-- Cart Button -->
+                <a class="btn nav-link cart-btn ml-2" href="{$WEB_ROOT}/cart.php?a=view">
+                    <i class="far fa-shopping-cart fa-fw"></i>
+                    <span id="cartItemCount" class="badge badge-info">{$cartitemcount}</span>
+                </a>
+
+                <!-- Secondary Navbar (Account, Login dropdown - Desktop only) -->
+                <nav class="navbar navbar-expand-xl p-0 d-none d-xl-block ml-3">
+                    <ul class="navbar-nav align-items-center">
                         {include file="$template/includes/navbar.tpl" navbar=$secondaryNavbar rightDrop=true}
                     </ul>
-                </div>
+                </nav>
+
+                {if $loggedin}
+                <a href="{$WEB_ROOT}/logout.php" class="logout-btn-glass text-decoration-none d-none d-xl-flex align-items-center ml-3">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+                {/if}
+
+                <!-- Hamburger Button (Mobile/Tablet only) -->
+                <button class="navbar-toggler ml-3 d-xl-none" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="fas fa-bars" style="color: #fff; font-size: 20px;"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div class="collapse navbar-collapse d-xl-none" id="mainNavbar">
+            <div class="mobile-menu-container p-4">
+                <!-- Mobile Search -->
+                <form method="post" action="{routePath('knowledgebase-search')}" class="w-100 mb-4">
+                    <div class="input-group search">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-default" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <input class="form-control prepended-form-control" type="text" name="search" placeholder="{lang key="searchOurKnowledgebase"}...">
+                    </div>
+                </form>
+                
+                <!-- Mobile Menu Links -->
+                <ul class="navbar-nav w-100">
+                    {include file="$template/includes/navbar.tpl" navbar=$primaryNavbar}
+                    <hr style="border-top: 1px solid rgba(255,255,255,0.08); margin: 15px 0;">
+                    {include file="$template/includes/navbar.tpl" navbar=$secondaryNavbar rightDrop=true}
+                    {if $loggedin}
+                    <hr style="border-top: 1px solid rgba(255,255,255,0.08); margin: 15px 0;">
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="{$WEB_ROOT}/logout.php">
+                            <i class="fas fa-sign-out-alt mr-1"></i> Logout
+                        </a>
+                    </li>
+                    {/if}
+                </ul>
             </div>
         </div>
     </header>
 
     {include file="$template/includes/network-issues-notifications.tpl"}
 
+    {if count($breadcrumb) > 0}
     <nav class="master-breadcrumb" aria-label="breadcrumb">
         <div class="container">
             {include file="$template/includes/breadcrumb.tpl"}
         </div>
     </nav>
+    {/if}
 
     {include file="$template/includes/validateuser.tpl"}
     {include file="$template/includes/verifyemail.tpl"}

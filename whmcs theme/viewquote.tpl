@@ -43,7 +43,7 @@
                     {if $logo}
                         <p><img src="{$logo}" title="{$companyname}" class="logo-img" /></p>
                     {else}
-                        <p><img src="{$WEB_ROOT}/templates/1onlyhost/images/logo.png" title="{$companyname}" class="logo-img" /></p>
+                        <p><img src="{$WEB_ROOT}/templates/{$template}/images/logo.svg" title="{$companyname}" class="logo-img" /></p>
                     {/if}
                     <h3>{lang key='quotenumber'}{$id}</h3>
 

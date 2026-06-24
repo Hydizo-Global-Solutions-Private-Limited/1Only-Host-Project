@@ -99,3 +99,38 @@
     --vl-letter-spacing: var(--letter-spacing);
     --vl-disabled-opacity: var(--disabled-opacity);
 }
+
+/* Custom Order Form Glassmorphic Card Styles & Readability Overrides */
+.card, .product-card, .price-table, .package-card, .product-status, .order-catalog, .order-summary, .product-info {
+    background: rgba(9, 13, 30, 0.65) !important;
+    border: 1px solid rgba(255, 158, 0, 0.15) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+    color: #e2e8f0 !important;
+}
+
+.card *, .product-card *, .price-table *, .package-card *, .product-status *, .order-catalog *, .order-summary *, .product-info * {
+    color: #cbd5e1 !important;
+}
+
+.card-title, h1, h2, h3, h4, h5, h6, .card-title *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+    color: #ffffff !important;
+}
+
+.btn-primary, .btn-success, .btn-order-now, button[type="submit"] {
+    background: linear-gradient(135deg, #FF9E00 0%, #FF007F 100%) !important;
+    border: none !important;
+    color: #ffffff !important;
+}
+
+.btn-primary *, .btn-success *, .btn-order-now *, button[type="submit"] * {
+    color: #ffffff !important;
+}
+
+/* Fix for checkmarks and bullet features in catalog */
+ul li, .features li, .package-features li {
+    color: #cbd5e1 !important;
+}
+ul li *, .features li *, .package-features li * {
+    color: #cbd5e1 !important;
+}
