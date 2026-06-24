@@ -7,7 +7,7 @@
     {include file="$template/includes/head.tpl"}
     {$headoutput}
 </head>
-<body class="primary-bg-color template-{$templatefile}" data-phone-cc-input="{$phoneNumberInputStyle}">
+<body class="primary-bg-color template-{$templatefile}{if $loggedin} logged-in{/if}" data-phone-cc-input="{$phoneNumberInputStyle}">
     {if $captcha}{$captcha->getMarkup()}{/if}
     {$headeroutput}
 

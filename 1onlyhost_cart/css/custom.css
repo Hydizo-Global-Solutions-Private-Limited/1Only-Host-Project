@@ -101,7 +101,7 @@
 }
 
 /* Custom Order Form Glassmorphic Card Styles & Readability Overrides */
-.card, .product-card, .price-table, .package-card, .product-status, .order-catalog, .order-summary, .product-info {
+.card, .product-card, .price-table, .package-card, .product-status, .order-catalog, .order-summary, .product-info, .pricing-card, .plan-card, .plan {
     background: rgba(9, 13, 30, 0.65) !important;
     border: 1px solid rgba(255, 158, 0, 0.15) !important;
     border-radius: 16px !important;
@@ -109,11 +109,11 @@
     color: #e2e8f0 !important;
 }
 
-.card *, .product-card *, .price-table *, .package-card *, .product-status *, .order-catalog *, .order-summary *, .product-info * {
+.card *, .product-card *, .price-table *, .package-card *, .product-status *, .order-catalog *, .order-summary *, .product-info *, .pricing-card *, .plan-card *, .plan * {
     color: #cbd5e1 !important;
 }
 
-.card-title, h1, h2, h3, h4, h5, h6, .card-title *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+.card-title, h1, h2, h3, h4, h5, h6, .card-title *, h1 *, h2 *, h3 *, h4 *, h5 *, h6 *, .price-amount, .plan-price, .plan-price *, .price-amount *, .plan-name, .plan-name * {
     color: #ffffff !important;
 }
 
@@ -134,3 +134,83 @@ ul li, .features li, .package-features li {
 ul li *, .features li *, .package-features li * {
     color: #cbd5e1 !important;
 }
+
+/* Highly specific list-group item overrides inside cart shadow DOM */
+.list-group,
+.list-group-item,
+.list-group .list-group-item,
+.list-group-item-action,
+.list-group .list-group-item-action,
+.list-group-item.active,
+.list-group .list-group-item.active,
+.list-group-item:hover,
+.list-group .list-group-item:hover {
+    background: rgba(255, 255, 255, 0.02) !important;
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    color: #cbd5e1 !important;
+}
+
+.list-group-item.active,
+.list-group .list-group-item.active,
+.list-group-item.active:hover,
+.list-group .list-group-item.active:hover {
+    background: rgba(255, 158, 0, 0.08) !important;
+    background-color: rgba(255, 158, 0, 0.08) !important;
+    color: #FF9E00 !important;
+    border-color: rgba(255, 158, 0, 0.2) !important;
+}
+
+.list-group-item a,
+.list-group .list-group-item a {
+    color: #cbd5e1 !important;
+}
+
+.list-group-item a:hover,
+.list-group .list-group-item a:hover,
+.list-group-item.active a,
+.list-group .list-group-item.active a {
+    color: #FF9E00 !important;
+}
+
+/* Form fields, inputs, and selectors styling inside Shadow DOM */
+.form-control, select, textarea, input, select.custom-select {
+    background: rgba(2, 4, 10, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 10px !important;
+    color: #ffffff !important;
+    padding: 10px 16px !important;
+    height: auto !important;
+}
+
+.form-control:focus, select:focus, textarea:focus, input:focus {
+    background: rgba(2, 4, 10, 0.7) !important;
+    border-color: #FF9E00 !important;
+    box-shadow: 0 0 0 3px rgba(255, 158, 0, 0.2) !important;
+    outline: none !important;
+}
+
+/* Table and Cart Item Overrides inside Shadow DOM */
+table, .table, thead, tbody, tr, td, th {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #e2e8f0 !important;
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+table th, .table th {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+/* Alert styling inside Shadow DOM */
+.alert {
+    background: rgba(9, 13, 30, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #cbd5e1 !important;
+    border-radius: 12px !important;
+}
+.alert-danger { border-left: 4px solid #ef4444 !important; }
+.alert-warning { border-left: 4px solid #ffb703 !important; }
+.alert-success { border-left: 4px solid #00F5D4 !important; }
+.alert-info { border-left: 4px solid #00b4d8 !important; }

@@ -175,7 +175,7 @@ body {
 }
 
 #main-body {
-    padding-top: 150px;
+    padding-top: 170px !important; /* Increased default padding to clear header on standard pages */
     padding-bottom: 60px;
     flex: 1;
 }
@@ -456,10 +456,11 @@ a:hover {
 /* --- Form Fields & Inputs Reskin --- */
 .form-control, select, textarea {
     background: rgba(2, 4, 10, 0.5) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
     border-radius: 10px !important;
     color: var(--white) !important;
     padding: 10px 16px !important;
+    height: auto !important;
     transition: var(--transition-base) !important;
 }
 
@@ -468,6 +469,30 @@ a:hover {
     border-color: var(--primary) !important;
     box-shadow: 0 0 0 3px rgba(255, 158, 0, 0.2) !important;
     outline: none !important;
+}
+
+/* Specific fix for telephone input flag overlap */
+body #inputPhone,
+body input[type="tel"],
+body input[name="phonenumber"],
+body .intl-tel-input input,
+body .intl-tel-input input[type="tel"],
+body .iti input,
+body .iti input[type="tel"] {
+    padding-left: 90px !important;
+}
+
+/* Datatables Page Length Select Fix (resolves "Show ... entries") */
+body select.form-control-sm,
+body select[name*="_length"],
+body .dataTables_length select {
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    padding-left: 8px !important;
+    padding-right: 24px !important;
+    height: 30px !important;
+    width: 65px !important;
+    display: inline-block !important;
 }
 
 label {
@@ -1162,15 +1187,259 @@ body.invoice-page {
     color: inherit !important;
 }
 
-/* WHMCS Store Pages (Shopping Cart) Top Padding Push */
-.template-products #main-body,
-.template-configureproduct #main-body,
-.template-viewcart #main-body,
-.template-store #main-body {
-    padding-top: 190px !important;
+/* Ensure all cart and store pages have sufficient padding to clear the fixed header */
+body[class*="template-store"] #main-body,
+body[class*="template-cart"] #main-body,
+body[class*="template-products"] #main-body,
+body[class*="template-configureproduct"] #main-body,
+body[class*="template-viewcart"] #main-body,
+body[class*="template-domain"] #main-body {
+    padding-top: 200px !important;
+}
+
+body.logged-in[class*="template-store"] #main-body,
+body.logged-in[class*="template-cart"] #main-body,
+body.logged-in[class*="template-products"] #main-body,
+body.logged-in[class*="template-configureproduct"] #main-body,
+body.logged-in[class*="template-viewcart"] #main-body,
+body.logged-in[class*="template-domain"] #main-body {
+    padding-top: 250px !important;
 }
 
 /* Specific class logic for the login page card gap */
-.template-login .login-form {
+body.template-login .login-form {
     margin-top: 110px !important;
+}
+
+/* Global Dropdown Menu Glassmorphism Overrides */
+body .dropdown-menu {
+    background: rgba(10, 12, 18, 0.95) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border: 1px solid rgba(255, 158, 0, 0.15) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    padding: 10px !important;
+}
+
+body .dropdown-item {
+    color: rgba(255, 255, 255, 0.8) !important;
+    background: transparent !important;
+    border-radius: 6px !important;
+    padding: 8px 16px !important;
+    transition: all 0.2s ease !important;
+}
+
+body .dropdown-item:hover, 
+body .dropdown-item:focus,
+body .dropdown-menu li:hover > a {
+    background: rgba(255, 158, 0, 0.1) !important;
+    color: #FF9E00 !important;
+    text-decoration: none !important;
+}
+
+/* Highly specific list-group item overrides (resolves white boxes in sidebar categories/lists) */
+body .list-group,
+body .list-group-item,
+body .list-group .list-group-item,
+body .list-group-item-action,
+body .list-group .list-group-item-action,
+body .list-group-item.active,
+body .list-group .list-group-item.active,
+body .list-group-item:hover,
+body .list-group .list-group-item:hover {
+    background: rgba(255, 255, 255, 0.02) !important;
+    background-color: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    color: #cbd5e1 !important;
+}
+
+body .list-group-item.active,
+body .list-group .list-group-item.active,
+body .list-group-item.active:hover,
+body .list-group .list-group-item.active:hover {
+    background: rgba(255, 158, 0, 0.08) !important;
+    background-color: rgba(255, 158, 0, 0.08) !important;
+    color: #FF9E00 !important;
+    border-color: rgba(255, 158, 0, 0.2) !important;
+}
+
+body .list-group-item a,
+body .list-group .list-group-item a {
+    color: #cbd5e1 !important;
+}
+
+body .list-group-item a:hover,
+body .list-group .list-group-item a:hover,
+body .list-group-item.active a,
+body .list-group .list-group-item.active a {
+    color: #FF9E00 !important;
+}
+
+/* Strip inline styles and background colors from single/list announcement views */
+body.template-viewannouncement .py-5,
+body.template-viewannouncement .py-5 *,
+body.template-announcements article,
+body.template-announcements article *,
+body.template-announcements .announcements *,
+body.template-viewannouncement .extra-padding,
+body.template-viewannouncement .extra-padding * {
+    background-color: transparent !important;
+    background: transparent !important;
+    color: #cbd5e1 !important;
+}
+
+/* Highly specific overrides for Datatables and Stripe/Hover rows to eliminate white table background */
+body .table-responsive,
+body .table-container,
+body .dataTables_scroll,
+body .dataTables_scrollBody,
+body .listtable,
+body .dataTables_wrapper,
+body table.table-list,
+body table.dataTable,
+body table.dataTable tbody tr,
+body table.dataTable tbody tr.odd,
+body table.dataTable tbody tr.even,
+body table.dataTable tbody tr:hover,
+body table.dataTable.stripe tbody tr.odd,
+body table.dataTable.stripe tbody tr.even,
+body table.dataTable.hover tbody tr:hover,
+body table.dataTable.hover tbody tr.odd:hover,
+body table.dataTable.hover tbody tr.even:hover {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #e2e8f0 !important;
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+body table.table-list td,
+body table.dataTable td,
+body table.table-list th,
+body table.dataTable th,
+body .table td,
+body .table th,
+body .dataTable td,
+body .dataTable th {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #cbd5e1 !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Style the table headers specifically */
+body table.table-list thead th,
+body table.dataTable thead th,
+body .table thead th,
+body .dataTable thead th {
+    background: rgba(255, 255, 255, 0.03) !important;
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    color: #ffffff !important;
+    border-bottom: 2px solid rgba(255, 158, 0, 0.15) !important;
+}
+
+/* Table empty search / no records block overrides */
+body .dataTables_empty, 
+body .no-records, 
+body .no-records-found,
+body td.dataTables_empty {
+    background-color: transparent !important;
+    background: transparent !important;
+    color: var(--text-muted) !important;
+}
+
+/* Style pagination and search controls for tables */
+body .dataTables_info, 
+body .dataTables_paginate, 
+body .paging_simple_numbers, 
+body .dataTables_length, 
+body .dataTables_filter {
+    color: #cbd5e1 !important;
+}
+
+body .paginate_button, 
+body .page-link {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #cbd5e1 !important;
+    border-radius: 4px !important;
+    padding: 6px 12px !important;
+}
+
+body .paginate_button.active, 
+body .page-item.active .page-link {
+    background: linear-gradient(135deg, #FF9E00, #FF007F) !important;
+    color: #fff !important;
+    border: none !important;
+}
+
+body .page-item.disabled .page-link,
+body .pagination .disabled .page-link,
+body .paginate_button.disabled,
+body .paginate_button.disabled:hover,
+body .paginate_button.disabled:active {
+    background: rgba(255, 255, 255, 0.02) !important;
+    color: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* WHMCS Store Pricing Card Glassmorphism overrides */
+body .pricing-card,
+body .package-card,
+body .product-card,
+body .table-wrapper {
+    background: rgba(9, 13, 30, 0.65) !important;
+    backdrop-filter: var(--glass-blur) !important;
+    -webkit-backdrop-filter: var(--glass-blur) !important;
+    border: 1px solid rgba(255, 158, 0, 0.15) !important;
+    border-radius: 20px !important;
+    box-shadow: var(--shadow-premium) !important;
+    color: var(--text) !important;
+}
+
+body .pricing-card *,
+body .package-card *,
+body .product-card * {
+    color: #cbd5e1 !important;
+}
+
+body .pricing-card .price-amount,
+body .pricing-card .plan-name,
+body .pricing-card h1,
+body .pricing-card h2,
+body .pricing-card h3,
+body .pricing-card h4 {
+    color: #ffffff !important;
+}
+
+body .table-wrapper {
+    background: rgba(9, 13, 30, 0.65) !important;
+}
+
+body .comparison-table th,
+body .comparison-table td {
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+body .comparison-table .product-name,
+body .comparison-table .feature-title {
+    color: #ffffff !important;
+}
+
+/* General Table Zebra Striping transparency overrides (resolves affiliates commissions table striping) */
+body .table-striped tbody tr:nth-of-type(odd),
+body .table-striped tbody tr:nth-of-type(even),
+body .table-striped tr:nth-of-type(odd),
+body .table-striped tr:nth-of-type(even),
+body table.table-striped tbody tr,
+body table.table-striped tr {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* Subtler borders for bordered tables to look professional */
+body .table-bordered,
+body .table-bordered th,
+body .table-bordered td {
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
 }
