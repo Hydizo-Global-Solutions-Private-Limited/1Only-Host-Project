@@ -1384,32 +1384,482 @@ body .paginate_button.disabled:active {
 }
 
 /* WHMCS Store Pricing Card Glassmorphism overrides */
-body .pricing-card,
-body .package-card,
-body .product-card,
-body .table-wrapper {
+html body #main-body .pricing-card,
+html body #main-body .plan-card,
+html body #main-body .package-card,
+html body #main-body .product-card,
+html body #main-body .card,
+html body #main-body .table-wrapper,
+html body #main-body .product,
+html body #main-body .package,
+html body #main-body .plan,
+html body #main-body .pricing-item,
+html body #main-body div[id^="product"].product,
+html body #main-body div[id^="package"].package,
+html body #main-body .price-table,
+html body #main-body .pricing-table,
+html body #main-body .plans-container,
+html body #main-body .plan-container {
     background: rgba(9, 13, 30, 0.65) !important;
+    background-color: rgba(9, 13, 30, 0.65) !important;
     backdrop-filter: var(--glass-blur) !important;
     -webkit-backdrop-filter: var(--glass-blur) !important;
-    border: 1px solid rgba(255, 158, 0, 0.15) !important;
-    border-radius: 20px !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 24px !important;
     box-shadow: var(--shadow-premium) !important;
     color: var(--text) !important;
+    padding: 32px 24px !important;
+    transition: all 0.3s ease !important;
 }
 
-body .pricing-card *,
-body .package-card *,
-body .product-card * {
+/* Featured / Popular Card Styling (matches Platinum card on homepage) */
+html body #main-body .pricing-card.featured,
+html body #main-body .pricing-card.popular,
+html body #main-body .pricing-card.most-popular,
+html body #main-body .pricing-card.sh-popular,
+html body #main-body .pricing-card.featured-product,
+html body #main-body .product.featured,
+html body #main-body .product.popular,
+html body #main-body .product.most-popular,
+html body #main-body .product.sh-popular,
+html body #main-body .product.featured-product,
+html body #main-body div[id^="product"].product.featured,
+html body #main-body div[id^="product"].product.popular,
+html body #main-body div[id^="product"].product.most-popular,
+html body #main-body div[id^="product"].product.sh-popular,
+html body #main-body div[id^="product"].product.featured-product,
+html body #main-body .pricing-item.featured,
+html body #main-body .pricing-item.popular,
+html body #main-body .pricing-item.most-popular,
+html body #main-body .pricing-item.sh-popular,
+html body #main-body .pricing-item.featured-product,
+html body #main-body #product2 {
+    background: rgba(255, 0, 127, 0.03) !important;
+    background-color: rgba(255, 0, 127, 0.03) !important;
+    border: 1px solid rgba(255, 0, 127, 0.3) !important;
+    box-shadow: 0 0 40px rgba(255, 0, 127, 0.06) !important;
+    position: relative !important;
+}
+
+/* Add MOST POPULAR badge to product2 container using pseudo-element */
+html body #main-body #product2::before {
+    content: "MOST POPULAR" !important;
+    position: absolute !important;
+    top: -14px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    background: linear-gradient(135deg, #FF9E00, #FF007F) !important;
+    color: #ffffff !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 20px !important;
+    padding: 5px 15px !important;
+    border: none !important;
+    box-shadow: 0 4px 10px rgba(255, 0, 127, 0.2) !important;
+    z-index: 10 !important;
+}
+
+/* Ribbon/Badge styling for featured product */
+html body #main-body .pricing-card .badge,
+html body #main-body .product .badge,
+html body #main-body .pricing-item .badge,
+html body #main-body .pricing-card .ribbon,
+html body #main-body .product .ribbon,
+html body #main-body .pricing-item .ribbon {
+    background: linear-gradient(135deg, #FF9E00, #FF007F) !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    font-family: var(--font-main) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 20px !important;
+    padding: 6px 16px !important;
+    border: none !important;
+}
+
+html body #main-body .pricing-card *,
+html body #main-body .plan-card *,
+html body #main-body .package-card *,
+html body #main-body .product-card *,
+html body #main-body .card *,
+html body #main-body .product *,
+html body #main-body .package *,
+html body #main-body .plan *,
+html body #main-body .pricing-item *,
+html body #main-body div[id^="product"].product *,
+html body #main-body div[id^="package"].package *,
+html body #main-body .price-table *,
+html body #main-body .pricing-table * {
     color: #cbd5e1 !important;
 }
 
-body .pricing-card .price-amount,
-body .pricing-card .plan-name,
-body .pricing-card h1,
-body .pricing-card h2,
-body .pricing-card h3,
-body .pricing-card h4 {
+/* Card Titles styling */
+html body #main-body .pricing-card .plan-name,
+html body #main-body .pricing-card h3,
+html body #main-body .pricing-card h4,
+html body #main-body .product h3,
+html body #main-body .product h4,
+html body #main-body .product .product-name,
+html body #main-body .pricing-item h3,
+html body #main-body .pricing-item h4,
+html body #main-body .pricing-item .plan-name,
+html body #main-body div[id^="product"].product h3,
+html body #main-body div[id^="product"].product h4 {
+    font-family: var(--font-main) !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-size: 14px !important;
     color: #ffffff !important;
+    margin-top: 5px !important;
+    margin-bottom: 15px !important;
+}
+
+html body #main-body .pricing-card .price-amount,
+html body #main-body .pricing-card .plan-name,
+html body #main-body .pricing-card h1, html body #main-body .pricing-card h2, html body #main-body .pricing-card h3, html body #main-body .pricing-card h4,
+html body #main-body .product h1, html body #main-body .product h2, html body #main-body .product h3, html body #main-body .product h4, html body #main-body .product h5, html body #main-body .product h6,
+html body #main-body .package h1, html body #main-body .package h2, html body #main-body .package h3, html body #main-body .package h4,
+html body #main-body .plan h1, html body #main-body .plan h2, html body #main-body .plan h3, html body #main-body .plan h4,
+html body #main-body .pricing-item h1, html body #main-body .pricing-item h2, html body #main-body .pricing-item h3, html body #main-body .pricing-item h4,
+html body #main-body .price-amount, html body #main-body .plan-price, html body #main-body .plan-price *, html body #main-body .price-amount *, html body #main-body .plan-name, html body #main-body .plan-name * {
+    color: #ffffff !important;
+}
+
+/* Large Gradient Pricing Block */
+html body #main-body .pricing-card .price-amount,
+html body #main-body .pricing-card .plan-price,
+html body #main-body .product .price-amount,
+html body #main-body .product .plan-price,
+html body #main-body .pricing-item .price-amount,
+html body #main-body .pricing-item .plan-price,
+html body #main-body div[id^="product"].product .price-amount,
+html body #main-body div[id^="product"].product .plan-price,
+html body #main-body .price-amount,
+html body #main-body .plan-price,
+html body #main-body .product-pricing .price,
+html body #main-body .product .product-pricing .price,
+html body #main-body div[id^="product"].product .product-pricing .price {
+    background: linear-gradient(90deg, #FF9E00, #FF007F) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-family: var(--font-main) !important;
+    font-size: 2.2rem !important;
+    font-weight: 900 !important;
+    display: inline-block !important;
+    line-height: 1.1 !important;
+    margin-bottom: 10px !important;
+    color: transparent !important;
+}
+
+html body #main-body .pricing-card .price-amount *,
+html body #main-body .pricing-card .plan-price *,
+html body #main-body .product .price-amount *,
+html body #main-body .product .plan-price *,
+html body #main-body .pricing-item .price-amount *,
+html body #main-body .pricing-item .plan-price *,
+html body #main-body div[id^="product"].product .price-amount *,
+html body #main-body div[id^="product"].product .plan-price * {
+    background: inherit !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+/* Style the period text (like /mo or Monthly or Annually) to be small and grey */
+html body #main-body .pricing-card .price-period,
+html body #main-body .pricing-card .plan-price .period,
+html body #main-body .product .price-period,
+html body #main-body .product .plan-price .period,
+html body #main-body .pricing-item .price-period,
+html body #main-body .pricing-item .plan-price .period,
+html body #main-body div[id^="product"].product .price-period,
+html body #main-body div[id^="product"].product .plan-price .period,
+html body #main-body .price-period,
+html body #main-body .price-cycle-view .period,
+html body #main-body .product-pricing,
+html body #main-body .product .product-pricing {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: rgba(255, 255, 255, 0.5) !important;
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.5) !important;
+    background: none !important;
+    display: inline-block !important;
+    margin-left: 4px !important;
+    vertical-align: baseline !important;
+}
+
+/* Button Styles: Regular Cards (Transparent + outline) */
+html body #main-body .pricing-card .plan-button,
+html body #main-body .pricing-card .btn-order-now,
+html body #main-body .pricing-card .btn-primary,
+html body #main-body .pricing-card button[type="submit"],
+html body #main-body .product .plan-button,
+html body #main-body .product .btn-order-now,
+html body #main-body .product .btn-primary,
+html body #main-body .product button[type="submit"],
+html body #main-body .pricing-item .plan-button,
+html body #main-body .pricing-item .btn-order-now,
+html body #main-body .pricing-item .btn-primary,
+html body #main-body .pricing-item button[type="submit"],
+html body #main-body div[id^="product"].product .plan-button,
+html body #main-body div[id^="product"].product .btn-order-now,
+html body #main-body div[id^="product"].product .btn-primary,
+html body #main-body div[id^="product"].product button[type="submit"] {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    font-family: var(--font-main) !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 30px !important;
+    padding: 12px 24px !important;
+    width: 100% !important;
+    display: inline-block !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+}
+
+html body #main-body .pricing-card .plan-button:hover,
+html body #main-body .pricing-card .btn-order-now:hover,
+html body #main-body .pricing-card .btn-primary:hover,
+html body #main-body .pricing-card button[type="submit"]:hover,
+html body #main-body .product .plan-button:hover,
+html body #main-body .product .btn-order-now:hover,
+html body #main-body .product .btn-primary:hover,
+html body #main-body .product button[type="submit"]:hover,
+html body #main-body .pricing-item .plan-button:hover,
+html body #main-body .pricing-item .btn-order-now:hover,
+html body #main-body .pricing-item .btn-primary:hover,
+html body #main-body div[id^="product"].product .plan-button:hover,
+html body #main-body div[id^="product"].product .btn-order-now:hover {
+    border-color: #FF9E00 !important;
+    background: rgba(255, 158, 0, 0.05) !important;
+    color: #FF9E00 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Button Styles: Featured / Popular Card (Solid pink-orange gradient) */
+html body #main-body .pricing-card.featured .plan-button,
+html body #main-body .pricing-card.featured .btn-order-now,
+html body #main-body .pricing-card.featured .btn-primary,
+html body #main-body .pricing-card.featured button[type="submit"],
+html body #main-body .pricing-card.popular .plan-button,
+html body #main-body .pricing-card.popular .btn-order-now,
+html body #main-body .pricing-card.popular .btn-primary,
+html body #main-body .pricing-card.popular button[type="submit"],
+html body #main-body .pricing-card.most-popular .plan-button,
+html body #main-body .pricing-card.most-popular .btn-order-now,
+html body #main-body .pricing-card.most-popular .btn-primary,
+html body #main-body .pricing-card.most-popular button[type="submit"],
+html body #main-body .pricing-card.sh-popular .plan-button,
+html body #main-body .pricing-card.sh-popular .btn-order-now,
+html body #main-body .pricing-card.sh-popular .btn-primary,
+html body #main-body .pricing-card.sh-popular button[type="submit"],
+html body #main-body .product.featured .plan-button,
+html body #main-body .product.featured .btn-order-now,
+html body #main-body .product.featured .btn-primary,
+html body #main-body .product.featured button[type="submit"],
+html body #main-body .product.popular .plan-button,
+html body #main-body .product.popular .btn-order-now,
+html body #main-body .product.popular .btn-primary,
+html body #main-body .product.popular button[type="submit"],
+html body #main-body .product.most-popular .plan-button,
+html body #main-body .product.most-popular .btn-order-now,
+html body #main-body .product.most-popular .btn-primary,
+html body #main-body .product.most-popular button[type="submit"],
+html body #main-body .product.sh-popular .plan-button,
+html body #main-body .product.sh-popular .btn-order-now,
+html body #main-body .product.sh-popular .btn-primary,
+html body #main-body .product.sh-popular button[type="submit"],
+html body #main-body .pricing-item.featured .plan-button,
+html body #main-body .pricing-item.featured .btn-order-now,
+html body #main-body .pricing-item.featured .btn-primary,
+html body #main-body .pricing-item.featured button[type="submit"],
+html body #main-body .pricing-item.popular .plan-button,
+html body #main-body .pricing-item.popular .btn-order-now,
+html body #main-body .pricing-item.popular .btn-primary,
+html body #main-body .pricing-item.popular button[type="submit"],
+html body #main-body .pricing-item.most-popular .plan-button,
+html body #main-body .pricing-item.most-popular .btn-order-now,
+html body #main-body .pricing-item.most-popular .btn-primary,
+html body #main-body .pricing-item.most-popular button[type="submit"],
+html body #main-body .pricing-item.sh-popular .plan-button,
+html body #main-body .pricing-item.sh-popular .btn-order-now,
+html body #main-body .pricing-item.sh-popular .btn-primary,
+html body #main-body .pricing-item.sh-popular button[type="submit"],
+html body #main-body div[id^="product"].product.featured .plan-button,
+html body #main-body div[id^="product"].product.featured .btn-order-now,
+html body #main-body div[id^="product"].product.featured .btn-primary,
+html body #main-body div[id^="product"].product.featured button[type="submit"],
+html body #main-body div[id^="product"].product.popular .plan-button,
+html body #main-body div[id^="product"].product.popular .btn-order-now,
+html body #main-body div[id^="product"].product.popular .btn-primary,
+html body #main-body div[id^="product"].product.popular button[type="submit"],
+html body #main-body div[id^="product"].product.most-popular .plan-button,
+html body #main-body div[id^="product"].product.most-popular .btn-order-now,
+html body #main-body div[id^="product"].product.most-popular .btn-primary,
+html body #main-body div[id^="product"].product.most-popular button[type="submit"],
+html body #main-body div[id^="product"].product.sh-popular .plan-button,
+html body #main-body div[id^="product"].product.sh-popular .btn-order-now,
+html body #main-body div[id^="product"].product.sh-popular .btn-primary,
+html body #main-body div[id^="product"].product.sh-popular button[type="submit"],
+html body #main-body #product2-order-button,
+html body #main-body #product2 .btn-order-now {
+    background: linear-gradient(135deg, #FF9E00, #FF007F) !important;
+    background-color: transparent !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(255, 0, 127, 0.3) !important;
+}
+
+html body #main-body .pricing-card.featured .plan-button:hover,
+html body #main-body .pricing-card.featured .btn-order-now:hover,
+html body #main-body .pricing-card.featured button[type="submit"]:hover,
+html body #main-body .pricing-card.popular .plan-button:hover,
+html body #main-body .pricing-card.popular .btn-order-now:hover,
+html body #main-body .pricing-card.popular button[type="submit"]:hover,
+html body #main-body .pricing-card.most-popular .plan-button:hover,
+html body #main-body .pricing-card.most-popular .btn-order-now:hover,
+html body #main-body .pricing-card.most-popular button[type="submit"]:hover,
+html body #main-body .pricing-card.sh-popular .plan-button:hover,
+html body #main-body .pricing-card.sh-popular .btn-order-now:hover,
+html body #main-body .pricing-card.sh-popular button[type="submit"]:hover,
+html body #main-body .product.featured .plan-button:hover,
+html body #main-body .product.featured .btn-order-now:hover,
+html body #main-body .product.popular .plan-button:hover,
+html body #main-body .product.popular .btn-order-now:hover,
+html body #main-body .product.most-popular .plan-button:hover,
+html body #main-body .product.most-popular .btn-order-now:hover,
+html body #main-body .product.sh-popular .plan-button:hover,
+html body #main-body .product.sh-popular .btn-order-now:hover,
+html body #main-body .pricing-item.featured .plan-button:hover,
+html body #main-body .pricing-item.featured .btn-order-now:hover,
+html body #main-body .pricing-item.popular .plan-button:hover,
+html body #main-body .pricing-item.popular .btn-order-now:hover,
+html body #main-body .pricing-item.most-popular .plan-button:hover,
+html body #main-body .pricing-item.most-popular .btn-order-now:hover,
+html body #main-body .pricing-item.sh-popular .plan-button:hover,
+html body #main-body .pricing-item.sh-popular .btn-order-now:hover,
+html body #main-body div[id^="product"].product.featured .plan-button:hover,
+html body #main-body div[id^="product"].product.featured .btn-order-now:hover,
+html body #main-body div[id^="product"].product.popular .plan-button:hover,
+html body #main-body div[id^="product"].product.popular .btn-order-now:hover,
+html body #main-body div[id^="product"].product.most-popular .plan-button:hover,
+html body #main-body div[id^="product"].product.most-popular .btn-order-now:hover,
+html body #main-body div[id^="product"].product.sh-popular .plan-button:hover,
+html body #main-body div[id^="product"].product.sh-popular .btn-order-now:hover,
+html body #main-body #product2-order-button:hover,
+html body #main-body #product2 .btn-order-now:hover {
+    background: linear-gradient(135deg, #FF9E00, #FF007F) !important;
+    color: #ffffff !important;
+    opacity: 0.95 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(255, 0, 127, 0.4) !important;
+}
+
+/* Feature Checkmarks colors */
+html body #main-body .pricing-card ul li i,
+html body #main-body .pricing-card .features li i,
+html body #main-body .pricing-card .package-features li i,
+html body #main-body .pricing-card .plan-features li i,
+html body #main-body .pricing-card .feature-item i,
+html body #main-body .product ul li i,
+html body #main-body .product .features li i,
+html body #main-body .product .package-features li i,
+html body #main-body .product .plan-features li i,
+html body #main-body .product .feature-item i,
+html body #main-body .pricing-item ul li i,
+html body #main-body .pricing-item .features li i,
+html body #main-body .pricing-item .package-features li i,
+html body #main-body .pricing-item .plan-features li i,
+html body #main-body .pricing-item .feature-item i,
+html body #main-body div[id^="product"].product ul li i,
+html body #main-body div[id^="product"].product .features li i,
+html body #main-body div[id^="product"].product .package-features li i,
+html body #main-body div[id^="product"].product .plan-features li i,
+html body #main-body div[id^="product"].product .feature-item i {
+    color: #FF9E00 !important;
+}
+
+/* Feature Check icon class specifically (like fas fa-check) */
+html body #main-body .pricing-card .feature-check,
+html body #main-body .product .feature-check,
+html body #main-body .pricing-item .feature-check,
+html body #main-body div[id^="product"].product .feature-check {
+    color: #FF9E00 !important;
+}
+
+/* Make headers and sections inside store pricing cards transparent */
+html body #main-body .product-header,
+html body #main-body .package-header,
+html body #main-body .plan-header,
+html body #main-body .pricing-header,
+html body #main-body .card-header,
+html body #main-body .header,
+html body #main-body .pricing-card .header,
+html body #main-body .plan-card .header,
+html body #main-body .package-card .header,
+html body #main-body .product-card .header,
+html body #main-body .card .header,
+html body #main-body .product .header,
+html body #main-body .package .header,
+html body #main-body .plan .header,
+html body #main-body .pricing-item .header,
+html body #main-body div[id^="product"].product .header,
+html body #main-body div[id^="package"].package .header,
+html body #main-body .pricing-card .card-header,
+html body #main-body .plan-card .card-header,
+html body #main-body .package-card .card-header,
+html body #main-body .product-card .card-header,
+html body #main-body .product .card-header,
+html body #main-body .package .card-header,
+html body #main-body .plan .card-header,
+html body #main-body .pricing-item .card-header,
+html body #main-body div[id^="product"].product .card-header,
+html body #main-body div[id^="package"].package .card-header,
+html body #main-body .pricing-card .pricing-header,
+html body #main-body .plan-card .pricing-header,
+html body #main-body .product-card .pricing-header,
+html body #main-body .product .pricing-header,
+html body #main-body div[id^="product"].product .pricing-header,
+html body #main-body .pricing-card .package-header,
+html body #main-body .pricing-card .product-header,
+html body #main-body .pricing-card .plan-header,
+html body #main-body .product-desc,
+html body #main-body .package-desc,
+html body #main-body .plan-body,
+html body #main-body .plan-footer,
+html body #main-body .product-footer,
+html body #main-body .package-footer {
+    background: transparent !important;
+    background-color: transparent !important;
+    border-color: rgba(255, 255, 255, 0.05) !important;
+    border-bottom: none !important;
+}
+
+/* Card titles typography in standard cart */
+html body #main-body .product header span[id$="-name"],
+html body #main-body div[id^="product"].product header span[id$="-name"] {
+    font-family: var(--font-main) !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-size: 18px !important;
+    color: #ffffff !important;
+    display: block !important;
+    margin-top: 5px !important;
+    margin-bottom: 10px !important;
 }
 
 body .table-wrapper {
@@ -1442,4 +1892,178 @@ body .table-bordered,
 body .table-bordered th,
 body .table-bordered td {
     border: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* --- WHMCS Shared Hosting Store Layout and Styling Refinements --- */
+
+/* 1. Transparent Header Overrides (targeting HTML5 <header> tags) */
+html body #main-body div[id^="product"].product header,
+html body #main-body .product header,
+.product header,
+div[id^="product"].product header {
+    background: transparent !important;
+    background-color: transparent !important;
+    border-bottom: none !important;
+    padding: 24px 15px 10px 15px !important;
+    text-align: center !important;
+}
+
+/* Ensure the title text is visible and styled properly */
+html body #main-body div[id^="product"].product header span[id$="-name"],
+html body #main-body .product header span[id$="-name"],
+.product header span[id$="-name"] {
+    font-family: var(--font-main) !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    font-size: 18px !important;
+    color: #ffffff !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* 2. Vertical Stack Layout for Product Cards (clears floats and centers price/button) */
+html body #main-body div[id^="product"].product,
+html body #main-body .product,
+.product {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    padding: 32px 24px !important;
+}
+
+/* Set vertical order: Header (1) -> Price/Button Footer (2) -> Features Description (3) */
+html body #main-body div[id^="product"].product header,
+html body #main-body .product header {
+    order: 1 !important;
+    width: 100% !important;
+}
+
+html body #main-body div[id^="product"].product footer,
+html body #main-body .product footer,
+.product footer {
+    order: 2 !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border-top: none !important;
+    border-bottom: none !important;
+    margin: 15px 0 20px 0 !important;
+    padding: 0 !important;
+    float: none !important; /* Clear floats */
+}
+
+html body #main-body div[id^="product"].product .product-desc,
+html body #main-body .product .product-desc,
+.product .product-desc {
+    order: 3 !important;
+    width: 100% !important;
+    float: none !important; /* Clear floats */
+    margin: 15px 0 0 0 !important;
+    padding: 0 !important;
+    text-align: center !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Center features lists inside the description */
+html body #main-body div[id^="product"].product .product-desc ul,
+.product .product-desc ul {
+    display: inline-block !important;
+    text-align: left !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+html body #main-body div[id^="product"].product .product-desc ul li,
+.product .product-desc ul li {
+    margin-bottom: 8px !important;
+    font-size: 14px !important;
+    color: #cbd5e1 !important;
+}
+
+/* 3. Pricing Typography and Layout inside Footer */
+html body #main-body div[id^="product"].product footer .product-pricing,
+html body #main-body .product footer .product-pricing,
+.product footer .product-pricing {
+    float: none !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 15px !important;
+    padding: 0 !important;
+}
+
+html body #main-body div[id^="product"].product footer .product-pricing .price,
+html body #main-body .product footer .product-pricing .price,
+.product footer .product-pricing .price {
+    background: linear-gradient(90deg, #FF9E00, #FF007F) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-size: 2.4rem !important;
+    font-weight: 900 !important;
+    color: transparent !important;
+    display: inline-block !important;
+    line-height: 1.1 !important;
+    margin-bottom: 5px !important;
+}
+
+/* 4. Button Reskinning for Standard Cart Order Buttons */
+html body #main-body div[id^="product"].product footer a.btn,
+html body #main-body div[id^="product"].product footer a[id$="-order-button"],
+.product footer a.btn {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    border-radius: 30px !important;
+    padding: 12px 24px !important;
+    width: 100% !important;
+    max-width: 220px !important;
+    display: inline-block !important;
+    text-align: center !important;
+    transition: all 0.3s ease !important;
+    box-shadow: none !important;
+    text-decoration: none !important;
+}
+
+html body #main-body div[id^="product"].product footer a.btn:hover,
+html body #main-body div[id^="product"].product footer a[id$="-order-button"]:hover,
+.product footer a.btn:hover {
+    border-color: #FF9E00 !important;
+    background: rgba(255, 158, 0, 0.05) !important;
+    color: #FF9E00 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Featured Card Button Override (Solid gradient for #product2) */
+html body #main-body #product2 footer a.btn,
+html body #main-body #product2-order-button,
+html body #main-body #product2 footer a[id$="-order-button"] {
+    background: linear-gradient(135deg, #FF9E00, #FF007F) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 6px 20px rgba(255, 0, 127, 0.3) !important;
+}
+
+html body #main-body #product2 footer a.btn:hover,
+html body #main-body #product2-order-button:hover,
+html body #main-body #product2 footer a[id$="-order-button"]:hover {
+    background: linear-gradient(135deg, #FF9E00, #FF007F) !important;
+    color: #ffffff !important;
+    opacity: 0.95 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(255, 0, 127, 0.4) !important;
 }
