@@ -787,3 +787,214 @@ div[id^="product"].product footer a[id$="-order-button"]:hover,
     transform: translateY(-2px) !important;
     box-shadow: 0 8px 25px rgba(255, 0, 127, 0.4) !important;
 }
+
+/* --- Choose a Domain / WHMCS Cart & Product Configuration Pages Premium Dark Theme Overrides --- */
+
+/* 1. Scoped Cart Container */
+#order-standard_cart,
+.template-cart #main-body,
+.template-configureproduct #main-body,
+.template-configureproductdomain #main-body,
+.template-viewcart #main-body,
+.template-checkout #main-body {
+    background: transparent !important;
+    color: #e2e8f0 !important;
+}
+
+/* 2. Global Card, Panel & Box Overrides to eliminate all white boxes in the cart flow */
+#order-standard_cart .card,
+#order-standard_cart .panel,
+#order-standard_cart .panel-default,
+#order-standard_cart .well,
+#order-standard_cart .thumbnail,
+#order-standard_cart .list-group-item,
+#order-standard_cart .product-info,
+#order-standard_cart .field-container,
+#order-standard_cart .sub-heading-admin,
+#order-standard_cart .domain-selection-options .option,
+#order-standard_cart .domain-input-group,
+#order-standard_cart .promo-header,
+#order-standard_cart .addon-products {
+    background: rgba(9, 13, 30, 0.65) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+    color: #cbd5e1 !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Ensure child texts within these cards are styled correctly */
+#order-standard_cart .card *,
+#order-standard_cart .panel *,
+#order-standard_cart .list-group-item *,
+#order-standard_cart .field-container *,
+#order-standard_cart .product-info * {
+    color: #cbd5e1 !important;
+}
+
+/* 3. Headers, Titles & Labels inside the Cart Flow */
+#order-standard_cart h1, 
+#order-standard_cart h2, 
+#order-standard_cart h3, 
+#order-standard_cart h4, 
+#order-standard_cart h5, 
+#order-standard_cart h6,
+#order-standard_cart h1 *, 
+#order-standard_cart h2 *, 
+#order-standard_cart h3 *,
+#order-standard_cart .card-title,
+#order-standard_cart .panel-title,
+#order-standard_cart .product-name {
+    color: #ffffff !important;
+    font-family: var(--font-main, 'Outfit', sans-serif) !important;
+}
+
+#order-standard_cart label,
+#order-standard_cart .control-label {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+}
+
+/* 4. Elimination of standard Bootstrap background utilities */
+#order-standard_cart .bg-white,
+#order-standard_cart .bg-light,
+#order-standard_cart .bg-default,
+#order-standard_cart .bg-muted {
+    background-color: transparent !important;
+    background: transparent !important;
+}
+
+/* 5. Cart Table and Pricing Summaries Overrides */
+#order-standard_cart table,
+#order-standard_cart .table,
+#order-standard_cart thead,
+#order-standard_cart tbody,
+#order-standard_cart tr,
+#order-standard_cart td,
+#order-standard_cart th {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #cbd5e1 !important;
+    border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+#order-standard_cart table th,
+#order-standard_cart .table th {
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+/* 6. Form Controls, Dropdowns & Textareas inside standard cart */
+#order-standard_cart .form-control,
+#order-standard_cart select,
+#order-standard_cart textarea,
+#order-standard_cart input[type="text"],
+#order-standard_cart input[type="password"],
+#order-standard_cart input[type="email"] {
+    background: rgba(2, 4, 10, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 12px !important;
+    color: #ffffff !important;
+    padding: 10px 16px !important;
+    height: auto !important;
+    transition: all 0.3s ease !important;
+}
+
+#order-standard_cart .form-control:focus,
+#order-standard_cart select:focus,
+#order-standard_cart textarea:focus,
+#order-standard_cart input:focus {
+    background: rgba(2, 4, 10, 0.75) !important;
+    border-color: #FF9E00 !important;
+    box-shadow: 0 0 0 3px rgba(255, 158, 0, 0.25) !important;
+    outline: none !important;
+}
+
+#order-standard_cart textarea::placeholder,
+#order-standard_cart input::placeholder {
+    color: rgba(255, 255, 255, 0.45) !important;
+}
+
+/* 7. Hover and Active option styles in the checkout flow */
+#order-standard_cart .option:hover {
+    border-color: rgba(255, 158, 0, 0.25) !important;
+    background: rgba(9, 13, 30, 0.8) !important;
+}
+
+#order-standard_cart .option:has(input[type="radio"]:checked),
+#order-standard_cart .option:has(.checked),
+#order-standard_cart .option:has(.iradio_square-blue.checked) {
+    background: rgba(255, 0, 127, 0.03) !important;
+    border-color: rgba(255, 0, 127, 0.4) !important;
+    box-shadow: 0 0 25px rgba(255, 0, 127, 0.08) !important;
+}
+
+/* Label flex layout and typography inside option cards */
+#order-standard_cart .domain-selection-options .option label {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    color: #ffffff !important;
+    cursor: pointer !important;
+    margin-bottom: 0 !important;
+}
+
+#order-standard_cart .domain-selection-options .option label .iradio_square-blue {
+    margin-top: 0 !important;
+}
+
+/* Input group padding */
+#order-standard_cart .domain-selection-options .option .domain-input-group {
+    margin-top: 20px !important;
+    padding-top: 20px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    width: 100% !important;
+}
+
+/* 8. Order Summary and Sidebar Overrides */
+#order-standard_cart .order-summary,
+#order-standard_cart .cart-sidebar,
+#order-standard_cart .sidebar {
+    background: rgba(9, 13, 30, 0.65) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 16px !important;
+}
+
+/* 9. Buttons Gradient Styling inside Cart */
+#order-standard_cart .btn-primary,
+#order-standard_cart button[type="submit"],
+#order-standard_cart .btn-order-now,
+#order-standard_cart #btnCheckAvailability,
+#order-standard_cart #btnTransfer,
+#order-standard_cart #useOwnDomain,
+#order-standard_cart button[id^="btn"] {
+    background: linear-gradient(135deg, #FF9E00 0%, #FF007F 100%) !important;
+    border: none !important;
+    border-radius: 30px !important;
+    color: #ffffff !important;
+    font-family: var(--font-main, 'Outfit', sans-serif) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    padding: 12px 28px !important;
+    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.25) !important;
+    transition: all 0.3s ease !important;
+    cursor: pointer !important;
+}
+
+#order-standard_cart .btn-primary:hover,
+#order-standard_cart button[type="submit"]:hover,
+#order-standard_cart .btn-order-now:hover,
+#order-standard_cart #btnCheckAvailability:hover,
+#order-standard_cart #btnTransfer:hover,
+#order-standard_cart #useOwnDomain:hover,
+#order-standard_cart button[id^="btn"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(255, 0, 127, 0.35) !important;
+    opacity: 0.95 !important;
+}
+
