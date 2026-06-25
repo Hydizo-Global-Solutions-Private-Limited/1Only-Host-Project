@@ -2686,9 +2686,7 @@ html body .bootstrap-select .btn {
 #order-standard_cart .panel:nth-of-type(3),
 #order-standard_cart .domain-selection-options:nth-of-type(3) {
     z-index: 80 !important;
-}
-
-/* Force visibility and correct coloring of the .com/.in dropdown buttons in the Transfer section */
+}/* Force visibility and correct coloring of the .com/.in dropdown buttons in the Transfer section */
 #order-standard_cart .dropdown-toggle,
 #order-standard_cart .btn-default.dropdown-toggle,
 #frmProductDomain .dropdown-toggle,
@@ -2756,6 +2754,86 @@ html body #frmProductDomain .input-group-btn .btn * {
     text-shadow: none !important;
 }
 
+/* Global Select & Option styling to ensure white text visibility on dark background */
+html body select,
+html body select.form-control,
+html body select.custom-select,
+html body select *,
+html body option,
+html body option *,
+html body .bootstrap-select .filter-option,
+html body .bootstrap-select .filter-option-inner,
+html body .bootstrap-select .filter-option-inner-inner,
+html body .bootstrap-select .dropdown-toggle,
+html body .bootstrap-select .btn,
+html body .bootstrap-select .btn *,
+html body .dropdown-toggle,
+html body .dropdown-toggle *,
+html body .multiselect-selected-text,
+html body .nice-select .current,
+html body .nice-select .option,
+html body .select2-selection__rendered,
+html body .select2-results__option {
+    color: #ffffff !important;
+    font-family: var(--font-main, 'Outfit', sans-serif) !important;
+}
 
+/* Ensure dark background on all selects and options globally */
+html body select,
+html body select.form-control,
+html body select.custom-select,
+html body option,
+html body .nice-select,
+html body .nice-select .list,
+html body .select2-dropdown,
+html body .select2-selection {
+    background-color: #0c0e16 !important;
+}
 
+/* Client Area Dashboard - "Register a New Domain" Box Layout Optimization */
+.client-home-cards form {
+    width: 100% !important;
+}
 
+.client-home-cards form .input-group {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 15px !important;
+}
+
+/* Make the domain input field full-width and rounded */
+.client-home-cards form .input-group input[type="text"].form-control,
+.client-home-cards form .input-group input[type="text"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 auto !important;
+    border-radius: 12px !important;
+    background-color: rgba(2, 4, 10, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    padding: 12px 16px !important;
+    height: auto !important;
+    font-size: 16px !important;
+}
+
+/* Style the buttons wrapper to render below the input box and align side-by-side */
+.client-home-cards form .input-group .input-group-btn,
+.client-home-cards form .input-group .input-group-append {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    gap: 12px !important;
+    width: 100% !important;
+}
+
+/* Force both Register and Transfer buttons to look consistent, rounded, and fit nicely */
+.client-home-cards form .input-group .input-group-btn .btn,
+.client-home-cards form .input-group .input-group-append .btn {
+    border-radius: 12px !important;
+    padding: 10px 24px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    flex: 1 !important; /* Make buttons share equal width */
+    max-width: 200px !important; /* Keep them neat and not overly stretched */
+}
