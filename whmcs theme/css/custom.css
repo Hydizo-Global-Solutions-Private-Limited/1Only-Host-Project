@@ -2121,9 +2121,12 @@ html body #main-body #product2 footer a[id$="-order-button"]:hover {
 #order-standard_cart h4, 
 #order-standard_cart h5, 
 #order-standard_cart h6,
-#order-standard_cart h1 *, 
-#order-standard_cart h2 *, 
-#order-standard_cart h3 *,
+#order-standard_cart h1 *:not(i):not([class*="fa-"]), 
+#order-standard_cart h2 *:not(i):not([class*="fa-"]), 
+#order-standard_cart h3 *:not(i):not([class*="fa-"]),
+#order-standard_cart h4 *:not(i):not([class*="fa-"]),
+#order-standard_cart h5 *:not(i):not([class*="fa-"]),
+#order-standard_cart h6 *:not(i):not([class*="fa-"]),
 #order-standard_cart .card-title,
 #order-standard_cart .panel-title,
 #order-standard_cart .product-name {
@@ -2277,4 +2280,442 @@ html body #main-body #product2 footer a[id$="-order-button"]:hover {
     box-shadow: 0 6px 20px rgba(255, 0, 127, 0.35) !important;
     opacity: 0.95 !important;
 }
+
+/* --- Additional Theme & Cart Fixes --- */
+
+/* 10. Order Summary Details Panel & Text Overrides */
+#order-standard_cart #orderSummary,
+#order-standard_cart .summary-container,
+#order-standard_cart .summary,
+#order-standard_cart .product-info,
+.order-summary #orderSummary,
+.order-summary .summary-container,
+.order-summary .product-info {
+    background: rgba(9, 13, 30, 0.65) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 12px !important;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02) !important;
+    color: #cbd5e1 !important;
+    padding: 15px !important;
+}
+
+/* Force text inside orderSummary to be readable */
+#order-standard_cart #orderSummary *,
+#order-standard_cart .summary-container *,
+.order-summary #orderSummary *,
+.order-summary .summary-container * {
+    color: #cbd5e1 !important;
+}
+
+#order-standard_cart #orderSummary .product-name,
+#order-standard_cart #orderSummary .price,
+#order-standard_cart #orderSummary .total-due-today,
+#order-standard_cart #orderSummary .total-due,
+#order-standard_cart #orderSummary h1,
+#order-standard_cart #orderSummary h2,
+#order-standard_cart #orderSummary h3,
+#order-standard_cart #orderSummary h4,
+#order-standard_cart #orderSummary h5,
+#order-standard_cart #orderSummary h6,
+.order-summary #orderSummary .product-name,
+.order-summary #orderSummary .price,
+.order-summary #orderSummary .total-due-today,
+.order-summary #orderSummary .total-due {
+    color: #ffffff !important;
+}
+
+/* 11. Sidebar Categories & Actions Chevron/Icon Fixes */
+.card-sidebar .card-header,
+#order-standard_cart .sidebar .panel-heading,
+#order-standard_cart .cart-sidebar .panel-heading {
+    background: rgba(255, 255, 255, 0.02) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    padding: 12px 15px !important;
+}
+
+.card-sidebar .card-title,
+#order-standard_cart .sidebar .panel-title,
+#order-standard_cart .cart-sidebar .panel-title {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    color: #ffffff !important;
+}
+
+.card-sidebar .card-title i,
+#order-standard_cart .sidebar .panel-title i,
+#order-standard_cart .cart-sidebar .panel-title i {
+    font-size: 14px !important;
+    color: #FF9E00 !important;
+    opacity: 0.9 !important;
+}
+
+.card-sidebar .card-minimise,
+#order-standard_cart .sidebar .panel-minimise,
+#order-standard_cart .cart-sidebar .panel-minimise {
+    color: rgba(255, 255, 255, 0.4) !important;
+    cursor: pointer !important;
+    transition: color 0.2s ease !important;
+}
+
+.card-sidebar .card-minimise:hover,
+#order-standard_cart .sidebar .panel-minimise:hover,
+#order-standard_cart .cart-sidebar .panel-minimise:hover {
+    color: #FF007F !important;
+}
+
+/* 12. Input Group and Select Dropdown Fixes */
+#order-standard_cart .input-group .input-group-btn select,
+#order-standard_cart .input-group select,
+#order-standard_cart select.form-control,
+#order-standard_cart .bootstrap-select .dropdown-toggle {
+    background-color: rgba(2, 4, 10, 0.7) !important;
+    background: rgba(2, 4, 10, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important; /* Force explicit border bottom */
+    box-shadow: none !important;
+    color: #ffffff !important;
+    border-radius: 0 12px 12px 0 !important; /* Match input-group-btn border-radius */
+}
+
+#order-standard_cart .input-group .form-control:first-child,
+#order-standard_cart .input-group input:first-child {
+    border-radius: 12px 0 0 12px !important;
+}
+
+#order-standard_cart .input-group-btn,
+#order-standard_cart .input-group-addon {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+#order-standard_cart select option {
+    background-color: #0c122b !important;
+    color: #ffffff !important;
+}
+
+/* 13. Tailwind & Vue App (nexus-root) White Box Overrides */
+#order-standard_cart .bg-white,
+#order-standard_cart .bg-slate-50,
+#order-standard_cart .bg-slate-100,
+#order-standard_cart .bg-slate-200,
+#order-standard_cart .bg-zinc-50,
+#order-standard_cart .bg-zinc-100,
+#order-standard_cart .bg-neutral-50,
+#order-standard_cart .bg-neutral-100,
+#order-standard_cart .bg-gray-50,
+#order-standard_cart .bg-gray-100,
+#nexus-root .bg-white,
+#nexus-root .bg-slate-50,
+#nexus-root .bg-slate-100,
+#nexus-root .bg-slate-200,
+#nexus-root .bg-zinc-50,
+#nexus-root .bg-zinc-100,
+#nexus-root .bg-neutral-50,
+#nexus-root .bg-neutral-100,
+#nexus-root .bg-gray-50,
+#nexus-root .bg-gray-100 {
+    background-color: rgba(9, 13, 30, 0.65) !important;
+    background: rgba(9, 13, 30, 0.65) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #cbd5e1 !important;
+}
+
+/* Target alert message boxes */
+#order-standard_cart .alert,
+#order-standard_cart .alert-info,
+#order-standard_cart .alert-warning,
+#order-standard_cart .alert-danger,
+#order-standard_cart .alert-success,
+#nexus-root .alert,
+#nexus-root .alert-info,
+#nexus-root .alert-warning,
+#nexus-root .alert-danger,
+#nexus-root .alert-success {
+    background-color: rgba(9, 13, 30, 0.65) !important;
+    background: rgba(9, 13, 30, 0.65) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #cbd5e1 !important;
+    border-radius: 12px !important;
+}
+
+/* Override text color in dark glassmorphic boxes */
+#order-standard_cart [class*="text-slate-"],
+#order-standard_cart [class*="text-zinc-"],
+#order-standard_cart [class*="text-neutral-"],
+#order-standard_cart [class*="text-gray-"],
+#order-standard_cart .text-black,
+#nexus-root [class*="text-slate-"],
+#nexus-root [class*="text-zinc-"],
+#nexus-root [class*="text-neutral-"],
+#nexus-root [class*="text-gray-"],
+#nexus-root .text-black {
+    color: #cbd5e1 !important;
+}
+
+/* Search results domain matches styling */
+#order-standard_cart .domain-suggestions,
+#order-standard_cart .domain-lookup-result,
+#nexus-root .domain-suggestions,
+#nexus-root .domain-lookup-result {
+    background: rgba(9, 13, 30, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px !important;
+}
+
+/* Domain suggestions and results wrapper overrides to eliminate white box completely */
+#order-standard_cart .suggested-domains .domain-lookup-suggestions-loader,
+#order-standard_cart .suggested-domains .domain-lookup-suggestions-message,
+#order-standard_cart #domainSuggestions .domain-lookup-suggestions-loader,
+#order-standard_cart #domainSuggestions .domain-lookup-suggestions-message,
+#order-standard_cart #domainSuggestions .card-body,
+#order-standard_cart #domainSuggestions .panel-body,
+#order-standard_cart #domainSuggestions .well,
+.suggested-domains .domain-lookup-suggestions-loader,
+.suggested-domains .domain-lookup-suggestions-message {
+    background-color: rgba(9, 13, 30, 0.65) !important;
+    background: rgba(9, 13, 30, 0.65) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: rgb(226, 232, 240) !important;
+    border-radius: 12px !important;
+}
+
+#order-standard_cart .suggested-domains .domain-lookup-suggestions-message *,
+#order-standard_cart #domainSuggestions .domain-lookup-suggestions-message * {
+    color: rgb(226, 232, 240) !important;
+}
+
+/* Transfer availability eligible / not-eligible boxes */
+#order-standard_cart .transfer-eligible,
+#order-standard_cart .domain-checker-available,
+#order-standard_cart .domain-contact-support {
+    background-color: rgba(0, 245, 212, 0.15) !important;
+    border: 1px solid rgba(0, 245, 212, 0.3) !important;
+    color: #00F5D4 !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+}
+
+#order-standard_cart .transfer-not-eligible,
+#order-standard_cart .domain-checker-unavailable,
+#order-standard_cart .domain-checker-error {
+    background-color: rgba(239, 68, 68, 0.15) !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+    color: #ef4444 !important;
+    border-radius: 12px !important;
+    padding: 15px !important;
+}
+
+#order-standard_cart .transfer-eligible *,
+#order-standard_cart .domain-checker-available *,
+#order-standard_cart .transfer-not-eligible *,
+#order-standard_cart .domain-checker-unavailable * {
+    color: inherit !important;
+}
+
+/* TLD Select Dropdown Button & Dropdown Menu overrides for #frmProductDomain */
+#frmProductDomain button.multiselect.dropdown-toggle,
+#frmProductDomain .btn-group,
+#frmProductDomain .multiselect,
+#order-standard_cart button.multiselect.dropdown-toggle {
+    background-color: rgba(2, 4, 10, 0.6) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+    border-radius: 0 12px 12px 0 !important;
+    height: auto !important;
+    padding: 10px 16px !important;
+    box-shadow: none !important;
+}
+
+#frmProductDomain ul.multiselect-container.dropdown-menu,
+#order-standard_cart ul.multiselect-container.dropdown-menu {
+    background-color: rgba(10, 12, 18, 0.95) !important;
+    border: 1px solid rgba(255, 158, 0, 0.25) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    border-radius: 12px !important;
+    padding: 8px 0 !important;
+}
+
+#frmProductDomain ul.multiselect-container.dropdown-menu li a,
+#order-standard_cart ul.multiselect-container.dropdown-menu li a {
+    color: rgba(255, 255, 255, 0.8) !important;
+    padding: 8px 20px !important;
+    display: block !important;
+    transition: all 0.2s ease !important;
+}
+
+#frmProductDomain ul.multiselect-container.dropdown-menu li a:hover,
+#order-standard_cart ul.multiselect-container.dropdown-menu li a:hover {
+    background: rgba(255, 158, 0, 0.1) !important;
+    color: rgb(255, 158, 0) !important;
+    text-decoration: none !important;
+}
+
+#frmProductDomain input[type="text"].form-control,
+#frmProductDomain input[type="text"],
+#order-standard_cart input[type="text"].form-control {
+    border-radius: 12px 0 0 12px !important;
+}
+
+/* 14. Dropdown Overflow & Z-Index clipping fixes */
+#order-standard_cart .option,
+#order-standard_cart .domain-selection-options,
+#order-standard_cart .card,
+#order-standard_cart .panel,
+#frmProductDomainSelections,
+#frmProductDomain {
+    overflow: visible !important;
+}
+
+#order-standard_cart .btn-group,
+#order-standard_cart .dropdown,
+#frmProductDomain .btn-group,
+#frmProductDomain .dropdown {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+#order-standard_cart .dropdown-menu,
+#order-standard_cart .multiselect-container.dropdown-menu,
+#frmProductDomain .dropdown-menu,
+#frmProductDomain .multiselect-container.dropdown-menu {
+    position: absolute !important;
+    z-index: 999999 !important;
+}
+
+#order-standard_cart .btn-group.open .dropdown-menu,
+#frmProductDomain .btn-group.open .dropdown-menu,
+#order-standard_cart .dropdown.open .dropdown-menu,
+#frmProductDomain .dropdown.open .dropdown-menu {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* Force checkboxes and labels inside multiselect to be styled and visible */
+#order-standard_cart .multiselect-container.dropdown-menu label,
+#order-standard_cart .multiselect-container.dropdown-menu label input,
+#order-standard_cart .multiselect-container.dropdown-menu li *,
+#frmProductDomain .multiselect-container.dropdown-menu label,
+#frmProductDomain .multiselect-container.dropdown-menu label input,
+#frmProductDomain .multiselect-container.dropdown-menu li * {
+    color: #ffffff !important;
+    background-color: transparent !important;
+    font-weight: 500 !important;
+}
+
+/* TLD Dropdown list styling */
+#order-standard_cart .multiselect-container.dropdown-menu input[type="checkbox"],
+#frmProductDomain .multiselect-container.dropdown-menu input[type="checkbox"] {
+    margin-right: 8px !important;
+    accent-color: #FF9E00 !important;
+}
+
+/* 15. TLD Extension Selection Text Visibility (e.g. .com, .in text inside button) */
+#order-standard_cart .bootstrap-select .filter-option,
+#order-standard_cart .bootstrap-select .dropdown-toggle,
+#order-standard_cart .bootstrap-select .btn,
+#frmProductDomain .bootstrap-select .filter-option,
+#frmProductDomain .bootstrap-select .dropdown-toggle,
+#frmProductDomain .bootstrap-select .btn,
+#order-standard_cart select,
+#order-standard_cart select *,
+#frmProductDomain select,
+#frmProductDomain select *,
+html body .bootstrap-select .filter-option,
+html body .bootstrap-select .dropdown-toggle,
+html body .bootstrap-select .dropdown-toggle *,
+html body .bootstrap-select .btn,
+html body .bootstrap-select .btn *,
+html body .bootstrap-select select,
+html body .bootstrap-select select option,
+html body select.form-control,
+html body select.form-control *,
+html body .multiselect-selected-text {
+    color: #ffffff !important;
+    font-family: var(--font-main, 'Outfit', sans-serif) !important;
+}
+
+/* Fix dropdown buttons background-image gradient rendering as white lines */
+#order-standard_cart button.multiselect.dropdown-toggle,
+#order-standard_cart .bootstrap-select .dropdown-toggle,
+#order-standard_cart .bootstrap-select .btn,
+#frmProductDomain button.multiselect.dropdown-toggle,
+#frmProductDomain .bootstrap-select .dropdown-toggle,
+#frmProductDomain .bootstrap-select .btn,
+html body .bootstrap-select .dropdown-toggle,
+html body .bootstrap-select .btn {
+    background-color: rgba(2, 4, 10, 0.6) !important;
+    background-image: none !important; /* Remove Bootstrap button default gradient */
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: none !important;
+    color: #ffffff !important;
+}
+
+/* Fix stacking issues for domain selection options/cards to make sure dropdowns float on top of subsequent components */
+#order-standard_cart .option,
+#order-standard_cart .card,
+#order-standard_cart .panel,
+#order-standard_cart .domain-selection-options {
+    position: relative !important;
+}
+
+#order-standard_cart .option:nth-of-type(1),
+#order-standard_cart .card:nth-of-type(1),
+#order-standard_cart .panel:nth-of-type(1),
+#order-standard_cart .domain-selection-options:nth-of-type(1) {
+    z-index: 100 !important;
+}
+
+#order-standard_cart .option:nth-of-type(2),
+#order-standard_cart .card:nth-of-type(2),
+#order-standard_cart .panel:nth-of-type(2),
+#order-standard_cart .domain-selection-options:nth-of-type(2) {
+    z-index: 90 !important;
+}
+
+#order-standard_cart .option:nth-of-type(3),
+#order-standard_cart .card:nth-of-type(3),
+#order-standard_cart .panel:nth-of-type(3),
+#order-standard_cart .domain-selection-options:nth-of-type(3) {
+    z-index: 80 !important;
+}
+
+/* Force visibility and correct coloring of the .com/.in dropdown buttons in the Transfer section */
+#order-standard_cart .input-group-btn button.dropdown-toggle,
+#order-standard_cart button.dropdown-toggle,
+#order-standard_cart .btn-default.dropdown-toggle,
+#frmProductDomain .input-group-btn button.dropdown-toggle,
+#frmProductDomain button.dropdown-toggle,
+#frmProductDomain .btn-default.dropdown-toggle,
+html body #order-standard_cart .input-group-btn .btn,
+html body #order-standard_cart .input-group-btn .btn *,
+html body #frmProductDomain .input-group-btn .btn,
+html body #frmProductDomain .input-group-btn .btn * {
+    color: #ffffff !important;
+    background-color: rgba(2, 4, 10, 0.6) !important;
+    background-image: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+    box-shadow: none !important;
+}
+
+/* Remove bottom white borders or shadows from input group button dropdown toggles */
+#order-standard_cart .input-group-btn,
+#order-standard_cart .input-group-btn *,
+#frmProductDomain .input-group-btn,
+#frmProductDomain .input-group-btn * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+
+
 
