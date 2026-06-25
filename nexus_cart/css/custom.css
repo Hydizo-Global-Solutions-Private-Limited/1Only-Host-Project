@@ -1410,12 +1410,12 @@ html body .bootstrap-select .btn {
 }
 
 /* Force visibility and correct coloring of the .com/.in dropdown buttons in the Transfer section */
-#order-standard_cart .input-group-btn button.dropdown-toggle,
-#order-standard_cart button.dropdown-toggle,
+#order-standard_cart .dropdown-toggle,
 #order-standard_cart .btn-default.dropdown-toggle,
-#frmProductDomain .input-group-btn button.dropdown-toggle,
-#frmProductDomain button.dropdown-toggle,
+#frmProductDomain .dropdown-toggle,
 #frmProductDomain .btn-default.dropdown-toggle,
+.bootstrap-select .dropdown-toggle,
+.bootstrap-select .btn,
 html body #order-standard_cart .input-group-btn .btn,
 html body #order-standard_cart .input-group-btn .btn *,
 html body #frmProductDomain .input-group-btn .btn,
@@ -1426,6 +1426,46 @@ html body #frmProductDomain .input-group-btn .btn * {
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
     box-shadow: none !important;
+}
+
+/* Force child elements of dropdown buttons (like selected text) to be white */
+#order-standard_cart .dropdown-toggle *,
+#frmProductDomain .dropdown-toggle *,
+.bootstrap-select .dropdown-toggle * {
+    color: #ffffff !important;
+}
+
+/* Fix all dropdown menus background, border, and option text visibility */
+#order-standard_cart .dropdown-menu,
+#frmProductDomain .dropdown-menu,
+.dropdown-menu {
+    background-color: #0b0d16 !important;
+    border: 1px solid rgba(255, 158, 0, 0.25) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+    border-radius: 12px !important;
+    padding: 8px 0 !important;
+}
+
+#order-standard_cart .dropdown-menu li,
+#order-standard_cart .dropdown-menu li a,
+#order-standard_cart .dropdown-menu li span,
+#frmProductDomain .dropdown-menu li,
+#frmProductDomain .dropdown-menu li a,
+#frmProductDomain .dropdown-menu li span,
+.dropdown-menu li,
+.dropdown-menu li a,
+.dropdown-menu li span {
+    color: #ffffff !important;
+    background-color: transparent !important;
+    font-weight: 500 !important;
+}
+
+#order-standard_cart .dropdown-menu li a:hover,
+#frmProductDomain .dropdown-menu li a:hover,
+.dropdown-menu li a:hover {
+    background-color: rgba(255, 158, 0, 0.15) !important;
+    color: #ff9e00 !important;
+    text-decoration: none !important;
 }
 
 /* Remove bottom white borders or shadows from input group button dropdown toggles */
