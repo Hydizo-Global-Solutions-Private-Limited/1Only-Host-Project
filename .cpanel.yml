@@ -1,0 +1,23 @@
+---
+deployment:
+  tasks:
+    # 1. Add Node.js and npm to path (cPanel standard paths)
+    - export PATH=/usr/local/bin:$PATH
+    
+    # 2. Activate cPanel Node.js virtual environment
+    # IMPORTANT: Replace 'username' with your actual cPanel username (e.g., /home/onlyhost/nodevenv/...)
+    - source /home/username/nodevenv/1onlyhost/20/bin/activate
+    
+    # 3. Navigate to repository directory and build the project
+    # IMPORTANT: Replace 'username' with your actual cPanel username
+    - cd /home/username/1onlyhost
+    - npm install
+    - npm run build
+    
+    # 4. Sync client static files (HTML, CSS, JS, images) directly to public_html for Apache to serve fast
+    # IMPORTANT: Replace 'username' with your actual cPanel username
+    - rsync -av --delete /home/username/1onlyhost/dist/client/ /home/username/public_html/
+    
+    # 5. Signal Phusion Passenger to restart the application to apply server-side changes
+    # IMPORTANT: Replace 'username' with your actual cPanel username
+    - touch /home/username/1onlyhost/tmp/restart.txt
