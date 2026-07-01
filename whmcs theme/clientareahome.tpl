@@ -1,5 +1,12 @@
 {include file="$template/includes/flashmessage.tpl"}
 
+<div class="welcome-banner p-4 mb-4">
+    <div class="welcome-banner-content">
+        <h2>Welcome back, <span class="client-name">{$client.firstname}</span>!</h2>
+        <p class="mb-0 text-muted">Manage your services, domains, and billing all in one place.</p>
+    </div>
+</div>
+
 <div class="tiles mb-4">
     <div class="row no-gutters">
         <div class="col-6 col-xl-3">

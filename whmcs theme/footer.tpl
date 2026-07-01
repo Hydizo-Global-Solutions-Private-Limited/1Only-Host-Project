@@ -14,7 +14,10 @@
     <footer id="footer" class="footer footer-premium-glass">
         <div class="container">
             <ul class="list-inline mb-7 text-center float-lg-right">
-                {include file="$template/includes/social-accounts.tpl"}
+                <li class="list-inline-item"><a href="https://facebook.com/1onlyhost" target="_blank" class="social-icon-btn"><i class="fab fa-facebook-f"></i></a></li>
+                <li class="list-inline-item"><a href="https://instagram.com/1onlyhost" target="_blank" class="social-icon-btn"><i class="fab fa-instagram"></i></a></li>
+                <li class="list-inline-item"><a href="https://youtube.com/@1onlyhost" target="_blank" class="social-icon-btn"><i class="fab fa-youtube"></i></a></li>
+                <li class="list-inline-item"><a href="https://linkedin.com/company/1onlyhost" target="_blank" class="social-icon-btn"><i class="fab fa-linkedin-in"></i></a></li>
 
                 {if $languagechangeenabled && count($locales) > 1 || $currencies}
                     <li class="list-inline-item">
@@ -45,7 +48,7 @@
             </ul>
 
             <p class="copyright mb-0">
-                {lang key="copyrightFooterNotice" year=$date_year company=$companyname}
+                {lang key="copyrightFooterNotice" year=$date_year company=$companyname} | <span class="brand-gradient-text">Powered by 1OnlyHost</span>
             </p>
         </div>
     </footer>
@@ -146,5 +149,19 @@
 
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var header = document.getElementById('header');
+            if (header) {
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        header.classList.add('header-shrunk');
+                    } else {
+                        header.classList.remove('header-shrunk');
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>

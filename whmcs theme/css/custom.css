@@ -2843,3 +2843,293 @@ html body .select2-selection {
 #order-standard_cart .prepend-icon .form-control {
     padding-left: 45px !important;
 }
+
+/* ==========================================================================
+   Premium Heliocentric Space Theme & Glassmorphism Enhancements
+   ========================================================================== */
+
+/* 1. Global Page Fade-in Transition */
+@keyframes pageFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.main-page-wrapper {
+    animation: pageFadeIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 2. Welcome Banner */
+.welcome-banner {
+    background: rgba(9, 13, 30, 0.45) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3) !important;
+    position: relative;
+    overflow: hidden;
+}
+.welcome-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 158, 0, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+.welcome-banner h2 {
+    font-family: var(--font-main) !important;
+    font-weight: 800 !important;
+    background: linear-gradient(90deg, #FF9E00, #FF007F) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    display: inline-block;
+    margin-bottom: 6px !important;
+}
+.welcome-banner .client-name {
+    font-weight: 900 !important;
+    text-shadow: 0 0 10px rgba(255, 158, 0, 0.2);
+}
+
+/* 3. Dashboard Tiles */
+.tiles {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25);
+}
+.tiles .tile {
+    background: rgba(9, 13, 30, 0.6) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: none !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+    padding: 24px 15px !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    position: relative;
+    overflow: hidden;
+}
+.tiles .col-6:last-child .tile,
+.tiles .col-xl-3:last-child .tile {
+    border-right: none !important;
+}
+.tiles .tile i {
+    font-size: 24px !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+    margin-bottom: 12px !important;
+    transition: all 0.3s ease !important;
+}
+.tiles .tile .stat {
+    font-family: var(--font-main) !important;
+    font-weight: 800 !important;
+    font-size: 28px !important;
+    color: #ffffff !important;
+    line-height: 1.2 !important;
+    transition: all 0.3s ease !important;
+}
+.tiles .tile .title {
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    color: #94a3b8 !important;
+}
+.tiles .tile .highlight {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    opacity: 0.4;
+    transition: all 0.3s ease !important;
+}
+/* Tile Hover States */
+.tiles .tile:hover {
+    background: rgba(12, 18, 43, 0.8) !important;
+    transform: translateY(0) scale(1.02) !important;
+    z-index: 2;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4) !important;
+}
+.tiles .tile:hover i {
+    transform: scale(1.1) translateY(-2px) !important;
+}
+.tiles .tile:hover .highlight {
+    height: 5px !important;
+    opacity: 1 !important;
+}
+.tiles .tile:hover .stat {
+    text-shadow: 0 0 12px currentColor;
+}
+/* Individual Tile Accent Colors */
+.tiles .tile .bg-color-blue { background: #00b4d8 !important; }
+.tiles .tile:hover { color: #00b4d8; }
+.tiles .tile:hover .bg-color-blue { background: #00b4d8 !important; }
+
+.tiles .tile .bg-color-green { background: #00F5D4 !important; }
+.tiles .tile:hover:has(.bg-color-green) { color: #00F5D4; }
+.tiles .tile:hover .bg-color-green { background: #00F5D4 !important; }
+
+.tiles .tile .bg-color-red { background: #FF007F !important; }
+.tiles .tile:hover:has(.bg-color-red) { color: #FF007F; }
+.tiles .tile:hover .bg-color-red { background: #FF007F !important; }
+
+.tiles .tile .bg-color-gold { background: #FF9E00 !important; }
+.tiles .tile:hover:has(.bg-color-gold) { color: #FF9E00; }
+.tiles .tile:hover .bg-color-gold { background: #FF9E00 !important; }
+
+/* 4. Action Icon Buttons (Homepage Grid) */
+.action-icon-btns a {
+    background: rgba(9, 13, 30, 0.5) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 16px !important;
+    padding: 24px 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    font-weight: 600 !important;
+    color: #cbd5e1 !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
+}
+.action-icon-btns a .ico-container {
+    width: 52px !important;
+    height: 52px !important;
+    border-radius: 50% !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-bottom: 14px !important;
+    font-size: 20px !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease !important;
+}
+/* Action Card Hover Animations */
+.action-icon-btns a:hover {
+    background: rgba(12, 18, 43, 0.75) !important;
+    transform: translateY(-4px) !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3) !important;
+}
+.action-icon-btns a:hover .ico-container {
+    transform: scale(1.1) rotate(5deg) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+}
+/* Dynamic Accent Colors for Hover states */
+.action-icon-btns a.card-accent-teal:hover { border-color: #00F5D4 !important; box-shadow: 0 0 20px rgba(0, 245, 212, 0.15) !important; }
+.action-icon-btns a.card-accent-teal:hover .ico-container { color: #00F5D4 !important; }
+
+.action-icon-btns a.card-accent-pomegranate:hover { border-color: #ef4444 !important; box-shadow: 0 0 20px rgba(239, 68, 68, 0.15) !important; }
+.action-icon-btns a.card-accent-pomegranate:hover .ico-container { color: #ef4444 !important; }
+
+.action-icon-btns a.card-accent-sun-flower:hover { border-color: #FF9E00 !important; box-shadow: 0 0 20px rgba(255, 158, 0, 0.15) !important; }
+.action-icon-btns a.card-accent-sun-flower:hover .ico-container { color: #FF9E00 !important; }
+
+.action-icon-btns a.card-accent-asbestos:hover { border-color: #8338EC !important; box-shadow: 0 0 20px rgba(131, 56, 236, 0.15) !important; }
+.action-icon-btns a.card-accent-asbestos:hover .ico-container { color: #8338EC !important; }
+
+.action-icon-btns a.card-accent-green:hover { border-color: #00ccb0 !important; box-shadow: 0 0 20px rgba(0, 204, 176, 0.15) !important; }
+.action-icon-btns a.card-accent-green:hover .ico-container { color: #00ccb0 !important; }
+
+.action-icon-btns a.card-accent-midnight-blue:hover { border-color: #FF007F !important; box-shadow: 0 0 20px rgba(255, 0, 127, 0.15) !important; }
+.action-icon-btns a.card-accent-midnight-blue:hover .ico-container { color: #FF007F !important; }
+
+/* 5. Custom Status Badges (Pills) */
+.table .status {
+    padding: 6px 14px !important;
+    border-radius: 30px !important;
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    display: inline-block !important;
+    border: 1px solid transparent !important;
+}
+.table .status-active {
+    background: rgba(0, 245, 212, 0.08) !important;
+    border-color: rgba(0, 245, 212, 0.3) !important;
+    color: #00F5D4 !important;
+    box-shadow: 0 0 10px rgba(0, 245, 212, 0.05) !important;
+}
+.table .status-suspended, .table .status-pending {
+    background: rgba(255, 158, 0, 0.08) !important;
+    border-color: rgba(255, 158, 0, 0.3) !important;
+    color: #FF9E00 !important;
+    box-shadow: 0 0 10px rgba(255, 158, 0, 0.05) !important;
+}
+.table .status-terminated, .table .status-cancelled {
+    background: rgba(255, 0, 127, 0.08) !important;
+    border-color: rgba(255, 0, 127, 0.3) !important;
+    color: #FF007F !important;
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.05) !important;
+}
+
+/* 6. Scroll-Shrink Header & Styling */
+.header-floating-glass {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+.header-shrunk {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+    background: rgba(2, 4, 10, 0.85) !important;
+    border-bottom: 1px solid rgba(255, 158, 0, 0.25) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4) !important;
+}
+
+/* 7. Footer Social Media Buttons */
+.social-icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.6) !important;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    font-size: 14px;
+}
+.social-icon-btn:hover {
+    color: #ffffff !important;
+    transform: translateY(-2px);
+}
+.social-icon-btn:hover .fa-facebook-f { color: #1877F2; }
+.social-icon-btn:hover .fa-instagram { color: #E1306C; }
+.social-icon-btn:hover .fa-youtube { color: #FF0000; }
+.social-icon-btn:hover .fa-linkedin-in { color: #0077B5; }
+
+.brand-gradient-text {
+    background: linear-gradient(90deg, #FF9E00, #FF007F) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-weight: 700;
+}
+
+/* 8. Global Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #02040a;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 158, 0, 0.2);
+    border-radius: 5px;
+    border: 2px solid #02040a;
+    transition: background 0.3s ease;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 158, 0, 0.55);
+}
+
