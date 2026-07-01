@@ -2837,3 +2837,9 @@ html body .select2-selection {
     flex: 1 !important; /* Make buttons share equal width */
     max-width: 200px !important; /* Keep them neat and not overly stretched */
 }
+
+/* Fix input field placeholder and text alignment for prepended icons */
+#order-standard_cart .prepend-icon .field,
+#order-standard_cart .prepend-icon .form-control {
+    padding-left: 45px !important;
+}
