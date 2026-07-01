@@ -277,45 +277,6 @@ const { basePrefix = './', isHome = false } = Astro.props;
       
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav align-items-lg-center">
-          <!-- Domain Dropdown -->
-          <li class="nav-item dropdown mega-dropdown-sm mx-1">
-            <a class="nav-link dropdown-toggle font-outfit" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" onclick="if(window.innerWidth < 992) { event.preventDefault(); event.stopImmediatePropagation(); window.toggleMobileDropdown(this); }">Domain</a>
-            <ul class="dropdown-menu">
-              <li class="row gx-1">
-                <div class="col-lg-4">
-                  <div class="menu-column">
-                    <h6 class="mega-menu-title">Register</h6>
-                    <ul class="style-none mega-dropdown-list ps-0">
-                      <li><a href="/domain-registration" class="dropdown-item">Register Domain</a></li>
-                      <li><a href="/bulk-domain-registration" class="dropdown-item">Bulk Registration</a></li>
-                      <li><a href="/new-domain-extensions" class="dropdown-item">New Extensions</a></li>
-                      <li><a href="/sunrise" class="dropdown-item">Sunrise Domains</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="menu-column">
-                    <h6 class="mega-menu-title">Transfer</h6>
-                    <ul class="style-none mega-dropdown-list ps-0">
-                      <li><a href="/domain-transfer" class="dropdown-item">Transfer Domain</a></li>
-                      <li><a href="/bulk-domain-transfer" class="dropdown-item">Bulk Transfer</a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-lg-4">
-                  <div class="menu-column">
-                    <h6 class="mega-menu-title">Add-ons</h6>
-                    <ul class="style-none mega-dropdown-list ps-0">
-                      <li><a href="/domain-name-suggestion-tool" class="dropdown-item">Name Suggestion</a></li>
-                      <li><a href="/domain-whois-lookup" class="dropdown-item">Whois Lookup</a></li>
-                      <li><a href="/premium-domain" class="dropdown-item">Premium Domains</a></li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </li>
-          
           <!-- Hosting Dropdown -->
           <li class="nav-item dropdown mega-dropdown-sm mx-1">
             <a class="nav-link dropdown-toggle font-outfit" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false" onclick="if(window.innerWidth < 992) { event.preventDefault(); event.stopImmediatePropagation(); window.toggleMobileDropdown(this); }">Hosting</a>
@@ -376,6 +337,10 @@ const { basePrefix = './', isHome = false } = Astro.props;
               <li><a href="/codeguard-backup" class="dropdown-item">CodeGuard Backup</a></li>
               <li><a href="/acronis-cyber-backup" class="dropdown-item">Acronis Cyber Backup</a></li>
             </ul>
+          </li>
+          
+          <li class="nav-item mx-1">
+            <a class="nav-link font-outfit" href="https://my.1onlyhost.com/index.php?rp=/store/shared-hosting/free-trail" style="color: #00F5D4; font-weight: 700;">Free Trial</a>
           </li>
           
           <li class="nav-item mx-1">

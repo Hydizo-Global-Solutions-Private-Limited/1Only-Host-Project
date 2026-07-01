@@ -199,12 +199,12 @@ const basePrefix = pathSegments.length > 0 ? '../'.repeat(pathSegments.length) :
         
         <div class="d-flex justify-content-center mb-4 gap-4 flex-wrap">
           <span class="fw-700 text-accent fs-14 border-bottom border-accent pb-1" style="cursor: pointer;"><i class="icon icon-checked me-1"></i> Register</span>
-          <a href="/domain-transfer" class="text-white-50 fs-14 text-decoration-none hover-accent"><i class="icon icon-chevron-right me-1"></i> Transfer domain to us</a>
+          <a href="https://my.1onlyhost.com/cart.php?a=add&domain=transfer" class="text-white-50 fs-14 text-decoration-none hover-accent"><i class="icon icon-chevron-right me-1"></i> Transfer domain to us</a>
         </div>
         
         <div class="home-domain max-width-800 mx-auto">
-          <form id="domain-search-form" action="#" class="d-flex">
-            <input type="text" id="domain-search-input" placeholder="Find your perfect domain name..." required>
+          <form id="domain-search-form" action="https://my.1onlyhost.com/cart.php?a=add&domain=register" method="post" class="d-flex">
+            <input type="text" name="query" id="domain-search-input" placeholder="Find your perfect domain name..." required>
             <button type="submit">Search</button>
           </form>
 
@@ -2062,6 +2062,7 @@ function initCouponCopy() {
 
 // Domain availability HUD with Scanning Loader simulation
 function initDomainHUD() {
+    return; // Disable local interception so form posts natively to WHMCS
     const searchForm = document.getElementById('domain-search-form');
     const searchInput = document.getElementById('domain-search-input');
     const searchingLoader = document.getElementById('domain-searching-loader');
